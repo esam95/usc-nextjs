@@ -28,37 +28,64 @@ import { Checkbox } from '@/components/shadcn/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/shadcn/radio-group';
 import { Textarea } from '@/components/shadcn/textarea';
 import { Label } from '@/components/shadcn/label';
+import { personAbove18 } from '@/functions/personAbove18';
 
-const formSchema = z.object({
-  name: z
-    .string()
-    .min(2)
-    .refine((value) => value.length < 3, {
-      message: 'Namnet måste vara längre än 2 tecken',
-    }),
-  emailAddress: z.string().email(),
-  adress: z.string().optional(),
-  postalCode: z.string().optional(),
-  personnumber: z.string().min(10).optional(),
-  telephone: z
-    .string()
-    .min(1, 'Please enter a telephone number')
-    // Check that no strings are allowed
-    .refine((value) => !isNaN(Number(value)), {
-      message: 'Använd ett giltigt format för telefonnummer',
-    }),
-  gender: z.enum(['man', 'woman', '']).optional(),
-  sports: z.array(z.string()),
-  diseases: z.string().optional(),
-  trainingSessions: z.enum(['1-2', '3-4', '']).optional(),
-  discount: z.boolean().optional(),
-  comments: z.string().optional(),
-});
+const formSchema = z
+  .object({
+    name: z
+      .string()
+      .min(1, { message: 'Detta fält är obligatoriskt' })
+      .min(2, { message: 'Namnet måste vara längre än 2 tecken' }),
+    emailAddress: z
+      .string()
+      .min(1, { message: 'Detta fält är obligatoriskt' })
+      .email({ message: 'Ange en giltig e-postadress' })
+      .min(4, { message: 'Kan inte vara mindre än 4 tecken' }),
+    adress: z.string().optional(),
+    postalCode: z.string().optional(),
+    personnumber: z
+      .string()
+      .min(1, { message: 'Detta fält är obligatoriskt' })
+      .min(12, { message: 'Kan inte vara mindre än 10 tecken' })
+      // Check that no string characters are allowed
+      .refine((value) => !isNaN(Number(value)), { message: 'Personnummer kan endast innehålla siffror' }),
+    telephone: z
+      .string()
+      .min(1, { message: 'Detta fält är obligatoriskt' })
+      .refine((value) => !isNaN(Number(value)), {
+        message: 'Telefonnummer kan endast innehålla siffror',
+      }),
+    gender: z.enum(['man', 'woman', '']).optional(),
+    sports: z.array(z.string()),
+    diseases: z.string().optional(),
+    trainingFrequency: z.enum(['1-2', '3-4', '']).optional(),
+    discount: z.boolean().optional(),
+    comments: z.string().optional(),
+    guardianName: z.string().optional(),
+    guardianTelephone: z.string().optional(),
+    friendReferal: z.boolean().optional(),
+    friendsName: z.string().optional(),
+  })
+  .refine(
+    (data) => {
+      if (data.friendReferal && !data.friendsName) {
+        return false;
+      }
+      return true;
+    },
+    {
+      message: 'Vänligen skriv in ett namn och telefonnummer',
+      path: ['friendsName'],
+    },
+  );
 
 function BecomeMember() {
   const [hasComments, setHasComments] = useState(false);
   const [hasDiseases, setHasDiseases] = useState(false);
+  const [needsGuardian, setNeedsGuardian] = useState(false);
+  const [hasFriend, setHasFriend] = useState(false);
   const sports = ['Boxning', 'Fristil brottning', 'Submission grappling / NoGi', 'Fys & Kondition träningar'];
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -71,21 +98,35 @@ function BecomeMember() {
       gender: 'man',
       sports: [],
       diseases: '',
-      trainingSessions: '1-2',
+      trainingFrequency: '1-2',
       discount: false,
       comments: '',
+      guardianName: '',
+      guardianTelephone: '',
+      friendReferal: false,
+      friendsName: '',
     },
   });
 
   const handleSubmit = (values: z.infer<typeof formSchema>) => {
     console.log('values', { values });
   };
+
+  const handlePersonNumber = (value: string) => {
+    form.setValue('personnumber', value);
+    const isAbove18 = personAbove18(value);
+    setNeedsGuardian(!isAbove18);
+  };
+
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between p-12 pt-0">
-        <h2 className="text-center mb-8">Fyll i formuläret för att bli medlem</h2>
+        <div className="flex flex-col">
+          <h2 className="mb-8">Bli medlem</h2>
+        </div>
         <Form {...form}>
           <form className="flex flex-col gap-5 max-w-md w-full" onSubmit={form.handleSubmit(handleSubmit)}>
+            {/* Name Field */}
             <FormField
               name="name"
               control={form.control}
@@ -101,6 +142,72 @@ function BecomeMember() {
                 );
               }}
             />
+
+            {/* Personnumber field */}
+            <FormField
+              name="personnumber"
+              control={form.control}
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormLabel className="text-md">Personnummer</FormLabel>
+                    <FormControl>
+                      <Input
+                        onChange={(e) => {
+                          const value = e.target.value;
+                          field.onChange(e);
+                          handlePersonNumber(value);
+                        }}
+                        value={field.value}
+                        maxLength={12}
+                        placeholder="(ÅÅÅÅMMDDNNNN)"
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      Personnumret måste vara 12 siffror och skrivas utan mellanslag.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+
+            {/* Guardian fields */}
+            {form.watch('personnumber').length > 9 && needsGuardian && (
+              <>
+                <FormField
+                  name="guardianName"
+                  control={form.control}
+                  render={({ field }) => (
+                    <div className="form-item">
+                      <FormLabel className="text-md">Förmyndares namn</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Fyll i förmyndares namn" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </div>
+                  )}
+                />
+
+                <p>{form.watch('personnumber').length}</p>
+
+                <FormField
+                  name="guardianTelephone"
+                  control={form.control}
+                  render={({ field }) => (
+                    <div className="form-item">
+                      <FormLabel className="text-md">Förmyndares telefonnummer</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Fyll i förmyndares telefonnummer" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </div>
+                  )}
+                />
+              </>
+            )}
+
+            {/* Email address field */}
             <FormField
               name="emailAddress"
               control={form.control}
@@ -116,6 +223,8 @@ function BecomeMember() {
                 );
               }}
             />
+
+            {/* Telehpone field */}
             <FormField
               name="telephone"
               control={form.control}
@@ -131,6 +240,8 @@ function BecomeMember() {
                 );
               }}
             />
+
+            {/* Address field */}
             <FormField
               name="adress"
               control={form.control}
@@ -139,13 +250,15 @@ function BecomeMember() {
                   <FormItem>
                     <FormLabel className="text-md">Adress</FormLabel>
                     <FormControl>
-                      <Input placeholder="Fyll i din adress" {...field} />
+                      <Input placeholder="Fyll i din gatuadress" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 );
               }}
             />
+
+            {/* Postal code field */}
             <FormField
               name="postalCode"
               control={form.control}
@@ -161,21 +274,8 @@ function BecomeMember() {
                 );
               }}
             />
-            <FormField
-              name="postalCode"
-              control={form.control}
-              render={({ field }) => {
-                return (
-                  <FormItem>
-                    <FormLabel className="text-md">Postnummer</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Fyll i ditt postnummer" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
-            />
+
+            {/* Gender field */}
             <FormField
               name="gender"
               control={form.control}
@@ -202,6 +302,8 @@ function BecomeMember() {
                 </FormItem>
               )}
             />
+
+            {/* Sports field */}
             <FormField
               name="sports"
               control={form.control}
@@ -231,8 +333,10 @@ function BecomeMember() {
                 </FormItem>
               )}
             />
+
+            {/* Training Frequency */}
             <FormField
-              name="trainingSessions"
+              name="trainingFrequency"
               control={form.control}
               render={({ field }) => (
                 <FormItem>
@@ -255,6 +359,51 @@ function BecomeMember() {
                 </FormItem>
               )}
             />
+
+            {/* FriendReferal Field */}
+            <FormField
+              name="friendReferal"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="friendReferal" className="text-md">
+                    Vill du värva en vän?
+                  </FormLabel>
+                  <FormDescription>
+                    För varje vän du har med dig får du 10% rabatt under första terminen.
+                  </FormDescription>
+                  <FormControl>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={(checked: boolean) => {
+                          field.onChange(checked);
+                          setHasFriend(checked);
+                        }}
+                      />
+                      <Label>Ja</Label>
+                    </div>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            {hasFriend && (
+              <FormField
+                name="friendsName"
+                control={form.control}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Textarea placeholder="Skriv namnet på din vän samt telefonnummer" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            )}
+
+            {/* Discount Field */}
             <FormField
               name="discount"
               control={form.control}
@@ -278,6 +427,7 @@ function BecomeMember() {
               )}
             />
 
+            {/* Disease field */}
             <FormItem>
               <FormLabel className="text-md" htmlFor="diseases">
                 Har du några sjukdomar/skador som vi bör känna till?
@@ -292,7 +442,6 @@ function BecomeMember() {
                 </div>
               </FormControl>
             </FormItem>
-            {/* Diseases textarea (conditionally rendered) */}
             {hasDiseases && (
               <FormField
                 name="diseases"
@@ -307,6 +456,8 @@ function BecomeMember() {
                 )}
               />
             )}
+
+            {/* Comments field */}
             <FormItem>
               <FormLabel htmlFor="comments" className="text-md">
                 Har du övriga kommentarer?
@@ -335,6 +486,7 @@ function BecomeMember() {
                 )}
               />
             )}
+
             <Button className="w-full" type="submit">
               Skicka
             </Button>
