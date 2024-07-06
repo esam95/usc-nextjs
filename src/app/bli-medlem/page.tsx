@@ -29,55 +29,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/shadcn/radio-group';
 import { Textarea } from '@/components/shadcn/textarea';
 import { Label } from '@/components/shadcn/label';
 import { personAbove18 } from '@/functions/personAbove18';
-
-const formSchema = z
-  .object({
-    name: z
-      .string()
-      .min(1, { message: 'Detta fält är obligatoriskt' })
-      .min(2, { message: 'Namnet måste vara längre än 2 tecken' }),
-    emailAddress: z
-      .string()
-      .min(1, { message: 'Detta fält är obligatoriskt' })
-      .email({ message: 'Ange en giltig e-postadress' })
-      .min(4, { message: 'Kan inte vara mindre än 4 tecken' }),
-    adress: z.string().optional(),
-    postalCode: z.string().optional(),
-    personnumber: z
-      .string()
-      .min(1, { message: 'Detta fält är obligatoriskt' })
-      .min(12, { message: 'Kan inte vara mindre än 10 tecken' })
-      // Check that no string characters are allowed
-      .refine((value) => !isNaN(Number(value)), { message: 'Personnummer kan endast innehålla siffror' }),
-    telephone: z
-      .string()
-      .min(1, { message: 'Detta fält är obligatoriskt' })
-      .refine((value) => !isNaN(Number(value)), {
-        message: 'Telefonnummer kan endast innehålla siffror',
-      }),
-    gender: z.enum(['man', 'woman', '']).optional(),
-    sports: z.array(z.string()),
-    diseases: z.string().optional(),
-    trainingFrequency: z.enum(['1-2', '3-4', '']).optional(),
-    discount: z.boolean().optional(),
-    comments: z.string().optional(),
-    guardianName: z.string().optional(),
-    guardianTelephone: z.string().optional(),
-    friendReferal: z.boolean().optional(),
-    friendsName: z.string().optional(),
-  })
-  .refine(
-    (data) => {
-      if (data.friendReferal && !data.friendsName) {
-        return false;
-      }
-      return true;
-    },
-    {
-      message: 'Vänligen skriv in ett namn och telefonnummer',
-      path: ['friendsName'],
-    },
-  );
+import { formSchema } from './schema/formSchema';
 
 function BecomeMember() {
   const [hasComments, setHasComments] = useState(false);
@@ -121,8 +73,8 @@ function BecomeMember() {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between p-12 pt-0">
-        <div className="flex flex-col">
-          <h2 className="mb-8">Bli medlem</h2>
+        <div className="w-full max-w-md mb-8">
+          <h2 className="text-left">Registrera dig</h2>
         </div>
         <Form {...form}>
           <form className="flex flex-col gap-5 max-w-md w-full" onSubmit={form.handleSubmit(handleSubmit)}>
@@ -135,7 +87,7 @@ function BecomeMember() {
                   <FormItem>
                     <FormLabel className="text-md">För-och efternamn</FormLabel>
                     <FormControl>
-                      <Input placeholder="Fyll i ditt namn" {...field} />
+                      <Input placeholder="Fyll i ditt namn *" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -160,7 +112,7 @@ function BecomeMember() {
                         }}
                         value={field.value}
                         maxLength={12}
-                        placeholder="(ÅÅÅÅMMDDNNNN)"
+                        placeholder="(ÅÅÅÅMMDDNNNN) *"
                       />
                     </FormControl>
                     <FormDescription>
@@ -216,7 +168,7 @@ function BecomeMember() {
                   <FormItem>
                     <FormLabel className="text-md">E-post</FormLabel>
                     <FormControl>
-                      <Input placeholder="Fyll i din e-post adress" {...field} />
+                      <Input placeholder="Fyll i din mejladress *" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -224,7 +176,7 @@ function BecomeMember() {
               }}
             />
 
-            {/* Telehpone field */}
+            {/* Telephone field */}
             <FormField
               name="telephone"
               control={form.control}
@@ -233,7 +185,7 @@ function BecomeMember() {
                   <FormItem>
                     <FormLabel className="text-md">Telefon</FormLabel>
                     <FormControl>
-                      <Input placeholder="Fyll i ditt telefonnummer" {...field} />
+                      <Input placeholder="Fyll i ditt telefonnummer *" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -309,7 +261,7 @@ function BecomeMember() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-md">Vilken idrott vill du börja på?</FormLabel>
+                  <FormLabel className="text-md">Vilken idrott vill du börja på? *</FormLabel>
                   <FormControl>
                     <div className="flex flex-col gap-2">
                       {sports.map((sport) => (
