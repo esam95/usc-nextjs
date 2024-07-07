@@ -27,7 +27,7 @@ function SportsField({ form, sports }: SportsFieldProps) {
                       if (checked) {
                         field.onChange([...field.value, sport]);
                       } else {
-                        field.onChange(field.value.filter((s) => s !== sport));
+                        field.onChange(field.value.filter((s: string) => s !== sport));
                       }
                     }}
                   />

@@ -6,7 +6,7 @@ import { FormFieldProps } from '../page';
 function AddressField({ form }: FormFieldProps) {
   return (
     <FormField
-      name="adress"
+      name="address"
       control={form.control}
       render={({ field }) => {
         return (

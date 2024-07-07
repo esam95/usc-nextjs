@@ -11,7 +11,7 @@ export const formSchema = z
       .min(1, { message: 'Detta fält är obligatoriskt' })
       .email({ message: 'Ange en giltig e-postadress' })
       .min(4, { message: 'Kan inte vara mindre än 4 tecken' }),
-    adress: z.string().optional(),
+    address: z.string().optional(),
     postalCode: z.string().optional(),
     personnumber: z
       .string()

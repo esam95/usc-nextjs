@@ -4,14 +4,14 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const { firstName, email } = await request.json();
+  const { name, email, address } = await request.json();
 
   try {
     await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>', // This is just a testing email, remove later
       to: email,
-      subject: 'Welcome!',
-      react: SendEmail({ firstName }),
+      subject: 'Test email',
+      react: SendEmail({ name, address }),
     });
 
     return NextResponse.json({
