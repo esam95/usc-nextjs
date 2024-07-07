@@ -1,6 +1,6 @@
 'use client';
 import { Form } from '@/components/shadcn/form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { UseFormReturn, useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -43,14 +43,19 @@ function BecomeMember() {
   const [hasDiseases, setHasDiseases] = useState(false);
   const [needsGuardian, setNeedsGuardian] = useState(false);
   const [hasFriend, setHasFriend] = useState(false);
-  const sports = ['Boxning', 'Fristil brottning', 'Submission grappling / NoGi', 'Fys & Kondition träningar'];
+  const listOfSports = [
+    'Boxning',
+    'Fristil brottning',
+    'Submission grappling / NoGi',
+    'Fys & Kondition träningar',
+  ];
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
       emailAddress: '',
-      adress: '',
+      address: '',
       postalCode: '',
       personnumber: '',
       telephone: '',
@@ -67,10 +72,50 @@ function BecomeMember() {
     },
   });
 
+  const { isDirty, isSubmitting, isSubmitSuccessful } = form.formState;
+  const {
+    name,
+    emailAddress,
+    address,
+    postalCode,
+    personnumber,
+    telephone,
+    gender,
+    sports,
+    diseases,
+    trainingFrequency,
+    discount,
+    comments,
+    guardianName,
+    guardianTelephone,
+    friendReferal,
+    friendsName,
+  } = form.getValues();
+
+  const postEmail = async () => {
+    const response = await fetch('/api/emails', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: emailAddress,
+        name: name,
+        address,
+      }),
+    });
+    const data = await response.json();
+    console.log('data :', data);
+  };
+
   const handleSubmit = (values: z.infer<typeof formSchema>) => {
     console.log('values', { values });
-    form.reset();
+    postEmail();
   };
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      console.log('Form submitted successfully');
+      form.reset();
+    }
+  }, [form, isSubmitSuccessful, isSubmitting]);
 
   const handlePersonNumber = (value: string) => {
     form.setValue('personnumber', value);
@@ -82,7 +127,7 @@ function BecomeMember() {
     <>
       <main className="flex min-h-screen flex-col items-center justify-between px-3 pb-6">
         <Form {...form}>
-          <Card className="max-w-xl w-full md:min-w-[70%] xl:min-w-[68.75rem]">
+          <Card className="max-w-xl w-full md:min-w-[70%] xl:min-w-[60rem]">
             <CardHeader>
               <CardTitle>Registrera dig</CardTitle>
               <CardDescription>Var vänlig fyll i formuläret för att bli medlem</CardDescription>
@@ -119,7 +164,7 @@ function BecomeMember() {
                 <GenderField form={form} />
 
                 {/* Sports field */}
-                <SportsField form={form} sports={sports} />
+                <SportsField form={form} sports={listOfSports} />
 
                 {/* Training Frequency */}
                 <TrainingFrequencyField form={form} />
@@ -145,7 +190,11 @@ function BecomeMember() {
                 {hasComments && <CommentsForm form={form} />}
 
                 <CardFooter className="flex md:justify-end">
-                  <Button className="min-w-fit w-full md:w-auto" type="submit">
+                  <Button
+                    disabled={!isDirty || isSubmitting}
+                    className="min-w-fit w-full md:w-auto"
+                    type="submit"
+                  >
                     Skicka in
                   </Button>
                 </CardFooter>
