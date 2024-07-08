@@ -33,6 +33,7 @@ import HasDiseaseCheckbox from './formFields/HasDiseaseCheckbox';
 import DiseaseField from './formFields/DiseaseField';
 import CommentsForm from './formFields/CommentsForm';
 import CommentsCheckbox from './formFields/CommentCheckbox';
+import { Loader2 } from 'lucide-react';
 
 export type FormFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
@@ -195,7 +196,14 @@ function BecomeMember() {
                     className="min-w-fit w-full md:w-auto"
                     type="submit"
                   >
-                    Skicka in
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Skickar..
+                      </>
+                    ) : (
+                      'Skicka in'
+                    )}
                   </Button>
                 </CardFooter>
               </form>
