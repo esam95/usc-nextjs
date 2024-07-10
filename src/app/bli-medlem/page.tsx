@@ -103,7 +103,7 @@ function BecomeMember() {
   }, [form, isSubmitSuccessful, isSubmitting]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-3 pb-6">
+    <main className="flex min-h-screen flex-col items-center justify-between px-4 pb-6">
       <Form {...form}>
         <Card className="max-w-xl w-full md:min-w-[70%] xl:min-w-[60rem]">
           <CardHeader>

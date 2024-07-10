@@ -4,6 +4,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
+  const UPPRUSTNINGEN_EMAIL = process.env.UPPRUSTNINGEN_EMAIL;
   const formData = await request.json();
 
   // Extract specific fields you need for sending the email
@@ -28,9 +29,9 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>', // This is just a testing email, remove later
+      from: `Upprustningen Sports Club <${UPPRUSTNINGEN_EMAIL}>`,
       to: emailAddress,
-      subject: 'Test email',
+      subject: 'Ny medlem',
       react: EmailTemplate({
         name,
         address,
