@@ -69,7 +69,7 @@ const AboutUs = () => {
               <CardMedia
                 component="img"
                 height="300"
-                image="https://via.placeholder.com/600x300"
+                image="/Logga cirkulär.png"
                 alt="Club Image"
               />
             </Card>
