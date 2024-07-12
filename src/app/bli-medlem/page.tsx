@@ -1,6 +1,6 @@
 'use client';
 import { Form } from '@/components/shadcn/form';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { UseFormReturn, useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -34,6 +34,7 @@ import DiseaseField from './formFields/DiseaseField';
 import CommentsForm from './formFields/CommentsForm';
 import CommentsCheckbox from './formFields/CommentCheckbox';
 import { Loader2 } from 'lucide-react';
+import { useToast } from '@/components/shadcn/use-toast';
 
 export type FormFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
@@ -44,7 +45,10 @@ function BecomeMember() {
   const [hasDiseases, setHasDiseases] = useState(false);
   const [needsGuardian, setNeedsGuardian] = useState(false);
   const [hasFriend, setHasFriend] = useState(false);
-  const [statusMessage, setStatusMessage] = useState('');
+  const [statusMessage, setStatusMessage] = useState<ErrorOptions>();
+  const [statusCode, setStatusCode] = useState<number | null>(null);
+  const [errors, setErrors] = useState(null);
+  const { toast } = useToast();
   const listOfSports = [
     'Boxning',
     'Fristil brottning',
@@ -78,12 +82,35 @@ function BecomeMember() {
   const { isDirty, isSubmitting, isSubmitSuccessful } = form.formState;
 
   const postEmail = async () => {
-    const response = await fetch('/api/emails', {
-      method: 'POST',
-      body: JSON.stringify(formDataObject),
-    });
-    const data = await response.json();
-    setStatusMessage(data.message);
+    try {
+      const response = await fetch('/api/emailsss', {
+        method: 'POST',
+        body: JSON.stringify(formDataObject),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Check the endpoint, status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: 'Tack för din registrering!',
+          description: 'Ditt meddelande har skickats',
+          variant: 'success',
+        });
+      } else {
+        throw new Error(data.message || 'Unknown error');
+      }
+    } catch (error) {
+      toast({
+        title: 'Något blev fel!',
+        description: 'Vi kunde tyvärr inte skicka ditt meddelande',
+        variant: 'destructive',
+      });
+      console.error('Error:', error);
+    }
   };
 
   const onSubmit = () => {
@@ -97,7 +124,7 @@ function BecomeMember() {
   };
 
   useEffect(() => {
-    if (isSubmitSuccessful) {
+    if (isSubmitSuccessful && !form.formState.errors) {
       form.reset();
     }
   }, [form, isSubmitSuccessful, isSubmitting]);
@@ -170,7 +197,7 @@ function BecomeMember() {
               <CardFooter className="flex md:justify-end">
                 <Button
                   disabled={!isDirty || isSubmitting}
-                  className="min-w-fit w-full md:w-auto"
+                  className="mt- min-w-fit w-full md:w-auto"
                   type="submit"
                 >
                   {isSubmitting ? (
