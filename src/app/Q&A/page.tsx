@@ -1,13 +1,11 @@
 import React from "react";
-import { 
-  Container, 
-  Typography, 
-  Accordion, 
-  AccordionSummary, 
-  AccordionDetails, 
-  Box, 
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/shadcn/accordion"
+
 
 const questionsAndAnswers = [
   {
@@ -62,31 +60,18 @@ const questionsAndAnswers = [
 
 const FAQ = () => {
   return (
-    <Container>
-      <Box sx={{ mt: 5 }}>
-        <Typography variant="h4" gutterBottom>
-          Frågor och svar
-        </Typography>
-        {questionsAndAnswers.map((item, index) => (
-          <Accordion key={index}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls={`panel${index}-content`}
-              id={`panel${index}-header`}
-            >
-              <Typography variant="h6" component="div">
-                <strong>{item.question}</strong>
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography variant="body1" component="div">
-                {item.answer}
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-        ))}
-      </Box>
-    </Container>
+    <>
+    <h1>Frågor och svar</h1>
+    <Accordion type="single" collapsible>
+      {questionsAndAnswers.map((row, index) =>
+      <AccordionItem key={index.toString()} value={index.toString()}>
+        <AccordionTrigger>{row.question}</AccordionTrigger>
+        <AccordionContent>{row.answer}</AccordionContent>
+      </AccordionItem>
+      )}
+    </Accordion>
+    </>
+
   );
 };
 
