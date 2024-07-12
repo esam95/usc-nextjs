@@ -1,57 +1,51 @@
 import React from "react";
-import { 
-  Container, 
-  Typography, 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableContainer, 
-  TableHead, 
-  TableRow, 
-  Paper, 
-  Box } from "@mui/material";
+
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/shadcn/table"
+  
 
 const schedule = [
-  { day: "Monday", time: "6:00 PM - 7:30 PM", activity: "Boxing" },
-  { day: "Tuesday", time: "6:00 PM - 7:30 PM", activity: "MMA" },
-  { day: "Wednesday", time: "6:00 PM - 7:30 PM", activity: "Judo" },
-  { day: "Thursday", time: "6:00 PM - 7:30 PM", activity: "Kickboxing" },
-  { day: "Friday", time: "6:00 PM - 7:30 PM", activity: "Wrestling" },
-  { day: "Saturday", time: "10:00 AM - 12:00 PM", activity: "Open Mat" },
-  { day: "Sunday", time: "Closed", activity: "-" },
+  { day: "Måndag", time: "–", activity: "–" },
+  { day: "Tisdag", time: "19:00 - 21:00", activity: "Boxning" },
+  { day: "Onsdag", time: "–", activity: "–" },
+  { day: "Torsdag", time: "19:00 - 21:00", activity: "Boxning" },
+  { day: "Fredag", time: "–", activity: "–" },
+  { day: "Lördag", time: "–", activity: "–" },
+  { day: "Söndag", time: "13:00 - 15:00	", activity: "Boxning" },
 ];
 
 const TrainingSchedule = () => {
   return (
-    <Container>
-      <Box sx={{ mt: 5 }}>
-        <Typography variant="h4" gutterBottom>
-          Training Schedule
-        </Typography>
-        <TableContainer component={Paper}>
-          <Table aria-label="training schedule table">
-            <TableHead>
-              <TableRow>
-                <TableCell>Day</TableCell>
-                <TableCell>Time</TableCell>
-                <TableCell>Activity</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {schedule.map((row, index) => (
-                <TableRow key={index}>
-                  <TableCell component="th" scope="row">
-                    {row.day}
-                  </TableCell>
-                  <TableCell>{row.time}</TableCell>
-                  <TableCell>{row.activity}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Box>
-    </Container>
+    <>
+    <h1>Träningsschema</h1>
+    <Table>
+      <TableCaption>Träningsschema</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableHead >Dag</TableHead>
+          <TableHead>Tid</TableHead>
+          <TableHead >Aktivitet</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {schedule.map((row, index) => 
+          <TableRow key={index}>
+            <TableCell className="font-medium">{row.day}</TableCell>
+            <TableCell>{row.time}</TableCell>
+            <TableCell >{row.activity}</TableCell>
+          </TableRow>
+        )}
+      </TableBody>
+    </Table>
+    </>
+
   );
 };
 
