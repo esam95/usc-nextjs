@@ -4,32 +4,38 @@ import {
   Box, 
   Typography, 
   Grid, 
-  Card, 
-  CardContent, 
   CardMedia, 
 } from "@mui/material";
 
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@/components/shadcn/card';
+
+
 const AboutUs = () => {
   return (
-    <Container>
-      <Box sx={{ mt: 5 }}>
+    <Card>
         <Typography variant="h4" gutterBottom>
           Om oss
         </Typography>
+        <CardHeader>
+              <CardTitle>Välkommen till <span style={{ fontWeight: "bold" }}>
+                    Upprustningen Sports Club!
+                  </span></CardTitle>
+              <CardDescription>Grundades år 2023, vårt uppdrag är att stärka individer 
+                  genom högkvalitativ träning, och främja både fysisk och 
+                  mental utveckling.</CardDescription>
+            </CardHeader>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Card>
               <CardContent>
-                <Typography variant="h5" gutterBottom>
-                  Välkommen till <span style={{ fontWeight: "bold" }}>
-                    Upprustningen Sports Club!
-                  </span>
-                </Typography>
-                <Typography variant="body1" paragraph>
-                  Grundades år 2023, vårt uppdrag är att stärka individer 
-                  genom högkvalitativ träning, och främja både fysisk och 
-                  mental utveckling.
-                </Typography>
+                
                 <Typography variant="h6" gutterBottom>
                   Vår filosofi
                 </Typography>
@@ -75,8 +81,7 @@ const AboutUs = () => {
             </Card>
           </Grid>
         </Grid>
-      </Box>
-    </Container>
+      </Card>
   );
 };
 
