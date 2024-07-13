@@ -87,10 +87,10 @@ h2 {
   @apply scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-gray-700 transition-colors first:mt-0;
 }
 h3 {
-  @apply scroll-m-20 text-2xl font-semibold tracking-tight  transition-colors;
+  @apply scroll-m-20 text-2xl font-semibold tracking-tight transition-colors;
 }
 h4 {
-  @apply scroll-m-20 text-xl font-semibold tracking-tight  transition-colors;
+  @apply scroll-m-20 text-xl font-semibold tracking-tight transition-colors;
 }
 h5 {
   @apply scroll-m-20 text-lg font-semibold tracking-tight transition-colors;
