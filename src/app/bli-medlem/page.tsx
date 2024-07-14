@@ -1,40 +1,40 @@
 'use client';
-import { Form } from '@/components/shadcn/form';
-import { useCallback, useEffect, useState } from 'react';
-import { UseFormReturn, useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/shadcn/button';
-import { personAbove18 } from '@/functions/personAbove18';
-import { formSchema } from './schema/formSchema';
 import {
   Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
 } from '@/components/shadcn/card';
-import NameField from './formFields/NameField';
-import PersonNumberField from './formFields/PersonNumberField';
+import { Form } from '@/components/shadcn/form';
+import { useToast } from '@/components/shadcn/use-toast';
+import { personAbove18 } from '@/functions/personAbove18';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Loader2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { UseFormReturn, useForm } from 'react-hook-form';
+import * as z from 'zod';
+import AddressField from './formFields/AddressField';
+import CommentsCheckbox from './formFields/CommentCheckbox';
+import CommentsForm from './formFields/CommentsForm';
+import DiscountField from './formFields/DiscountField';
+import DiseaseField from './formFields/DiseaseField';
+import EmailAdressField from './formFields/EmailAdressField';
+import FriendNameFields from './formFields/FriendNameFiels';
+import FriendReferalField from './formFields/FriendReferalFriend';
+import GenderField from './formFields/GenderField';
 import GuardianNameField from './formFields/GuardianNameField';
 import GuardianTelephoneField from './formFields/GuardianTelephone';
-import EmailAdressField from './formFields/EmailAdressField';
-import TelephoneField from './formFields/TelephoneField';
-import AddressField from './formFields/AddressField';
-import PostalCodeField from './formFields/PostalCodeField';
-import GenderField from './formFields/GenderField';
-import SportsField from './formFields/SportsField';
-import TrainingFrequencyField from './formFields/TrainingFrequencyField';
-import FriendReferalField from './formFields/FriendReferalFriend';
-import FriendNameFields from './formFields/FriendNameFiels';
-import DiscountField from './formFields/DiscountField';
 import HasDiseaseCheckbox from './formFields/HasDiseaseCheckbox';
-import DiseaseField from './formFields/DiseaseField';
-import CommentsForm from './formFields/CommentsForm';
-import CommentsCheckbox from './formFields/CommentCheckbox';
-import { Loader2 } from 'lucide-react';
-import { useToast } from '@/components/shadcn/use-toast';
+import NameField from './formFields/NameField';
+import PersonNumberField from './formFields/PersonNumberField';
+import PostalCodeField from './formFields/PostalCodeField';
+import SportsField from './formFields/SportsField';
+import TelephoneField from './formFields/TelephoneField';
+import TrainingFrequencyField from './formFields/TrainingFrequencyField';
+import { formSchema } from './schema/formSchema';
 
 export type FormFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
@@ -45,9 +45,6 @@ function BecomeMember() {
   const [hasDiseases, setHasDiseases] = useState(false);
   const [needsGuardian, setNeedsGuardian] = useState(false);
   const [hasFriend, setHasFriend] = useState(false);
-  const [statusMessage, setStatusMessage] = useState<ErrorOptions>();
-  const [statusCode, setStatusCode] = useState<number | null>(null);
-  const [errors, setErrors] = useState(null);
   const { toast } = useToast();
   const listOfSports = [
     'Boxning',
@@ -79,17 +76,17 @@ function BecomeMember() {
   });
 
   const formDataObject = form.getValues();
-  const { isDirty, isSubmitting, isSubmitSuccessful } = form.formState;
+  const { isDirty, isSubmitting, isSubmitSuccessful, errors } = form.formState;
 
   const postEmail = async () => {
     try {
-      const response = await fetch('/api/emailsss', {
+      const response = await fetch('/api/emails', {
         method: 'POST',
         body: JSON.stringify(formDataObject),
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! Check the endpoint, status: ${response.status}`);
+        throw new Error(`HTTP error! Check the api endpoint, status: ${response.status}`);
       }
 
       const data = await response.json();
@@ -113,8 +110,8 @@ function BecomeMember() {
     }
   };
 
-  const onSubmit = () => {
-    postEmail();
+  const onSubmit = async () => {
+    await postEmail();
   };
 
   const handlePersonNumber = (value: string) => {
@@ -124,20 +121,28 @@ function BecomeMember() {
   };
 
   useEffect(() => {
-    if (isSubmitSuccessful && !form.formState.errors) {
+    if (isSubmitSuccessful && !errors) {
       form.reset();
     }
-  }, [form, isSubmitSuccessful, isSubmitting]);
+  }, [form, isSubmitSuccessful, isSubmitting, errors]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-4 pb-6">
+    <div className="flex min-h-screen min-w-80 w-full flex-col items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-3xl mb-8">
+        <h1 className="text-center font-extrabold tracking-tight md:text-left lg:text-5xl text-gray-700">
+          Ansökan om medlemskap
+        </h1>
+      </div>
+
       <Form {...form}>
-        <Card className="max-w-xl w-full md:min-w-[70%] xl:min-w-[60rem]">
-          <CardHeader>
-            <CardTitle>Registrera dig</CardTitle>
-            <CardDescription>Var vänlig fyll i formuläret för att bli medlem</CardDescription>
+        <Card className="w-full max-w-3xl bg-white shadow-lg rounded-lg">
+          <CardHeader className="bg-primary text-primary-foreground rounded-t-lg p-6">
+            <CardTitle className="text-2xl font-bold">Registrera dig</CardTitle>
+            <CardDescription className="text-primary-foreground/70">
+              Var vänlig fyll i formuläret för att bli medlem
+            </CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-6">
             <form className="flex flex-col gap-5" onSubmit={form.handleSubmit(onSubmit)}>
               {/* Name Field */}
               <NameField form={form} />
@@ -185,7 +190,7 @@ function BecomeMember() {
               {/* HasDisease checkbox */}
               <HasDiseaseCheckbox
                 hasDiseases={hasDiseases}
-                setHasDiseases={(checked: boolean) => setHasDiseases(checked)}
+                setHasDiseases={(checked) => setHasDiseases(checked)}
               />
               {/* Disease field */}
               {hasDiseases && <DiseaseField form={form} />}
@@ -194,13 +199,13 @@ function BecomeMember() {
               <CommentsCheckbox hasComments={hasComments} setHasComments={setHasComments} />
               {hasComments && <CommentsForm form={form} />}
 
-              <CardFooter className="flex md:justify-end">
+              <CardFooter className="flex justify-end p-6">
                 <Button
                   disabled={!isDirty || isSubmitting}
-                  className="mt- min-w-fit w-full md:w-auto"
+                  className="w-full md:w-auto bg-primary text-primary-foreground hover:bg-primary/90"
                   type="submit"
                 >
-                  {isSubmitting ? (
+                  {form.formState.isSubmitting ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                       Skickar..
@@ -214,7 +219,7 @@ function BecomeMember() {
           </CardContent>
         </Card>
       </Form>
-    </main>
+    </div>
   );
 }
 
