@@ -42,7 +42,7 @@ const AboutUs: React.FC = () => {
                 <Image
                   src={boxingImg}
                   alt={'Boxer punching bag, by Michael Starkie'}
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="rounded-lg"
                 />
@@ -57,7 +57,7 @@ const AboutUs: React.FC = () => {
                 <Image
                   src={mmaImg}
                   alt="MMA Training, by Redd F"
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="rounded-lg"
                 />
@@ -72,7 +72,7 @@ const AboutUs: React.FC = () => {
                 <Image
                   src={submissionWrestling}
                   alt="Submission Wrestling, by Nathan Dumlao"
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="rounded-lg"
                 />
@@ -87,7 +87,7 @@ const AboutUs: React.FC = () => {
                 <Image
                   src="/images/wrestling.jpg"
                   alt="Freestyle Wrestling"
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="rounded-lg"
                 />
