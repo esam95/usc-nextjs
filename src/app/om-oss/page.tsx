@@ -42,7 +42,7 @@ const AboutUs = () => {
           </section>
           <section className="flex-1 flex justify-center">
             <Image
-              src="/Logga cirkulär.png"
+              src="/logo_circular.webp"
               width={500}
               height={500}
               alt="Club Image"
