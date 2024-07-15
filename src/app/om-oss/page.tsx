@@ -3,6 +3,7 @@ import Image from 'next/image';
 import boxingImg from '../../../public/img/boxing_img.webp';
 import mmaImg from '../../../public/img/mma_img.webp';
 import submissionWrestling from '../../../public/img/nogi.webp';
+import freeStyleWrestling from '../../../public/img/freestyle_wrestling.webp';
 
 const AboutUs: React.FC = () => {
   return (
@@ -85,8 +86,8 @@ const AboutUs: React.FC = () => {
 
               <Card className="relative h-64">
                 <Image
-                  src="/images/wrestling.jpg"
-                  alt="Freestyle Wrestling"
+                  src={freeStyleWrestling}
+                  alt="Freestyle Wrestling, from freepik.com"
                   fill
                   objectFit="cover"
                   className="rounded-lg"
