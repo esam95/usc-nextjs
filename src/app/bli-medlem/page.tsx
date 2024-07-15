@@ -33,6 +33,7 @@ import HasDiseaseCheckbox from './formFields/HasDiseaseCheckbox';
 import DiseaseField from './formFields/DiseaseField';
 import CommentsForm from './formFields/CommentsForm';
 import CommentsCheckbox from './formFields/CommentCheckbox';
+import { Loader2 } from 'lucide-react';
 
 export type FormFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
@@ -72,7 +73,6 @@ function BecomeMember() {
     },
   });
 
-  const { isDirty, isSubmitting, isSubmitSuccessful } = form.formState;
   const {
     name,
     emailAddress,
@@ -105,23 +105,24 @@ function BecomeMember() {
     console.log('data :', data);
   };
 
-  const handleSubmit = (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     console.log('values', { values });
-    postEmail();
+    await postEmail();
   };
-
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      console.log('Form submitted successfully');
-      form.reset();
-    }
-  }, [form, isSubmitSuccessful, isSubmitting]);
-
   const handlePersonNumber = (value: string) => {
     form.setValue('personnumber', value);
     const isAbove18 = personAbove18(value);
     setNeedsGuardian(!isAbove18);
   };
+
+  const { isDirty, isSubmitting, isSubmitSuccessful } = form.formState;
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      console.log('Form submitted , resetting form');
+      form.reset();
+    }
+  }, [form, isSubmitSuccessful, isSubmitting]);
 
   return (
     <>
@@ -133,7 +134,7 @@ function BecomeMember() {
               <CardDescription>Var vänlig fyll i formuläret för att bli medlem</CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="flex flex-col gap-5" onSubmit={form.handleSubmit(handleSubmit)}>
+              <form className="flex flex-col gap-5" onSubmit={form.handleSubmit(onSubmit)}>
                 {/* Name Field */}
                 <NameField form={form} />
 
@@ -195,7 +196,14 @@ function BecomeMember() {
                     className="min-w-fit w-full md:w-auto"
                     type="submit"
                   >
-                    Skicka in
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Skickar..
+                      </>
+                    ) : (
+                      'Skicka in'
+                    )}
                   </Button>
                 </CardFooter>
               </form>
