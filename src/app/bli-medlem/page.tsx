@@ -14,7 +14,7 @@ import { personAbove18 } from '@/functions/personAbove18';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { UseFormReturn, useForm } from 'react-hook-form';
+import { FieldErrors, UseFormReturn, useForm } from 'react-hook-form';
 import * as z from 'zod';
 import AddressField from './formFields/AddressField';
 import CommentsCheckbox from './formFields/CommentCheckbox';
@@ -114,6 +114,16 @@ function BecomeMember() {
     await postEmail();
   };
 
+  const onError = (errors: FieldErrors) => {
+    if (errors) {
+      toast({
+        title: 'Något blev fel!',
+        description: 'Vänligen fyll i alla obligatoriska fält',
+        variant: 'destructive',
+      });
+    }
+  };
+
   const handlePersonNumber = (value: string) => {
     form.setValue('personnumber', value);
     const isAbove18 = personAbove18(value);
@@ -143,7 +153,7 @@ function BecomeMember() {
             </CardDescription>
           </CardHeader>
           <CardContent className="p-6">
-            <form className="flex flex-col gap-5" onSubmit={form.handleSubmit(onSubmit)}>
+            <form className="flex flex-col gap-5" onSubmit={form.handleSubmit(onSubmit, onError)}>
               {/* Name Field */}
               <NameField form={form} />
 
