@@ -4,10 +4,11 @@ import boxingImg from '../../../public/img/boxing_img.webp';
 import mmaImg from '../../../public/img/mma_img.webp';
 import submissionWrestling from '../../../public/img/nogi.webp';
 import freeStyleWrestling from '../../../public/img/freestyle_wrestling.webp';
+import logoIcon from '../../../public/logo_circular.webp';
 
 const AboutUs: React.FC = () => {
   return (
-    <main className="min-h-screen min-w-80 w-full bg-secondary flex flex-col items-center md:px-6">
+    <main className="min-h-screen min-w-80 w-full bg-secondary flex flex-col items-center">
       <Card className="w-full  bg-white shadow-lg rounded-lg overflow-hidden">
         <CardHeader className="bg-primary text-primary-foreground p-6">
           <CardTitle className="text-3xl font-bold mb-2">
@@ -19,7 +20,7 @@ const AboutUs: React.FC = () => {
           </CardDescription>
           <section className="flex-1 flex justify-center items-center bg-primary p-4">
             <Image
-              src="/Logga cirkulär.png"
+              src={logoIcon}
               width={150}
               height={150}
               alt="Club Image"
@@ -36,7 +37,7 @@ const AboutUs: React.FC = () => {
               utformade för att förbättra färdigheter, bygga karaktär och skapa en stödjande gemenskap.
             </p>
 
-            <section className="w-full max-w-5xl mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <section className="w-full max-w-5xl my-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               <h3 className="font-semibold mb-4 col-span-1 md:col-span-2">Program vi erbjuder</h3>
 
               <Card className="relative h-64">
@@ -44,8 +45,10 @@ const AboutUs: React.FC = () => {
                   src={boxingImg}
                   alt={'Boxer punching bag, by Michael Starkie'}
                   fill
-                  objectFit="cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'cover' }}
                   className="rounded-lg"
+                  priority
                 />
                 <div className="absolute inset-0 bg-slate-950 opacity-40 rounded-lg"></div>
                 <CardContent className="relative z-10 text-white p-6">
@@ -59,8 +62,9 @@ const AboutUs: React.FC = () => {
                   src={mmaImg}
                   alt="MMA Training, by Redd F"
                   fill
-                  objectFit="cover"
+                  style={{ objectFit: 'cover' }}
                   className="rounded-lg"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-slate-950 opacity-40 rounded-lg"></div>
                 <CardContent className="relative z-10 text-white p-6">
@@ -74,8 +78,9 @@ const AboutUs: React.FC = () => {
                   src={submissionWrestling}
                   alt="Submission Wrestling, by Nathan Dumlao"
                   fill
-                  objectFit="cover"
+                  style={{ objectFit: 'cover' }}
                   className="rounded-lg"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-slate-950 opacity-40 rounded-lg"></div>
                 <CardContent className="relative z-10 text-white p-6">
@@ -89,8 +94,9 @@ const AboutUs: React.FC = () => {
                   src={freeStyleWrestling}
                   alt="Freestyle Wrestling, from freepik.com"
                   fill
-                  objectFit="cover"
+                  style={{ objectFit: 'cover' }}
                   className="rounded-lg"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-slate-950 opacity-40 rounded-lg"></div>
                 <CardContent className="relative z-10 text-white p-6">
