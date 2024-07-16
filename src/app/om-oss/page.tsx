@@ -9,25 +9,25 @@ import logoIcon from '../../../public/logo_circular.webp';
 const AboutUs: React.FC = () => {
   return (
     <main className="min-h-screen min-w-80 w-full bg-secondary flex flex-col items-center">
-      <Card className="w-full  bg-white shadow-lg rounded-lg overflow-hidden">
-        <CardHeader className="bg-primary text-primary-foreground p-6">
-          <CardTitle className="text-3xl font-bold mb-2">
-            <span className="font-extrabold"> Om Upprustningen Sports Club</span>
-          </CardTitle>
-          <CardDescription className="text-base text-primary-foreground">
+      <div className="w-full rounded-none bg-white overflow-hidden">
+        <div className="bg-primary text-primary-foreground p-6">
+          <span className="text-3xl font-bold mb-2">
+            <h2 className="text-primary-foreground font-extrabold"> Om Upprustningen Sports Club</h2>
+          </span>
+          <p className="text-base text-primary-foreground">
             Grundades år 2023, vårt uppdrag är att stärka individer genom högkvalitativ träning, och främja
             både fysisk och mental utveckling.
-          </CardDescription>
+          </p>
           <section className="flex-1 flex justify-center items-center bg-primary p-4">
             <Image
               src={logoIcon}
-              width={150}
-              height={150}
+              width={100}
+              height={100}
               alt="Club Image"
-              className="rounded-full shadow-lg"
+              className="rounded-full shadow-lg max-w-36"
             />
           </section>
-        </CardHeader>
+        </div>
 
         <CardContent className="flex flex-col md:flex-row p-6">
           <div className="flex-1 md:mr-6">
@@ -48,7 +48,7 @@ const AboutUs: React.FC = () => {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectFit: 'cover' }}
                   className="rounded-lg"
-                  priority
+                  placeholder="blur"
                 />
                 <div className="absolute inset-0 bg-slate-950 opacity-40 rounded-lg"></div>
                 <CardContent className="relative z-10 text-white p-6">
@@ -65,6 +65,7 @@ const AboutUs: React.FC = () => {
                   style={{ objectFit: 'cover' }}
                   className="rounded-lg"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  placeholder="blur"
                 />
                 <div className="absolute inset-0 bg-slate-950 opacity-40 rounded-lg"></div>
                 <CardContent className="relative z-10 text-white p-6">
@@ -81,6 +82,7 @@ const AboutUs: React.FC = () => {
                   style={{ objectFit: 'cover' }}
                   className="rounded-lg"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  placeholder="blur"
                 />
                 <div className="absolute inset-0 bg-slate-950 opacity-40 rounded-lg"></div>
                 <CardContent className="relative z-10 text-white p-6">
@@ -97,6 +99,7 @@ const AboutUs: React.FC = () => {
                   style={{ objectFit: 'cover' }}
                   className="rounded-lg"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  placeholder="blur"
                 />
                 <div className="absolute inset-0 bg-slate-950 opacity-40 rounded-lg"></div>
                 <CardContent className="relative z-10 text-white p-6">
@@ -115,7 +118,7 @@ const AboutUs: React.FC = () => {
             </section>
           </div>
         </CardContent>
-      </Card>
+      </div>
     </main>
   );
 };
