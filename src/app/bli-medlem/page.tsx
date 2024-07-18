@@ -131,7 +131,7 @@ function BecomeMember() {
   };
 
   useEffect(() => {
-    if (isSubmitSuccessful && !errors) {
+    if (isSubmitSuccessful) {
       form.reset();
     }
   }, [form, isSubmitSuccessful, isSubmitting, errors]);
