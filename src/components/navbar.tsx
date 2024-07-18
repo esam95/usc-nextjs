@@ -14,11 +14,11 @@ type Props = {
 
 export function Navbar({ imageSrc, title }: Props) {
   return (
-    <nav className="min-w-full mb-8 bg-blue-500">
+    <nav className="min-w-full bg-blue-500">
       <div className="container">
         <div className="flex h-[5.5rem] items-center justify-between">
           <Link href="/" className="mr-auto flex items-center gap-4 text-lg font-semibold" prefetch={false}>
-            <Image src={imageSrc} alt={'logo'} width={80} height={80}></Image>
+            <Image src={imageSrc} alt={'logo'} width={60} height={60}></Image>
             <h2 className="text-primary-foreground">{title}</h2>
           </Link>
           <nav className="flex items-center space-x-4 gap-4">
@@ -48,7 +48,7 @@ export function Navbar({ imageSrc, title }: Props) {
               className="font-medium text-sm text-primary-foreground border-transparent transition-colors hover:text-gray-300 dark:hover:text-gray-50"
               prefetch={false}
             >
-              Kontakta oss
+              Kontakt
             </Link>
             <Link
               href="/Q&A"
