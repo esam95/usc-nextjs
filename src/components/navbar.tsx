@@ -15,10 +15,10 @@ export function Navbar({ imageSrc, title }: Props) {
           <Image src={imageSrc} alt="logo" width={60} height={60} />
           <h2 className="text-xl text-primary-foreground lg:text-2xl">{title}</h2>
         </Link>
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <MenuWizard />
         </div>
-        <div className="hidden md:flex items-center space-x-4 gap-4">
+        <div className="hidden lg:flex items-center space-x-4 gap-4">
           <Link
             href="/"
             className="font-medium text-sm text-primary-foreground transition-colors hover:text-gray-300 dark:hover:text-gray-50"
