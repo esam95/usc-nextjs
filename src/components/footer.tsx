@@ -28,7 +28,7 @@ export function Footer() {
               info@upprustningen.com
             </span>
           </section>
-          <section className="flex flex-col items-center font-normal text-pretty md:items-end gap-2 md:flex-1">
+          <section className="flex flex-col items-center font-normal md:items-end gap-2 md:flex-1">
             <div id="inner" className="flex flex-col items-center gap-2 md:items-start">
               <Link
                 href="#"
