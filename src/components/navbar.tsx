@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
 import { MenuWizard } from './MenuWizard';
+import { Button } from './shadcn/button';
 
 type Props = {
   title: string;
@@ -53,6 +54,13 @@ export function Navbar({ imageSrc, title }: Props) {
             prefetch={false}
           >
             FAQ
+          </Link>
+        </div>
+        <div className="hidden lg:flex items-center">
+          <Link href="/bli-medlem" className="font-medium transition-colors" prefetch={false}>
+            <Button variant={'outline'} className="text-primary hover:text-primary hover:bg-slate-200">
+              Bli medlem
+            </Button>
           </Link>
         </div>
       </div>
