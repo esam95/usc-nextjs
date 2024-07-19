@@ -10,7 +10,7 @@ type Props = {
 export function Navbar({ imageSrc, title }: Props) {
   return (
     <nav className="min-w-full bg-blue-500">
-      <div className="container pl-5 flex h-[5.5rem] items-center justify-between">
+      <div className="container pl-5 flex h-24 items-center justify-between">
         <Link href="/" className="flex items-center gap-4 text-lg font-semibold" prefetch={false}>
           <Image src={imageSrc} alt="logo" width={60} height={60} />
           <h2 className="text-xl text-primary-foreground lg:text-2xl">{title}</h2>
