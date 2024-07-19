@@ -25,7 +25,7 @@ export function MenuWizard() {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle className="text-xl">Meny</SheetTitle>
+          <SheetTitle className="text-xl text-left">Meny</SheetTitle>
           <VisuallyHidden.Root>
             <SheetDescription>Navigera till sidor</SheetDescription>
           </VisuallyHidden.Root>
@@ -77,13 +77,6 @@ export function MenuWizard() {
             </Link>
           </SheetClose>
         </div>
-        <SheetFooter className="mt-8">
-          {/* <SheetClose asChild>
-            <Button variant="ghost" aria-label="close menu">
-              <X size={34} aria-labelledby="Button" />
-            </Button>
-          </SheetClose> */}
-        </SheetFooter>
       </SheetContent>
     </Sheet>
   );
