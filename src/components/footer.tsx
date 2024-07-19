@@ -11,11 +11,11 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 
-import { Facebook, Instagram } from 'lucide-react';
-import { Icon } from 'next/dist/lib/metadata/types/metadata-types';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Separator } from '@/components/shadcn/separator';
+import { SiFacebook as FacebookIcon } from '@icons-pack/react-simple-icons';
+import { SiInstagram as InstagramIcon } from '@icons-pack/react-simple-icons';
 
 export function Footer() {
   return (
@@ -26,35 +26,8 @@ export function Footer() {
           <span className="text-primary-foreground text-xl font-semibold">Upprustningen Sports Club</span>
         </div>
         <Separator orientation="horizontal" decorative className="h-0.5" />
-        {/* <div className="w-full max-w-5xl mb-6"></div> */}
         <div className="w-full max-w-5xl flex flex-col md:flex-row md:justify-evenly md:items-center gap-6 md:gap-60">
-          <div className="flex justify-center md:justify-start items-center gap-4">
-            <Link
-              href="#"
-              aria-label="Twitter"
-              className="text-primary-foreground hover:text-primary transition-colors"
-              prefetch={false}
-            >
-              <Facebook className="h-6 w-6" />
-            </Link>
-            <Link
-              href="#"
-              aria-label="LinkedIn"
-              className="text-primary-foreground hover:text-primary transition-colors"
-              prefetch={false}
-            >
-              <LinkedinIcon className="h-6 w-6" />
-            </Link>
-            <Link
-              href="#"
-              aria-label="Instagram"
-              className="text-primary-foreground hover:text-primary transition-colors"
-              prefetch={false}
-            >
-              <InstagramIcon className="h-6 w-6" />
-            </Link>
-          </div>
-          <div className="flex flex-col items-center md:items-start gap-2">
+          <section className="flex flex-col items-center md:items-start gap-2">
             <Link
               href="#"
               className="text-primary-foreground hover:text-primary transition-colors"
@@ -83,8 +56,35 @@ export function Footer() {
             >
               Schema
             </Link>
-          </div>
+          </section>
         </div>
+        <section className="flex flex-col items-center md:items-start">
+          <span className="text-primary-foreground font-semibold">Kontakt</span>
+          <span className="text-primary-foreground" aria-label="email adress information">
+            info@upprustningen.com
+          </span>
+        </section>
+        <section
+          className="flex justify-center md:justify-start items-center gap-6"
+          aria-label="social media icons"
+        >
+          <Link
+            href="#"
+            aria-label="Facebook icon"
+            className="text-primary-foreground transition-colors"
+            prefetch={false}
+          >
+            <FacebookIcon size={28} />
+          </Link>
+          <Link
+            href="https://www.instagram.com/totalsthlm/?igshid=MzRlODBiNWFlZA%3D%3D"
+            aria-label="Instagram icon"
+            className="text-primary-foreground transition-colors"
+            prefetch={false}
+          >
+            <InstagramIcon size={28} />
+          </Link>
+        </section>
         <div className="flex justify-center mt-6">
           <p className="text-primary-foreground text-xs">
             &copy; 2024 Upprustningen Sports Club. All rights reserved.
@@ -92,66 +92,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function InstagramIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-    </svg>
-  );
-}
-
-function LinkedinIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect width="4" height="12" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
-    </svg>
-  );
-}
-
-function TwitterIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-    </svg>
   );
 }
