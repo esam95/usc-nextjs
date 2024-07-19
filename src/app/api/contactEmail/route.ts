@@ -1,17 +1,17 @@
 import { Resend } from 'resend';
-import SendEmail from '@/app/emails/sendEmail';
 import { NextResponse } from 'next/server';
+import ContactEmail from '@/app/emails/sendContactEmail';
 
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const { name, email, message } = await request.json();
+  const { fullName, emailAddress, message } = await request.json();
 
   try {
     await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>', // This is just a testing email, remove later
-      to: email,
+      to: emailAddress,
       subject: 'Test email',
-      react: SendEmail({ name, message }),
+      react: ContactEmail({ fullName, emailAddress, message }),
     });
 
     return NextResponse.json({

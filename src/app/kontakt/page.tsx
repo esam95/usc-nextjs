@@ -11,16 +11,31 @@ export default function Contact() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
+      fullName: "",
       emailAddress: "",
       message: "",
     },
   })
 
+  const { isDirty, isSubmitting, isSubmitSuccessful } = form.formState;
+  const { fullName, emailAddress, message } = form.getValues()
+
+  const postEmail = async () => {
+    const response = await fetch('/api/contactEmail', {
+      method: 'POST',
+      body: JSON.stringify({
+        fullName,
+        emailAddress,
+        message,
+      }),
+    });
+    const data = await response.json();
+    console.log('data :', data);
+  };
+
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
+    console.log('values', { values });
+    postEmail();
   }
 
   return (
@@ -28,7 +43,7 @@ export default function Contact() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
-          name="name"
+          name="fullName"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Name</FormLabel>
@@ -74,7 +89,13 @@ export default function Contact() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button
+          disabled={!isDirty || isSubmitting}
+          className="min-w-fit w-full md:w-auto"
+          type="submit"
+        >
+          Skicka in
+        </Button>
       </form>
     </Form>
   )
