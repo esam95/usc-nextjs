@@ -1,11 +1,19 @@
 "use client"
+import { useEffect } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { useForm, UseFormReturn } from "react-hook-form"
 import { z } from "zod"
 import { Button } from "@/components/shadcn/button"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/shadcn/form"
-import { Input } from "@/components/shadcn/input"
+import { Form} from "@/components/shadcn/form"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/shadcn/card';
 import { formSchema } from "./schema/formSchema"
+import NameField from "./formFields/NameField"
+import MessageField from "./formFields/MessageField"
+import EmailAddressField from "./formFields/EmailAddressField"
+
+export type FormFieldProps = {
+  form: UseFormReturn<z.infer<typeof formSchema>>;
+};
 
 export default function Contact() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -38,65 +46,45 @@ export default function Contact() {
     postEmail();
   }
 
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      console.log('Form submitted successfully');
+      form.reset();
+    }
+  }, [form, isSubmitSuccessful, isSubmitting]);
+
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="fullName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormDescription>
-                Your name.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="emailAddress"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormDescription>
-                Your email.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormDescription>
-                Your message.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button
-          disabled={!isDirty || isSubmitting}
-          className="min-w-fit w-full md:w-auto"
-          type="submit"
-        >
-          Skicka in
-        </Button>
-      </form>
-    </Form>
+    <main className="flex min-h-screen flex-col items-center justify-between px-3 pb-6">
+      <Form {...form}>
+        <Card className="max-w-xl w-full md:min-w-[70%] xl:min-w-[60rem]">
+          <CardHeader>
+            <CardTitle>Kontakta oss</CardTitle>
+            <CardDescription>Vi besvarar alla dina frågor inom 24 timmar.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form className="flex flex-col gap-5" onSubmit={form.handleSubmit(onSubmit)}>
+              {/* Name Field */}
+              <NameField form={form} />
+              
+              {/* Emailadress Field */}
+              <EmailAddressField form={form} />
+
+              {/* Message Field */}
+              <MessageField form={form} />
+
+              <CardFooter className="flex md:justify-end">
+                <Button
+                  disabled={!isDirty || isSubmitting}
+                  className="min-w-fit w-full md:w-auto"
+                  type="submit"
+                >
+                  Skicka in
+                </Button>
+              </CardFooter>
+            </form>
+          </CardContent>
+        </Card>
+      </Form>
+    </main>
   )
 }
