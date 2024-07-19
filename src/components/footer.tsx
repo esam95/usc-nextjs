@@ -26,48 +26,45 @@ export function Footer() {
           <span className="text-primary-foreground text-xl font-semibold">Upprustningen Sports Club</span>
         </div>
         <Separator orientation="horizontal" decorative className="h-0.5" />
-        <div className="w-full max-w-5xl flex flex-col md:flex-row md:justify-evenly md:items-center gap-6 md:gap-60">
-          <section className="flex flex-col items-center md:items-start gap-2">
+        <div className="w-full max-w-5xl flex flex-col-reverse items-center gap-6 md:flex-row md:justify-between md:items-center">
+          <section className="flex flex-col items-center md:items-start gap-2 md:flex-1">
+            <span className="text-primary-foreground font-semibold">Kontakt</span>
+            <span className="text-primary-foreground" aria-label="email address information">
+              info@upprustningen.com
+            </span>
+          </section>
+          <section className="flex flex-col items-center md:items-end gap-2 md:flex-1">
             <Link
               href="#"
-              className="text-primary-foreground hover:text-primary transition-colors"
+              className="text-primary-foreground hover:text-gray-300 transition-colors"
               prefetch={false}
             >
               Hem
             </Link>
             <Link
               href="#"
-              className="text-primary-foreground hover:text-primary transition-colors"
+              className="text-primary-foreground hover:text-gray-300 transition-colors"
               prefetch={false}
             >
               Om oss
             </Link>
             <Link
               href="#"
-              className="text-primary-foreground hover:text-primary transition-colors"
+              className="text-primary-foreground hover:text-gray-300 transition-colors"
               prefetch={false}
             >
               Kontakt
             </Link>
             <Link
               href="#"
-              className="text-primary-foreground hover:text-primary transition-colors"
+              className="text-primary-foreground hover:text-gray-300 transition-colors"
               prefetch={false}
             >
               Schema
             </Link>
           </section>
         </div>
-        <section className="flex flex-col items-center md:items-start">
-          <span className="text-primary-foreground font-semibold">Kontakt</span>
-          <span className="text-primary-foreground" aria-label="email adress information">
-            info@upprustningen.com
-          </span>
-        </section>
-        <section
-          className="flex justify-center md:justify-start items-center gap-6"
-          aria-label="social media icons"
-        >
+        <section className="flex justify-center items-center gap-6" aria-label="social media icons">
           <Link
             href="#"
             aria-label="Facebook icon"
@@ -77,7 +74,7 @@ export function Footer() {
             <FacebookIcon size={28} />
           </Link>
           <Link
-            href="https://www.instagram.com/totalsthlm/?igshid=MzRlODBiNWFlZA%3D%3D"
+            href="https://www.instagram.com/upprustningensc?igsh=YzB4a21qYjB6MG41"
             aria-label="Instagram icon"
             className="text-primary-foreground transition-colors"
             prefetch={false}
