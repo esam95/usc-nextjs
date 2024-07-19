@@ -4,13 +4,6 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 
-/** Add fonts into your Next.js project:
-
-To read more about using these font, please visit the Next.js documentation:
-- App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
-- Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
-**/
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { Separator } from '@/components/shadcn/separator';
@@ -25,7 +18,9 @@ export function Footer() {
           <Image src="/img/club_logo.webp" alt={'logo'} width={40} height={40} />
           <span className="text-primary-foreground text-xl font-semibold">Upprustningen Sports Club</span>
         </div>
+
         <Separator orientation="horizontal" decorative className="h-0.5" />
+
         <div className="w-full max-w-5xl flex flex-col-reverse items-center gap-6 md:flex-row md:justify-between md:items-center">
           <section className="flex flex-col items-center md:items-start gap-2 md:flex-1">
             <span className="text-primary-foreground font-semibold">Kontakt</span>
@@ -33,37 +28,47 @@ export function Footer() {
               info@upprustningen.com
             </span>
           </section>
-          <section className="flex flex-col items-center md:items-end gap-2 md:flex-1">
-            <Link
-              href="#"
-              className="text-primary-foreground hover:text-gray-300 transition-colors"
-              prefetch={false}
-            >
-              Hem
-            </Link>
-            <Link
-              href="#"
-              className="text-primary-foreground hover:text-gray-300 transition-colors"
-              prefetch={false}
-            >
-              Om oss
-            </Link>
-            <Link
-              href="#"
-              className="text-primary-foreground hover:text-gray-300 transition-colors"
-              prefetch={false}
-            >
-              Kontakt
-            </Link>
-            <Link
-              href="#"
-              className="text-primary-foreground hover:text-gray-300 transition-colors"
-              prefetch={false}
-            >
-              Schema
-            </Link>
+          <section className="flex flex-col items-center font-normal md:items-end gap-2 md:flex-1">
+            <div id="inner" className="flex flex-col items-center gap-2 md:items-start">
+              <Link
+                href="#"
+                className="text-primary-foreground hover:text-gray-300 transition-colors"
+                prefetch={false}
+              >
+                Hem
+              </Link>
+              <Link
+                href="/om-oss"
+                className="text-primary-foreground hover:text-gray-300 transition-colors"
+                prefetch={false}
+              >
+                Om oss
+              </Link>
+              <Link
+                href="/kontakta-oss"
+                className="text-primary-foreground hover:text-gray-300 transition-colors"
+                prefetch={false}
+              >
+                Kontakt
+              </Link>
+              <Link
+                href="/schema"
+                className="text-primary-foreground hover:text-gray-300 transition-colors"
+                prefetch={false}
+              >
+                Schema
+              </Link>
+              <Link
+                href="/Q&A"
+                className="text-primary-foreground hover:text-gray-300 transition-colors"
+                prefetch={false}
+              >
+                FAQ
+              </Link>
+            </div>
           </section>
         </div>
+
         <section className="flex justify-center items-center gap-6" aria-label="social media icons">
           <Link
             href="#"
@@ -82,6 +87,7 @@ export function Footer() {
             <InstagramIcon size={28} />
           </Link>
         </section>
+
         <div className="flex justify-center mt-6">
           <p className="text-primary-foreground text-xs">
             &copy; 2024 Upprustningen Sports Club. All rights reserved.
