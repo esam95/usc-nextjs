@@ -34,7 +34,7 @@ function BecomeSupportMember() {
 
   const postEmail = async () => {
     try {
-      const response = await fetch('/api/emails', {
+      const response = await fetch('/api/stodmedlemEmail', {
         method: 'POST',
         body: JSON.stringify(formDataObject),
       });
@@ -75,8 +75,6 @@ function BecomeSupportMember() {
         description: 'Vänligen fyll i alla obligatoriska fält',
         variant: 'destructive',
       });
-      console.log(errors);
-      console.log(formDataObject);
     }
   };
 
@@ -98,7 +96,7 @@ function BecomeSupportMember() {
         <Card className="w-full max-w-3xl bg-white shadow-lg rounded-lg">
           <CardHeader className="bg-primary text-primary-foreground rounded-t-lg p-6">
             <CardTitle className="text-2xl font-bold">Bli stödmedlem</CardTitle>
-            <CardDescription className="text-primary-foreground/70">
+            {/* <CardDescription className="text-primary-foreground/70">
               <p>
                 Genom att bli stödmedlem i vår kampsportsklubb hjälper du oss på många sätt:
               </p>
@@ -114,7 +112,7 @@ function BecomeSupportMember() {
               <p>
                 <strong>Exklusiva Förmåner:</strong> Som stödmedlem får du exklusiva uppdateringar, inbjudningar till speciella evenemang och rabatter på klubbens merchandise.
               </p>
-            </CardDescription>
+            </CardDescription> */}
           </CardHeader>
           <CardContent className="p-6">
             <form className="flex flex-col gap-5" onSubmit={form.handleSubmit(onSubmit, onError)}>

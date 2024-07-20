@@ -29,7 +29,7 @@ export default function StodmedlemEmailTemplate({
     <Html>
       <Head />
       <Tailwind>
-        <Preview>Ny stödmedlems registrering</Preview>
+        <Preview>Ny stödmedlemsregistrering</Preview>
         <Body className="bg-background text-foreground font-sans">
           <Container className="max-w-[580px] mx-auto my-8 bg-card text-card-foreground shadow-lg rounded-lg">
             <Section
@@ -55,14 +55,14 @@ export default function StodmedlemEmailTemplate({
             <Section className="p-5 px-8">
               <Text className="leading-6 text-xl font-semibold mb-4 text-primary">Grattis!</Text>
               <Text className="leading-6 text-base mb-4">
-                En ny medlem har registrerat sig. Nedan följer detaljerna:
+                En ny stödmedlem har registrerat sig. Nedan följer detaljerna:
               </Text>
               <Section className="bg-gray-100 p-4 rounded-lg shadow-xl">
                 <Text className="leading-6 text-base font-bold">Namn:</Text>
                 <Text className="leading-6 text-base mb-2">{name}</Text>
                 <Text className="leading-6 text-base font-bold">Mejl adress:</Text>
                 <Text className="leading-6 text-base mb-2">{emailAddress}</Text>
-                <Text className="leading-6 text-base font-bold">Adress:</Text>
+                <Text className="leading-6 text-base font-bold">Mängd:</Text>
                 <Text className="leading-6 text-base mb-2">{amount}</Text>
               </Section>
 
