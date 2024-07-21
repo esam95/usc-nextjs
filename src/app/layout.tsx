@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/shadcn/toaster';
 import Navbar from '@/components/navbar';
+import { Footer } from '@/components/footer';
+import logo from '../../public/img/club_logo.webp';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,10 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
         <Toaster />
-        <Navbar title={'Upprustningen Sports Club'} imageSrc={''} />
+        <Navbar title={'Upprustningen Sports Club'} imageSrc={logo} />
         {children}
+        <Footer />
       </body>
     </html>
   );
