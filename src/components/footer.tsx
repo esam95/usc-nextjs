@@ -15,23 +15,18 @@ export function Footer() {
     <footer className="bg-blue-500 py-6 w-full">
       <div className="container mx-auto flex flex-col items-center gap-6">
         <div className="flex items-center gap-3 justify-center">
-          <Image src="/img/club_logo.webp" alt={'logo'} width={40} height={40} />
+          <Image src="/img/club_logo.webp" alt={'logo'} width={40} height={40} priority />
           <span className="text-primary-foreground text-xl font-semibold">Upprustningen Sports Club</span>
         </div>
 
         <Separator orientation="horizontal" decorative className="h-0.5" />
 
-        <div className="w-full max-w-5xl flex flex-col-reverse items-center gap-6 md:flex-row md:justify-between md:items-center">
+        <div className="w-full max-w-5xl flex flex-col items-center gap-6 md:flex-row md:justify-between md:items-start">
           <section className="flex flex-col items-center md:items-start gap-2 md:flex-1">
-            <span className="text-primary-foreground font-semibold text-lg">Kontakt</span>
-            <span className="text-primary-foreground" aria-label="email address information">
-              info@upprustningen.com
-            </span>
-          </section>
-          <section className="flex flex-col items-center font-normal md:items-end gap-2 md:flex-1">
+            <h4 className="text-primary-foreground font-semibold text-lg">Navigera</h4>
             <div id="inner" className="flex flex-col items-center gap-2 md:items-start">
               <Link
-                href="#"
+                href="/"
                 className="text-primary-foreground hover:text-gray-300 transition-colors"
                 prefetch={false}
               >
@@ -67,9 +62,19 @@ export function Footer() {
               </Link>
             </div>
           </section>
+          <section className="flex flex-col items-center font-normal md:items-start md:justify-start gap-2 md:flex-1">
+            <span className="text-primary-foreground font-semibold text-lg md:ml-[70%]">Kontakt</span>
+            <span className="text-primary-foreground md:ml-[70%]" aria-label="email address information">
+              info@upprustningen.com
+            </span>
+          </section>
         </div>
 
-        <section className="flex justify-center items-center gap-6" aria-label="social media icons">
+        <section
+          id="social-media-icons"
+          className="flex justify-center items-center gap-6 mt-4"
+          aria-label="social media icons"
+        >
           <Link
             href="#"
             aria-label="Facebook icon"
@@ -88,7 +93,7 @@ export function Footer() {
           </Link>
         </section>
 
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-6 md:mt-0">
           <p className="text-primary-foreground text-xs">
             &copy; 2024 Upprustningen Sports Club. All rights reserved.
           </p>
