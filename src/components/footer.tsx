@@ -22,8 +22,10 @@ export function Footer() {
         <Separator orientation='horizontal' decorative className='h-0.5' />
 
         <div className='w-full max-w-5xl flex flex-col items-center gap-6 md:flex-row md:justify-between md:items-start'>
-          <section className='flex flex-col items-center md:items-start gap-2 md:flex-1'>
-            <h4 className='text-primary-foreground font-semibold text-lg underline'>Navigera</h4>
+          <section className='flex flex-col items-center font-light md:text-lg md:items-start gap-2 md:flex-1'>
+            <h4 className='text-primary-foreground font-semibold text-lg underline underline-offset-2'>
+              Navigera
+            </h4>
             <div id='inner' className='flex flex-col items-center gap-2 md:items-start'>
               <Link
                 href='/'
@@ -63,8 +65,13 @@ export function Footer() {
             </div>
           </section>
           <section className='flex flex-col items-center font-normal md:items-start md:justify-start gap-2 md:flex-1'>
-            <span className='text-primary-foreground font-semibold text-lg underline'>Kontakt</span>
-            <span className='text-primary-foreground' aria-label='email address information'>
+            <span className='text-primary-foreground font-semibold text-lg underline underline-offset-2'>
+              Kontakt
+            </span>
+            <span
+              className='text-primary-foreground font-light md:text-lg'
+              aria-label='email address information'
+            >
               info@upprustningen.com
             </span>
           </section>
@@ -94,7 +101,7 @@ export function Footer() {
         </section>
 
         <div className='flex justify-center mt-6 md:mt-0'>
-          <p className='text-primary-foreground text-xs'>
+          <p className='text-primary-foreground text-xs text-center'>
             &copy; 2024 Upprustningen Sports Club. All rights reserved.
           </p>
         </div>
