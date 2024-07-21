@@ -12,89 +12,89 @@ import { SiInstagram as InstagramIcon } from '@icons-pack/react-simple-icons';
 
 export function Footer() {
   return (
-    <footer className="bg-blue-500 py-6 w-full">
-      <div className="container mx-auto flex flex-col items-center gap-6">
-        <div className="flex items-center gap-3 justify-center">
-          <Image src="/img/club_logo.webp" alt={'logo'} width={40} height={40} priority />
-          <span className="text-primary-foreground text-xl font-semibold">Upprustningen Sports Club</span>
+    <footer className='bg-blue-500 py-6 w-full'>
+      <div className='container mx-auto flex flex-col items-center gap-6'>
+        <div className='flex items-center gap-3 justify-center'>
+          <Image src='/img/club_logo.webp' alt={'logo'} width={40} height={40} priority />
+          <span className='text-primary-foreground text-xl font-semibold'>Upprustningen Sports Club</span>
         </div>
 
-        <Separator orientation="horizontal" decorative className="h-0.5" />
+        <Separator orientation='horizontal' decorative className='h-0.5' />
 
-        <div className="w-full max-w-5xl flex flex-col items-center gap-6 md:flex-row md:justify-between md:items-start">
-          <section className="flex flex-col items-center md:items-start gap-2 md:flex-1">
-            <h4 className="text-primary-foreground font-semibold text-lg">Navigera</h4>
-            <div id="inner" className="flex flex-col items-center gap-2 md:items-start">
+        <div className='w-full max-w-5xl flex flex-col items-center gap-6 md:flex-row md:justify-between md:items-start'>
+          <section className='flex flex-col items-center md:items-start gap-2 md:flex-1'>
+            <h4 className='text-primary-foreground font-semibold text-lg underline'>Navigera</h4>
+            <div id='inner' className='flex flex-col items-center gap-2 md:items-start'>
               <Link
-                href="/"
-                className="text-primary-foreground hover:text-gray-300 transition-colors"
+                href='/'
+                className='text-primary-foreground hover:text-gray-300 transition-colors'
                 prefetch={false}
               >
                 Hem
               </Link>
               <Link
-                href="/om-oss"
-                className="text-primary-foreground hover:text-gray-300 transition-colors"
+                href='/om-oss'
+                className='text-primary-foreground hover:text-gray-300 transition-colors'
                 prefetch={false}
               >
                 Om oss
               </Link>
               <Link
-                href="/kontakta-oss"
-                className="text-primary-foreground hover:text-gray-300 transition-colors"
+                href='/kontakta-oss'
+                className='text-primary-foreground hover:text-gray-300 transition-colors'
                 prefetch={false}
               >
                 Kontakt
               </Link>
               <Link
-                href="/schema"
-                className="text-primary-foreground hover:text-gray-300 transition-colors"
+                href='/schema'
+                className='text-primary-foreground hover:text-gray-300 transition-colors'
                 prefetch={false}
               >
                 Schema
               </Link>
               <Link
-                href="/Q&A"
-                className="text-primary-foreground hover:text-gray-300 transition-colors"
+                href='/Q&A'
+                className='text-primary-foreground hover:text-gray-300 transition-colors'
                 prefetch={false}
               >
                 FAQ
               </Link>
             </div>
           </section>
-          <section className="flex flex-col items-center font-normal md:items-start md:justify-start gap-2 md:flex-1">
-            <span className="text-primary-foreground font-semibold text-lg md:ml-[70%]">Kontakt</span>
-            <span className="text-primary-foreground md:ml-[70%]" aria-label="email address information">
+          <section className='flex flex-col items-center font-normal md:items-start md:justify-start gap-2 md:flex-1'>
+            <span className='text-primary-foreground font-semibold text-lg underline'>Kontakt</span>
+            <span className='text-primary-foreground' aria-label='email address information'>
               info@upprustningen.com
             </span>
           </section>
         </div>
 
         <section
-          id="social-media-icons"
-          className="flex justify-center items-center gap-6 mt-4"
-          aria-label="social media icons"
+          id='social-media-icons'
+          className='flex justify-center items-center gap-6 mt-4'
+          aria-label='social media icons'
         >
           <Link
-            href="#"
-            aria-label="Facebook icon"
-            className="text-primary-foreground transition-colors"
+            href='#'
+            aria-label='Facebook icon'
+            className='text-primary-foreground transition-colors'
             prefetch={false}
           >
             <FacebookIcon size={28} />
           </Link>
           <Link
-            href="https://www.instagram.com/upprustningensc?igsh=YzB4a21qYjB6MG41"
-            aria-label="Instagram icon"
-            className="text-primary-foreground transition-colors"
+            href='https://www.instagram.com/upprustningensc?igsh=YzB4a21qYjB6MG41'
+            aria-label='Instagram icon'
+            className='text-primary-foreground transition-colors'
             prefetch={false}
           >
             <InstagramIcon size={28} />
           </Link>
         </section>
 
-        <div className="flex justify-center mt-6 md:mt-0">
-          <p className="text-primary-foreground text-xs">
+        <div className='flex justify-center mt-6 md:mt-0'>
+          <p className='text-primary-foreground text-xs'>
             &copy; 2024 Upprustningen Sports Club. All rights reserved.
           </p>
         </div>
