@@ -137,23 +137,23 @@ function BecomeMember() {
   }, [form, isSubmitSuccessful, isSubmitting, errors]);
 
   return (
-    <div className="flex min-h-screen min-w-80 w-full flex-col items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-3xl mb-8">
-        <h1 className="text-center font-extrabold tracking-tight md:text-left lg:text-5xl text-gray-700">
+    <div className='flex min-h-screen min-w-80 w-full flex-col items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8'>
+      <div className='w-full max-w-3xl mb-8'>
+        <h1 className='text-center font-extrabold tracking-tight lg:text-5xl text-gray-700'>
           Ansökan om medlemskap
         </h1>
       </div>
 
       <Form {...form}>
-        <Card className="w-full max-w-3xl bg-white shadow-lg rounded-lg">
-          <CardHeader className="bg-primary text-primary-foreground rounded-t-lg p-6">
-            <CardTitle className="text-2xl font-bold">Registrera dig</CardTitle>
-            <CardDescription className="text-primary-foreground/70">
+        <Card className='w-full max-w-3xl bg-white shadow-lg rounded-lg'>
+          <CardHeader className='bg-primary text-primary-foreground rounded-t-lg p-6'>
+            <CardTitle className='text-2xl font-bold'>Registrera dig</CardTitle>
+            <CardDescription className='text-primary-foreground/70'>
               Var vänlig fyll i formuläret för att bli medlem
             </CardDescription>
           </CardHeader>
-          <CardContent className="p-6">
-            <form className="flex flex-col gap-5" onSubmit={form.handleSubmit(onSubmit, onError)}>
+          <CardContent className='p-6'>
+            <form className='flex flex-col gap-5' onSubmit={form.handleSubmit(onSubmit, onError)}>
               {/* Name Field */}
               <NameField form={form} />
 
@@ -209,15 +209,15 @@ function BecomeMember() {
               <CommentsCheckbox hasComments={hasComments} setHasComments={setHasComments} />
               {hasComments && <CommentsForm form={form} />}
 
-              <CardFooter className="flex justify-end p-6">
+              <CardFooter className='flex justify-end p-6'>
                 <Button
                   disabled={!isDirty || isSubmitting}
-                  className="w-full md:w-auto bg-primary text-primary-foreground hover:bg-primary/90"
-                  type="submit"
+                  className='w-full md:w-auto bg-primary text-primary-foreground hover:bg-primary/90'
+                  type='submit'
                 >
                   {form.formState.isSubmitting ? (
                     <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      <Loader2 className='mr-2 h-4 w-4 animate-spin' />
                       Skickar..
                     </>
                   ) : (
