@@ -3,7 +3,7 @@
 import * as z from 'zod';
 
 export const formSchema = z.object({
-  fullName: z
+  name: z
   .string()
   .min(1, { message: 'Detta fält är obligatoriskt' })
   .min(2, { message: 'Namnet måste vara längre än 2 tecken' }),
