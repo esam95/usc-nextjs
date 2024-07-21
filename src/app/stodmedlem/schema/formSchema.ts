@@ -14,5 +14,21 @@ export const formSchema = z
     
     amount: z
     .string()
+    .min(1, { message: 'Detta fält är obligatoriskt' })
+    .superRefine((val, ctx) => {
+      if (isNaN(Number(val))) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: "Stödmängd kan endast innehålla siffror",
+        });
+      }
+    
+      else if (Number(val) <= 0) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: `Stödmängd måste vara över 0 kr`,
+        });
+      }
+    }),
   })
  

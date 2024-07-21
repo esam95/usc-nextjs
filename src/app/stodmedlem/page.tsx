@@ -96,23 +96,23 @@ function BecomeSupportMember() {
         <Card className="w-full max-w-3xl bg-white shadow-lg rounded-lg">
           <CardHeader className="bg-primary text-primary-foreground rounded-t-lg p-6">
             <CardTitle className="text-2xl font-bold">Bli stödmedlem</CardTitle>
-            <CardDescription className="text-primary-foreground/70">
-                Genom att bli stödmedlem i vår kampsportsklubb hjälper du oss på många sätt: 
-            </CardDescription>
 
-            <p>
-              <strong>Stöd Våra Idrottare:</strong> Dina bidrag hjälper till att finansiera träning, utrustning och resekostnader för våra idrottare.
-            </p>
-            <p>
-              <strong>Förbättra Faciliteterna:</strong> Vi strävar efter att tillhandahålla de bästa faciliteterna för våra medlemmar, och ditt stöd hjälper oss att underhålla och förbättra vår träningsmiljö.
-            </p>
-            <p>
-              <strong>Engagera Gemenskapen:</strong> Ditt stöd gör det möjligt för oss att organisera evenemang och program som engagerar det lokala samhället och främjar sporten.
-            </p>
-            <p>
-              <strong>Exklusiva Förmåner:</strong> Som stödmedlem får du exklusiva uppdateringar, inbjudningar till speciella evenemang och rabatter på klubbens merchandise.
-            </p>
-            
+            <div>
+              <h4>Genom att bli stödmedlem i vår kampsportsklubb hjälper du oss på många sätt: </h4>
+              <p>
+                <strong>Stöd Våra Idrottare:</strong> Dina bidrag hjälper till att finansiera träning, utrustning och resekostnader för våra idrottare.
+              </p>
+              <p>
+                <strong>Förbättra Faciliteterna:</strong> Vi strävar efter att tillhandahålla de bästa faciliteterna för våra medlemmar, och ditt stöd hjälper oss att underhålla och förbättra vår träningsmiljö.
+              </p>
+              <p>
+                <strong>Engagera Gemenskapen:</strong> Ditt stöd gör det möjligt för oss att organisera evenemang och program som engagerar det lokala samhället och främjar sporten.
+              </p>
+              <p>
+                <strong>Exklusiva Förmåner:</strong> Som stödmedlem får du exklusiva uppdateringar, inbjudningar till speciella evenemang och rabatter på klubbens merchandise.
+              </p>
+            </div>
+
           </CardHeader>
           <CardContent className="p-6">
             <form className="flex flex-col gap-5" onSubmit={form.handleSubmit(onSubmit, onError)}>
