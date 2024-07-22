@@ -1,6 +1,13 @@
 'use client';
 import { Button } from '@/components/shadcn/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/shadcn/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/shadcn/card';
 import { Form } from '@/components/shadcn/form';
 import { useToast } from '@/components/shadcn/use-toast';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -79,73 +86,103 @@ function BecomeSupportMember() {
   };
 
   useEffect(() => {
-    if (isSubmitSuccessful && !errors) {
+    if (isSubmitSuccessful) {
       form.reset();
     }
   }, [form, isSubmitSuccessful, isSubmitting, errors]);
 
   return (
-    <div className="flex min-h-screen min-w-80 w-full flex-col items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-3xl mb-8">
-        <h1 className="text-center font-extrabold tracking-tight md:text-left lg:text-5xl text-gray-700">
-          Stödmedlem
-        </h1>
+    <>
+      <div
+        id='stod-medlem-card'
+        className='flex min-h-screen min-w-80 w-full flex-col items-center justify-cente py-12 px-4 sm:px-6 lg:px-8'
+      >
+        <div className='w-full max-w-3xl mb-1'>
+          <h1 className='text-center font-extrabold tracking-tight lg:text-5xl text-gray-700'>Stödmedlem</h1>
+        </div>
+
+        <div className='w-full max-w-3xl mb-8 bg-white p-6'>
+          <div className=' text-slate-600 text-lg leading-relaxed'>
+            <h4 className='text-lg font-normal'>
+              Genom att bli stödmedlem i vår kampsportsklubb hjälper du oss på många sätt.
+            </h4>
+            <br />
+
+            <section className='mb-4'>
+              <h5 className='text-slate-900'>Stöd Våra Idrottare</h5>
+              <p className='text-base'>
+                Dina bidrag hjälper till att finansiera träning, utrustning och resekostnader för våra
+                idrottare.
+              </p>
+            </section>
+
+            <section className='mb-4'>
+              <h5 className='text-slate-900'>Förbättra Faciliteterna</h5>
+              <p className='text-base'>
+                Vi strävar efter att tillhandahålla de bästa faciliteterna för våra medlemmar, och ditt stöd
+                hjälper oss att underhålla och förbättra vår träningsmiljö.
+              </p>
+            </section>
+
+            <section className='mb-4'>
+              <h5 className='text-slate-900'>Engagera Gemenskapen</h5>
+              <p className='text-base'>
+                Ditt stöd gör det möjligt för oss att organisera evenemang och program som engagerar det
+                lokala samhället och främjar sporten.
+              </p>
+            </section>
+
+            <section className='mb-4'>
+              <h5 className='text-slate-900'>Exklusiva Förmåner</h5>
+              <p className='text-base'>
+                Som stödmedlem får du exklusiva uppdateringar, inbjudningar till speciella evenemang och
+                rabatter på klubbens merchandise.
+              </p>
+            </section>
+          </div>
+        </div>
+
+        <Form {...form}>
+          <Card className='w-full max-w-3xl bg-white shadow-lg rounded-lg'>
+            <CardHeader className='bg-primary text-primary-foreground rounded-t-lg p-6'>
+              <CardTitle className='text-2xl font-bold'>Bli stödmedlem</CardTitle>
+              <CardDescription className='text-primary-foreground'>
+                Du kan alltid swisha eller göra en bankgiro överföring med valfri summa
+              </CardDescription>
+            </CardHeader>
+            <CardContent className='p-6'>
+              <form className='flex flex-col gap-5' onSubmit={form.handleSubmit(onSubmit, onError)}>
+                {/* Name Field */}
+                <NameField form={form} />
+
+                {/* Email address field */}
+                <EmailAdressField form={form} />
+
+                {/* Amount field */}
+                <AmountField form={form} />
+
+                <CardFooter className='flex justify-end p-6'>
+                  <Button
+                    disabled={!isDirty || isSubmitting}
+                    className='w-full md:w-auto bg-primary text-primary-foreground hover:bg-primary/90'
+                    type='submit'
+                  >
+                    {form.formState.isSubmitting ? (
+                      <>
+                        <Loader2 className='mr-2 h-4 w-4 animate-spin' />
+                        Skickar..
+                      </>
+                    ) : (
+                      'Skicka in'
+                    )}
+                  </Button>
+                </CardFooter>
+              </form>
+            </CardContent>
+          </Card>
+        </Form>
       </div>
-
-      <Form {...form}>
-        <Card className="w-full max-w-3xl bg-white shadow-lg rounded-lg">
-          <CardHeader className="bg-primary text-primary-foreground rounded-t-lg p-6">
-            <CardTitle className="text-2xl font-bold">Bli stödmedlem</CardTitle>
-
-            <div>
-              <h4>Genom att bli stödmedlem i vår kampsportsklubb hjälper du oss på många sätt: </h4>
-              <p>
-                <strong>Stöd Våra Idrottare:</strong> Dina bidrag hjälper till att finansiera träning, utrustning och resekostnader för våra idrottare.
-              </p>
-              <p>
-                <strong>Förbättra Faciliteterna:</strong> Vi strävar efter att tillhandahålla de bästa faciliteterna för våra medlemmar, och ditt stöd hjälper oss att underhålla och förbättra vår träningsmiljö.
-              </p>
-              <p>
-                <strong>Engagera Gemenskapen:</strong> Ditt stöd gör det möjligt för oss att organisera evenemang och program som engagerar det lokala samhället och främjar sporten.
-              </p>
-              <p>
-                <strong>Exklusiva Förmåner:</strong> Som stödmedlem får du exklusiva uppdateringar, inbjudningar till speciella evenemang och rabatter på klubbens merchandise.
-              </p>
-            </div>
-
-          </CardHeader>
-          <CardContent className="p-6">
-            <form className="flex flex-col gap-5" onSubmit={form.handleSubmit(onSubmit, onError)}>
-              {/* Name Field */}
-              <NameField form={form} />
-
-              {/* Email address field */}
-              <EmailAdressField form={form} />
-
-              {/* Telephone field */}
-              <AmountField form={form} />
-
-              <CardFooter className="flex justify-end p-6">
-                <Button
-                  disabled={!isDirty || isSubmitting}
-                  className="w-full md:w-auto bg-primary text-primary-foreground hover:bg-primary/90"
-                  type="submit"
-                >
-                  {form.formState.isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Skickar..
-                    </>
-                  ) : (
-                    'Skicka in'
-                  )}
-                </Button>
-              </CardFooter>
-            </form>
-          </CardContent>
-        </Card>
-      </Form>
-    </div>
+    </>
   );
 }
 
