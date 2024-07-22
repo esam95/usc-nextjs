@@ -45,7 +45,7 @@ const FAQ = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Accordion type="single" className="w-full">
+          <Accordion type="single" collapsible className="w-full">
             {questionsAndAnswers.map((row, index) => (
               <AccordionItem key={index} value={index.toString()}>
                 <AccordionTrigger className="text-gray-800 text-lg font-semibold text-left">
