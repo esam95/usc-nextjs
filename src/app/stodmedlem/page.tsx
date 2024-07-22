@@ -147,7 +147,7 @@ function BecomeSupportMember() {
             <CardHeader className='bg-primary text-primary-foreground rounded-t-lg p-6'>
               <CardTitle className='text-2xl font-bold'>Bli stödmedlem</CardTitle>
               <CardDescription className='text-primary-foreground'>
-                Du kan alltid swisha eller göra en bankgiro överföring med valfri summa
+                Du kan alltid swisha eller göra en banköverföring med valfri summa
               </CardDescription>
             </CardHeader>
             <CardContent className='p-6'>
