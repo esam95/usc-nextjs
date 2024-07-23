@@ -42,7 +42,7 @@ export function Footer() {
                 Om oss
               </Link>
               <Link
-                href='/kontakta-oss'
+                href='/kontakt'
                 className='text-primary-foreground hover:text-gray-300 transition-colors'
                 prefetch={false}
               >
