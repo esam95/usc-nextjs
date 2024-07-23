@@ -21,7 +21,7 @@ export function MenuWizard() {
           className='text-primary-foreground hover:text-gray-300 focus:outline-none'
           aria-label='Toggle menu'
         >
-          <Menu className='w-6 h-6' />
+          <Menu className='w-6 h-6 text-primary' />
         </button>
       </SheetTrigger>
       <SheetContent>
