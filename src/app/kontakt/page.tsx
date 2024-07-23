@@ -28,21 +28,22 @@ export default function Contact() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fullName: '',
+      name: '',
       emailAddress: '',
       message: '',
     },
   });
+
   const { toast } = useToast();
-  const { isDirty, isSubmitting, isSubmitSuccessful } = form.formState;
-  const { fullName, emailAddress, message } = form.getValues();
+  const { isDirty, isSubmitting, isSubmitSuccessful, errors } = form.formState;
+  const { name, emailAddress, message } = form.getValues();
 
   const postEmail = async () => {
     try {
       const response = await fetch('/api/contactEmail', {
         method: 'POST',
         body: JSON.stringify({
-          fullName,
+          name,
           emailAddress,
           message,
         }),
@@ -91,7 +92,7 @@ export default function Contact() {
     if (isSubmitSuccessful) {
       form.reset();
     }
-  }, [form, isSubmitSuccessful, isSubmitting]);
+  }, [form, isSubmitSuccessful, isSubmitting, errors]);
 
   return (
     <div className='flex min-h-screen min-w-80 w-full flex-col items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8'>

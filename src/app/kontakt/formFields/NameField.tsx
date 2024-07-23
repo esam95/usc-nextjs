@@ -6,7 +6,7 @@ import { FormFieldProps } from '../page';
 function NameField({ form }: FormFieldProps) {
   return (
     <FormField
-      name="fullName"
+      name="name"
       control={form.control}
       render={({ field }) => {
         return (
