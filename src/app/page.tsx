@@ -1,11 +1,20 @@
+'use client';
 import backgroundImg from '../../public/img/background_img.webp';
 import Image from 'next/image';
 import logo from '../../public/img/club_logo.webp';
 import { ArrowRightIcon } from 'lucide-react';
 import { Button } from '@/components/shadcn/button';
 import Link from 'next/link';
+import { CardDescription } from '@/components/shadcn/card';
+import React from 'react';
+import { CarouselComponent } from '@/components/CarouselComponent';
+import boxingImg from '../../public/img/boxing_img.webp';
+import mmaImg from '../../public/img/mma_img.webp';
+import submissionWrestling from '../../public/img/nogi.webp';
+import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
 
 export default function Home() {
+  const classesImages = [boxingImg, mmaImg, submissionWrestling, freeStyleWrestling];
   return (
     <>
       <div className='relative min-h-screen'>
@@ -74,19 +83,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section
+      <section
         className='container py-11 flex flex-col justify-center items-center gap-12 flex-wrap
       md:flex-row'
       >
-        <div className='flex flex-col max-w-[20rem] w-full mt-6'>
-          <h2 className='text-secondary-foreground font-semibold mb-4'>Upptäck våra klasser</h2>
+        <div className='flex flex-col gap-4 max-w-[22rem] w-full max-h-fit items-start justify-center lg:max-w-fit lg:w-2/4'>
+          <div className='flex flex-col'>
+            <h2 className='text-secondary-foreground font-semibold lg:text-4xl'>Upptäck våra klasser</h2>
+            <CardDescription>Det finns inga gränser för vad du kan åstadkomma hos oss.</CardDescription>
+          </div>
           <p className='text-base leading-relaxed mb-6 max-w-max'>
-            <strong className=''>Det finns inga gränser för vad du kan åstadkomma hos oss.</strong>
             Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs, oavsett din
             ålder eller erfarenhet, har vi träningen för dig.
           </p>
         </div>
-      </section> */}
+
+        <CarouselComponent images={classesImages} />
+      </section>
     </>
   );
 }
