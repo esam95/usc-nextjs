@@ -14,12 +14,12 @@ export function Footer() {
   return (
     <footer className='py-6 w-full bg-background'>
       <div className='container mx-auto flex flex-col items-center gap-6'>
+        <Separator orientation='horizontal' decorative className='h-0.5 bg-primary' />
+
         <div className='flex items-center gap-3 justify-center'>
           <Image src='/img/club_logo.webp' alt={'logo'} width={40} height={40} priority />
           <span className='text-secondary-foreground text-xl font-semibold'>Upprustningen Sports Club</span>
         </div>
-
-        <Separator orientation='horizontal' decorative className='h-0.5 bg-primary' />
 
         <div className='w-full max-w-5xl flex flex-col items-center gap-6 md:flex-row md:justify-between md:items-start'>
           <section className='flex flex-col items-center font-light md:text-lg md:items-start gap-2 md:flex-1'>
@@ -65,7 +65,7 @@ export function Footer() {
             </div>
           </section>
           <section className='flex flex-col items-center font-normal md:items-start md:justify-start gap-2 md:flex-1'>
-            <span className='text-secondary-foreground font-semibold text-lg underline underline-offset-2'>
+            <span className='text-secondary-foreground font-semibold text-lg underline underline-offset-2 off'>
               Kontakt
             </span>
             <span

@@ -15,6 +15,7 @@ import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
 
 export default function Home() {
   const classesImages = [boxingImg, mmaImg, submissionWrestling, freeStyleWrestling];
+
   return (
     <>
       <div className='relative min-h-screen'>
@@ -34,21 +35,30 @@ export default function Home() {
         </div>
 
         <div className='relative z-10 flex flex-col items-center justify-center min-h-screen gap-8'>
-          <h1 className='px-2 text-4xl font-extrabold text-secondary-foreground text-center drop-shadow-lg'>
+          <h1 className='px-2 text-4xl font-extrabold text-secondary-foreground text-center drop-shadow-lg lg:text-5xl'>
             Upprustningen Sports Club
           </h1>
 
-          <div className='flex flex-row gap-6 mt-6'>
-            <Link href={'/bli-medlem'}>
-              <Button size='lg' className='rounded-none text-secondary-foreground opacity-90 md:w-42 md:h-12'>
-                Bli Medlem
-              </Button>
-            </Link>
-            <Link href={'/schema'}>
-              <Button size='lg' className='rounded-none opacity-90 md:w-42 md:h-12' variant={'outline'}>
-                Våra klasser
-              </Button>
-            </Link>
+          <div className='mt-8'>
+            <div className='flex flex-row gap-6'>
+              <Link href={'/bli-medlem'}>
+                <Button
+                  size='lg'
+                  className='px-9 py-5 rounded-[2px] text-primary-foreground opacity-90 md:min-w-36 md:min-h-12 xl:text-base'
+                >
+                  Bli Medlem
+                </Button>
+              </Link>
+              <Link href={'/schema'}>
+                <Button
+                  size='lg'
+                  className='px-9 py-5 rounded-[2px] text-secondary-foreground opacity-90 md:min-w-36 md:min-h-12 xl:text-base'
+                  variant={'outline'}
+                >
+                  Våra klasser
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -75,7 +85,7 @@ export default function Home() {
 
         <div className='flex flex-col items-center justify-center min-h-36 h-full'>
           <Link href='/om-oss'>
-            <Button size={'lg'}>
+            <Button size={'lg'} className='text-primary-foreground hover:text-primary hover:bg-slate-200'>
               Läs mer om oss
               <ArrowRightIcon className='ml-2 h-4 w-4' />
             </Button>
@@ -83,22 +93,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        className='container py-11 flex flex-col justify-center items-center gap-12 flex-wrap
-      md:flex-row'
-      >
-        <div className='flex flex-col gap-4 max-w-[22rem] w-full max-h-fit items-start justify-center lg:max-w-fit lg:w-2/4'>
+      <section className='container py-11 flex flex-col justify-center items-center gap-12 flex-wrap'>
+        <div className='flex flex-col gap-3 min-w-fit w-full max-h-fit items-center justify-center'>
           <div className='flex flex-col'>
-            <h2 className='text-secondary-foreground font-semibold lg:text-4xl'>Upptäck våra klasser</h2>
-            <CardDescription>Det finns inga gränser för vad du kan åstadkomma hos oss.</CardDescription>
+            <h2 className='text-secondary-foreground font-semibold text-center lg:text-4xl'>
+              Upptäck våra klasser
+            </h2>
+            <CardDescription className='text-center text-primary font-medium'>
+              Det finns inga gränser för vad du kan åstadkomma hos oss
+            </CardDescription>
           </div>
-          <p className='text-base leading-relaxed mb-6 max-w-max'>
-            Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs, oavsett din
+          <p className='text-base leading-relaxed mb-6 max-w-max w-full text-center lg:text-lg'>
+            Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. Oavsett din
             ålder eller erfarenhet, har vi träningen för dig.
           </p>
         </div>
 
-        <CarouselComponent images={classesImages} />
+        <CarouselComponent images={classesImages} delayTime={3000} />
+
+        <div className='flex flex-col items-center justify-center min-h-36 h-full mt-6'>
+          <Link href='/schema'>
+            <Button size={'lg'} className='text-primary-foreground hover:text-primary hover:bg-slate-200'>
+              Schema
+              <ArrowRightIcon className='ml-2 h-4 w-4' />
+            </Button>
+          </Link>
+        </div>
       </section>
     </>
   );
