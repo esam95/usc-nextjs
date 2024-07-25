@@ -4,6 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 import { MenuWizard } from './MenuWizard';
 import { Button } from './shadcn/button';
 import { usePathname } from 'next/navigation';
+
 type Props = {
   title: string;
   imageSrc: string | StaticImageData;
@@ -22,7 +23,6 @@ export function Navbar({ imageSrc, title }: Props) {
   const isActive = (href: string) => {
     return pathname === href;
   };
-  console.log(pathname);
 
   const navLinks = links.map((link) => (
     <Link
@@ -30,7 +30,7 @@ export function Navbar({ imageSrc, title }: Props) {
       href={link.href}
       className={`
         ${isActive(link.href) ? 'text-primary' : 'text-secondary-foreground'}
-        font-medium text-md transition-colors hover:text-secondary hover:underline-offset-4 xl:text-lg dark:hover:text-gray-50 hover-animation`}
+        font-medium transition-colors hover:text-secondary hover:underline-offset-4 xl:text-lg dark:hover:text-gray-50 hover-animation`}
       prefetch={false}
     >
       {link.label}

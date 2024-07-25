@@ -6,14 +6,23 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/shadcn/carousel';
-import { Card, CardContent } from './shadcn/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './shadcn/card';
 import { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import { useRef } from 'react';
+import { Button } from './shadcn/button';
+
+type ImageProps = {
+  imgSrc: StaticImageData;
+  alt: string;
+  description: string;
+  label: string;
+};
 
 type Props = {
-  images?: StaticImageData[];
+  images?: ImageProps[];
   delayTime?: number;
+  id?: string;
 };
 
 export function CarouselComponent({ images, delayTime }: Props) {
@@ -30,20 +39,33 @@ export function CarouselComponent({ images, delayTime }: Props) {
         {images && images.length > 0
           ? images.map((image, index: number) => (
               <CarouselItem key={index} className='fixed-size'>
-                <div className='p-1'>
-                  <Card>
-                    <CardContent className='flex aspect-square items-center justify-center p-0'>
+                <div id='wrapper' className=''>
+                  <Card
+                    className='min-h-[530px] h-full w-full
+                    rounded-b-xl shadow-lg'
+                  >
+                    <CardContent className='h-1/2 w-full flex aspect-square items-center justify-center p-0'>
                       <Image
-                        src={image}
-                        alt={`Carousel image ${index + 1}`}
+                        src={image.imgSrc}
+                        alt={image.alt}
                         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                         style={{
                           objectFit: 'cover',
                           width: '100%',
                           height: '100%',
                         }}
+                        className='rounded-t-lg opacity-80'
                       />
                     </CardContent>
+                    <div id='card-info'>
+                      <CardHeader>
+                        <CardTitle>{image.label}</CardTitle>
+                        <CardDescription>{image.description}</CardDescription>
+                      </CardHeader>
+                      <CardFooter className='flex justify-end'>
+                        <Button>Läs mer</Button>
+                      </CardFooter>
+                    </div>
                   </Card>
                 </div>
               </CarouselItem>

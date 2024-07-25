@@ -5,16 +5,45 @@ import logo from '../../public/img/club_logo.webp';
 import { ArrowRightIcon } from 'lucide-react';
 import { Button } from '@/components/shadcn/button';
 import Link from 'next/link';
-import { CardDescription } from '@/components/shadcn/card';
 import React from 'react';
 import { CarouselComponent } from '@/components/CarouselComponent';
 import boxingImg from '../../public/img/boxing_img.webp';
 import mmaImg from '../../public/img/mma_img.webp';
 import submissionWrestling from '../../public/img/nogi.webp';
 import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
+import { Separator } from '@radix-ui/react-separator';
 
 export default function Home() {
-  const classesImages = [boxingImg, mmaImg, submissionWrestling, freeStyleWrestling];
+  const classesImages = [
+    {
+      imgSrc: boxingImg,
+      alt: 'Boxing',
+      label: 'Boxing',
+      description:
+        'En traditionell kampsport som fokuserar på slagtekniker med händerna. Det handlar om snabbhet, styrka och strategi för att överlista sin motståndare.',
+    },
+    {
+      imgSrc: mmaImg,
+      alt: 'Mixed Martial Arts',
+      label: 'MMA',
+      description:
+        'Mixed Martial Arts är en hybrid kampsport som kombinerar tekniker från boxning, thai-boxning, brottning, jiu-jitsu, och andra kampsporter. Det är en allsidig träning som inkluderar både stående och markkamp.',
+    },
+    {
+      imgSrc: submissionWrestling,
+      alt: 'Submission Wrestling',
+      label: 'Submission Wrestling / NoGi',
+      description:
+        'En kampsport som kombinerar tekniker från brottning och brasiliansk jiu-jitsu. Fokuset ligger på att använda kast, positionering och markkontroll för att få motståndaren att ge upp genom ledlås eller strypgrepp. Perfekt för att utveckla både styrka och teknisk skicklighet.',
+    },
+    {
+      imgSrc: freeStyleWrestling,
+      alt: 'Freestyle Wrestling',
+      label: 'Freestyle Wrestling',
+      description:
+        'Traditionell brottningsstil som tillåter brottare att använda sina ben både offensivt och defensivt. Det handlar om att kontrollera och kasta sin motståndare för att få poäng.',
+    },
+  ];
 
   return (
     <>
@@ -44,15 +73,15 @@ export default function Home() {
               <Link href={'/bli-medlem'}>
                 <Button
                   size='lg'
-                  className='px-9 py-5 rounded-[2px] text-primary-foreground opacity-90 md:min-w-36 md:min-h-12 xl:text-base'
+                  className='px-9 py-5 rounded-[2px] text-primary-foreground opacity-90 hover:text-secondary-foreground md:min-w-36 md:min-h-12 xl:text-base'
                 >
                   Bli Medlem
                 </Button>
               </Link>
-              <Link href={'/schema'}>
+              <Link href={'#our-classes'}>
                 <Button
                   size='lg'
-                  className='px-9 py-5 rounded-[2px] text-secondary-foreground opacity-90 md:min-w-36 md:min-h-12 xl:text-base'
+                  className='px-9 py-5 rounded-[2px] text-secondary-foreground opacity-90 hover:text-primary md:min-w-36 md:min-h-12 xl:text-base'
                   variant={'outline'}
                 >
                   Våra klasser
@@ -64,7 +93,10 @@ export default function Home() {
       </div>
 
       {/* MAIN CONTENT */}
-      <section className='container py-11 mt-12 flex flex-col justify-center items-center gap-12 flex-wrap md:flex-row md:gap-16'>
+      <section
+        id='main-content'
+        className='container py-11 mt-12 flex flex-col justify-center items-center gap-12 flex-wrap md:flex-row md:gap-16'
+      >
         <div className='flex flex-col items-center min-w-fit w-full gap-8 md:flex-row md:justify-center md:min-w-fit lg:gap-16'>
           <div className='flex flex-col max-w-[22rem] w-full max-h-fit items-start justify-center lg:max-w-fit lg:w-2/4'>
             <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>
@@ -93,23 +125,37 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='container py-11 flex flex-col justify-center items-center gap-12 flex-wrap'>
+      <Separator orientation='horizontal' decorative className='h-0.5 bg-secondary w-3/4 mx-auto' />
+
+      {/* VÅRA KLASSER  */}
+      <section className='container py-11 flex flex-col justify-center items-center gap-12 flex-wrap w-full'>
         <div className='flex flex-col gap-3 min-w-fit w-full max-h-fit items-center justify-center'>
           <div className='flex flex-col'>
-            <h2 className='text-secondary-foreground font-semibold text-center lg:text-4xl'>
+            <h2 id='our-classes' className='text-secondary-foreground font-semibold text-center lg:text-4xl'>
               Upptäck våra klasser
             </h2>
-            <CardDescription className='text-center text-primary font-medium'>
+            {/* <CardDescription className='text-center text-primary font-medium'>
               Det finns inga gränser för vad du kan åstadkomma hos oss
-            </CardDescription>
+            </CardDescription> */}
           </div>
-          <p className='text-base leading-relaxed mb-6 max-w-max w-full text-center lg:text-lg'>
+
+          <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-left lg:text-lg'>
             Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. Oavsett din
-            ålder eller erfarenhet, har vi träningen för dig.
+            ålder eller erfarenhet, har vi träningen för dig. <br />
+            Våra träningspass inkluderar&nbsp;
+            <strong className='text-primary'>
+              Boxning, MMA, Fristilsbrottning, Submission Wrestling / NoGi&nbsp;
+            </strong>
+            och även&nbsp;
+            <strong className='text-primary'>fys och styrke träningar</strong>&nbsp; för den som inte är ute
+            efter kampsport.
+          </p>
+          <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center lg:text-base'>
+            Kom och hitta den perfekta träningsformen som passar just dig!
           </p>
         </div>
 
-        <CarouselComponent images={classesImages} delayTime={3000} />
+        <CarouselComponent images={classesImages} />
 
         <div className='flex flex-col items-center justify-center min-h-36 h-full mt-6'>
           <Link href='/schema'>
