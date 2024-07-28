@@ -1,18 +1,17 @@
 'use client';
 import backgroundImg from '../../public/img/background_img.webp';
 import Image from 'next/image';
-import logo from '../../public/img/club_logo.webp';
 import { ArrowRightIcon } from 'lucide-react';
 import { Button } from '@/components/shadcn/button';
-import Link from 'next/link';
-import React from 'react';
+import { Separator } from '@radix-ui/react-separator';
 import { CarouselComponent } from '@/components/CarouselComponent';
+import Link from 'next/link';
+import logo from '../../public/img/club_logo.webp';
 import boxingImg from '../../public/img/boxing_img.webp';
 import mmaImg from '../../public/img/mma_img.webp';
 import submissionWrestling from '../../public/img/nogi.webp';
 import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
-import { Separator } from '@radix-ui/react-separator';
-import { EmblaOptionsType } from 'embla-carousel';
+import strengthCondition from '../../public/img/strength_condition.webp';
 
 export default function Home() {
   const classesImages = [
@@ -35,7 +34,7 @@ export default function Home() {
       alt: 'Submission Wrestling',
       label: 'Submission Wrestling / NoGi',
       description:
-        'En kampsport som kombinerar tekniker från brottning och brasiliansk jiu-jitsu. Fokuset ligger på att använda kast, positionering och markkontroll för att få motståndaren att ge upp genom ledlås eller strypgrepp. Perfekt för att utveckla både styrka och teknisk skicklighet.',
+        'En kampsport som kombinerar tekniker från brottning och brasiliansk jiu-jitsu. Fokuset ligger på att använda kast, positionering och markkontroll för att få motståndaren att ge upp genom ledlås eller strypgrepp.',
     },
     {
       imgSrc: freeStyleWrestling,
@@ -43,6 +42,13 @@ export default function Home() {
       label: 'Freestyle Wrestling',
       description:
         'Traditionell brottningsstil som tillåter brottare att använda sina ben både offensivt och defensivt. Det handlar om att kontrollera och kasta sin motståndare för att få poäng.',
+    },
+    {
+      imgSrc: strengthCondition,
+      alt: 'Fys & Kondition',
+      label: 'Fys & Kondition',
+      description:
+        'Detta träningsprogram är perfekt för dig som vill förbättra din allmänna fysik, styrka, flexibilitet och uthållighet genom olika övningar. Våra träningspass erbjuder en rolig och utmanande träningsmiljö.',
     },
   ];
 
@@ -129,8 +135,8 @@ export default function Home() {
       <Separator orientation='horizontal' decorative className='h-0.5 bg-secondary w-3/4 mx-auto' />
 
       {/* VÅRA KLASSER  */}
-      <section className='container py-11 flex flex-col justify-center items-center gap-12 flex-wrap w-full'>
-        <div className='flex flex-col gap-3 min-w-fit w-full max-h-fit items-center justify-center'>
+      <section className='w-screen py-11 flex flex-col justify-center items-center gap-12'>
+        <div className='flex flex-col gap-3 min-w-fit w-full max-h-fit items-center justify-center px-8'>
           <div className='flex flex-col'>
             <h2 id='our-classes' className='text-secondary-foreground font-semibold text-center lg:text-4xl'>
               Upptäck våra klasser
@@ -148,8 +154,8 @@ export default function Home() {
               Boxning, MMA, Fristilsbrottning, Submission Wrestling / NoGi&nbsp;
             </strong>
             och även&nbsp;
-            <strong className='text-primary'>fys och styrke träningar</strong>&nbsp; för den som inte är ute
-            efter kampsport.
+            <strong className='text-primary'>fys och konditions</strong>&nbsp; träningar för den som inte är
+            ute efter kampsport.
           </p>
           <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center lg:text-base md:text-center'>
             Kom och hitta den perfekta träningsformen som passar just dig!
