@@ -12,13 +12,14 @@ import mmaImg from '../../public/img/mma_img.webp';
 import submissionWrestling from '../../public/img/nogi.webp';
 import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
 import { Separator } from '@radix-ui/react-separator';
+import { EmblaOptionsType } from 'embla-carousel';
 
 export default function Home() {
   const classesImages = [
     {
       imgSrc: boxingImg,
       alt: 'Boxing',
-      label: 'Boxing',
+      label: 'Boxning',
       description:
         'En traditionell kampsport som fokuserar på slagtekniker med händerna. Det handlar om snabbhet, styrka och strategi för att överlista sin motståndare.',
     },
@@ -139,9 +140,9 @@ export default function Home() {
             </CardDescription> */}
           </div>
 
-          <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-left lg:text-lg'>
-            Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. Oavsett din
-            ålder eller erfarenhet, har vi träningen för dig. <br />
+          <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-left md:text-center lg:text-lg'>
+            Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
+            Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
             Våra träningspass inkluderar&nbsp;
             <strong className='text-primary'>
               Boxning, MMA, Fristilsbrottning, Submission Wrestling / NoGi&nbsp;
@@ -150,21 +151,21 @@ export default function Home() {
             <strong className='text-primary'>fys och styrke träningar</strong>&nbsp; för den som inte är ute
             efter kampsport.
           </p>
-          <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center lg:text-base'>
+          <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center lg:text-base md:text-center'>
             Kom och hitta den perfekta träningsformen som passar just dig!
           </p>
         </div>
 
         <CarouselComponent images={classesImages} />
 
-        <div className='flex flex-col items-center justify-center min-h-36 h-full mt-6'>
+        {/* <div className='flex flex-col items-center justify-center min-h-36 h-full mt-6'>
           <Link href='/schema'>
             <Button size={'lg'} className='text-primary-foreground hover:text-primary hover:bg-slate-200'>
               Schema
               <ArrowRightIcon className='ml-2 h-4 w-4' />
             </Button>
           </Link>
-        </div>
+        </div> */}
       </section>
     </>
   );

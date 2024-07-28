@@ -2,6 +2,7 @@ import Autoplay from 'embla-carousel-autoplay';
 import {
   Carousel,
   CarouselContent,
+  CarouselDots,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
@@ -11,6 +12,10 @@ import { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { Button } from './shadcn/button';
+import Link from 'next/link';
+import { ArrowRightIcon } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { EmblaOptionsType } from 'embla-carousel';
 
 type ImageProps = {
   imgSrc: StaticImageData;
@@ -31,7 +36,7 @@ export function CarouselComponent({ images, delayTime }: Props) {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className='w-full max-w-xs'
+      className='w-full max-w-xs lg:min-w-[450px]'
       onMouseEnter={() => plugin.current.stop()}
       onMouseLeave={() => plugin.current.reset()}
     >
@@ -41,8 +46,8 @@ export function CarouselComponent({ images, delayTime }: Props) {
               <CarouselItem key={index} className='fixed-size'>
                 <div id='wrapper' className=''>
                   <Card
-                    className='min-h-[530px] h-full w-full
-                    rounded-b-xl shadow-lg'
+                    className='min-h-[530px] h-[20%] w-full
+                    rounded-b-xl shadow-lg '
                   >
                     <CardContent className='h-1/2 w-full flex aspect-square items-center justify-center p-0'>
                       <Image
@@ -63,7 +68,12 @@ export function CarouselComponent({ images, delayTime }: Props) {
                         <CardDescription>{image.description}</CardDescription>
                       </CardHeader>
                       <CardFooter className='flex justify-end'>
-                        <Button>Läs mer</Button>
+                        <Link href={'/schema'}>
+                          <Button>
+                            Se schema
+                            <ArrowRightIcon className='ml-2 h-4 w-4' />
+                          </Button>
+                        </Link>
                       </CardFooter>
                     </div>
                   </Card>
@@ -83,8 +93,9 @@ export function CarouselComponent({ images, delayTime }: Props) {
               </CarouselItem>
             ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className='max-sm:hidden' />
+      <CarouselNext className='max-sm:hidden' />
+      <CarouselDots />
     </Carousel>
   );
 }

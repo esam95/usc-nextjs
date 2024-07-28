@@ -3,7 +3,6 @@
 import * as React from 'react';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/shadcn/button';
 
@@ -171,6 +170,49 @@ const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
 );
 CarouselItem.displayName = 'CarouselItem';
 
+const CarouselDots = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>((props, ref) => {
+  const { api } = useCarousel();
+  const [updateState, setUpdateState] = React.useState(false);
+  const toggleUpdateState = React.useCallback(() => setUpdateState((prevState) => !prevState), []);
+
+  React.useEffect(() => {
+    if (api) {
+      api.on('select', toggleUpdateState);
+      api.on('reInit', toggleUpdateState);
+
+      return () => {
+        api.off('select', toggleUpdateState);
+        api.off('reInit', toggleUpdateState);
+      };
+    }
+  }, [api, toggleUpdateState]);
+
+  const numberOfSlides = api?.scrollSnapList().length || 0;
+  const currentSlide = api?.selectedScrollSnap() || 0;
+
+  if (numberOfSlides > 1) {
+    return (
+      <div ref={ref} className={`flex justify-center ${props.className}`}>
+        {Array.from({ length: numberOfSlides }, (_, i) => (
+          <Button
+            key={i}
+            className={`mx-1 h-1.5 w-1.5 rounded-full p-0 ${
+              i === currentSlide
+                ? 'scale-125 transform bg-gray-500 hover:bg-gray-500'
+                : 'bg-gray-300 hover:bg-gray-300'
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => api?.scrollTo(i)}
+          />
+        ))}
+      </div>
+    );
+  } else {
+    return <></>;
+  }
+});
+CarouselDots.displayName = 'CarouselDots';
+
 const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
   ({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
     const { orientation, scrollPrev, canScrollPrev } = useCarousel();
@@ -183,7 +225,7 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
         className={cn(
           'absolute h-8 w-8 rounded-full',
           orientation === 'horizontal'
-            ? 'ml-4 left-1/4 bottom-[-2rem] -translate-x-1/2 translate-y-1/2 md:-left-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:ml-0'
+            ? 'ml-4 left-1/4 bottom-[-1.3rem] -translate-x-1/2 translate-y-1/2 md:-left-16 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:ml-0'
             : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
           className,
         )}
@@ -211,7 +253,7 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
         className={cn(
           'absolute h-8 w-8 rounded-full',
           orientation === 'horizontal'
-            ? 'right-1/4 bottom-[-2rem] -translate-x-1/2 translate-y-1/2 md:-right-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0'
+            ? 'right-1/4 bottom-[-1.2rem] -translate-x-1/2 translate-y-1/2 md:-right-16 md:top-1/2 md:-translate-y-1/2 md:translate-x-0'
             : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
           className,
         )}
@@ -227,4 +269,12 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 );
 CarouselNext.displayName = 'CarouselNext';
 
-export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext };
+export {
+  type CarouselApi,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselDots,
+};
