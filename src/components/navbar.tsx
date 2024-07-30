@@ -13,7 +13,7 @@ type Props = {
 
 export function Navbar({ imageSrc, title }: Props) {
   const pathname = usePathname();
-  const [bgColor, setBgColor] = useState('bg-background/40 dark:bg-[#0000008C]');
+  const [bgColor, setBgColor] = useState('bg-transparent');
   const [navbarHeight, setNavbarHeight] = useState('h-28');
 
   const links = [
@@ -44,10 +44,11 @@ export function Navbar({ imageSrc, title }: Props) {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 715) {
+        // setBgColor('bg-transparent');
         setBgColor('bg-[#020617]');
         setNavbarHeight('h-24');
       } else {
-        setBgColor('bg-background/40 dark:bg-[#0000008C]');
+        setBgColor('bg-transparent');
         setNavbarHeight('h-28');
       }
     };

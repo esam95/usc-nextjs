@@ -174,7 +174,7 @@ export default function Home() {
           <div className='relative w-full min-h-[420px] h-[420px] md:h-[600px] lg:h-[500px]'>
             <Image
               src={sparring}
-              alt={'sparring session'}
+              alt={'sparring session, by Daniil Zanevskiy'}
               className='w-full h-full object-cover opacity-50'
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             />
