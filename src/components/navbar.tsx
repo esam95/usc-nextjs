@@ -4,6 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 import { MenuWizard } from './MenuWizard';
 import { Button } from './shadcn/button';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 type Props = {
   title: string;
@@ -12,6 +13,9 @@ type Props = {
 
 export function Navbar({ imageSrc, title }: Props) {
   const pathname = usePathname();
+  const [bgColor, setBgColor] = useState('bg-background/40 dark:bg-[#0000008C]');
+  const [navbarHeight, setNavbarHeight] = useState('h-28');
+
   const links = [
     { href: '/', label: 'Hem' },
     { href: '/om-oss', label: 'Om oss' },
@@ -30,16 +34,33 @@ export function Navbar({ imageSrc, title }: Props) {
       href={link.href}
       className={`
         ${isActive(link.href) ? 'text-primary' : 'text-secondary-foreground'}
-        font-medium transition-colors hover:text-secondary hover:underline-offset-4 xl:text-lg dark:hover:text-gray-50 hover-animation`}
+        font-sm transition-colors hover:text-secondary hover:underline-offset-4 2xl:text-lg dark:hover:text-gray-50 hover-animation`}
       prefetch={false}
     >
       {link.label}
     </Link>
   ));
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 715) {
+        setBgColor('bg-[#020617]');
+        setNavbarHeight('h-24');
+      } else {
+        setBgColor('bg-background/40 dark:bg-[#0000008C]');
+        setNavbarHeight('h-28');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className='w-full fixed top-0 left-0 z-20  bg-background/40 dark:bg-[#0000008C]'>
-      <div className='container pl-5 flex h-32 items-center justify-between'>
+    <nav className={` w-full fixed top-0 left-0 z-20 transition-colors duration-300 ${bgColor}`}>
+      <div className={`container pl-5 flex ${navbarHeight} items-center justify-between`}>
         <Link href='/' className='flex items-center gap-4 text-lg font-semibold' prefetch={false}>
           <Image src={imageSrc} alt='logo' width={60} height={60} />
           <h2 className='text-xl text-foreground lg:text-2xl'>{title}</h2>

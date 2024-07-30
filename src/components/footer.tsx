@@ -12,10 +12,9 @@ import { SiInstagram as InstagramIcon } from '@icons-pack/react-simple-icons';
 
 export function Footer() {
   return (
-    <footer className='py-6 w-full bg-background'>
+    <footer className='pb-6 w-full bg-background'>
       <div className='container mx-auto flex flex-col items-center gap-6'>
-        <Separator orientation='horizontal' decorative className='h-0.5 bg-primary' />
-
+        <Separator orientation='horizontal' decorative className='h-0.5 bg-primary mb-8' />
         <div className='flex items-center gap-3 justify-center'>
           <Image src='/img/club_logo.webp' alt={'logo'} width={40} height={40} priority />
           <span className='text-secondary-foreground text-xl font-semibold'>Upprustningen Sports Club</span>

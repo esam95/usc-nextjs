@@ -12,6 +12,9 @@ import mmaImg from '../../public/img/mma_img.webp';
 import submissionWrestling from '../../public/img/nogi.webp';
 import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
 import strengthCondition from '../../public/img/strength_condition.webp';
+import logoStamps from '../../public/img/club_logo_stamps.webp';
+import { CardDescription } from '@/components/shadcn/card';
+import sparring from '../../public/img/sparring.webp';
 
 export default function Home() {
   const classesImages = [
@@ -102,7 +105,7 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <section
         id='main-content'
-        className='container py-11 mt-12 flex flex-col justify-center items-center gap-12 flex-wrap md:flex-row md:gap-16'
+        className='w-screen bg-[#0d1420] py-11 flex flex-col justify-center items-center flex-wrap md:flex-row gap-16 lg:gap-0 md:min-h-screen'
       >
         <div className='flex flex-col items-center min-w-fit w-full gap-8 md:flex-row md:justify-center md:min-w-fit lg:gap-16'>
           <div className='flex flex-col max-w-[22rem] w-full max-h-fit items-start justify-center lg:max-w-fit lg:w-2/4'>
@@ -122,7 +125,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='flex flex-col items-center justify-center min-h-36 h-full'>
+        <div className='flex flex-col items-center justify-center min-h-12 lg:mb-12'>
           <Link href='/om-oss'>
             <Button size={'lg'} className='text-primary-foreground hover:text-primary hover:bg-slate-200'>
               Läs mer om oss
@@ -132,21 +135,19 @@ export default function Home() {
         </div>
       </section>
 
-      <Separator orientation='horizontal' decorative className='h-0.5 bg-secondary w-3/4 mx-auto' />
+      {/* <Separator orientation='horizontal' decorative className='h-0.5 bg-secondary w-3/4 mx-auto' /> */}
 
-      {/* VÅRA KLASSER  */}
-      <section className='w-screen py-11 flex flex-col justify-center items-center gap-12'>
-        <div className='flex flex-col gap-3 min-w-fit w-full max-h-fit items-center justify-center px-8'>
+      {/* VÅRA KLASSER */}
+      <section className='relative w-screen py-11 flex flex-col justify-center items-center gap-12'>
+        {/* <Image src={logoStamps} alt={'logos'} className='absolute h-full w-full object-cover opacity-10' /> */}
+        <div className='relative min-h-[400px] flex flex-col justify-center items-center gap-3 px-8 z-10'>
           <div className='flex flex-col'>
-            <h2 id='our-classes' className='text-secondary-foreground font-semibold text-center lg:text-4xl'>
+            <h2 id='our-classes' className='text-white font-semibold text-center lg:text-4xl'>
               Upptäck våra klasser
             </h2>
-            {/* <CardDescription className='text-center text-primary font-medium'>
-              Det finns inga gränser för vad du kan åstadkomma hos oss
-            </CardDescription> */}
           </div>
 
-          <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-left md:text-center lg:text-lg'>
+          <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
             Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
             Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
             Våra träningspass inkluderar&nbsp;
@@ -157,21 +158,54 @@ export default function Home() {
             <strong className='text-primary'>fys och konditions</strong>&nbsp; träningar för den som inte är
             ute efter kampsport.
           </p>
-          <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center lg:text-base md:text-center'>
+          <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
             Kom och hitta den perfekta träningsformen som passar just dig!
           </p>
         </div>
-
         <CarouselComponent images={classesImages} />
+      </section>
 
-        {/* <div className='flex flex-col items-center justify-center min-h-36 h-full mt-6'>
+      {/* PROVTRÄNA */}
+      <section
+        id='provträna-content'
+        className='py-12 flex flex-col justify-center items-center gap-8 flex-wrap md:gap-16'
+      >
+        <div className='flex flex-col items-center w-full gap-16'>
+          <div className='relative w-full min-h-[420px] h-[420px] md:h-[600px] lg:h-[500px]'>
+            <Image
+              src={sparring}
+              alt={'sparring session'}
+              className='w-full h-full object-cover opacity-50'
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            />
+            <div className='absolute inset-0 flex flex-col items-center justify-center text-center p-4'>
+              <h1 className='text-secondary-foreground font-semibold mb-4'>Vill du provträna?</h1>
+              <CardDescription className='xl:text-base'>
+                Vi ser fram emot att hjälpa dig på din träningsresa
+              </CardDescription>
+            </div>
+          </div>
+          <div className='px-8 flex flex-col items-center max-w-[800px] w-full gap-4 text-left md:px-16 '>
+            <p className='font-semibold leading-relaxed w-full lg:text-base xl:text-lg'>
+              Att börja på en ny klubb kan vara ett stort steg för många <br /> Därför är du alltid välkommen
+              att provträna
+            </p>
+            <p className='text-base text-muted-foreground leading-relaxed mb-6 lg:text-lg xl:text-xl'>
+              På vår klubb erbjuder vi en dynamisk och stödjande miljö som främjar utveckling, fysisk styrka
+              och mental skärpa. Kom och provträna med oss och upplev gemenskapen och energin som vår klubb
+              har att erbjuda.
+            </p>
+          </div>
+        </div>
+
+        <div className='flex flex-col items-center justify-center min-h-36 h-full'>
           <Link href='/schema'>
             <Button size={'lg'} className='text-primary-foreground hover:text-primary hover:bg-slate-200'>
               Schema
               <ArrowRightIcon className='ml-2 h-4 w-4' />
             </Button>
           </Link>
-        </div> */}
+        </div>
       </section>
     </>
   );
