@@ -1,6 +1,7 @@
 // This component is from
 // https://daisyui.com/components/timeline/
 
+import Image from 'next/image';
 import React from 'react';
 
 function TimelineComponent() {
@@ -24,15 +25,22 @@ function TimelineComponent() {
               </svg>
             </div>
             <div className='timeline-start mb-10 md:text-end'>
-              <time className='font-mono italic'>1984</time>
-              <div className='text-lg font-black'>First Macintosh computer</div>
+              <time className='font-mono italic'>2023 Mars</time>
+              <div className='text-lg font-black'>Klubbens första träning</div>
               <p>
-                The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
-                personal computer. It played a pivotal role in establishing desktop publishing as a general
-                office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
-                in a beige case with integrated carrying handle; it came with a keyboard and single-button
-                mouse.
+                Ett gäng ungdomar och barn från Husby bestämmer sig för att hyra idrottshall i Huby och träna 
+                fristilsbrottning från grunden med en erfaren tränare från Kazakhstan. Grunderna i fristilsbrottning
+                lärs ut sakta men säker och klubbmedlemmarna visar prov på disciplin och tålamod genom att närvara
+                på träningarna 4 gånger i veckan. 
               </p>
+            </div>
+            <div className='timeline-end mb-10 '>
+              <Image
+                src="/img/freestyle_wrestling.webp"
+                width={500}
+                height={500}
+                alt="Picture of the author"
+              />            
             </div>
             <hr className='bg-muted-foreground' />
           </li>
@@ -52,72 +60,23 @@ function TimelineComponent() {
                 />
               </svg>
             </div>
-            <div className='timeline-end mb-10'>
-              <time className='font-mono italic'>1998</time>
-              <div className='text-lg font-black'>iMac</div>
+            <div className='timeline-start mb-10 md:timeline-end'>
+              <time className='font-mono italic'>Juni 2024</time>
+              <div className='text-lg font-black'>Utomhus träning</div>
               <p>
-                iMac is a family of all-in-one Mac desktop computers designed and built by Apple Inc. It has
-                been the primary part of Apple's consumer desktop offerings since its debut in August 1998,
-                and has evolved through seven distinct forms
+                Många av klubbmedlemmarna har sommarlov och vädret passar på för att träna och få upp fysiken utomhus.
+                Fysträning sker utomhus med löpning, armhävningar och diversere andra övningar. Klubbmedlemmarna tar 
+                tillfället i akt och ger järnet för att uppnå fördelarna som kommer hjälpa de i kampsporterna som drar igång
+                inom snar framtid.
               </p>
             </div>
-            <hr className='bg-muted-foreground' />
-          </li>
-          <li>
-            <hr className='bg-muted-foreground' />
-            <div className='timeline-middle'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-                className='h-5 w-5 text-primary'
-              >
-                <path
-                  fillRule='evenodd'
-                  d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z'
-                  clipRule='evenodd'
-                />
-              </svg>
-            </div>
-            <div className='timeline-start mb-10 md:text-end'>
-              <time className='font-mono italic'>2001</time>
-              <div className='text-lg font-black'>iPod</div>
-              <p>
-                The iPod is a discontinued series of portable media players and multi-purpose mobile devices
-                designed and marketed by Apple Inc. The first version was released on October 23, 2001, about
-                8+1⁄2 months after the Macintosh version of iTunes was released. Apple sold an estimated 450
-                million iPod products as of 2022. Apple discontinued the iPod product line on May 10, 2022. At
-                over 20 years, the iPod brand is the oldest to be discontinued by Apple
-              </p>
-            </div>
-            <hr className='bg-muted-foreground' />
-          </li>
-          <li>
-            <hr className='bg-muted-foreground' />
-            <div className='timeline-middle'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-                className='h-5 w-5 text-primary'
-              >
-                <path
-                  fillRule='evenodd'
-                  d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z'
-                  clipRule='evenodd'
-                />
-              </svg>
-            </div>
-            <div className='timeline-end mb-10'>
-              <time className='font-mono italic'>2007</time>
-              <div className='text-lg font-black'>iPhone</div>
-              <p>
-                iPhone is a line of smartphones produced by Apple Inc. that use Apple's own iOS mobile
-                operating system. The first-generation iPhone was announced by then-Apple CEO Steve Jobs on
-                January 9, 2007. Since then, Apple has annually released new iPhone models and iOS updates. As
-                of November 1, 2018, more than 2.2 billion iPhones had been sold. As of 2022, the iPhone
-                accounts for 15.6% of global smartphone market share
-              </p>
+            <div className='timeline-end mb-10 md:timeline-start'>
+              <Image
+                src="/img/club_logo.webp"
+                width={500}
+                height={500}
+                alt="Picture of the author"
+              />            
             </div>
             <hr className='bg-muted-foreground' />
           </li>
@@ -138,15 +97,27 @@ function TimelineComponent() {
               </svg>
             </div>
             <div className='timeline-start mb-10 md:text-end'>
-              <time className='font-mono italic'>2015</time>
-              <div className='text-lg font-black'>Apple Watch</div>
+              <time className='font-mono italic'>Juli 2024</time>
+              <div className='text-lg font-black'>Första boxningsträningen</div>
               <p>
-                The Apple Watch is a line of smartwatches produced by Apple Inc. It incorporates fitness
-                tracking, health-oriented capabilities, and wireless telecommunication, and integrates with
-                iOS and other Apple products and services
+                Upprustningen Sports Club implemterar planen på att expandera till olika kampsporter genom att
+                anordna sin första boxningsträning. Träningarna sker tre gånger i veckan med erfarna tränare som har
+                uppnått prestigefulla utmärkelser i sporten. Intresset visar sig vara starkt för ungdomar i området
+                och klubbmedlemmarna gör betyndande framsteg i striking-sporten.
               </p>
             </div>
+            <div className='timeline-end mb-10'>
+              <Image
+                src="/img/boxing_img.webp"
+                width={500}
+                height={500}
+                alt="Picture of the author"
+              />            
+            </div>
+            <hr className='bg-muted-foreground' />
           </li>
+         
+         
         </ul>
       </div>
     </>
