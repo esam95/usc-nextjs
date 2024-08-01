@@ -1,8 +1,8 @@
 import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/shadcn/accordion';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
+import HeroSection from '@/components/HeroSectionComponent';
 
-const questionsAndAnswers = [
+export const questionsAndAnswers = [
   {
     question: 'Får jag provträna?',
     answer: 'Absolut, ifall det finns plats får du alltid testa två gånger - helt gratis!',
@@ -35,29 +35,26 @@ const questionsAndAnswers = [
 
 const FAQ = () => {
   return (
-    <main className="flex justify-center py-6 px-4 sm:px-6 lg:px-8 bg-gray-100 min-h-screen mt-0">
-      <Card className="w-full max-w-3xl bg-white shadow-lg rounded-lg">
-        <CardHeader>
-          <CardTitle className="text-2xl text-gray-800">Vanliga frågor och svar</CardTitle>
-          <CardDescription className="text-muted-foreground">
-            Här hittar du svar på de vanligaste frågorna vi får. Om du inte hittar svaret på din fråga är du
-            välkommen att kontakta oss.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Accordion type="single" className="w-full">
+    <>
+      <HeroSection />
+      <main className='px-4 flex flex-col items-start sm:px-6 lg:mx-24 lg:px-8 min-h-[500px]'>
+        <div className='w-full max-w-3xl'>
+          <h2 className='mb-8 text-secondary-foreground'>Vanliga frågor och svar</h2>
+          <Accordion type='single' className='w-full'>
             {questionsAndAnswers.map((row, index) => (
               <AccordionItem key={index} value={index.toString()}>
-                <AccordionTrigger className="text-gray-800 text-lg font-semibold text-left">
+                <AccordionTrigger className='text-secondary-foreground text-lg font-semibold text-left'>
                   {row.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-700 md:text-base">{row.answer}</AccordionContent>
+                <AccordionContent className='text-muted-foreground md:text-base'>
+                  {row.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
-        </CardContent>
-      </Card>
-    </main>
+        </div>
+      </main>
+    </>
   );
 };
 
