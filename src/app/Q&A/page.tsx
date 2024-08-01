@@ -40,7 +40,7 @@ const FAQ = () => {
       <main className='px-4 flex flex-col items-start sm:px-6 lg:mx-24 lg:px-8 min-h-[500px]'>
         <div className='w-full max-w-3xl'>
           <h2 className='mb-8 text-secondary-foreground'>Vanliga frågor och svar</h2>
-          <Accordion type='single' className='w-full'>
+          <Accordion type='single' className='w-full mb-36'>
             {questionsAndAnswers.map((row, index) => (
               <AccordionItem key={index} value={index.toString()}>
                 <AccordionTrigger className='text-secondary-foreground text-lg font-semibold text-left'>

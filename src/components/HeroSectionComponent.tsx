@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import { Button } from './shadcn/button';
+import Image from 'next/image';
+import artLogo from '../../public/img/3d-illustration.webp';
 
 const HeroSection: React.FC = () => (
-  <section className='mt-20 py-16 px-6 lg:py-20 lg:px-8 xl:py-24 xl:px-10'>
-    <div className='mx-auto max-w-7xl'>
-      <div className='flex flex-col gap-10 items-center md:flex-row lg:items-start'>
+  <section className='py-16 px-6 lg:py-20 lg:px-8 xl:py-24 xl:px-10'>
+    <div className='max-w-7xl'>
+      <div className='mt-24 flex flex-col justify-center gap-10 items-center md:flex-row'>
         <div className='flex flex-col items-start gap-5'>
-          <h1 className='text-4xl font-bold text-secondary-foreground md:text-5xl lg:text-6xl xl:text-8xl'>
+          <h1 className='text-4xl font-bold text-secondary-foreground md:text-5xl lg:text-6xl xl:text-7xl'>
             Frågor & Svar
           </h1>
           <p className='max-w-lg text-xl font-normal text-muted-foreground   md:mt-6'>
@@ -25,9 +27,9 @@ const HeroSection: React.FC = () => (
           </Link>
         </div>
         <div className='mt-8 lg:mt-0 lg:ml-8 flex-shrink-0'>
-          <img
+          <Image
             className='w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-xl'
-            src='https://landingfoliocom.imgix.net/store/collection/dusk/images/hero/1/3d-illustration.png'
+            src={artLogo}
             alt='Hero image logo'
           />
         </div>

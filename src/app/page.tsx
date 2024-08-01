@@ -74,7 +74,7 @@ export default function Home() {
         </div>
 
         <div className='relative z-10 flex flex-col items-center justify-center min-h-screen gap-8'>
-          <h1 className='px-2 text-4xl font-extrabold text-secondary-foreground text-center drop-shadow-lg lg:text-5xl'>
+          <h1 className='mt-12 px-2 text-secondary-foreground text-center drop-shadow-lg text-4xl font-bold  md:text-5xl lg:text-6xl xl:text-7xl'>
             Upprustningen Sports Club
           </h1>
 
