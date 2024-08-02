@@ -77,13 +77,13 @@ export function Footer() {
           </section>
 
           <section className='flex flex-col items-center font-light md:text-lg md:items-start gap-2 md:flex-1'>
-            <span className='text-primary-foreground font-semibold text-lg underline underline-offset-2'>
+            <span className='text-secondary-foreground font-semibold text-lg underline underline-offset-2'>
               Stöd oss
             </span>
             <div className='flex flex-col items-center gap-2 md:items-start'>
               <Link
                 href='/stodmedlem'
-                className='text-primary-foreground hover:text-gray-300 transition-colors'
+                className='text-secondary-foreground hover:text-gray-300 hover:underline hover:underline-offset-2 transition-colors'
                 prefetch={false}
               >
                 Bli stöd medlem
