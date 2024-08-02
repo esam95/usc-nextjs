@@ -95,16 +95,20 @@ export default function Contact() {
   }, [form, isSubmitSuccessful, isSubmitting, errors]);
 
   return (
-    <div className='flex min-h-screen min-w-80 w-full flex-col items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8'>
+    <div className='mt-32 flex min-h-screen min-w-80 w-full flex-col items-center justify-center pb-12 px-4 sm:px-6 lg:px-8'>
       <div className='w-full max-w-3xl mb-8'>
-        <h1 className='text-center font-extrabold tracking-tight lg:text-5xl text-gray-700'>Kontakta oss</h1>
+        <h1 className='text-secondary-foreground text-center font-extrabold tracking-tight lg:text-5xl'>
+          Kontakta oss
+        </h1>
       </div>
 
       <Form {...form}>
-        <Card className='w-full max-w-3xl bg-white shadow-lg rounded-lg'>
-          <CardHeader className='bg-primary text-primary-foreground rounded-t-lg p-6'>
-            <CardTitle className='text-2xl font-bold'>Har du funderingar?</CardTitle>
-            <CardDescription className='text-primary-foreground/70'>
+        <Card className='w-full max-w-3xl shadow-lg rounded-lg'>
+          <CardHeader className='bg-secondary text-primary-foreground rounded-t-lg p-6'>
+            <CardTitle className='text-secondary-foreground text-2xl font-bold'>
+              Har du funderingar?
+            </CardTitle>
+            <CardDescription className='text-muted-foreground'>
               Vi besvarar alla dina frågor inom 24 timmar.
             </CardDescription>
           </CardHeader>
