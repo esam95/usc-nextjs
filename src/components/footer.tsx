@@ -63,6 +63,7 @@ export function Footer() {
               </Link>
             </div>
           </section>
+
           <section className='flex flex-col items-center font-normal md:items-start md:justify-start gap-2 md:flex-1'>
             <span className='text-secondary-foreground font-semibold text-lg underline underline-offset-2 off'>
               Kontakt
@@ -73,6 +74,21 @@ export function Footer() {
             >
               info@upprustningen.com
             </span>
+          </section>
+
+          <section className='flex flex-col items-center font-light md:text-lg md:items-start gap-2 md:flex-1'>
+            <span className='text-primary-foreground font-semibold text-lg underline underline-offset-2'>
+              Stöd oss
+            </span>
+            <div className='flex flex-col items-center gap-2 md:items-start'>
+              <Link
+                href='/stodmedlem'
+                className='text-primary-foreground hover:text-gray-300 transition-colors'
+                prefetch={false}
+              >
+                Bli stöd medlem
+              </Link>
+            </div>
           </section>
         </div>
 
