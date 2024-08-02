@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import ContactEmail from '@/app/emails/sendContactEmail';
 
 export async function POST(request: Request) {
+  const { UPPRUSTNINGEN_EMAIL } = process.env;
   const resend = new Resend(process.env.RESEND_API_KEY);
   const formData = await request.json();
 
