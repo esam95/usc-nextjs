@@ -13,17 +13,17 @@ const AboutUs: React.FC = () => {
           alt='About Us Background'
           layout='fill'
           objectFit='cover'
-          className='w-full h-full object-cover'
+          className='w-full h-full object-cover opacity-60'
         />
-        <div className='absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center p-4'>
-          <h1 className='text-4xl md:text-6xl font-bold text-white text-center'>
+        <div className='absolute inset-0 flex flex-col justify-center items-center p-4'>
+          <h1 className='text-secondary-foreground text-4xl font-bold text-center md:text-6xl'>
             Om Upprustningen Sports Club
           </h1>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className='w-full bg-primary text-primary-foreground p-4 md:p-6'>
+      <div className='mt-12 mb-24 w-full text-secondary-foreground p-4 md:p-6'>
         <section className='flex flex-col items-center text-center p-4'>
           <Image
             src={logoIcon}
@@ -32,7 +32,7 @@ const AboutUs: React.FC = () => {
             alt='Club Logo'
             className='rounded-full shadow-lg mb-4'
           />
-          <h2 className='text-3xl font-bold mb-2'>Om Upprustningen Sports Club</h2>
+          <h2 className='text-secondary-foreground text-3xl font-bold mb-2'>Om Upprustningen Sports Club</h2>
           <p className='text-base'>
             Grundades år 2023, vårt uppdrag är att stärka individer genom högkvalitativ träning, och främja
             både fysisk och mental utveckling.

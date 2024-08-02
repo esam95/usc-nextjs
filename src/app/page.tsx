@@ -105,9 +105,9 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <section
         id='main-content'
-        className='w-screen bg-[#0d1420] py-11 flex flex-col justify-center items-center flex-wrap md:flex-row gap-16 lg:gap-0 md:min-h-screen'
+        className='w-full bg-[#0d1420] py-11 flex flex-col justify-start items-center flex-wrap gap-16 md:flex-row md:gap-0 md:min-h-screen lg:gap-0 lg:pb-0 self-center xl:min-h-[80vh]'
       >
-        <div className='flex flex-col items-center min-w-fit w-full gap-8 md:flex-row md:justify-center md:min-w-fit lg:gap-16'>
+        <div className='flex flex-col items-center min-w-fit w-full gap-8 md:flex-row md:items-start md:gap-16 md:justify-evenly'>
           <div className='flex flex-col max-w-[22rem] w-full max-h-fit items-start justify-center lg:max-w-fit lg:w-2/4'>
             <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>
               Välkommen till Upprustningen Sports Club
@@ -120,22 +120,23 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='flex flex-col items-center max-w-fit w-full md:justify-center'>
+          <div className='relative flex flex-col items-center max-w-fit w-full md:w-1/2 md:items-start'>
             <Image src={logo} alt={'club logo'} width={250} height={250} className='lg:w-80 lg:h-80' />
           </div>
         </div>
 
-        <div className='flex flex-col items-center justify-center min-h-12 lg:mb-12'>
+        <div className='flex flex-col items-center md:items-start w-full md:mt-0 md:ml-12 lg:ml-[5.5rem] xl:ml-32 xl:mb-40'>
           <Link href='/om-oss'>
-            <Button size={'lg'} className='text-primary-foreground hover:text-primary hover:bg-slate-200'>
+            <Button
+              size={'lg'}
+              className='text-primary-foreground hover:text-primary hover:bg-slate-200 md:h-12 md:px-12'
+            >
               Läs mer om oss
               <ArrowRightIcon className='ml-2 h-4 w-4' />
             </Button>
           </Link>
         </div>
       </section>
-
-      {/* <Separator orientation='horizontal' decorative className='h-0.5 bg-secondary w-3/4 mx-auto' /> */}
 
       {/* VÅRA KLASSER */}
       <section className='relative w-screen py-11 flex flex-col justify-center items-center gap-12'>
@@ -210,3 +211,5 @@ export default function Home() {
     </>
   );
 }
+
+// absolute ml-10 bottom-[-44rem]
