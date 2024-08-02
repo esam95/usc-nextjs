@@ -20,7 +20,7 @@ export function Navbar({ imageSrc, title }: Props) {
     { href: '/', label: 'Hem' },
     { href: '/om-oss', label: 'Om oss' },
     { href: '/schema', label: 'Schema' },
-    { href: '/kontakta-oss', label: 'Kontakt' },
+    { href: '/kontakt', label: 'Kontakt' },
     { href: '/Q&A', label: 'FAQ' },
   ];
 

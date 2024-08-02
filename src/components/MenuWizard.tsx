@@ -61,7 +61,7 @@ export function MenuWizard() {
           </SheetClose>
           <SheetClose asChild aria-label='kontakta-oss button'>
             <Link
-              href='/kontakta-oss'
+              href='/kontakt'
               className='font-medium text-lg text-secondary-foreground transition-colors hover:text-gray-300 dark:hover:text-gray-50'
               prefetch={false}
             >

@@ -41,7 +41,7 @@ export function Footer() {
                 Om oss
               </Link>
               <Link
-                href='/kontakta-oss'
+                href='/kontakt'
                 className='text-secondary-foreground hover:text-gray-300 hover:underline hover:underline-offset-2 transition-colors'
                 prefetch={false}
               >

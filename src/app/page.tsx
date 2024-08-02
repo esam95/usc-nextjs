@@ -3,7 +3,6 @@ import backgroundImg from '../../public/img/background_img.webp';
 import Image from 'next/image';
 import { ArrowRightIcon } from 'lucide-react';
 import { Button } from '@/components/shadcn/button';
-import { Separator } from '@radix-ui/react-separator';
 import { CarouselComponent } from '@/components/CarouselComponent';
 import Link from 'next/link';
 import logo from '../../public/img/club_logo.webp';
