@@ -12,8 +12,8 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>', // This is just a testing email, remove later
-      to: emailAddress,
+      from: `Upprustningen Sports Club <${UPPRUSTNINGEN_EMAIL}>`,
+      to: [UPPRUSTNINGEN_EMAIL, emailAddress],
       subject: 'Contact email',
       react: ContactEmail({ name, emailAddress, message }),
     });
