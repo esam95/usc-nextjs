@@ -20,7 +20,7 @@ export const membershipOptions = [
   {
     title: 'Enkel träning',
     price: '100 kr',
-    age: 'För alla',
+    age: 'Alla åldrar',
     description: [
       'Gäller vissa träningar beroende på individens erfarenhet av kampsport',
       'Gäller endast för pass med ledig plats',

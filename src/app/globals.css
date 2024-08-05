@@ -120,3 +120,6 @@ h5 {
 .hover-animation:hover:after {
   transform: scaleX(1);
 }
+
+/* Might change the card color to this later
+ hsl(220.54deg 77.36% 62.3%) */
