@@ -35,13 +35,6 @@ export default function StodmedlemEmailTemplate({ name, emailAddress, amount }: 
             />
           </Section>
 
-          <Section style={sectionsBordersStyle}>
-            <Row>
-              <Column style={sectionBorderStyle} />
-              <Column style={sectionCenterStyle} />
-              <Column style={sectionBorderStyle} />
-            </Row>
-          </Section>
           <Section style={sectionStyle}>
             <Text style={textTitleStyle}>Tack!</Text>
             <Text style={textBaseStyle}>

@@ -68,13 +68,6 @@ export default function EmailTemplate({
               />
             </Section>
 
-            <Section style={sectionsBordersStyle}>
-              <Row>
-                <Column style={sectionBorderStyle} />
-                <Column style={sectionCenterStyle} />
-                <Column style={sectionBorderStyle} />
-              </Row>
-            </Section>
             <Section style={sectionStyle}>
               <Text style={textTitleStyle}>Grattis!</Text>
               <Text style={textBaseStyle}>
@@ -185,21 +178,6 @@ const mainSectionStyle = {
 
 const logoStyle = {
   borderRadius: '50%',
-};
-
-const sectionsBordersStyle = {
-  display: 'flex',
-  width: '100%',
-};
-
-const sectionBorderStyle = {
-  borderBottom: '2px solid #a2b1c0',
-  width: '249px',
-};
-
-const sectionCenterStyle = {
-  borderBottom: '2px solid #a2b1c0',
-  width: '102px',
 };
 
 const sectionStyle = {
