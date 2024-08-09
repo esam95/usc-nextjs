@@ -19,6 +19,7 @@ import EmailAdressField from './formFields/EmailAdressField';
 import NameField from './formFields/NameField';
 import AmountField from './formFields/AmountField';
 import { formSchema } from './schema/formSchema';
+import PersonNumberField from './formFields/PersonNumberField';
 
 export type FormFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
@@ -31,6 +32,7 @@ function BecomeSupportMember() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
+      personnumber: '',
       emailAddress: '',
       amount: '',
     },
@@ -156,6 +158,9 @@ function BecomeSupportMember() {
               <form className='flex flex-col gap-5' onSubmit={form.handleSubmit(onSubmit, onError)}>
                 {/* Name Field */}
                 <NameField form={form} />
+
+                {/* Name Field */}
+                <PersonNumberField form={form} />
 
                 {/* Email address field */}
                 <EmailAdressField form={form} />
