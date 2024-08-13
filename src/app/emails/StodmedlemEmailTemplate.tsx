@@ -16,12 +16,14 @@ import {
 
 type EmailProps = {
   name: string;
+  personnumber: string;
   emailAddress: string;
   amount: number;
 };
 
 export default function StodmedlemEmailTemplate({
   name,
+  personnumber,
   emailAddress,
   amount,
 }: EmailProps) {
@@ -60,6 +62,8 @@ export default function StodmedlemEmailTemplate({
               <Section className="bg-gray-100 p-4 rounded-lg shadow-xl">
                 <Text className="leading-6 text-base font-bold">Namn:</Text>
                 <Text className="leading-6 text-base mb-2">{name}</Text>
+                <Text className="leading-6 text-base font-bold">Personnummer:</Text>
+                <Text className="leading-6 text-base mb-2">{personnumber}</Text>
                 <Text className="leading-6 text-base font-bold">Mejl adress:</Text>
                 <Text className="leading-6 text-base mb-2">{emailAddress}</Text>
                 <Text className="leading-6 text-base font-bold">Mängd:</Text>
