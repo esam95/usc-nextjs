@@ -7,7 +7,7 @@ const schedule = [
   { day: 'Onsdag', time: '–', activity: '–' },
   { day: 'Torsdag', time: '19:00 - 21:00', activity: 'Boxning' },
   { day: 'Fredag', time: '–', activity: '–' },
-  { day: 'Lördag', time: '–', activity: '–' },
+  { day: 'Lördag', time: '11:30 – 13:00', activity: 'Fys' },
   { day: 'Söndag', time: '13:00 - 15:00	', activity: 'Boxning' },
 ];
 
@@ -20,7 +20,7 @@ const TrainingSchedule = () => {
       <Card className='w-full max-w-3xl shadow-xl rounded-lg'>
         <CardHeader className='bg-secondary text-secondary-foreground rounded-t-lg p-6'>
           <CardTitle className='text-3xl font-bold'>Veckoschema</CardTitle>
-          <CardDescription className='mt-2'>Här är vårt nuvarande träningsschema för veckan.</CardDescription>
+          <CardDescription className='mt-2'>Här är vårt nuvarande träningsschema för veckan. (OBS, tider kan variera!)</CardDescription>
         </CardHeader>
         <CardContent className='p-6'>
           <Table className='min-w-full'>
