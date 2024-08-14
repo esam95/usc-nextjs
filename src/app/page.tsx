@@ -179,7 +179,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
+          {/* <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
             Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
             Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
             Våra träningspass inkluderar&nbsp;
@@ -189,6 +189,20 @@ export default function Home() {
             och även&nbsp;
             <strong className='text-primary'>fys och konditions</strong>&nbsp; träningar för den som inte är
             ute efter kampsport.
+          </p>
+          <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
+            Kom och hitta den perfekta träningsformen som passar just dig!
+          </p> */}
+          <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
+            Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
+            Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
+            Våra träningspass inkluderar för närvarande&nbsp;
+            <strong className='text-primary'>
+              boxning samt fys- och konditionsträningar.&nbsp;
+            </strong>
+              Snart introducerar vi även&nbsp;
+            <strong className='text-primary'>brottning och BJJ</strong>&nbsp; och längre fram 
+            <strong className='text-primary'> MMA.</strong>
           </p>
           <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
             Kom och hitta den perfekta träningsformen som passar just dig!
