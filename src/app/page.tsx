@@ -253,23 +253,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      {/* SPONSORER */}
-      <section 
-        id='provträna-content'
-        className='py-12 flex flex-col justify-center items-center gap-8 flex-wrap md:gap-16'
-      >
-        <div className='relative w-full min-h-[420px] h-[420px] md:h-[600px] lg:h-[500px]'>
-          
-          <div className='absolute inset-0 flex flex-col items-center justify-center text-center p-4'>
-            <h1 className='text-secondary-foreground font-semibold mb-4'>Vill du provträna?</h1>
-            <CardDescription className='xl:text-base'>
-              Vi ser fram emot att hjälpa dig på din träningsresa
-            </CardDescription>
-            
-          </div>
-        </div>
-      </section>
     </>
   );
 }

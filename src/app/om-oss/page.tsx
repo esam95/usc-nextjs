@@ -43,7 +43,7 @@ const AboutUs: React.FC = () => {
           <div className='flex-1 md:mr-6'>
             <h3 className='font-semibold mb-4'>Vår filosofi</h3>
             <p className='text-base leading-relaxed mb-6'>
-              Välkommen till Total Sports Club! Vi är stolta över att presentera vår nyöppnade klubb i Järva
+              Välkommen till Upprustningen Sports Club! Vi är stolta över att presentera vår nyöppnade klubb i Järva
               som är en plats där passionerade idrottare och kampsportsentusiaster kan komma samman för att
               utmana sig själva, växa som individer och uppnå sina träningsmål. På vår klubb erbjuder vi en
               dynamisk och stödjande miljö som främjar teknisk utveckling, fysisk styrka och mental skärpa.
@@ -57,13 +57,13 @@ const AboutUs: React.FC = () => {
               all kampsport. Dessa två sporter är unika, speciellt fristilsbrottning som kombinerar teknisk
               skicklighet, snabbhet, explosivitet, kreativitet och improvisation. Dess globala popularitet och
               förmåga att engagera människor runt om i världen gör det till en av de bästa sporterna som
-              finns. Total Sports Club har målet att uppmuntra en hälsosam livsstil och få unga att engagera
+              finns. Upprustningen Sports Club har målet att uppmuntra en hälsosam livsstil och få unga att engagera
               sig i regelbunden motion istället för att ägna sig åt mindre gynnsamma aktiviteter. Genom att
               erbjuda träning och utbildning inom kampsport, strävar klubben efter att locka ungdomar till att
               bli fysiskt aktiva, bygga styrka och kondition samt utveckla värdefulla livsfärdigheter som
               disciplin, respekt och kamratskap. Målet är att erbjuda en meningsfull och positiv
               fritidsaktivitet som kan gynna unga fysiska och mentala hälsa på lång sikt. Vi satsar även på
-              att stödja vuxna… Vi ser fram emot att välkomna dig till vårt brottnings/MMA-team och hjälpa dig
+              att stödja vuxna… Vi ser fram emot att välkomna dig till våra klasser och hjälpa dig
               att nå dina träningsmål. Tillsammans skapar vi en starkare och mer passionerad kampsportsfamilj!
             </p>
 
