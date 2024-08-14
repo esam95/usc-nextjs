@@ -14,6 +14,9 @@ import strengthCondition from '../../public/img/strength_condition.webp';
 import logoStamps from '../../public/img/club_logo_stamps.webp';
 import { CardDescription } from '@/components/shadcn/card';
 import sparring from '../../public/img/sparring.webp';
+import logoRf from '../../public/img/logo_rf.webp';
+import logoUpprustningen from '../../public/img/logo_upprustningen.webp';
+import logoSbk from '../../public/img/logo_sbk.webp';
 
 export default function Home() {
   const classesImages = [
@@ -135,6 +138,35 @@ export default function Home() {
             </Button>
           </Link>
         </div>
+
+        <div className='min-w-fit w-full flex flex-col items-center gap-y-2 py-8'>
+          <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>
+            Våra samarbetspartners
+          </h2>
+          <div className='min-w-fit w-full flex flex-wrap flex-col md:flex-row md:justify-evenly items-center gap-y-5'>
+            <div className='max-w-fit'>
+              <Image
+              className='max-w-56'
+              src={logoUpprustningen}
+              alt={'Upprustningen'}
+              /> 
+            </div>
+            <div className='max-w-fit'>
+              <Image
+              className='max-w-56'
+              src={logoRf}
+              alt={'Riksidrottsförbundet'}
+              /> 
+            </div>
+            <div className='max-w-fit'>
+              <Image
+              className='max-w-56'
+              src={logoSbk}
+              alt={'Svenska Budo & Kampsportsförbundet'}
+              /> 
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* VÅRA KLASSER */}
@@ -205,6 +237,23 @@ export default function Home() {
               <ArrowRightIcon className='ml-2 h-4 w-4' />
             </Button>
           </Link>
+        </div>
+      </section>
+
+      {/* SPONSORER */}
+      <section 
+        id='provträna-content'
+        className='py-12 flex flex-col justify-center items-center gap-8 flex-wrap md:gap-16'
+      >
+        <div className='relative w-full min-h-[420px] h-[420px] md:h-[600px] lg:h-[500px]'>
+          
+          <div className='absolute inset-0 flex flex-col items-center justify-center text-center p-4'>
+            <h1 className='text-secondary-foreground font-semibold mb-4'>Vill du provträna?</h1>
+            <CardDescription className='xl:text-base'>
+              Vi ser fram emot att hjälpa dig på din träningsresa
+            </CardDescription>
+            
+          </div>
         </div>
       </section>
     </>
