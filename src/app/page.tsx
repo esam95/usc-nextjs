@@ -13,7 +13,7 @@ import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
 import strengthCondition from '../../public/img/strength_condition.webp';
 import logoStamps from '../../public/img/club_logo_stamps.webp';
 import { CardDescription } from '@/components/shadcn/card';
-import sparring from '../../public/img/sparring.webp';
+import armbar from '../../public/img/armbar.webp';
 import logoRf from '../../public/img/logo_rf.webp';
 import logoUpprustningen from '../../public/img/logo_upprustningen.webp';
 import logoSbk from '../../public/img/logo_sbk.webp';
@@ -219,8 +219,8 @@ export default function Home() {
         <div className='flex flex-col items-center w-full gap-16'>
           <div className='relative w-full min-h-[420px] h-[420px] md:h-[600px] lg:h-[500px]'>
             <Image
-              src={sparring}
-              alt={'sparring session, by Daniil Zanevskiy'}
+              src={armbar}
+              alt={'armbar, by Vladislav Bychkov'}
               className='w-full h-full object-cover opacity-50'
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             />
