@@ -72,7 +72,7 @@ export function Footer() {
               className='text-secondary-foreground font-light md:text-lg'
               aria-label='email address information'
             >
-              info@upprustningensc.nu
+              admin@upprustningensc.nu
             </span>
           </section>
 
