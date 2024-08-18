@@ -95,46 +95,48 @@ function BecomeSupportMember() {
     <>
       <div
         id='stod-medlem-card'
-        className='flex min-h-screen min-w-80 w-full flex-col items-center justify-cente py-12 px-4 sm:px-6 lg:px-8'
+        className='flex min-h-screen min-w-80 w-full flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 pt-36'
       >
         <div className='w-full max-w-3xl mb-1'>
-          <h1 className='text-center font-extrabold tracking-tight lg:text-5xl text-gray-700'>Stödmedlem</h1>
+          <h1 className='text-center font-extrabold tracking-tight lg:text-5xl text-secondary-foreground'>
+            Stödmedlem
+          </h1>
         </div>
 
-        <div className='w-full max-w-3xl mb-8 bg-white p-6'>
-          <div className=' text-slate-600 text-lg leading-relaxed'>
-            <h4 className='text-lg font-normal'>
+        <div className='w-full max-w-3xl mb-8 p-6'>
+          <div className='text-lg leading-relaxed'>
+            <h4 className='text-lg font-normal text-muted-foreground'>
               Genom att bli stödmedlem i vår kampsportsklubb hjälper du oss på många sätt.
             </h4>
             <br />
 
             <section className='mb-4'>
-              <h5 className='text-slate-900'>Stöd Våra Idrottare</h5>
-              <p className='text-base'>
+              <h5 className='text-secondary-foreground'>Stöd Våra Idrottare</h5>
+              <p className='text-base text-muted-foreground'>
                 Dina bidrag hjälper till att finansiera träning, utrustning och resekostnader för våra
                 idrottare.
               </p>
             </section>
 
             <section className='mb-4'>
-              <h5 className='text-slate-900'>Förbättra Faciliteterna</h5>
-              <p className='text-base'>
+              <h5 className='text-secondary-foreground'>Förbättra Faciliteterna</h5>
+              <p className='text-base text-muted-foreground'>
                 Vi strävar efter att tillhandahålla de bästa faciliteterna för våra medlemmar, och ditt stöd
                 hjälper oss att underhålla och förbättra vår träningsmiljö.
               </p>
             </section>
 
             <section className='mb-4'>
-              <h5 className='text-slate-900'>Engagera Gemenskapen</h5>
-              <p className='text-base'>
+              <h5 className='text-secondary-foreground'>Engagera Gemenskapen</h5>
+              <p className='text-base text-muted-foreground'>
                 Ditt stöd gör det möjligt för oss att organisera evenemang och program som engagerar det
                 lokala samhället och främjar sporten.
               </p>
             </section>
 
             <section className='mb-4'>
-              <h5 className='text-slate-900'>Exklusiva Förmåner</h5>
-              <p className='text-base'>
+              <h5 className='text-secondary-foreground'>Exklusiva Förmåner</h5>
+              <p className='text-base text-muted-foreground'>
                 Som stödmedlem får du exklusiva uppdateringar, inbjudningar till speciella evenemang och
                 rabatter på klubbens merchandise.
               </p>
@@ -143,10 +145,10 @@ function BecomeSupportMember() {
         </div>
 
         <Form {...form}>
-          <Card className='w-full max-w-3xl bg-white shadow-lg rounded-lg'>
-            <CardHeader className='bg-primary text-primary-foreground rounded-t-lg p-6'>
+          <Card className='w-full max-w-3xl shadow-lg rounded-lg'>
+            <CardHeader className='bg-secondary text-secondary-foreground rounded-t-lg p-6'>
               <CardTitle className='text-2xl font-bold'>Bli stödmedlem</CardTitle>
-              <CardDescription className='text-primary-foreground'>
+              <CardDescription className='text-secondary-foreground'>
                 Du kan alltid swisha eller göra en banköverföring med valfri summa
               </CardDescription>
             </CardHeader>
@@ -164,7 +166,7 @@ function BecomeSupportMember() {
                 <CardFooter className='flex justify-end p-6'>
                   <Button
                     disabled={!isDirty || isSubmitting}
-                    className='w-full md:w-auto bg-primary text-primary-foreground hover:bg-primary/90'
+                    className='w-full md:w-auto bg-primary text-secondary-foreground hover:bg-primary/90'
                     type='submit'
                   >
                     {form.formState.isSubmitting ? (

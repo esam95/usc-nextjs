@@ -21,7 +21,7 @@ export function MenuWizard() {
           className='text-primary-foreground hover:text-gray-300 focus:outline-none'
           aria-label='Toggle menu'
         >
-          <Menu className='w-6 h-6' />
+          <Menu className='w-8 h-8 text-primary' />
         </button>
       </SheetTrigger>
       <SheetContent>
@@ -61,7 +61,7 @@ export function MenuWizard() {
           </SheetClose>
           <SheetClose asChild aria-label='kontakta-oss button'>
             <Link
-              href='/kontakta-oss'
+              href='/kontakt'
               className='font-medium text-lg text-secondary-foreground transition-colors hover:text-gray-300 dark:hover:text-gray-50'
               prefetch={false}
             >
