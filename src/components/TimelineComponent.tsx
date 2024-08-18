@@ -28,18 +28,16 @@ function TimelineComponent() {
               <time className='font-mono italic'>2023 Mars</time>
               <div className='text-lg font-black'>Klubbens första träning</div>
               <p>
-                Ett gäng ungdomar och barn från Husby bestämmer sig för att hyra idrottshall i Huby och träna 
-                fristilsbrottning från grunden med en erfaren tränare från Kazakhstan. Grunderna i fristilsbrottning
-                lärs ut sakta men säker och klubbmedlemmarna visar prov på disciplin och tålamod genom att närvara
-                på träningarna 4 gånger i veckan. 
+                Ett gäng ungdomar från Järva bestämmer sig för att hyra idrottshall i Husby och träna 
+                fristilsbrottning. Grunderna i fristilsbrottning lärs ut sakta men säkert fyra gånger i veckan. 
               </p>
             </div>
             <div className='timeline-end mb-10 '>
               <Image
-                src="/img/freestyle_wrestling.webp"
+                src="/img/wrestling_practice.webp"
                 width={500}
                 height={500}
-                alt="Picture of the author"
+                alt="Träning i fristilsbrottning"
               />            
             </div>
             <hr className='bg-muted-foreground' />
