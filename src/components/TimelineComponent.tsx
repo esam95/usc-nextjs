@@ -59,18 +59,17 @@ function TimelineComponent() {
               </svg>
             </div>
             <div className='timeline-start mb-10 md:timeline-end'>
-              <time className='font-mono italic'>Juni 2024</time>
-              <div className='text-lg font-black'>Utomhus träning</div>
+              <time className='font-mono italic'>Mars 2024</time>
+              <div className='text-lg font-black'>Hopslagning med Upprustningen</div>
               <p>
-                Många av klubbmedlemmarna har sommarlov och vädret passar på för att träna och få upp fysiken utomhus.
-                Fysträning sker utomhus med löpning, armhävningar och diversere andra övningar. Klubbmedlemmarna tar 
-                tillfället i akt och ger järnet för att uppnå fördelarna som kommer hjälpa de i kampsporterna som drar igång
-                inom snar framtid.
+                Den lokala föreniningen Upprustningen når ut till klubben och diskuterar samarbete. Båda
+                har inser att de har gemensamma mål och klubben bestämmer sig för att gå under förenignen Upprustningen
+                och byter namn till Upprustningen Sports Club.
               </p>
             </div>
             <div className='timeline-end mb-10 md:timeline-start'>
               <Image
-                src="/img/club_logo.webp"
+                src="/img/upprustningen_logo.webp"
                 width={500}
                 height={500}
                 alt="Picture of the author"
@@ -98,10 +97,8 @@ function TimelineComponent() {
               <time className='font-mono italic'>Juli 2024</time>
               <div className='text-lg font-black'>Första boxningsträningen</div>
               <p>
-                Upprustningen Sports Club implemterar planen på att expandera till olika kampsporter genom att
-                anordna sin första boxningsträning. Träningarna sker tre gånger i veckan med erfarna tränare som har
-                uppnått prestigefulla utmärkelser i sporten. Intresset visar sig vara starkt för ungdomar i området
-                och klubbmedlemmarna gör betyndande framsteg i striking-sporten.
+                Upprustningen Sports Club expanderar till olika kampsporter genom att anordna sin första boxningsträning. 
+                Träningarna sker tre gånger i veckan med erfarna tränare. Intresset visar sig vara starkt från ungdomar i området.
               </p>
             </div>
             <div className='timeline-end mb-10'>
