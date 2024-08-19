@@ -7,7 +7,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Separator } from '@/components/shadcn/separator';
-import { SiFacebook as FacebookIcon } from '@icons-pack/react-simple-icons';
+import { SiLinkedin as LinkedInIcon } from '@icons-pack/react-simple-icons';
 import { SiInstagram as InstagramIcon } from '@icons-pack/react-simple-icons';
 
 export function Footer() {
@@ -98,12 +98,12 @@ export function Footer() {
           aria-label='social media icons'
         >
           <Link
-            href='#'
-            aria-label='Facebook icon'
+            href='https://www.linkedin.com/company/104606452/'
+            aria-label='LinkedIn icon'
             className='text-secondary-foreground transition-colors'
             prefetch={false}
           >
-            <FacebookIcon size={28} />
+            <LinkedInIcon size={28} />
           </Link>
           <Link
             href='https://www.instagram.com/upprustningensc?igsh=YzB4a21qYjB6MG41'
