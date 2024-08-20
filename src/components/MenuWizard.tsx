@@ -68,6 +68,15 @@ export function MenuWizard() {
               Kontakt
             </Link>
           </SheetClose>
+          <SheetClose asChild aria-label='priser button'>
+            <Link
+              href='/medlemskap'
+              className='font-medium text-lg text-secondary-foreground transition-colors hover:text-gray-300 dark:hover:text-gray-50'
+              prefetch={false}
+            >
+              Priser
+            </Link>
+          </SheetClose>
           <SheetClose asChild aria-label='FAQ button'>
             <Link
               href='/Q&A'
