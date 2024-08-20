@@ -53,7 +53,7 @@ export function CarouselComponent({ images, delayTime }: Props) {
                 className='w-full px-0 pl-1 md:basis-1/2 lg:basis-1/3'
               >
                 <div id='wrapper' className='w-full pr-2'>
-                  <Card id='Card' className='h-[32.5rem] w-full shadow-lg rounded-t-none lg:h-[37.5rem] '>
+                  <Card id='Card' className='h-[32.5rem] w-full shadow-lg rounded-t-none lg:h-[37.5rem]'>
                     <CardContent className='h-2/3 w-full flex aspect-square items-center justify-center p-0'>
                       <Image
                         src={image.imgSrc}
@@ -72,14 +72,7 @@ export function CarouselComponent({ images, delayTime }: Props) {
                         <CardTitle>{image.label}</CardTitle>
                         <CardDescription>{image.description}</CardDescription>
                       </CardHeader>
-                      <CardFooter className='flex justify-end'>
-                        {/* <Link href={'/schema'}>
-                          <Button>
-                            Se schema
-                            <ArrowRightIcon className='ml-2 h-4 w-4' />
-                          </Button>
-                        </Link> */}
-                      </CardFooter>
+                      <CardFooter className='flex justify-end'></CardFooter>
                     </div>
                   </Card>
                 </div>
