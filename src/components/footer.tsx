@@ -55,6 +55,13 @@ export function Footer() {
                 Schema
               </Link>
               <Link
+                href='/medlemskap'
+                className='text-secondary-foreground hover:text-gray-300 hover:underline hover:underline-offset-2 transition-colors'
+                prefetch={false}
+              >
+                Priser
+              </Link>
+              <Link
                 href='/Q&A'
                 className='text-secondary-foreground hover:text-gray-300 hover:underline hover:underline-offset-2 transition-colors'
                 prefetch={false}
