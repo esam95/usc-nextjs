@@ -43,7 +43,7 @@ const MembershipOptions = () => {
         <div id='membership-cards' className='grid gap-12 md:grid-cols-2 lg:grid-cols-3'>
           {membershipOptions.map((membership, index) => (
             <Card key={index} className='shadow-xl h-[500px] flex flex-col'>
-              <CardHeader id='header' className='bg-secondary text-secondary-foreground'>
+              <CardHeader id='header' className='rounded-sm bg-secondary text-secondary-foreground'>
                 <CardTitle id='title' className='mb-2 text-3xl font-bold'>
                   {membership.title}
                 </CardTitle>
