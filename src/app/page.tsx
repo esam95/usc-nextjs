@@ -140,30 +140,16 @@ export default function Home() {
         </div>
 
         <div className='min-w-fit w-full flex flex-col items-center gap-y-2 py-8'>
-          <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>
-            Våra samarbetspartners
-          </h2>
+          <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>Våra samarbetspartners</h2>
           <div className='min-w-fit w-full flex flex-wrap flex-col md:flex-row md:justify-evenly items-center gap-y-5'>
             <div className='max-w-fit'>
-              <Image
-              className='max-w-56'
-              src={logoUpprustningen}
-              alt={'Upprustningen'}
-              /> 
+              <Image className='max-w-56' src={logoUpprustningen} alt={'Upprustningen'} />
             </div>
             <div className='max-w-fit'>
-              <Image
-              className='max-w-56'
-              src={logoRf}
-              alt={'Riksidrottsförbundet'}
-              /> 
+              <Image className='max-w-56' src={logoRf} alt={'Riksidrottsförbundet'} />
             </div>
             <div className='max-w-fit'>
-              <Image
-              className='max-w-56'
-              src={logoSbk}
-              alt={'Svenska Budo & Kampsportsförbundet'}
-              /> 
+              <Image className='max-w-56' src={logoSbk} alt={'Svenska Budo & Kampsportsförbundet'} />
             </div>
           </div>
         </div>
@@ -193,15 +179,14 @@ export default function Home() {
           <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
             Kom och hitta den perfekta träningsformen som passar just dig!
           </p> */}
+
           <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
             Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
             Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
             Våra träningspass inkluderar för närvarande&nbsp;
-            <strong className='text-primary'>
-              boxning samt fys- och konditionsträningar.&nbsp;
-            </strong>
-              Snart introducerar vi även&nbsp;
-            <strong className='text-primary'>brottning och BJJ</strong>&nbsp; och längre fram 
+            <strong className='text-primary'>boxning samt fys- och konditionsträningar.&nbsp;</strong>
+            Snart introducerar vi även&nbsp;
+            <strong className='text-primary'>brottning och BJJ</strong>&nbsp; och längre fram
             <strong className='text-primary'> MMA.</strong>
           </p>
           <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
@@ -232,11 +217,11 @@ export default function Home() {
             </div>
           </div>
           <div className='px-8 flex flex-col items-center max-w-[800px] w-full gap-4 text-left md:px-16 '>
-            <p className='font-semibold leading-relaxed w-full lg:text-base xl:text-lg'>
+            <h4 className='text-center font-semibold leading-relaxed w-full '>
               Att börja på en ny klubb kan vara ett stort steg för många <br /> Därför är du alltid välkommen
               att provträna
-            </p>
-            <p className='text-base text-muted-foreground leading-relaxed mb-6 lg:text-lg xl:text-xl'>
+            </h4>
+            <p className='text-center text-base text-muted-foreground leading-relaxed mb-6 lg:text-lg xl:text-xl'>
               På vår klubb erbjuder vi en dynamisk och stödjande miljö som främjar utveckling, fysisk styrka
               och mental skärpa. Kom och provträna med oss och upplev gemenskapen och energin som vår klubb
               har att erbjuda.
@@ -256,5 +241,3 @@ export default function Home() {
     </>
   );
 }
-
-// absolute ml-10 bottom-[-44rem]
