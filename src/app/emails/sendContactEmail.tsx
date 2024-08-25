@@ -30,7 +30,7 @@ export default function ContactEmail({ name, emailAddress, message }: EmailProps
           <Container style={containerStyle}>
             <Section style={mainSectionStyle}>
               <Img
-                src='https://upprustningensportsclub.wordpress.com/wp-content/uploads/2024/03/upprustningen-sc-logga.jpg'
+                src='https://www.upprustningensc.nu/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fclub_logo.6bc7e7c7.webp&w=128&q=75'
                 alt='Logo'
                 width='150'
                 height='150'
@@ -75,7 +75,7 @@ export default function ContactEmail({ name, emailAddress, message }: EmailProps
                 <Link href='https://www.upprustningensc.nu'>
                   <Img
                     alt='totalsports club icon'
-                    src='https://upprustningensportsclub.wordpress.com/wp-content/uploads/2024/03/upprustningen-sc-logga.jpg'
+                    src='https://www.upprustningensc.nu/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fclub_logo.6bc7e7c7.webp&w=128&q=75'
                     style={iconStyle}
                   />
                 </Link>
