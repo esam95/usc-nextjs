@@ -8,15 +8,16 @@ export async function POST(request: Request) {
   const formData = await request.json();
 
   // Extract specific fields you need for sending the email
-  const { name, emailAddress, amount } = formData;
+  const { name, personnumber, emailAddress, amount } = formData;
 
   try {
     await resend.emails.send({
-      from: `Upprustningen Sports Club <${UPPRUSTNINGEN_EMAIL}>`,
-      to: [UPPRUSTNINGEN_EMAIL, emailAddress],
+      from: `Upprustningen Sports Club `,
+      to: `Upprustningen Sports Club [<${UPPRUSTNINGEN_EMAIL}>, ${emailAddress}`,
       subject: 'Ny medlem',
       react: StodmedlemEmailTemplate({
         name,
+        personnumber,
         emailAddress,
         amount,
       }),
