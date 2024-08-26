@@ -25,25 +25,26 @@ function TimelineComponent() {
               </svg>
             </div>
             <div className='timeline-start mb-10 md:text-end'>
-              <time className='font-mono italic'>2023 Mars</time>
+              <time className='font-mono italic'>Mars 2023</time>
               <div className='text-lg font-black'>Klubbens första träning</div>
               <p>
                 Ett gäng ungdomar från Järva bestämmer sig för att hyra idrottshall i Husby och träna 
                 fristilsbrottning. Grunderna i fristilsbrottning lärs ut sakta men säkert fyra gånger i veckan. 
               </p>
             </div>
-            <div className='timeline-end mb-10 '>
+            <div className='timeline-end mb-10'>
               <Image
                 src="/img/wrestling_practice.webp"
                 width={500}
                 height={500}
                 alt="Träning i fristilsbrottning"
+                className='md:my-20'
               />            
             </div>
-            <hr className='bg-muted-foreground' />
+            <hr className='bg-muted-foreground md:mx-10' />
           </li>
           <li>
-            <hr className='bg-muted-foreground' />
+            <hr className='bg-muted-foreground md:mx-10' />
             <div className='timeline-middle'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -73,12 +74,13 @@ function TimelineComponent() {
                 width={500}
                 height={500}
                 alt="Picture of the author"
+                className='md:my-20'
               />            
             </div>
             <hr className='bg-muted-foreground' />
           </li>
           <li>
-            <hr className='bg-muted-foreground' />
+            <hr className='bg-muted-foreground md:mx-10' />
             <div className='timeline-middle'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -107,6 +109,7 @@ function TimelineComponent() {
                 width={500}
                 height={500}
                 alt="Picture of the author"
+                className='md:mt-20'
               />            
             </div>
             <hr className='bg-muted-foreground' />
