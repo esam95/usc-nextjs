@@ -24,27 +24,35 @@ function TimelineComponent() {
                 />
               </svg>
             </div>
-            <div className='timeline-start mb-10 md:text-end'>
+            <div className='timeline-end mb-10'>
               <time className='font-mono italic'>Mars 2023</time>
               <div className='text-lg font-black'>Klubbens första träning</div>
               <p>
                 Ett gäng ungdomar från Järva bestämmer sig för att hyra idrottshall i Husby och träna 
                 fristilsbrottning. Grunderna i fristilsbrottning lärs ut sakta men säkert fyra gånger i veckan. 
               </p>
+              <div className='md:hidden'>
+                <Image
+                  src="/img/wrestling_practice.webp"
+                  width={500}
+                  height={500}
+                  alt="Träning i fristilsbrottning"
+                  className='mt-4'
+                />            
+              </div>
             </div>
-            <div className='timeline-end mb-10'>
+            <div className='md:block md:timeline-start md:my-10'>
               <Image
                 src="/img/wrestling_practice.webp"
                 width={500}
                 height={500}
                 alt="Träning i fristilsbrottning"
-                className='md:my-20'
+                className='mt-4'
               />            
             </div>
-            <hr className='bg-muted-foreground md:mx-10' />
+            <hr className='bg-muted-foreground md:mx-8' />
           </li>
           <li>
-            <hr className='bg-muted-foreground md:mx-10' />
             <div className='timeline-middle'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -59,7 +67,7 @@ function TimelineComponent() {
                 />
               </svg>
             </div>
-            <div className='timeline-start mb-10 md:timeline-end'>
+            <div className='timeline-start'>
               <time className='font-mono italic'>Mars 2024</time>
               <div className='text-lg font-black'>Hopslagning med Upprustningen</div>
               <p>
@@ -67,20 +75,28 @@ function TimelineComponent() {
                 har inser att de har gemensamma mål och klubben bestämmer sig för att gå under förenignen Upprustningen
                 och byter namn till Upprustningen Sports Club.
               </p>
+              <div className='md:hidden'>
+                <Image
+                  src="/img/upprustningen_logo.webp"
+                  width={500}
+                  height={500}
+                  alt="Upprustningen"
+                  className='my-6'
+                />            
+              </div>
             </div>
-            <div className='timeline-end mb-10 md:timeline-start'>
+            <div className='md:block md:timeline-end md:my-10'>
               <Image
                 src="/img/upprustningen_logo.webp"
                 width={500}
                 height={500}
-                alt="Picture of the author"
-                className='md:my-20'
+                alt="Upprustningen"
+                className='mt-4'
               />            
             </div>
-            <hr className='bg-muted-foreground' />
+            <hr className='bg-muted-foreground md:mx-8' />
           </li>
           <li>
-            <hr className='bg-muted-foreground md:mx-10' />
             <div className='timeline-middle'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -95,26 +111,34 @@ function TimelineComponent() {
                 />
               </svg>
             </div>
-            <div className='timeline-start mb-10 md:text-end'>
+            <div className='timeline-end mb-10'>
               <time className='font-mono italic'>Juli 2024</time>
               <div className='text-lg font-black'>Första boxningsträningen</div>
               <p>
                 Upprustningen Sports Club expanderar till olika kampsporter genom att anordna sin första boxningsträning. 
                 Träningarna sker tre gånger i veckan med erfarna tränare. Intresset visar sig vara starkt från ungdomar i området.
               </p>
+              <div className='md:hidden'>
+                <Image
+                  src="/img/boxing_img.webp"
+                  width={500}
+                  height={500}
+                  alt="Träning i boxning"
+                  className='mt-4'
+                />            
+              </div>
             </div>
-            <div className='timeline-end mb-10'>
+            <div className='md:block md:timeline-start md:my-10'>
               <Image
                 src="/img/boxing_img.webp"
                 width={500}
                 height={500}
-                alt="Picture of the author"
-                className='md:mt-20'
+                alt="Träning i boxning"
+                className='mt-4'
               />            
             </div>
-            <hr className='bg-muted-foreground' />
+            <hr className='bg-muted-foreground md:mx-8'/>
           </li>
-         
          
         </ul>
       </div>
