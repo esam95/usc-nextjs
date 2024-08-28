@@ -120,7 +120,7 @@ function TimelineComponent() {
               </p>
               <div className='md:hidden'>
                 <Image
-                  src="/img/boxing_img.webp"
+                  src="/img/boxing_practice.webp"
                   width={500}
                   height={500}
                   alt="Träning i boxning"
@@ -130,7 +130,7 @@ function TimelineComponent() {
             </div>
             <div className='md:block md:timeline-start md:my-10'>
               <Image
-                src="/img/boxing_img.webp"
+                src="/img/boxing_practice.webp"
                 width={500}
                 height={500}
                 alt="Träning i boxning"
