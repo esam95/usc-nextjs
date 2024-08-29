@@ -4,11 +4,11 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 const schedule = [
   { day: 'Måndag', time: '–', activity: '–' },
   { day: 'Tisdag', time: '19:00 - 21:00', activity: 'Boxning' },
-  { day: 'Lördag', time: '19:00 – 20:30', activity: 'Fys' },
+  { day: 'Onsdag', time: '19:00 – 20:00', activity: 'Fys' },
   { day: 'Torsdag', time: '19:00 - 21:00', activity: 'Boxning' },
   { day: 'Fredag', time: '–', activity: '–' },
-  { day: 'Lördag', time: '13:30 – 15:00', activity: 'Fys' },
-  { day: 'Söndag', time: '13:00 - 15:00	', activity: 'Boxning' },
+  { day: 'Lördag', time: '13:30 – 14:30', activity: 'Fys' },
+  { day: 'Söndag', time: '13:00 - 14:00	', activity: 'Boxning' },
 ];
 
 const TrainingSchedule = () => {
