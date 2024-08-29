@@ -1,5 +1,6 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/shadcn/table';
+import { FaMapPin as LocationPinIcon } from 'react-icons/fa';
 
 const schedule = [
   { day: 'Måndag', time: '–', activity: '–' },
@@ -22,7 +23,10 @@ const TrainingSchedule = () => {
           <CardTitle className='text-3xl font-bold'>Veckoschema</CardTitle>
           <CardDescription className='mt-2'>
             Här är vårt nuvarande träningsschema för veckan. (OBS, tider kan variera!)<br/>
-            <strong>Plats: Kvarnbacka BP (Jyllandsgatan 3, 164 47 Kista)</strong>
+            <div className='flex flex-column gap-2'>
+              <LocationPinIcon color="red" />
+              <strong>Plats: Kvarnbacka BP (Jyllandsgatan 3, 164 47 Kista)</strong>
+            </div>
             </CardDescription>
         </CardHeader>
         <CardContent className='p-6'>
