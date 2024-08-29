@@ -9,13 +9,13 @@ function TimelineComponent() {
     <>
       <div className='container mx-auto p-4'>
         <ul className='timeline timeline-snap-icon max-md:timeline-compact timeline-vertical'>
-          <li>
+          <li id='first-timeline' className='md:h-[27.5rem] lg:h-[37.5rem]'>
             <div className='timeline-middle'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 20 20'
                 fill='currentColor'
-                className='h-5 w-5 text-primary'
+                className='h-5 w-5 text-primary mb-2'
               >
                 <path
                   fillRule='evenodd'
@@ -24,41 +24,42 @@ function TimelineComponent() {
                 />
               </svg>
             </div>
-            <div className='timeline-end mb-10'>
+            <div className='mb-16 md:self-start md:h-full timeline-end'>
               <time className='font-mono italic'>Mars 2023</time>
               <div className='text-lg font-black'>Klubbens första träning</div>
               <p>
-                Ett gäng ungdomar från Järva bestämmer sig för att hyra idrottshall i Husby och träna 
-                fristilsbrottning. Grunderna i fristilsbrottning lärs ut sakta men säkert fyra gånger i veckan. 
+                Ett gäng ungdomar från Järva bestämmer sig för att hyra idrottshall i Husby och träna
+                fristilsbrottning. Grunderna i fristilsbrottning lärs ut sakta men säkert fyra gånger i
+                veckan.
               </p>
               <div className='md:hidden'>
                 <Image
-                  src="/img/wrestling_practice.webp"
+                  src='/img/wrestling_practice.webp'
                   width={500}
                   height={500}
-                  alt="Träning i fristilsbrottning"
+                  alt='Träning i fristilsbrottning'
                   className='mt-4'
-                />            
+                />
               </div>
             </div>
             <div className='md:block md:timeline-start md:my-10'>
               <Image
-                src="/img/wrestling_practice.webp"
+                src='/img/wrestling_practice.webp'
                 width={500}
                 height={500}
-                alt="Träning i fristilsbrottning"
+                alt='Träning i fristilsbrottning'
                 className='mt-4'
-              />            
+              />
             </div>
             <hr className='bg-muted-foreground md:mx-8' />
           </li>
-          <li>
+          <li id='second-timeline' className='md:h-[27.5rem] lg:h-[37.5rem]'>
             <div className='timeline-middle'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 20 20'
                 fill='currentColor'
-                className='h-5 w-5 text-primary'
+                className='h-5 w-5 text-primary mb-2'
               >
                 <path
                   fillRule='evenodd'
@@ -67,42 +68,42 @@ function TimelineComponent() {
                 />
               </svg>
             </div>
-            <div className='timeline-start'>
+            <div style={{ marginBottom: '4rem' }} className='md:self-start md:h-full timeline-start'>
               <time className='font-mono italic'>Mars 2024</time>
               <div className='text-lg font-black'>Hopslagning med Upprustningen</div>
               <p>
-                Den lokala föreniningen Upprustningen når ut till klubben och diskuterar samarbete. Båda
-                har inser att de har gemensamma mål och klubben bestämmer sig för att gå under förenignen Upprustningen
-                och byter namn till Upprustningen Sports Club.
+                Den lokala föreniningen Upprustningen når ut till klubben och diskuterar samarbete. Båda har
+                inser att de har gemensamma mål och klubben bestämmer sig för att gå under förenignen
+                Upprustningen och byter namn till Upprustningen Sports Club.
               </p>
               <div className='md:hidden'>
                 <Image
-                  src="/img/upprustningen_logo.webp"
+                  src='/img/upprustningen_logo.webp'
                   width={500}
                   height={500}
-                  alt="Upprustningen"
+                  alt='Upprustningen'
                   className='my-6'
-                />            
+                />
               </div>
             </div>
             <div className='md:block md:timeline-end md:my-10'>
               <Image
-                src="/img/upprustningen_logo.webp"
+                src='/img/upprustningen_logo.webp'
                 width={500}
                 height={500}
-                alt="Upprustningen"
+                alt='Upprustningen'
                 className='mt-4'
-              />            
+              />
             </div>
             <hr className='bg-muted-foreground md:mx-8' />
           </li>
-          <li>
+          <li id='third-timeline' className='md:h-[27.5rem] lg:h-[37.5rem]'>
             <div className='timeline-middle'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 20 20'
                 fill='currentColor'
-                className='h-5 w-5 text-primary'
+                className='h-5 w-5 text-primary mb-2'
               >
                 <path
                   fillRule='evenodd'
@@ -111,35 +112,35 @@ function TimelineComponent() {
                 />
               </svg>
             </div>
-            <div className='timeline-end mb-10'>
+            <div className='self-start h-full timeline-end'>
               <time className='font-mono italic'>Juli 2024</time>
               <div className='text-lg font-black'>Första boxningsträningen</div>
               <p>
-                Upprustningen Sports Club expanderar till olika kampsporter genom att anordna sin första boxningsträning. 
-                Träningarna sker tre gånger i veckan med erfarna tränare. Intresset visar sig vara starkt från ungdomar i området.
+                Upprustningen Sports Club expanderar till olika kampsporter genom att anordna sin första
+                boxningsträning. Träningarna sker tre gånger i veckan med erfarna tränare. Intresset visar sig
+                vara starkt från ungdomar i området.
               </p>
               <div className='md:hidden'>
                 <Image
-                  src="/img/boxing_practice.webp"
+                  src='/img/boxing_practice.webp'
                   width={500}
                   height={500}
-                  alt="Träning i boxning"
+                  alt='Träning i boxning'
                   className='mt-4'
-                />            
+                />
               </div>
             </div>
             <div className='md:block md:timeline-start md:my-10'>
               <Image
-                src="/img/boxing_practice.webp"
+                src='/img/boxing_practice.webp'
                 width={500}
                 height={500}
-                alt="Träning i boxning"
+                alt='Träning i boxning'
                 className='mt-4'
-              />            
+              />
             </div>
-            <hr className='bg-muted-foreground md:mx-8'/>
+            <hr className='bg-muted-foreground md:mx-8' />
           </li>
-         
         </ul>
       </div>
     </>

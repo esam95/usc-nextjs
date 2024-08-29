@@ -40,43 +40,69 @@ const AboutUs: React.FC = () => {
           </p>
         </section>
 
-        <CardContent className='flex flex-col md:flex-row p-4 md:p-6'>
+        <CardContent className='flex flex-col p-4 mb-10 md:flex-row md:mb-16 md:p-6 lg:mb-20'>
           <div className='flex-1 md:mr-6'>
             <h3 className='font-semibold mb-4'>Vår filosofi</h3>
-            <p className='text-base leading-relaxed mb-6'>
-              Välkommen till Total Sports Club! Vi är stolta över att presentera vår nyöppnade klubb i Järva
-              som är en plats där passionerade idrottare och kampsportsentusiaster kan komma samman för att
-              utmana sig själva, växa som individer och uppnå sina träningsmål. På vår klubb erbjuder vi en
-              dynamisk och stödjande miljö som främjar teknisk utveckling, fysisk styrka och mental skärpa.
-              Oavsett om du är nybörjare eller erfaren inom kampsport, är du hjärtligt välkommen till oss. Vår
-              klubb är öppen för alla, oavsett ålder och tidigare erfarenhet. Vi tror på att skapa en
-              inkluderande gemenskap där varje medlem kan trivas och utvecklas. Vårt erfarna tränarteam består
-              av dedikerade och kunniga instruktörer som brinner för att dela med sig av sin kunskap och
-              hjälpa dig att nå nya höjder. Genom noggrant strukturerade träningsprogram och individuell
-              vägledning fokuserar vi på att förbättra teknik, kondition och självförtroende hos våra
-              medlemmar. Vi brinner väldigt mycket för brottning och grappling då det är den bästa basen för
-              all kampsport. Dessa två sporter är unika, speciellt fristilsbrottning som kombinerar teknisk
-              skicklighet, snabbhet, explosivitet, kreativitet och improvisation. Dess globala popularitet och
-              förmåga att engagera människor runt om i världen gör det till en av de bästa sporterna som
-              finns. Total Sports Club har målet att uppmuntra en hälsosam livsstil och få unga att engagera
-              sig i regelbunden motion istället för att ägna sig åt mindre gynnsamma aktiviteter. Genom att
-              erbjuda träning och utbildning inom kampsport, strävar klubben efter att locka ungdomar till att
-              bli fysiskt aktiva, bygga styrka och kondition samt utveckla värdefulla livsfärdigheter som
-              disciplin, respekt och kamratskap. Målet är att erbjuda en meningsfull och positiv
-              fritidsaktivitet som kan gynna unga fysiska och mentala hälsa på lång sikt. Vi satsar även på
-              att stödja vuxna… Vi ser fram emot att välkomna dig till vårt brottnings/MMA-team och hjälpa dig
-              att nå dina träningsmål. Tillsammans skapar vi en starkare och mer passionerad kampsportsfamilj!
+            <p className='text-base leading-relaxed mb-4'>
+              Välkommen till Total Sports Club! Vi är stolta över att presentera vår nyöppnade klubb i Järva –
+              en plats där passionerade idrottare och kampsportsentusiaster kan komma samman för att utmana
+              sig själva, växa som individer och uppnå sina träningsmål.
+            </p>
+
+            <p className='text-base leading-relaxed mb-4'>
+              På vår klubb erbjuder vi en dynamisk och stödjande miljö som främjar teknisk utveckling, fysisk
+              styrka och mental skärpa. Oavsett om du är nybörjare eller erfaren inom kampsport, är du
+              hjärtligt välkommen till oss. Vår klubb är öppen för alla, oavsett ålder och tidigare
+              erfarenhet.
+            </p>
+
+            <p className='text-base leading-relaxed mb-4'>
+              Vi tror på att skapa en inkluderande gemenskap där varje medlem kan trivas och utvecklas. Vårt
+              erfarna tränarteam består av dedikerade och kunniga instruktörer som brinner för att dela med
+              sig av sin kunskap och hjälpa dig att nå nya höjder.
+            </p>
+
+            <p className='text-base leading-relaxed mb-4'>
+              Genom noggrant strukturerade träningsprogram och individuell vägledning fokuserar vi på att
+              förbättra teknik, kondition och självförtroende hos våra medlemmar. Vi brinner för brottning och
+              grappling, då vi anser att de utgör den bästa basen för all kampsport.
+            </p>
+
+            <p className='text-base leading-relaxed mb-4'>
+              Dessa två sporter är unika, särskilt fristilsbrottning som kombinerar teknisk skicklighet,
+              snabbhet, explosivitet, kreativitet och improvisation. Dess globala popularitet och förmåga att
+              engagera människor runt om i världen gör den till en av de bästa sporterna som finns.
+            </p>
+
+            <p className='text-base leading-relaxed mb-4'>
+              Total Sports Club har som mål att uppmuntra en hälsosam livsstil och få unga att engagera sig i
+              regelbunden motion istället för mindre gynnsamma aktiviteter. Genom att erbjuda träning och
+              utbildning inom kampsport, strävar klubben efter att locka ungdomar till att bli fysiskt aktiva,
+              bygga styrka och kondition samt utveckla värdefulla livsfärdigheter som disciplin, respekt och
+              kamratskap.
+            </p>
+
+            <p className='text-base leading-relaxed mb-4'>
+              Målet är att erbjuda en meningsfull och positiv fritidsaktivitet som kan gynna ungas fysiska och
+              mentala hälsa på lång sikt. Vi satsar även på att stödja vuxna i deras träningsresor och
+              utveckling inom kampsport.
+            </p>
+
+            <p className='text-base leading-relaxed mb-4'>
+              Vi ser fram emot att välkomna dig till vårt brottnings- och MMA-team och hjälpa dig att nå dina
+              träningsmål. Tillsammans skapar vi en starkare och mer passionerad kampsportsfamilj!
             </p>
 
             <section>
               <h3 className='font-semibold mb-4'>Våra Tränare</h3>
               <p className='text-base leading-relaxed'>
-                Vårt erfarna tränarteam inkluderar erfarna proffs med imponerande bakgrunder inom olika
+                Vårt tränarteam inkluderar erfarna proffs med imponerande bakgrunder inom olika
                 kampsportsdiscipliner. De är dedikerade till att hjälpa dig att nå din personliga bästa nivå.
               </p>
             </section>
           </div>
         </CardContent>
+
         <TimelineComponent />
       </div>
     </main>
