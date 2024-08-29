@@ -13,7 +13,10 @@ import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
 import strengthCondition from '../../public/img/strength_condition.webp';
 import logoStamps from '../../public/img/club_logo_stamps.webp';
 import { CardDescription } from '@/components/shadcn/card';
-import sparring from '../../public/img/sparring.webp';
+import armbar from '../../public/img/armbar.webp';
+import logoRf from '../../public/img/logo_rf.webp';
+import logoUpprustningen from '../../public/img/logo_upprustningen.webp';
+import logoSbk from '../../public/img/logo_sbk.webp';
 
 export default function Home() {
   const classesImages = [
@@ -135,6 +138,21 @@ export default function Home() {
             </Button>
           </Link>
         </div>
+
+        <div className='min-w-fit w-full flex flex-col items-center gap-y-2 py-8'>
+          <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>Våra samarbetspartners</h2>
+          <div className='min-w-fit w-full flex flex-wrap flex-col md:flex-row md:justify-evenly items-center gap-y-5'>
+            <div className='max-w-fit'>
+              <Image className='max-w-56' src={logoUpprustningen} alt={'Upprustningen'} />
+            </div>
+            <div className='max-w-fit'>
+              <Image className='max-w-56' src={logoRf} alt={'Riksidrottsförbundet'} />
+            </div>
+            <div className='max-w-fit'>
+              <Image className='max-w-56' src={logoSbk} alt={'Svenska Budo & Kampsportsförbundet'} />
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* VÅRA KLASSER */}
@@ -147,7 +165,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
+          {/* <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
             Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
             Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
             Våra träningspass inkluderar&nbsp;
@@ -157,6 +175,19 @@ export default function Home() {
             och även&nbsp;
             <strong className='text-primary'>fys och konditions</strong>&nbsp; träningar för den som inte är
             ute efter kampsport.
+          </p>
+          <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
+            Kom och hitta den perfekta träningsformen som passar just dig!
+          </p> */}
+
+          <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
+            Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
+            Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
+            Våra träningspass inkluderar för närvarande&nbsp;
+            <strong className='text-primary'>boxning samt fys- och konditionsträningar.&nbsp;</strong>
+            Snart introducerar vi även&nbsp;
+            <strong className='text-primary'>brottning och BJJ</strong>&nbsp; och längre fram
+            <strong className='text-primary'> MMA.</strong>
           </p>
           <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
             Kom och hitta den perfekta träningsformen som passar just dig!
@@ -173,8 +204,8 @@ export default function Home() {
         <div className='flex flex-col items-center w-full gap-16'>
           <div className='relative w-full min-h-[420px] h-[420px] md:h-[600px] lg:h-[500px]'>
             <Image
-              src={sparring}
-              alt={'sparring session, by Daniil Zanevskiy'}
+              src={armbar}
+              alt={'armbar, by Vladislav Bychkov'}
               className='w-full h-full object-cover opacity-50'
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             />
@@ -186,11 +217,11 @@ export default function Home() {
             </div>
           </div>
           <div className='px-8 flex flex-col items-center max-w-[800px] w-full gap-4 text-left md:px-16 '>
-            <p className='font-semibold leading-relaxed w-full lg:text-base xl:text-lg'>
+            <h4 className='text-center font-semibold leading-relaxed w-full '>
               Att börja på en ny klubb kan vara ett stort steg för många <br /> Därför är du alltid välkommen
               att provträna
-            </p>
-            <p className='text-base text-muted-foreground leading-relaxed mb-6 lg:text-lg xl:text-xl'>
+            </h4>
+            <p className='text-center text-base text-muted-foreground leading-relaxed mb-6 lg:text-lg xl:text-xl'>
               På vår klubb erbjuder vi en dynamisk och stödjande miljö som främjar utveckling, fysisk styrka
               och mental skärpa. Kom och provträna med oss och upplev gemenskapen och energin som vår klubb
               har att erbjuda.
@@ -210,5 +241,3 @@ export default function Home() {
     </>
   );
 }
-
-// absolute ml-10 bottom-[-44rem]

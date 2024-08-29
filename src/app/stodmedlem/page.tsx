@@ -19,6 +19,9 @@ import EmailAdressField from './formFields/EmailAdressField';
 import NameField from './formFields/NameField';
 import AmountField from './formFields/AmountField';
 import { formSchema } from './schema/formSchema';
+import PersonNumberField from './formFields/PersonNumberField';
+import Image from 'next/image';
+import swishLogo from '../../../public/img/swish_logo.webp'
 
 export type FormFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
@@ -31,6 +34,7 @@ function BecomeSupportMember() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
+      personnumber: '',
       emailAddress: '',
       amount: '',
     },
@@ -157,6 +161,9 @@ function BecomeSupportMember() {
                 {/* Name Field */}
                 <NameField form={form} />
 
+                {/* Name Field */}
+                <PersonNumberField form={form} />
+
                 {/* Email address field */}
                 <EmailAdressField form={form} />
 
@@ -183,6 +190,24 @@ function BecomeSupportMember() {
             </CardContent>
           </Card>
         </Form>
+        <div className='w-full max-w-3xl mb-8 p-6'>
+          <h3 className='text-center font-extrabold tracking-tight lg:text-5xl text-secondary-foreground pb-6'>
+            Du kan alltid swisha eller göra en banköverföring med valfri summa 
+          </h3>
+          <div className='flex flex-row flex-wrap justify-between'>
+            <div>
+              <h5>Bankgiro:</h5>
+              <p className='m-0 mb-3'>802543-8030</p>
+              <h5>Swishnummer:</h5>
+              <p className='m-0'>1234458832</p>
+            </div>
+            <div>
+              <a href='https://app.swish.nu/1/p/sw/?sw=1234458832'>
+                <Image src={swishLogo} alt='Swish logga' width={100} />
+              </a>
+            </div>
+          </div>
+        </div> 
       </div>
     </>
   );
