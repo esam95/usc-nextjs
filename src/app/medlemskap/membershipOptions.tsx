@@ -38,10 +38,10 @@ export const membershipOptions = [
     ],
     route: '/stodmedlem',
   },
-  {
-    title: 'Fryshusets elever',
-    price: 'Gratis',
-    age: null,
-    description: ['Gäller endast för fryshusets elever', 'Två gratis provträningar'],
-  },
+  // {
+  //   title: 'Fryshusets elever',
+  //   price: 'Gratis',
+  //   age: null,
+  //   description: ['Gäller endast för fryshusets elever', 'Två gratis provträningar'],
+  // },
 ];
