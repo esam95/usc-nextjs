@@ -24,7 +24,7 @@ const AboutUs: React.FC = () => {
       </div>
 
       {/* Content Section */}
-      <div className='mt-12 mb-24 w-full text-secondary-foreground p-4 md:p-6'>
+      <div id='content' className='mt-12 mb-24 w-full text-secondary-foreground p-4 md:p-6'>
         <section className='flex flex-col items-center text-center p-4'>
           <Image
             src={logoIcon}

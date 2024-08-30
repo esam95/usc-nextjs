@@ -21,7 +21,7 @@ import AmountField from './formFields/AmountField';
 import { formSchema } from './schema/formSchema';
 import PersonNumberField from './formFields/PersonNumberField';
 import Image from 'next/image';
-import swishLogo from '../../../public/img/swish_logo.webp'
+import swishLogo from '../../../public/img/swish_logo.webp';
 
 export type FormFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
@@ -102,7 +102,10 @@ function BecomeSupportMember() {
         className='flex min-h-screen min-w-80 w-full flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 pt-36'
       >
         <div className='w-full max-w-3xl mb-1'>
-          <h1 className='text-center font-extrabold tracking-tight lg:text-5xl text-secondary-foreground'>
+          <h1
+            id='content'
+            className='text-center font-extrabold tracking-tight lg:text-5xl text-secondary-foreground'
+          >
             Stödmedlem
           </h1>
         </div>
@@ -192,7 +195,7 @@ function BecomeSupportMember() {
         </Form>
         <div className='w-full max-w-3xl mb-8 p-6'>
           <h3 className='text-center font-extrabold tracking-tight lg:text-5xl text-secondary-foreground pb-6'>
-            Du kan alltid swisha eller göra en banköverföring med valfri summa 
+            Du kan alltid swisha eller göra en banköverföring med valfri summa
           </h3>
           <div className='flex flex-row flex-wrap justify-between'>
             <div>
@@ -207,7 +210,7 @@ function BecomeSupportMember() {
               </a>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
     </>
   );

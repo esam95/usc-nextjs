@@ -97,7 +97,10 @@ export default function Contact() {
   return (
     <div className='mt-32 flex min-h-screen min-w-80 w-full flex-col items-center justify-center pb-12 px-4 sm:px-6 lg:px-8'>
       <div className='w-full max-w-3xl mb-8'>
-        <h1 className='text-secondary-foreground text-center font-extrabold tracking-tight lg:text-5xl'>
+        <h1
+          id='content'
+          className='text-secondary-foreground text-center font-extrabold tracking-tight lg:text-5xl'
+        >
           Kontakta oss
         </h1>
       </div>
