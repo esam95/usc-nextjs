@@ -6,7 +6,7 @@ import aboutUsImg from '../../../public/img/aboutUs.webp';
 
 const AboutUs: React.FC = () => {
   return (
-    <main className='min-h-screen w-full bg-secondary flex flex-col items-center'>
+    <main className='min-h-screen w-full flex flex-col items-center'>
       {/* Hero Section */}
       <div className='relative w-full min-h-screen'>
         <Image
