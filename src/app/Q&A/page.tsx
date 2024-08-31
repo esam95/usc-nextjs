@@ -6,6 +6,7 @@ import { questionsAndAnswers } from './questionAndAnswers';
 const FAQ = () => {
   return (
     <>
+      <span id='content'></span>
       <HeroSection />
       <main className='px-4 flex flex-col items-start sm:px-6 lg:mx-24 lg:px-8 min-h-[500px]'>
         <div className='w-full max-w-3xl'>

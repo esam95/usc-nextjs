@@ -139,7 +139,10 @@ function BecomeMember() {
   return (
     <div className='mt-32 flex min-h-screen min-w-80 w-full flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
       <div className='w-full max-w-3xl mb-8'>
-        <h1 className='text-center font-extrabold tracking-tight lg:text-5xl text-secondary-foreground'>
+        <h1
+          id='content'
+          className='text-center font-extrabold tracking-tight lg:text-5xl text-secondary-foreground'
+        >
           Ansökan om medlemskap
         </h1>
       </div>

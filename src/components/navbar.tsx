@@ -43,25 +43,34 @@ export function Navbar({ imageSrc, title }: Props) {
   ));
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 715) {
-        // setBgColor('bg-transparent');
-        setBgColor('bg-[#020617]');
-        setNavbarHeight('h-24');
-      } else {
-        setBgColor('bg-transparent');
-        setNavbarHeight('h-28');
-      }
-    };
+    const targetElement = document.querySelector('#content'); // Replace with the ID of your target element
 
-    window.addEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBgColor('bg-transparent');
+          setNavbarHeight('h-28');
+        } else {
+          setBgColor('bg-[#020617]');
+          setNavbarHeight('h-24');
+        }
+      },
+      { threshold: 0.1 }, // Adjust the threshold as needed
+    );
+
+    if (targetElement) {
+      observer.observe(targetElement);
+    }
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      if (targetElement) {
+        observer.unobserve(targetElement);
+      }
     };
   }, []);
 
   return (
-    <nav className={` w-full fixed top-0 left-0 z-20 transition-colors duration-300 ${bgColor}`}>
+    <nav className={`w-full fixed top-0 left-0 z-20 transition-colors duration-300 ${bgColor}`}>
       <div className={`container pl-5 flex ${navbarHeight} items-center justify-between`}>
         <Link href='/' className='flex items-center gap-4 text-lg font-semibold' prefetch={false}>
           <Image src={imageSrc} alt='logo' width={60} height={60} />

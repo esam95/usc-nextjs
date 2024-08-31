@@ -15,7 +15,7 @@ const schedule = [
 const TrainingSchedule = () => {
   return (
     <main className='pt-36 flex flex-col items-center min-w-full py-8 px-4 mt-0 sm:px-6 lg:px-8 min-h-screen'>
-      <h1 className='font-extrabold tracking-tight text-secondary-foreground lg:text-5xl mb-8'>
+      <h1 id='content' className='font-extrabold tracking-tight text-secondary-foreground lg:text-5xl mb-8'>
         Träningstider
       </h1>
       <Card className='w-full max-w-3xl shadow-xl rounded-lg'>
