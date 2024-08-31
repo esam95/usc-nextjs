@@ -12,9 +12,9 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: `Upprustningen Sports Club `,
-      to: `Upprustningen Sports Club [<${UPPRUSTNINGEN_EMAIL}>, ${emailAddress}`,
-      subject: 'Ny medlem',
+      from: `Upprustningen Sports Club <${UPPRUSTNINGEN_EMAIL}>`,
+      to: [`${UPPRUSTNINGEN_EMAIL}`, `${emailAddress}`],
+      subject: 'Ny stödmedlem',
       react: StodmedlemEmailTemplate({
         name,
         personnumber,

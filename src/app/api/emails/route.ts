@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   try {
     await resend.emails.send({
       from: `Upprustningen Sports Club <${UPPRUSTNINGEN_EMAIL}>`,
-      to: [UPPRUSTNINGEN_EMAIL, emailAddress],
+      to: [`${UPPRUSTNINGEN_EMAIL}`, `${emailAddress}`],
       subject: 'Ny medlem',
       react: EmailTemplate({
         name,
