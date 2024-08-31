@@ -1,14 +1,15 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/shadcn/table';
+import { FaMapPin as LocationPinIcon } from 'react-icons/fa';
 
 const schedule = [
   { day: 'Måndag', time: '–', activity: '–' },
   { day: 'Tisdag', time: '19:00 - 21:00', activity: 'Boxning' },
-  { day: 'Lördag', time: '19:00 – 20:30', activity: 'Fys' },
+  { day: 'Onsdag', time: '19:00 – 20:00', activity: 'Fys' },
   { day: 'Torsdag', time: '19:00 - 21:00', activity: 'Boxning' },
   { day: 'Fredag', time: '–', activity: '–' },
-  { day: 'Lördag', time: '13:30 – 15:00', activity: 'Fys' },
-  { day: 'Söndag', time: '13:00 - 15:00	', activity: 'Boxning' },
+  { day: 'Lördag', time: '13:30 – 14:30', activity: 'Fys' },
+  { day: 'Söndag', time: '13:00 - 14:00	', activity: 'Boxning' },
 ];
 
 const TrainingSchedule = () => {
@@ -21,10 +22,12 @@ const TrainingSchedule = () => {
         <CardHeader className='bg-secondary text-secondary-foreground rounded-t-lg p-6'>
           <CardTitle className='text-3xl font-bold'>Veckoschema</CardTitle>
           <CardDescription className='mt-2'>
-            Här är vårt nuvarande träningsschema för veckan. (OBS, tider kan variera!)
-            <br />
-            <strong>Plats: Kvarnbacka BP (Jyllandsgatan 3, 164 47 Kista)</strong>
-          </CardDescription>
+            Här är vårt nuvarande träningsschema för veckan. (OBS, tider kan variera!)<br/>
+            <div className='flex flex-column gap-2'>
+              <LocationPinIcon color="red" />
+              <strong>Plats: Kvarnbacka BP (Jyllandsgatan 3, 164 47 Kista)</strong>
+            </div>
+            </CardDescription>
         </CardHeader>
         <CardContent className='p-6'>
           <Table className='min-w-full'>

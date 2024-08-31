@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button } from './shadcn/button';
 import Image from 'next/image';
 import artLogo from '../../public/img/3d-illustration.webp';
+import usc_text_logo from '../../public/img/usc_text_logo.webp'
 
 const HeroSection: React.FC = () => (
   <section className='py-16 px-6 lg:py-20 lg:px-8 xl:py-24 xl:px-10'>
@@ -29,8 +30,8 @@ const HeroSection: React.FC = () => (
         <div className='mt-8 lg:mt-0 lg:ml-8 flex-shrink-0'>
           <Image
             className='w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-xl'
-            src={artLogo}
-            alt='Hero image logo'
+            src={usc_text_logo}
+            alt='Upprustningen SC logo'
           />
         </div>
       </div>
