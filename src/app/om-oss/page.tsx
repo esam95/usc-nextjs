@@ -1,6 +1,6 @@
 import { CardContent } from '@/components/shadcn/card';
 import Image from 'next/image';
-import logoIcon from '../../../public/logo_circular.webp';
+import clubLogo from '../../../public/club_logo.webp';
 import TimelineComponent from '@/components/TimelineComponent';
 import aboutUsImg from '../../../public/img/aboutUs.webp';
 
@@ -27,7 +27,7 @@ const AboutUs: React.FC = () => {
       <div id='content' className='mt-12 mb-24 w-full text-secondary-foreground p-4 md:p-6'>
         <section className='flex flex-col items-center text-center p-4'>
           <Image
-            src={logoIcon}
+            src={clubLogo}
             width={100}
             height={100}
             alt='Club Logo'
