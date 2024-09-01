@@ -1,6 +1,6 @@
 import { CardContent } from '@/components/shadcn/card';
 import Image from 'next/image';
-import clubLogo from '../../../public/club_logo.webp';
+import clubLogo from '../../../public/img/club_logo.webp';
 import TimelineComponent from '@/components/TimelineComponent';
 import aboutUsImg from '../../../public/img/aboutUs.webp';
 
