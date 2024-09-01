@@ -33,7 +33,6 @@ const AboutUs: React.FC = () => {
             alt='Club Logo'
             className='rounded-full shadow-lg mb-4'
           />
-          <h2 className='text-secondary-foreground text-3xl font-bold mb-2'>Om Upprustningen Sports Club</h2>
           <p className='text-base'>
             Grundades år 2023, vårt uppdrag är att stärka individer genom högkvalitativ träning, och främja
             både fysisk och mental utveckling.
@@ -44,7 +43,7 @@ const AboutUs: React.FC = () => {
           <div className='flex-1 md:mr-6'>
             <h3 className='font-semibold mb-4'>Vår filosofi</h3>
             <p className='text-base leading-relaxed mb-4'>
-              Välkommen till Total Sports Club! Vi är stolta över att presentera vår nyöppnade klubb i Järva –
+              Välkommen till Upprustningen Sports Club! Vi är stolta över att presentera vår nyöppnade klubb i Järva –
               en plats där passionerade idrottare och kampsportsentusiaster kan komma samman för att utmana
               sig själva, växa som individer och uppnå sina träningsmål.
             </p>
@@ -57,25 +56,13 @@ const AboutUs: React.FC = () => {
             </p>
 
             <p className='text-base leading-relaxed mb-4'>
-              Vi tror på att skapa en inkluderande gemenskap där varje medlem kan trivas och utvecklas. Vårt
-              erfarna tränarteam består av dedikerade och kunniga instruktörer som brinner för att dela med
-              sig av sin kunskap och hjälpa dig att nå nya höjder.
-            </p>
-
-            <p className='text-base leading-relaxed mb-4'>
               Genom noggrant strukturerade träningsprogram och individuell vägledning fokuserar vi på att
               förbättra teknik, kondition och självförtroende hos våra medlemmar. Vi brinner för brottning och
               grappling, då vi anser att de utgör den bästa basen för all kampsport.
             </p>
 
             <p className='text-base leading-relaxed mb-4'>
-              Dessa två sporter är unika, särskilt fristilsbrottning som kombinerar teknisk skicklighet,
-              snabbhet, explosivitet, kreativitet och improvisation. Dess globala popularitet och förmåga att
-              engagera människor runt om i världen gör den till en av de bästa sporterna som finns.
-            </p>
-
-            <p className='text-base leading-relaxed mb-4'>
-              Total Sports Club har som mål att uppmuntra en hälsosam livsstil och få unga att engagera sig i
+              Upprustningen Sports Club har som mål att uppmuntra en hälsosam livsstil och få unga att engagera sig i
               regelbunden motion istället för mindre gynnsamma aktiviteter. Genom att erbjuda träning och
               utbildning inom kampsport, strävar klubben efter att locka ungdomar till att bli fysiskt aktiva,
               bygga styrka och kondition samt utveckla värdefulla livsfärdigheter som disciplin, respekt och
@@ -83,23 +70,10 @@ const AboutUs: React.FC = () => {
             </p>
 
             <p className='text-base leading-relaxed mb-4'>
-              Målet är att erbjuda en meningsfull och positiv fritidsaktivitet som kan gynna ungas fysiska och
-              mentala hälsa på lång sikt. Vi satsar även på att stödja vuxna i deras träningsresor och
-              utveckling inom kampsport.
-            </p>
-
-            <p className='text-base leading-relaxed mb-4'>
               Vi ser fram emot att välkomna dig till vårt brottnings- och MMA-team och hjälpa dig att nå dina
               träningsmål. Tillsammans skapar vi en starkare och mer passionerad kampsportsfamilj!
             </p>
 
-            <section>
-              <h3 className='font-semibold mb-4'>Våra Tränare</h3>
-              <p className='text-base leading-relaxed'>
-                Vårt tränarteam inkluderar erfarna proffs med imponerande bakgrunder inom olika
-                kampsportsdiscipliner. De är dedikerade till att hjälpa dig att nå din personliga bästa nivå.
-              </p>
-            </section>
           </div>
         </CardContent>
 
