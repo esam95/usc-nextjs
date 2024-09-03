@@ -5,6 +5,7 @@ import { Toaster } from '@/components/shadcn/toaster';
 import Navbar from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import logo from '../../public/img/club_logo.webp';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Toaster />
         <Navbar title={'Upprustningen Sports Club'} imageSrc={logo} />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
