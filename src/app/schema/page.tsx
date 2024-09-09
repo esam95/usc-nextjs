@@ -22,45 +22,32 @@ const schedule: any = {
 
 function strToMins(t: string) {
   var s = t.split(":");
-  console.log('Number(s[0]) * 60 + Number(s[1])', Number(s[0]) * 60 + Number(s[1]))
   return Number(s[0]) * 60 + Number(s[1]);
 }
 
 const findMatch = (time: string, day: string) => {
   const arrayOfFullSchedule = Object.entries(schedule);
-console.log('arrayOfFullSchedule', arrayOfFullSchedule)
 
-const singleDay: any = arrayOfFullSchedule.find((singleDay) => {
-  console.log('singleDay[0]', singleDay[0], 'day', day)
-  return singleDay[0] === day;
-});
-console.log('singleDay', singleDay);
+  const singleDay: any = arrayOfFullSchedule.find((singleDay) => {
+    return singleDay[0] === day;
+  });
 
-const arrayOfActivitiesInSingeDay = Object.entries(singleDay ? singleDay[1] as { [key: string]: string }: {});
-console.log('arrayOfActivitiesInSingeDay', arrayOfActivitiesInSingeDay)
+  const arrayOfActivitiesInSingeDay = Object.entries(singleDay ? singleDay[1] as { [key: string]: string }: {});
 
-const currentActivity = arrayOfActivitiesInSingeDay.find((activity) => {
-  const [start, end] = activity[0].split(' - ');
+  const currentActivity = arrayOfActivitiesInSingeDay.find((activity) => {
+    const [start, end] = activity[0].split(' - ');
+    return time === start;
+  })
 
-  return time === start;
-})
-currentActivity ? console.log('currentActivity', currentActivity[1]): null;
-const [start, end] = currentActivity ? currentActivity[0].split(' - '): ['12:00', '13:00'];
+  const [start, end] = currentActivity ? currentActivity[0].split(' - '): ['12:00', '13:00'];
 
-const endHalfHours = strToMins(end)/30
-const startHalfHours = strToMins(start)/30
+  const endHalfHours = strToMins(end)/30
+  const startHalfHours = strToMins(start)/30
 
-console.log('endHalfHours, startHalfHours, currentActivity', endHalfHours, startHalfHours, currentActivity)
+  const rowSpan = endHalfHours - startHalfHours;
 
-const rowSpan = endHalfHours - startHalfHours;
-
-console.log('rowSpan', rowSpan)
-
-return currentActivity ? { rowSpan: rowSpan, activity: currentActivity[1] } : { rowSpan: 1, activity: null };
+  return currentActivity ? { rowSpan: rowSpan, activity: currentActivity[1] } : { rowSpan: 1, activity: null };
 }
-const day = 'Torsdag';
-const time = '20:00';
-
 
 
 const TrainingSchedule = () => {
@@ -95,8 +82,13 @@ const TrainingSchedule = () => {
                 <TableRow key={time} className='border-0 h-14 max-h-14'>
                   <TableCell key={time} className='border-b-2 border-r-2 p-0 align-top text-center'>{time}</TableCell>
                   {days.map((day: string) => 
-                    <TableCell key={day} rowSpan={findMatch(time, day).rowSpan} className={`${findMatch(time, day)?.activity === 'Fys' ? 'bg-cyan-600' : ''}`}>{findMatch(time, day)?.activity}</TableCell>,
-                    
+                    <TableCell 
+                    key={day} 
+                    rowSpan={findMatch(time, day).rowSpan} 
+                    className={`${findMatch(time, day)?.activity === 'Fys' ? 'bg-cyan-600' : ''}`}
+                    >
+                      {findMatch(time, day)?.activity}
+                    </TableCell>
                   )}
                 </TableRow>
               ))}
