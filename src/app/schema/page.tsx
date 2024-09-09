@@ -39,6 +39,12 @@ const findMatch = (time: string, day: string) => {
     return time === start;
   })
 
+  const currentNonActivity = arrayOfActivitiesInSingeDay.find((activity) => {
+    const [start, end] = activity[0].split(' - ');
+    return time >start && time < end;
+  })
+
+  console.log('time, day, currentNonActivity', time, day, currentNonActivity)
   const [start, end] = currentActivity ? currentActivity[0].split(' - '): ['12:00', '13:00'];
 
   const endHalfHours = strToMins(end)/30
@@ -46,7 +52,7 @@ const findMatch = (time: string, day: string) => {
 
   const rowSpan = endHalfHours - startHalfHours;
 
-  return currentActivity ? { rowSpan: rowSpan, activity: currentActivity[1] } : { rowSpan: 1, activity: null };
+  return currentActivity ? { rowSpan: rowSpan, activity: currentActivity[1], currentNonActivity: currentNonActivity } : { rowSpan: 1, activity: null, currentNonActivity: currentNonActivity };
 }
 
 
@@ -82,6 +88,7 @@ const TrainingSchedule = () => {
                 <TableRow key={time} className='border-0 h-14 max-h-14'>
                   <TableCell key={time} className='border-b-2 border-r-2 p-0 align-top text-center'>{time}</TableCell>
                   {days.map((day: string) => 
+                  findMatch(time, day).currentNonActivity ? null:
                     <TableCell 
                     key={day} 
                     rowSpan={findMatch(time, day).rowSpan} 
