@@ -55,6 +55,11 @@ const findMatch = (time: string, day: string) => {
   return currentActivity ? { rowSpan: rowSpan, activity: currentActivity[1], currentNonActivity: currentNonActivity } : { rowSpan: 1, activity: null, currentNonActivity: currentNonActivity };
 }
 
+const pickColor = (activity: string | null) => {
+  return activity === 'Boxning' ? 'bg-cyan-600': activity === 'Fys' ? 'bg-red-600': activity === 'Random' ? 'bg-yellow-600': null
+
+}
+
 
 const TrainingSchedule = () => {
   return (
@@ -92,7 +97,7 @@ const TrainingSchedule = () => {
                     <TableCell 
                     key={day} 
                     rowSpan={findMatch(time, day).rowSpan} 
-                    className={`${findMatch(time, day)?.activity === 'Fys' ? 'bg-cyan-600' : ''}`}
+                    className={`${pickColor(findMatch(time, day)?.activity)}`}
                     >
                       {findMatch(time, day)?.activity}
                     </TableCell>
