@@ -20,6 +20,11 @@ const schedule: any = {
   'Söndag': { '13:00 - 14:00': 'Boxning' },
 };
 
+function strToMins(t: string) {
+  var s = t.split(":");
+  console.log('Number(s[0]) * 60 + Number(s[1])', Number(s[0]) * 60 + Number(s[1]))
+  return Number(s[0]) * 60 + Number(s[1]);
+}
 
 const findMatch = (time: string, day: string) => {
   const arrayOfFullSchedule = Object.entries(schedule);
@@ -37,10 +42,21 @@ console.log('arrayOfActivitiesInSingeDay', arrayOfActivitiesInSingeDay)
 const currentActivity = arrayOfActivitiesInSingeDay.find((activity) => {
   const [start, end] = activity[0].split(' - ');
 
-  return time >= start && time < end;
+  return time === start;
 })
 currentActivity ? console.log('currentActivity', currentActivity[1]): null;
-return currentActivity ? currentActivity[1]: null;
+const [start, end] = currentActivity ? currentActivity[0].split(' - '): ['12:00', '13:00'];
+
+const endHalfHours = strToMins(end)/30
+const startHalfHours = strToMins(start)/30
+
+console.log('endHalfHours, startHalfHours, currentActivity', endHalfHours, startHalfHours, currentActivity)
+
+const rowSpan = endHalfHours - startHalfHours;
+
+console.log('rowSpan', rowSpan)
+
+return currentActivity ? { rowSpan: rowSpan, activity: currentActivity[1] } : { rowSpan: 1, activity: null };
 }
 const day = 'Torsdag';
 const time = '20:00';
@@ -76,10 +92,10 @@ const TrainingSchedule = () => {
             </TableHeader>
             <TableBody>
               {timeSlots.map((time: string) => (
-                <TableRow key={time} className='border-0 min-h-14 max-h-14'>
+                <TableRow key={time} className='border-0 h-14 max-h-14'>
                   <TableCell key={time} className='border-b-2 border-r-2 p-0 align-top text-center'>{time}</TableCell>
                   {days.map((day: string) => 
-                    <TableCell key={day} className={`${findMatch(time, day) === 'Fys' ? 'bg-cyan-600' : ''}`}>{findMatch(time, day)}</TableCell>,
+                    <TableCell key={day} rowSpan={findMatch(time, day).rowSpan} className={`${findMatch(time, day)?.activity === 'Fys' ? 'bg-cyan-600' : ''}`}>{findMatch(time, day)?.activity}</TableCell>,
                     
                   )}
                 </TableRow>
