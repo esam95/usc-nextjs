@@ -1,6 +1,6 @@
 import { schedule } from "@/types/shedule";
 
-function strToMins(t: string) {
+export function strToMins(t: string) {
   var s = t.split(":");
   return Number(s[0]) * 60 + Number(s[1]);
 }
@@ -24,7 +24,7 @@ export const findActivity = (time: string, day: string) => {
     return time >start && time < end;
   })
 
-  console.log('time, day, currentNonActivity', time, day, currentNonActivity)
+  // console.log('time, day, currentNonActivity', time, day, currentNonActivity)
   const [start, end] = currentActivity ? currentActivity[0].split(' - '): ['12:00', '13:00'];
 
   const endHalfHours = strToMins(end)/30
@@ -32,5 +32,6 @@ export const findActivity = (time: string, day: string) => {
 
   const rowSpan = endHalfHours - startHalfHours;
 
-  return currentActivity ? { rowSpan: rowSpan, activity: currentActivity[1], currentNonActivity: currentNonActivity } : { rowSpan: 1, activity: null, currentNonActivity: currentNonActivity };
+  return currentActivity ? { rowSpan: rowSpan, activity: currentActivity[1], time: currentActivity[0], currentNonActivity: currentNonActivity }
+  : { rowSpan: 1, activity: null, currentNonActivity: currentNonActivity };
 }

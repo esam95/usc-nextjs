@@ -1,18 +1,12 @@
-'use client'
-
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/shadcn/table';
 import { FaMapPin as LocationPinIcon } from 'react-icons/fa';
-import { findActivity } from '@/functions/findActivity';
+import { findActivity, strToMins } from '@/functions/findActivity';
 import { days, timeSlots } from '@/types/shedule';
+import { pickColor } from '@/functions/pickColor';
 
 
-
-const pickColor = (activity: string | null) => {
-  return activity === 'Boxning' ? 'bg-cyan-600': activity === 'Fys' ? 'bg-red-600': activity === 'Random' ? 'bg-yellow-600': null
-
-}
 
 
 const TrainingSchedule = () => {
@@ -44,17 +38,28 @@ const TrainingSchedule = () => {
             </TableHeader>
             <TableBody>
               {timeSlots.map((time: string) => (
-                <TableRow key={time} className='border-0 h-14 max-h-14'>
-                  <TableCell key={time} className='border-b-2 border-r-2 p-0 align-top text-center'>{time}</TableCell>
+                strToMins(time) < 870 || strToMins(time) > 1110 ? 
+                <TableRow key={time} className='h-10 max-h-10'>
+                  <TableCell key={time} className='border-r-2 p-0 align-top text-center'>{time}</TableCell>
                   {days.map((day: string) => 
                   findActivity(time, day).currentNonActivity ? null:
                     <TableCell 
                     key={day} 
                     rowSpan={findActivity(time, day).rowSpan} 
-                    className={`${pickColor(findActivity(time, day)?.activity)}`}
+                    className={`${pickColor(findActivity(time, day)?.activity)} rounded-md backdrop-opacity-60`}
                     >
-                      {findActivity(time, day)?.activity}
+                      <div className='flex flex-col items-center'>
+                        <h4>{findActivity(time, day)?.activity}</h4>
+                        <span className='whitespace-nowrap	'>{findActivity(time, day)?.time}</span>
+                      </div>
+                      
                     </TableCell>
+                  )}
+                </TableRow>:
+                <TableRow key={time} className='h-auto'>
+                  <TableCell key={time} className='border-r-2 p-0 align-top text-center'>{time}</TableCell> 
+                  {days.map((day: string) =>
+                  <TableCell key={day}></TableCell>
                   )}
                 </TableRow>
               ))}
