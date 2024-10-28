@@ -64,7 +64,7 @@ const MembershipOptions = () => {
                 {membership?.route && (
                   <Link href={membership.route} className='w-full'>
                     <Button size={'lg'} className='w-full hover:text-primary hover:bg-secondary-foreground'>
-                      Köp
+                      Bli stödmedlem
                     </Button>
                   </Link>
                 )}
