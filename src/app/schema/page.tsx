@@ -1,16 +1,11 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/shadcn/table';
-import { FaMapPin as LocationPinIcon } from 'react-icons/fa';
+'use client'
 
-const schedule = [
-  { day: 'Måndag', time: '–', activity: '–' },
-  { day: 'Tisdag', time: '19:00 - 21:00', activity: 'Boxning' },
-  { day: 'Onsdag', time: '19:00 – 20:00', activity: 'Fys' },
-  { day: 'Torsdag', time: '19:00 - 21:00', activity: 'Boxning' },
-  { day: 'Fredag', time: '–', activity: '–' },
-  { day: 'Lördag', time: '13:30 – 14:30', activity: 'Fys' },
-  { day: 'Söndag', time: '13:00 - 14:00	', activity: 'Boxning' },
-];
+import React from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
+import { FaMapPin as LocationPinIcon } from 'react-icons/fa';
+import ScheduleTable from '@/components/ScheduleTable';
+import { ScheduleCards } from '@/components/ScheduleCards';
+
 
 const TrainingSchedule = () => {
   return (
@@ -21,33 +16,18 @@ const TrainingSchedule = () => {
       <Card className='w-full max-w-3xl shadow-xl rounded-lg'>
         <CardHeader className='bg-secondary text-secondary-foreground rounded-t-lg p-6'>
           <CardTitle className='text-3xl font-bold'>Veckoschema</CardTitle>
-          <CardDescription className='mt-2'>
-            Här är vårt nuvarande träningsschema för veckan. (OBS, tider kan variera!)<br/>
-            <div className='flex flex-column gap-2'>
-              <LocationPinIcon color="red" />
-              <strong>Plats: Kvarnbacka BP (Jyllandsgatan 3, 164 47 Kista)</strong>
-            </div>
-            </CardDescription>
+          <CardDescription className='mt-2 text-inherit'>
+            Här är vårt nuvarande träningsschema för veckan. (OBS, tider kan variera!)
+          </CardDescription>
+          <p></p>
+          <div className='flex flex-column gap-2 items-center	'>
+            <LocationPinIcon color="red" />
+            <strong>Plats: Fryshuset Husby (Lofotengatan 32-34, 164 33 Kista)</strong>
+          </div>
         </CardHeader>
         <CardContent className='p-6'>
-          <Table className='min-w-full'>
-            <TableHeader>
-              <TableRow className='border-b-2 border-gray-200'>
-                <TableHead className='py-3 px-6 text-left'>Dag</TableHead>
-                <TableHead className='py-3 px-6 text-left'>Tid</TableHead>
-                <TableHead className='py-3 px-6 text-left'>Aktivitet</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {schedule.map((row, index) => (
-                <TableRow key={index} className='border-b last:border-0'>
-                  <TableCell className='py-4 px-6 font-medium text-muted-foreground'>{row.day}</TableCell>
-                  <TableCell className='py-4 px-6'>{row.time}</TableCell>
-                  <TableCell className='py-4 px-6'>{row.activity}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+          <ScheduleCards/>
+          <ScheduleTable/>
         </CardContent>
       </Card>
     </main>
