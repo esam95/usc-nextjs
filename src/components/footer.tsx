@@ -99,20 +99,13 @@ export function Footer() {
                 <SquareArrowOutUpRight size={20} />
               </Link>
             </div>
-            <div className='flex flex-col items-center gap-6'>
-              <div className='mt-6 flex flex-row gap-2'>
-                <Image src={swishLogo} alt='Swish logo' width={40} height={40} />
-                <p className='m-0 font-semibold'>
-                  Swishnummer <br />
-                  1234458832
-                </p>
-              </div>
-              <p className='m-0 font-semibold'>
-                Bankgiro
-                <br />
-                802543-8030
+              <Image src={swishLogo} alt='Swish logo' width={40} height={40} />
+              <p className='font-medium'>
+                Swishnummer <br />1234458832
               </p>
-            </div>
+              <p className='font-medium'>
+                Bankgiro<br />802543-8030
+              </p>
           </section>
         </div>
 

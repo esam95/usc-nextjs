@@ -1,25 +1,19 @@
 export const membershipOptions = [
   {
-    title: 'Ungdomar',
-    price: '200 kr',
-    age: '15 -17 år',
-    description: ['Två gratis provträningar', 'Bindningstid, fem månader', '100kr medlemsavgift per termin'],
-  },
-  {
-    title: 'Vuxna',
-    price: '300 kr',
-    age: '18+ år',
+    title: 'Ungdomar och vuxna',
+    price: '1500 kr/termin',
+    age: '15+ år',
     description: ['Två gratis provträningar', 'Bindningstid, fem månader', '100kr medlemsavgift per termin'],
   },
   {
     title: 'Barn',
-    price: '200 kr',
-    age: '10 - 14 år',
-    description: ['Bindningstid, fem månader', 'Tre gratis provträningar', '100 kr medlemsavgift per termin'],
+    price: '1000 kr/termin',
+    age: '7 - 15 år',
+    description: ['Två gratis provträningar', 'Bindningstid, fem månader', '100 kr medlemsavgift per termin'],
   },
   {
     title: 'Enkel träning',
-    price: '100 kr',
+    price: '100 kr/träning',
     age: 'Alla åldrar',
     description: [
       'Gäller vissa träningar beroende på individens erfarenhet av kampsport',

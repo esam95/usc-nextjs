@@ -17,6 +17,8 @@ import armbar from '../../public/img/armbar.webp';
 import logoRf from '../../public/img/logo_rf.webp';
 import logoUpprustningen from '../../public/img/logo_upprustningen.webp';
 import logoSbk from '../../public/img/logo_sbk.webp';
+import logoFryshuset from '../../public/img/logo_fryshuset.webp'
+import logoFolketsHusby from '../../public/img/logo_folkets_husby.webp'
 
 export default function Home() {
   const classesImages = [
@@ -107,7 +109,7 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <section
         id='main-content'
-        className='w-full bg-[#0d1420] py-11 flex flex-col justify-start items-center flex-wrap gap-16 md:flex-row md:gap-0 md:min-h-screen lg:gap-0 lg:pb-0 self-center xl:min-h-[80vh]'
+        className='w-full bg-[#0d1420] py-11 flex flex-col justify-start items-center flex-wrap gap-16 md:flex-row md:min-h-screen self-center xl:min-h-[80vh]'
       >
         <div className='flex flex-col items-center min-w-fit w-full gap-8 md:flex-row md:items-start md:gap-16 md:justify-evenly'>
           <div className='flex flex-col max-w-[22rem] w-full max-h-fit items-start justify-center lg:max-w-fit lg:w-2/4'>
@@ -127,7 +129,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='flex flex-col items-center md:items-start w-full md:mt-0 md:ml-12 lg:ml-[5.5rem] xl:ml-32 xl:mb-40'>
+        <div className='flex flex-col items-center md:items-start w-full md:mt-0 md:ml-12 lg:ml-[5.5rem] xl:ml-32'>
           <Link href='/om-oss'>
             <Button
               size={'lg'}
@@ -139,7 +141,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className='min-w-fit w-full flex flex-col items-center gap-y-2 py-8'>
+        <div className='min-w-fit w-full flex flex-col items-center gap-y-2'>
           <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>Våra samarbetspartners</h2>
           <div className='min-w-fit w-full flex flex-wrap flex-col md:flex-row md:justify-evenly items-center gap-y-5'>
             <div className='max-w-fit'>
@@ -150,6 +152,12 @@ export default function Home() {
             </div>
             <div className='max-w-fit'>
               <Image className='max-w-56' src={logoSbk} alt={'Svenska Budo & Kampsportsförbundet'} />
+            </div>
+            <div className='max-w-fit'>
+              <Image className='max-w-56' src={logoFryshuset} alt={'Fryshuset'} />
+            </div>
+            <div className='max-w-fit'>
+              <Image className='max-w-56' src={logoFolketsHusby} alt={'Folkets husby'} />
             </div>
           </div>
         </div>
@@ -184,9 +192,9 @@ export default function Home() {
             Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
             Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
             Våra träningspass inkluderar för närvarande&nbsp;
-            <strong className='text-primary'>boxning samt fys- och konditionsträningar.&nbsp;</strong>
+            <strong className='text-primary'>boxning, grappling, brottning </strong> samt
+            <strong className='text-primary'> fys- och konditionsträningar.&nbsp;</strong>
             Snart introducerar vi även&nbsp;
-            <strong className='text-primary'>brottning och BJJ</strong>&nbsp; och längre fram
             <strong className='text-primary'> MMA.</strong>
           </p>
           <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>

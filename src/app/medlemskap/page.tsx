@@ -17,10 +17,6 @@ const MembershipOptions = () => {
       <div id='rabatter-section' className='bg-[#545960] text-secondary-foreground p-12 mb-12 w-full'>
         <h3 className='text-2xl font-bold mb-4'>Rabatter & erbjudanden</h3>
         <p className='text-lg font-light mb-4'>
-          – Vi erbjuder en 15% rabatt på träningsavgiften när du betalar för <strong>hela terminen</strong>{' '}
-          tillsammans med medlemsavgiften.
-        </p>
-        <p className='text-lg font-light mb-4'>
           – För <strong>varje</strong> vän du tar med dig som blir medlem hos oss, erbjuder vi en 10% rabatt
           på träningsavgiften.
         </p>
@@ -36,6 +32,10 @@ const MembershipOptions = () => {
           kommer vi också att introducera träningar i{' '}
           <strong className='text-secondary-foreground'>Fristilsbrottning, Grappling, Fys & Kondition</strong>{' '}
           och <strong className='text-secondary-foreground'>MMA</strong>.
+        </p>
+        <p className='text-lg font-light mb-4'>
+          – För frågor angående betalning och avgifter, kontakta&nbsp;
+          <strong className='text-secondary-foreground'>ekonomi@upprustningensc.nu</strong>.
         </p>
       </div>
 
@@ -64,7 +64,7 @@ const MembershipOptions = () => {
                 {membership?.route && (
                   <Link href={membership.route} className='w-full'>
                     <Button size={'lg'} className='w-full hover:text-primary hover:bg-secondary-foreground'>
-                      Köp
+                      Bli stödmedlem
                     </Button>
                   </Link>
                 )}
