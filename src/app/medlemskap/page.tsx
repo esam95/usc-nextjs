@@ -27,11 +27,12 @@ const MembershipOptions = () => {
           – På grund av det begränsade antalet tillgängliga platser för medlemmar rekommenderar vi starkt att
           du säkrar din plats redan idag genom att registrera dig.
         </p>
-        <p className='text-lg font-light'>
-          – För närvarande erbjuder vi endast träningar inom boxning på olika nivåer. Inom några månader
-          kommer vi också att introducera träningar i{' '}
-          <strong className='text-secondary-foreground'>Fristilsbrottning, Grappling, Fys & Kondition</strong>{' '}
-          och <strong className='text-secondary-foreground'>MMA</strong>.
+        <p className='text-lg font-light mb-4'>
+          – För närvarande erbjuder vi&nbsp;
+            <strong className='text-primary'>boxning, grappling, brottning </strong> samt
+            <strong className='text-primary'> fys- och konditionsträningar.&nbsp;</strong>
+            Snart introducerar vi även&nbsp;
+            <strong className='text-primary'> MMA.</strong>
         </p>
         <p className='text-lg font-light mb-4'>
           – För frågor angående betalning och avgifter, kontakta&nbsp;
