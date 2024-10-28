@@ -27,7 +27,7 @@ const calculateTime = (timePeriod: string) => {
 
 return (
   days.map((day: string) =>
-    <Card key={day} className='mb-4 border-none'>
+    <Card key={day} className='mb-4 border-none md:hidden'>
       <CardHeader className='bg-secondary  rounded-lg p-6'>
         <CardTitle className='text-lg font-bold'>{day}</CardTitle>
       </CardHeader>

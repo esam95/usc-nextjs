@@ -6,7 +6,7 @@ import { pickColor } from '@/functions/pickColor';
 
 export function ScheduleTable() {
   return (
-    <Table className='min-w-full'>
+    <Table className='min-w-full hidden md:block'>
       <TableHeader>
         <TableRow className='border-b-2 border-gray-200'>
           <TableHead className='text-center p-0 w-[calc(100%/10)]'>Tid</TableHead>

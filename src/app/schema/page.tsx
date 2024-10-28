@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react';
+import { useEffect, useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/shadcn/table';
 import { FaMapPin as LocationPinIcon } from 'react-icons/fa';
@@ -14,6 +15,21 @@ import { ScheduleCards } from '@/components/ScheduleCards';
 
 const TrainingSchedule = () => {
   const { width = 0, height = 0 } = useWindowSize()
+  const [mobile, setMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true); // Set to true after the component mounts
+    console.log('mobile, mounted, width', mobile, mounted, width)
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      setMobile(width < 768);
+      console.log('mobile, mounted, width', mobile, mounted, width)
+
+    }
+  }, [width, mounted]);
 
   return (
     <main className='pt-36 flex flex-col items-center min-w-full py-8 px-4 mt-0 sm:px-6 lg:px-8 min-h-screen'>
@@ -32,7 +48,8 @@ const TrainingSchedule = () => {
           </div>
         </CardHeader>
         <CardContent className='p-6'>
-          {width > 768 ? <ScheduleTable/>: <ScheduleCards/>}
+          <ScheduleCards/>
+          <ScheduleTable/>
         </CardContent>
       </Card>
     </main>
