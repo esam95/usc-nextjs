@@ -192,9 +192,9 @@ export default function Home() {
             Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
             Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
             Våra träningspass inkluderar för närvarande&nbsp;
-            <strong className='text-primary'>boxning samt fys- och konditionsträningar.&nbsp;</strong>
+            <strong className='text-primary'>boxning, grappling, brottning </strong> samt
+            <strong className='text-primary'> fys- och konditionsträningar.&nbsp;</strong>
             Snart introducerar vi även&nbsp;
-            <strong className='text-primary'>brottning och BJJ</strong>&nbsp; och längre fram
             <strong className='text-primary'> MMA.</strong>
           </p>
           <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
