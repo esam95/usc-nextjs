@@ -17,7 +17,7 @@ export function ScheduleTable() {
       </TableHeader>
       <TableBody>
         {timeSlots.map((time: string) => (
-          strToMins(time) < 870 || strToMins(time) > 1110 ? 
+          // strToMins(time) < 870 || strToMins(time) > 1110 ? 
           <TableRow key={time} className='h-10 max-h-10  border-0'>
             <TableCell key={time} className='border-r-2 border-b-2 p-0 align-top text-center'>{time}</TableCell>
             {days.map((day: string) => 
@@ -34,13 +34,13 @@ export function ScheduleTable() {
                 
               </TableCell>
             )}
-          </TableRow>:
+          </TableRow>/* :
           <TableRow key={time} className='h-10 max-h-10  border-0'>
             <TableCell key={time} className='border-r-2 border-b-2 p-0 align-top text-center'>{time}</TableCell> 
             {days.map((day: string) =>
             <TableCell key={day} className='border-r-2'></TableCell>
             )}
-          </TableRow>
+          </TableRow> */
         ))}
       </TableBody>
     </Table>

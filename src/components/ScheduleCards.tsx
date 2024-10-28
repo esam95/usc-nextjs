@@ -31,9 +31,9 @@ return (
       <CardHeader className='bg-secondary  rounded-lg p-6'>
         <CardTitle className='text-lg font-bold'>{day}</CardTitle>
       </CardHeader>
-      <CardContent className='p-0 border-none'>
+      <CardContent className='p-0 border-none text-center'>
         {findDay(day).map((activity: any) =>
-          <Card key={activity} className='flex flex-row p-2 shadow-lg bg-blue-600'>              
+          <Card key={activity} className='flex flex-row p-2 shadow-lg'>              
             <CardHeader className={`${pickColor(activity[1])} p-0 rounded-full w-36 h-28 flex justify-center`}>
               <CardTitle className='text-center text-sm whitespace-nowrap	'>
                 {activity[0]}
@@ -47,7 +47,7 @@ return (
             </CardContent>
           </Card>
         )}
-        {/* {findDay(day).length === 0 ? 'No activities': null} */}
+        {findDay(day).length === 0 ? 'Inga aktiviteter': null}
       </CardContent>
     </Card>
     )
