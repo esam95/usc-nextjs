@@ -14,8 +14,8 @@ export const days: string[] = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag
 export const schedule: Schedule = {
   'Måndag': { '18:00 - 19:00': 'Grappling' },
   'Tisdag': { '17:30 - 19:00': 'Kvinnor', '19:00 - 21:00': 'Brottning' },
-  'Onsdag': { '18:00 - 19:00': 'Fys' },
+  'Onsdag': { '19:00 - 20:00': 'Fys' },
   'Torsdag': { '17:30 - 18:30': 'Grappling', '19:00 - 21:00': 'Brottning' },
   'Lördag': { '11:00 - 12:30': 'Kvinnor', '19:00 - 21:00': 'Brottning' },
-  'Söndag': { '13:00 - 14:30': 'Boxning' },
+  'Söndag': { '13:00 - 15:00': 'Boxning' },
 };
