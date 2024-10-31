@@ -20,8 +20,10 @@ const TrainingSchedule = () => {
             Här är vårt nuvarande träningsschema för veckan. (OBS, tider kan variera!)
           </CardDescription>
           <p></p>
-          <div className='flex flex-column gap-2 items-center	'>
-            <LocationPinIcon color="red" />
+          <div className='flex gap-2'>
+            <div className='flex flex-row md:items-center mt-1 md:mt-0'>
+              <LocationPinIcon color="red"/>            
+            </div>
             <strong>Plats: Fryshuset Husby (Lofotengatan 32-34, 164 33 Kista)</strong>
           </div>
         </CardHeader>
