@@ -28,7 +28,7 @@ export function ScheduleTable() {
               className={`${pickColor(findActivity(time, day)?.activity)} rounded-md bg-opacity-75 p-2 border-r-2`}
               >
                 <div className='flex flex-col items-center'>
-                  <h6>{findActivity(time, day)?.activity}</h6>
+                  <h6 className='text-center'>{findActivity(time, day)?.activity}</h6>
                   <span className='whitespace-nowrap text-xs'>{findActivity(time, day)?.time}</span>
                 </div>
                 

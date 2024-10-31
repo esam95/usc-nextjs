@@ -12,10 +12,10 @@ export const timeSlots: string[] = [
 export const days: string[] = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag'];
 
 export const schedule: Schedule = {
-  'Måndag': { '18:00 - 19:00': 'Grappling' },
-  'Tisdag': { '17:30 - 19:00': 'Kvinnor', '19:00 - 21:00': 'Brottning' },
-  'Onsdag': { '19:00 - 20:00': 'Fys' },
-  'Torsdag': { '17:30 - 18:30': 'Grappling', '19:00 - 21:00': 'Brottning' },
-  'Lördag': { '11:00 - 12:30': 'Kvinnor', '19:00 - 21:00': 'Brottning' },
+  'Måndag': { '19:00 - 20:15': 'Fys' },
+  'Tisdag': { '17:30 - 19:00': 'Boxning\n(Kvinnor)', '19:00 - 21:00': 'Brottning' },
+  'Onsdag': { '19:00 - 20:30': 'Boxning' },
+  'Torsdag': { '19:00 - 21:00': 'Brottning' },
+  'Lördag': { '11:00 - 12:30': 'Boxning\n(Kvinnor)', '19:00 - 21:00': 'Brottning' },
   'Söndag': { '13:00 - 15:00': 'Boxning' },
 };
