@@ -14,14 +14,15 @@ const MembershipOptions = () => {
         </h1>
       </div>
 
-      <div id='rabatter-section' className='bg-[#545960] text-secondary-foreground p-12 mb-12 w-full'>
+      <div id='rabatter-section' className='bg-[#192334] text-secondary-foreground p-12 mb-12 w-full'>
         <h3 className='text-2xl font-bold mb-4'>Rabatter & erbjudanden</h3>
         <p className='text-lg font-light mb-4'>
-          – För <strong>varje</strong> vän du tar med dig som blir medlem hos oss, erbjuder vi en 10% rabatt
-          på träningsavgiften.
+          – <strong className='font-bold'>Höstterminen</strong> sträcker sig från januari till maj.&nbsp;
+          <strong>Vårterminen</strong> sträcker sig från september till december. <strong className='font-bold'>Juli och augusti</strong> är sommaruppehåll.
         </p>
         <p className='text-lg font-light mb-4'>
-          – Ifall du har medlemskap i två grupper får du halva priset på den andra gruppen.
+          – För <strong className='font-bold'>varje</strong> vän du tar med dig som blir medlem hos oss, erbjuder vi
+          <strong className='font-bold'> 10% rabatt </strong> på träningsavgiften.
         </p>
         <p className='text-lg font-light mb-4'>
           – På grund av det begränsade antalet tillgängliga platser för medlemmar rekommenderar vi starkt att
@@ -29,7 +30,7 @@ const MembershipOptions = () => {
         </p>
         <p className='text-lg font-light mb-4'>
           – För närvarande erbjuder vi&nbsp;
-            <strong className='text-primary'>boxning, grappling, brottning </strong> samt
+            <strong className='text-primary'>boxning, brottning </strong> samt
             <strong className='text-primary'> fys- och konditionsträningar.&nbsp;</strong>
             Snart introducerar vi även&nbsp;
             <strong className='text-primary'> MMA.</strong>

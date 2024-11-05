@@ -13,6 +13,7 @@ import {
   Text,
   Tailwind,
 } from '@react-email/components';
+import backgroundImg from '../../../public/img/background_img.webp';
 
 type EmailProps = {
   name: string;
@@ -58,7 +59,7 @@ export default function EmailTemplate({
           <Container style={containerStyle}>
             <Section style={mainSectionStyle}>
               <Img
-                src='https://www.upprustningensc.nu/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fclub_logo.6bc7e7c7.webp&w=128&q=75'
+                src='/img/background_img.webp'
                 alt='Logo'
                 width='150'
                 height='150'
@@ -126,8 +127,8 @@ export default function EmailTemplate({
               <Column align='left' style={columnStyle}>
                 <Link href=''>
                   <Img
-                    alt='totalsports club icon'
-                    src='https://www.upprustningensc.nu/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fclub_logo.6bc7e7c7.webp&w=128&q=75'
+                    alt='Upprustningen SC club icon'
+                    src='/img/background_img.webp'
                     style={iconStyle}
                   />
                 </Link>

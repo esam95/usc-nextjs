@@ -9,13 +9,13 @@ export const membershipOptions = [
     title: 'Ungdomar',
     price: '1250 kr/termin',
     age: '13-18 år',
-    description: ['Två gratis provträningar', 'Bindningstid, fem månader', '100kr medlemsavgift per termin', 'Får träna i alla sporter utan extra kostnad'],
+    description: ['Två gratis provträningar', 'Bindningstid, fem månader', '100kr medlemsavgift per termin'],
   },
   {
     title: 'Barn',
     price: '1000 kr/termin',
     age: '7-13 år',
-    description: ['Två gratis provträningar', 'Bindningstid, fem månader', '100 kr medlemsavgift per termin'],
+    description: ['Två gratis provträningar', 'Bindningstid, fem månader','100 kr medlemsavgift per termin'],
   },
   {
     title: 'Enkel träning',
