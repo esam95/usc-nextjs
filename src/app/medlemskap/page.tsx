@@ -18,7 +18,7 @@ const MembershipOptions = () => {
         <h3 className='text-2xl font-bold mb-4'>Rabatter & erbjudanden</h3>
         <p className='text-lg font-light mb-4'>
           – <strong className='font-bold'>Höstterminen</strong> sträcker sig från januari till maj.&nbsp;
-          <strong>Vårterminen</strong> sträcker sig från september till december. <strong className='font-bold'>Juli och augusti</strong> är sommaruppehåll.
+          <strong className='font-bold'>Vårterminen</strong> sträcker sig från september till december. <strong className='font-bold'>Juli och augusti</strong> är sommaruppehåll.
         </p>
         <p className='text-lg font-light mb-4'>
           – För <strong className='font-bold'>varje</strong> vän du tar med dig som blir medlem hos oss, erbjuder vi
@@ -36,8 +36,8 @@ const MembershipOptions = () => {
             <strong className='text-primary'> MMA.</strong>
         </p>
         <p className='text-lg font-light mb-4'>
-          – För frågor angående betalning och avgifter, kontakta&nbsp;
-          <strong className='text-secondary-foreground'>ekonomi@upprustningensc.nu</strong>.
+          – För frågor angående betalning och avgifter, kontakta
+          <strong className='font-bold'> ekonomi@upprustningensc.nu</strong>.
         </p>
       </div>
 

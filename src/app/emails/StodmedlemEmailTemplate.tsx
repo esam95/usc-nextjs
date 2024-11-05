@@ -28,7 +28,7 @@ export default function StodmedlemEmailTemplate({ name, emailAddress, amount, pe
         <Container style={containerStyle}>
           <Section style={mainSectionStyle}>
             <Img
-              src='/img/background_img.webp'
+              src='/img/club_logo.webp'
               alt='Logo'
               width='150'
               height='150'
@@ -75,7 +75,7 @@ export default function StodmedlemEmailTemplate({ name, emailAddress, amount, pe
               <Link href=''>
                 <Img
                   alt='Upprustningen SC club icon'
-                  src='/img/background_img.webp'
+                  src='/img/club_logo.webp'
                   style={iconStyle}
                 />
               </Link>
