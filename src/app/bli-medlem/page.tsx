@@ -19,7 +19,6 @@ import * as z from 'zod';
 import AddressField from './formFields/AddressField';
 import CommentsCheckbox from './formFields/CommentCheckbox';
 import CommentsForm from './formFields/CommentsForm';
-import DiscountField from './formFields/DiscountField';
 import DiseaseField from './formFields/DiseaseField';
 import EmailAdressField from './formFields/EmailAdressField';
 import FriendNameFields from './formFields/FriendNameFiels';
@@ -46,11 +45,14 @@ function BecomeMember() {
   const [needsGuardian, setNeedsGuardian] = useState(false);
   const [hasFriend, setHasFriend] = useState(false);
   const { toast } = useToast();
-  const listOfSports = [
+  const listOfSportsMen = [
     'Boxning',
-    'Fristil brottning',
-    'Submission grappling / NoGi',
+    'Olympisk brottning',
     'Fys & Kondition träningar',
+  ];
+
+  const listOfSportsWomen = [
+    'Boxning',
   ];
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -66,7 +68,6 @@ function BecomeMember() {
       sports: [],
       diseases: '',
       trainingFrequency: '1-2',
-      discount: false,
       comments: '',
       guardianName: '',
       guardianTelephone: '',
@@ -77,6 +78,7 @@ function BecomeMember() {
 
   const formDataObject = form.getValues();
   const { isDirty, isSubmitting, isSubmitSuccessful, errors } = form.formState;
+
 
   const postEmail = async () => {
     try {
@@ -187,7 +189,7 @@ function BecomeMember() {
               <GenderField form={form} />
 
               {/* Sports field */}
-              <SportsField form={form} sports={listOfSports} />
+              <SportsField form={form} sports={form.watch("gender") === 'man' ? listOfSportsMen: listOfSportsWomen} />
 
               {/* Training Frequency */}
               <TrainingFrequencyField form={form} />
@@ -196,9 +198,6 @@ function BecomeMember() {
               <FriendReferalField form={form} setHasFriend={setHasFriend} />
               {/* FriendReferal Field */}
               {hasFriend && <FriendNameFields form={form} />}
-
-              {/* Discount Field */}
-              <DiscountField form={form} />
 
               {/* HasDisease checkbox */}
               <HasDiseaseCheckbox

@@ -29,7 +29,6 @@ export const formSchema = z
     sports: z.array(z.string()).min(1, { message: 'Minst en sport måste väljas' }),
     diseases: z.string().optional(),
     trainingFrequency: z.enum(['1-2', '3-4', '']).optional(),
-    discount: z.boolean().optional(),
     comments: z.string().optional(),
     guardianName: z.string().optional(),
     guardianTelephone: z.string().optional(),

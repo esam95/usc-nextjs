@@ -25,7 +25,6 @@ type EmailProps = {
   sports: string[];
   diseases: string;
   trainingFrequency: string;
-  discount: boolean;
   comments: string;
   guardianName: string;
   guardianTelephone: string;
@@ -44,7 +43,6 @@ export default function EmailTemplate({
   sports,
   diseases,
   trainingFrequency,
-  discount,
   comments,
   guardianName,
   guardianTelephone,
@@ -94,8 +92,6 @@ export default function EmailTemplate({
                 <Text style={infoValueStyle}>{diseases || 'N/A'}</Text>
                 <Text style={infoLabelStyle}>Träning per vecka:</Text>
                 <Text style={infoValueStyle}>{trainingFrequency}</Text>
-                <Text style={infoLabelStyle}>Rabatterat pris:</Text>
-                <Text style={infoValueStyle}>{discount ? 'Ja' : 'Nej'}</Text>
                 <Text style={infoLabelStyle}>Kommentarer:</Text>
                 <Text style={infoValueStyle}>{comments || 'N/A'}</Text>
                 <Text style={infoLabelStyle}>Vårdnadshavares namn:</Text>

@@ -13,7 +13,7 @@ function GenderField({ form }: FormFieldProps) {
         <FormItem>
           <FormLabel className="text-md">Kön</FormLabel>
           <FormControl>
-            <RadioGroup value={field.value} onValueChange={field.onChange} className="flex gap-6">
+            <RadioGroup value={field.value} onValueChange={(value) => {field.onChange(value), form.setValue('sports', [])}} className="flex gap-6">
               <div className="flex gap-2">
                 <RadioGroupItem value="man" id="man" />
                 <label htmlFor="man" className="text-sm font-medium leading-none">
