@@ -39,6 +39,7 @@ function TimelineComponent() {
                   height={500}
                   alt='Träning i fristilsbrottning'
                   className='mt-4'
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               </div>
             </div>
@@ -49,6 +50,7 @@ function TimelineComponent() {
                 height={500}
                 alt='Träning i fristilsbrottning'
                 className='mt-4'
+                style={{ width: 'auto', height: 'auto' }}
               />
             </div>
             <hr className='bg-muted-foreground md:mx-8' />
