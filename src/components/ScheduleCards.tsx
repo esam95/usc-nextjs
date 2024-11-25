@@ -1,57 +1,40 @@
-'use client'
-
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/shadcn/card';
 import { days, schedule } from '@/types/shedule';
-import ScheduleTable from '@/components/ScheduleTable';
 import { strToMins } from '@/functions/findActivity';
-import { pickColor } from '@/functions/pickColor';
+import ActivityList from './ActivityList';
+import NoActivityList from './NoActivityList';
 
 export function ScheduleCards() {
-  
-const findDay = (currentDay: string) => {
-  const dayHasTraining = Object.entries(schedule).find((scheduleDay) => {
-    return currentDay === scheduleDay[0];
-  })
+  const findDay = (currentDay: string) => {
+    const dayHasTraining = Object.entries(schedule).find((scheduleDay) => {
+      return currentDay === scheduleDay[0];
+    });
 
-  const arrayOfActivitiesInDay = dayHasTraining ? Object.entries(dayHasTraining[1]): [];
+    const arrayOfActivitiesInDay = dayHasTraining ? Object.entries(dayHasTraining[1]) : [];
 
-  dayHasTraining ? console.log(Object.entries(dayHasTraining[1])): null
-  return arrayOfActivitiesInDay;
-}
+    return arrayOfActivitiesInDay;
+  };
 
-const calculateTime = (timePeriod: string) => {
-  const [start, end] = timePeriod.split(' - ');
-  return strToMins(end)-strToMins(start);
-}
+  const calculateTime = (timePeriod: string) => {
+    const [start, end] = timePeriod.split(' - ');
+    return strToMins(end) - strToMins(start);
+  };
 
-return (
-  days.map((day: string) =>
+  return days.map((day: string) => (
     <Card key={day} className='mb-4 border-none md:hidden'>
-      <CardHeader className='bg-secondary  rounded-lg p-6'>
+      <CardHeader className='bg-secondary rounded-lg rounded-b-none p-6'>
         <CardTitle className='text-lg font-bold'>{day}</CardTitle>
       </CardHeader>
-      <CardContent className='p-0 border-none text-center'>
-        {findDay(day).map((activity: any) =>
-          <Card key={activity} className='flex flex-row p-2 shadow-lg'>              
-            <CardHeader className={`${pickColor(activity[1])} p-0 rounded-full w-36 h-28 flex justify-center`}>
-              <CardTitle className='text-center text-sm whitespace-nowrap	'>
-                {activity[0]}
-              </CardTitle>
-              <CardDescription className='text-center text-white m-0'>
-                {calculateTime(activity[0])} min
-              </CardDescription>
-            </CardHeader>
-            <CardContent className='w-full flex items-center justify-center p-0'>
-              <div>{activity[1]}</div>
-            </CardContent>
-          </Card>
+      <CardContent className='p-0 border-none text-center flex flex-col'>
+        {findDay(day).length > 0 ? (
+          <ActivityList activities={findDay(day)} calculateTime={calculateTime} />
+        ) : (
+          <NoActivityList />
         )}
-        {findDay(day).length === 0 ? 'Inga aktiviteter': null}
       </CardContent>
     </Card>
-    )
-);
+  ));
 }
 
-export default ScheduleTable;
+export default ScheduleCards;
