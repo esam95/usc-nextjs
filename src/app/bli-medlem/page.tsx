@@ -45,15 +45,9 @@ function BecomeMember() {
   const [needsGuardian, setNeedsGuardian] = useState(false);
   const [hasFriend, setHasFriend] = useState(false);
   const { toast } = useToast();
-  const listOfSportsMen = [
-    'Boxning',
-    'Olympisk brottning',
-    'Fys & Kondition träningar',
-  ];
+  const listOfSportsMen = ['Boxning', 'Olympisk brottning', 'Fys & Kondition träningar'];
 
-  const listOfSportsWomen = [
-    'Boxning',
-  ];
+  const listOfSportsWomen = ['Boxning'];
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -78,7 +72,6 @@ function BecomeMember() {
 
   const formDataObject = form.getValues();
   const { isDirty, isSubmitting, isSubmitSuccessful, errors } = form.formState;
-
 
   const postEmail = async () => {
     try {
@@ -139,99 +132,102 @@ function BecomeMember() {
   }, [form, isSubmitSuccessful, isSubmitting, errors]);
 
   return (
-    <div className='mt-32 flex min-h-screen min-w-80 w-full flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
-      <div className='w-full max-w-3xl mb-8'>
-        <h1
-          id='content'
-          className='text-center font-extrabold tracking-tight lg:text-5xl text-secondary-foreground'
-        >
-          Ansökan om medlemskap
-        </h1>
+    <>
+      <span id='shift-navbar-color'>{/* Triggering change of navbar */}</span>
+      <div className='mt-32 flex min-h-screen min-w-80 w-full flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
+        <div className='w-full max-w-3xl mb-8'>
+          <h1 className='text-center font-extrabold tracking-tight lg:text-5xl text-secondary-foreground'>
+            Ansökan om medlemskap
+          </h1>
+        </div>
+
+        <Form {...form}>
+          <Card className='w-full max-w-3xl shadow-lg rounded-lg'>
+            <CardHeader className='bg-secondary text-primary-foreground rounded-t-lg p-6'>
+              <CardTitle className='text-secondary-foreground text-2xl font-bold'>Registrera dig</CardTitle>
+              <CardDescription className='text-muted-foreground'>
+                Var vänlig fyll i formuläret för att bli medlem
+              </CardDescription>
+            </CardHeader>
+            <CardContent className='p-6'>
+              <form className='flex flex-col gap-5' onSubmit={form.handleSubmit(onSubmit, onError)}>
+                {/* Name Field */}
+                <NameField form={form} />
+
+                {/* Personnumber field */}
+                <PersonNumberField handlePersonNumber={handlePersonNumber} form={form} />
+
+                {/* Guardian fields */}
+                {form.watch('personnumber').length > 9 && needsGuardian && (
+                  <>
+                    <GuardianNameField form={form} />
+                    <GuardianTelephoneField form={form} />
+                  </>
+                )}
+
+                {/* Email address field */}
+                <EmailAdressField form={form} />
+
+                {/* Telephone field */}
+                <TelephoneField form={form} />
+
+                {/* Address field */}
+                <AddressField form={form} />
+
+                {/* Postal code field */}
+                <PostalCodeField form={form} />
+
+                {/* Gender field */}
+                <GenderField form={form} />
+
+                {/* Sports field */}
+                <SportsField
+                  form={form}
+                  sports={form.watch('gender') === 'man' ? listOfSportsMen : listOfSportsWomen}
+                />
+
+                {/* Training Frequency */}
+                <TrainingFrequencyField form={form} />
+
+                {/* FriendReferal Checkbox */}
+                <FriendReferalField form={form} setHasFriend={setHasFriend} />
+                {/* FriendReferal Field */}
+                {hasFriend && <FriendNameFields form={form} />}
+
+                {/* HasDisease checkbox */}
+                <HasDiseaseCheckbox
+                  hasDiseases={hasDiseases}
+                  setHasDiseases={(checked) => setHasDiseases(checked)}
+                />
+                {/* Disease field */}
+                {hasDiseases && <DiseaseField form={form} />}
+
+                {/* Comments field */}
+                <CommentsCheckbox hasComments={hasComments} setHasComments={setHasComments} />
+                {hasComments && <CommentsForm form={form} />}
+
+                <CardFooter className='flex justify-end p-6'>
+                  <Button
+                    disabled={!isDirty || isSubmitting}
+                    className='w-full md:w-auto bg-primary text-primary-foreground hover:bg-secondary-foreground hover:text-primary'
+                    type='submit'
+                  >
+                    {form.formState.isSubmitting ? (
+                      <>
+                        <Loader2 className='mr-2 h-4 w-4 animate-spin' />
+                        Skickar..
+                      </>
+                    ) : (
+                      'Skicka in'
+                    )}
+                  </Button>
+                </CardFooter>
+              </form>
+            </CardContent>
+          </Card>
+        </Form>
       </div>
-
-      <Form {...form}>
-        <Card className='w-full max-w-3xl shadow-lg rounded-lg'>
-          <CardHeader className='bg-secondary text-primary-foreground rounded-t-lg p-6'>
-            <CardTitle className='text-secondary-foreground text-2xl font-bold'>Registrera dig</CardTitle>
-            <CardDescription className='text-muted-foreground'>
-              Var vänlig fyll i formuläret för att bli medlem
-            </CardDescription>
-          </CardHeader>
-          <CardContent className='p-6'>
-            <form className='flex flex-col gap-5' onSubmit={form.handleSubmit(onSubmit, onError)}>
-              {/* Name Field */}
-              <NameField form={form} />
-
-              {/* Personnumber field */}
-              <PersonNumberField handlePersonNumber={handlePersonNumber} form={form} />
-
-              {/* Guardian fields */}
-              {form.watch('personnumber').length > 9 && needsGuardian && (
-                <>
-                  <GuardianNameField form={form} />
-                  <GuardianTelephoneField form={form} />
-                </>
-              )}
-
-              {/* Email address field */}
-              <EmailAdressField form={form} />
-
-              {/* Telephone field */}
-              <TelephoneField form={form} />
-
-              {/* Address field */}
-              <AddressField form={form} />
-
-              {/* Postal code field */}
-              <PostalCodeField form={form} />
-
-              {/* Gender field */}
-              <GenderField form={form} />
-
-              {/* Sports field */}
-              <SportsField form={form} sports={form.watch("gender") === 'man' ? listOfSportsMen: listOfSportsWomen} />
-
-              {/* Training Frequency */}
-              <TrainingFrequencyField form={form} />
-
-              {/* FriendReferal Checkbox */}
-              <FriendReferalField form={form} setHasFriend={setHasFriend} />
-              {/* FriendReferal Field */}
-              {hasFriend && <FriendNameFields form={form} />}
-
-              {/* HasDisease checkbox */}
-              <HasDiseaseCheckbox
-                hasDiseases={hasDiseases}
-                setHasDiseases={(checked) => setHasDiseases(checked)}
-              />
-              {/* Disease field */}
-              {hasDiseases && <DiseaseField form={form} />}
-
-              {/* Comments field */}
-              <CommentsCheckbox hasComments={hasComments} setHasComments={setHasComments} />
-              {hasComments && <CommentsForm form={form} />}
-
-              <CardFooter className='flex justify-end p-6'>
-                <Button
-                  disabled={!isDirty || isSubmitting}
-                  className='w-full md:w-auto bg-primary text-primary-foreground hover:bg-secondary-foreground hover:text-primary'
-                  type='submit'
-                >
-                  {form.formState.isSubmitting ? (
-                    <>
-                      <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-                      Skickar..
-                    </>
-                  ) : (
-                    'Skicka in'
-                  )}
-                </Button>
-              </CardFooter>
-            </form>
-          </CardContent>
-        </Card>
-      </Form>
-    </div>
+    </>
   );
 }
 

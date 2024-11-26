@@ -17,8 +17,8 @@ import armbar from '../../public/img/armbar.webp';
 import logoRf from '../../public/img/logo_rf.webp';
 import logoUpprustningen from '../../public/img/logo_upprustningen.webp';
 import logoSbk from '../../public/img/logo_sbk.webp';
-import logoFryshuset from '../../public/img/logo_fryshuset.webp'
-import logoFolketsHusby from '../../public/img/logo_folkets_husby.webp'
+import logoFryshuset from '../../public/img/logo_fryshuset.webp';
+import logoFolketsHusby from '../../public/img/logo_folkets_husby.webp';
 
 export default function Home() {
   const classesImages = [
@@ -73,6 +73,7 @@ export default function Home() {
             quality={100}
             priority
             className='pointer-events-none'
+            id='shift-navbar-color'
           />
           <div className='absolute inset-0 bg-black opacity-50'></div>
         </div>
@@ -172,21 +173,6 @@ export default function Home() {
               Upptäck våra klasser
             </h2>
           </div>
-
-          {/* <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
-            Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
-            Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
-            Våra träningspass inkluderar&nbsp;
-            <strong className='text-primary'>
-              Boxning, MMA, Fristilsbrottning, Submission Wrestling / NoGi&nbsp;
-            </strong>
-            och även&nbsp;
-            <strong className='text-primary'>fys och konditions</strong>&nbsp; träningar för den som inte är
-            ute efter kampsport.
-          </p>
-          <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
-            Kom och hitta den perfekta träningsformen som passar just dig!
-          </p> */}
 
           <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
             Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />

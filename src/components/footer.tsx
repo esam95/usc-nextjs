@@ -99,13 +99,22 @@ export function Footer() {
                 <SquareArrowOutUpRight size={20} />
               </Link>
             </div>
-              <Image src={swishLogo} alt='Swish logo' width={40} height={40} />
-              <p className='font-medium'>
-                Swishnummer <br />1234458832
-              </p>
-              <p className='font-medium'>
-                Bankgiro<br />802543-8030
-              </p>
+            <Image
+              src={swishLogo}
+              alt='Swish logo'
+              width={40}
+              height={40}
+              style={{ width: 'auto', height: 'auto' }}
+            />
+            <p className='font-medium'>
+              Swishnummer <br />
+              1234458832
+            </p>
+            <p className='font-medium'>
+              Bankgiro
+              <br />
+              802543-8030
+            </p>
           </section>
         </div>
 
