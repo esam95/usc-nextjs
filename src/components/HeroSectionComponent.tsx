@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import { Button } from './shadcn/button';
 import Image from 'next/image';
-import artLogo from '../../public/img/3d-illustration.webp';
-import usc_text_logo from '../../public/img/usc_text_logo.webp'
+import usc_text_logo from '../../public/img/usc_text_logo.webp';
 
 const HeroSection: React.FC = () => (
-  <section className='py-16 px-6 lg:py-20 lg:px-8 xl:py-24 xl:px-10'>
+  <section className='py-16 lg:py-20 xl:py-24'>
     <div className='max-w-7xl'>
-      <div className='mt-24 flex flex-col justify-center gap-10 items-center md:flex-row'>
+      <div className='mt-24 flex flex-col justify-center gap-4 items-center md:flex-row'>
         <div className='flex flex-col items-start gap-5'>
           <h1 className='text-4xl font-bold text-secondary-foreground md:text-5xl lg:text-6xl xl:text-7xl'>
             Frågor & Svar

@@ -130,7 +130,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='flex flex-col items-center md:items-start w-full md:mt-0 md:ml-12 lg:ml-[5.5rem] xl:ml-32'>
+        <div className='flex flex-col items-center md:items-start w-full md:mt-0 md:ml-12 lg:ml-[5.5rem] xl:ml-32 2xl:ml-72'>
           <Link href='/om-oss'>
             <Button
               size={'lg'}
