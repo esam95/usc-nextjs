@@ -7,9 +7,9 @@ const FAQ = () => {
   return (
     <>
       <span id='shift-navbar-color'>{/* Triggering change of navbar */}</span>
-      <HeroSection />
-      <main className='px-4 flex flex-col items-start sm:px-6 lg:mx-24 lg:px-8 min-h-[500px]'>
-        <div className='w-full max-w-3xl'>
+      <main className='px-4 flex flex-col items-start min-h-[500px] sm:px-6 lg:mx-24 lg:px-8 xl:items-center'>
+        <HeroSection />
+        <div className='w-full max-w-3xl md:mt-16'>
           <h2 className='mb-8 text-secondary-foreground'>Vanliga frågor och svar</h2>
           <Accordion type='single' collapsible className='w-full mb-36'>
             {questionsAndAnswers.map((row, index) => (
