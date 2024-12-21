@@ -206,7 +206,13 @@ function BecomeSupportMember() {
             </div>
             <div>
               <a href='https://app.swish.nu/1/p/sw/?sw=1234458832'>
-                <Image src={swishLogo} alt='Swish logga' width={100} />
+                <Image
+                  src={swishLogo}
+                  alt='Swish logga'
+                  width={100}
+                  height={100}
+                  style={{ width: 'auto', height: 'auto' }}
+                />
               </a>
             </div>
           </div>

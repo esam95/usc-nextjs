@@ -5,6 +5,7 @@ import { MenuWizard } from './MenuWizard';
 import { Button } from './shadcn/button';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 type Props = {
   title: string;
@@ -14,7 +15,6 @@ type Props = {
 export function Navbar({ imageSrc, title }: Props) {
   const pathname = usePathname();
   const [bgColor, setBgColor] = useState('bg-transparent');
-  const [navbarHeight, setNavbarHeight] = useState('h-28');
 
   const links = [
     { href: '/', label: 'Hem' },
@@ -25,9 +25,7 @@ export function Navbar({ imageSrc, title }: Props) {
     { href: '/Q&A', label: 'FAQ' },
   ];
 
-  const isActive = (href: string) => {
-    return pathname === href;
-  };
+  const isActive = (href: string) => pathname === href;
 
   const navLinks = links.map((link) => (
     <Link
@@ -42,37 +40,33 @@ export function Navbar({ imageSrc, title }: Props) {
     </Link>
   ));
 
-  useEffect(() => {
-    const targetElement = document.querySelector('#content'); // Replace with the ID of your target element
+  const [ref] = useIntersectionObserver({
+    threshold: 0.1,
+    freezeOnceVisible: false,
+    onChange: (isIntersecting) => {
+      if (isIntersecting) {
+        setBgColor('bg-transparent');
+      } else {
+        setBgColor('bg-[#020617]');
+      }
+    },
+  });
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setBgColor('bg-transparent');
-          setNavbarHeight('h-28');
-        } else {
-          setBgColor('bg-[#020617]');
-          setNavbarHeight('h-24');
-        }
-      },
-      { threshold: 0.1 }, // Adjust the threshold as needed
-    );
+  useEffect(() => {
+    // Dynamically find the element with id='shift-navbar-color on the page'
+    const targetElement = document.getElementById('shift-navbar-color');
 
     if (targetElement) {
-      observer.observe(targetElement);
+      ref(targetElement);
+    } else {
+      setBgColor('bg-transparent');
     }
-
-    return () => {
-      if (targetElement) {
-        observer.unobserve(targetElement);
-      }
-    };
-  }, []);
+  }, [pathname, ref]);
 
   return (
     <nav className={`w-full fixed top-0 left-0 z-20 transition-colors duration-300 ${bgColor}`}>
-      <div className={`container pl-5 flex ${navbarHeight} items-center justify-between`}>
-        <Link href='/' className='flex items-center gap-4 text-lg font-semibold' prefetch={false}>
+      <div className={`container pl-5 flex h-24 items-center justify-between`}>
+        <Link href='/' className='flex items-center gap-4 text-lg font-semibold'>
           <Image src={imageSrc} alt='logo' width={60} height={60} />
           <h2 className='text-xl text-foreground lg:text-2xl'>{title}</h2>
         </Link>
