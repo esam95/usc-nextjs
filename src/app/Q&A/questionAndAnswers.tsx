@@ -29,4 +29,9 @@ export const questionsAndAnswers = [
     answer:
       'Absolut, du känner till dina fysiska förhinder och vet vad du kan och inte kan utföra. Instruktörerna kan anpassa träningen och låta dig utföra alternativa tekniker som passar dig bättre.',
   },
+  {
+    question: 'Kan jag betala träning- och medlemsavgift via friskvårdsbidraget?',
+    answer:
+      'Självklart, vi är en officiell idrottsklubb som är registrerade hos Riksidrottsförbundet.',
+  },
 ];

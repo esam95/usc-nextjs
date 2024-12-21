@@ -146,7 +146,7 @@ function BecomeMember() {
             <CardHeader className='bg-secondary text-primary-foreground rounded-t-lg p-6'>
               <CardTitle className='text-secondary-foreground text-2xl font-bold'>Registrera dig</CardTitle>
               <CardDescription className='text-muted-foreground'>
-                Var vänlig fyll i formuläret för att bli medlem
+                Var vänlig fyll i formuläret för att bli medlem (OBS! Du behöver inte registrera dig för att provträna.)
               </CardDescription>
             </CardHeader>
             <CardContent className='p-6'>
