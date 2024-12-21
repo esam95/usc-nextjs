@@ -17,7 +17,6 @@ import { FieldErrors, UseFormReturn, useForm } from 'react-hook-form';
 import * as z from 'zod';
 import EmailAdressField from './formFields/EmailAdressField';
 import NameField from './formFields/NameField';
-import AmountField from './formFields/AmountField';
 import { formSchema } from './schema/formSchema';
 import PersonNumberField from './formFields/PersonNumberField';
 import Image from 'next/image';
@@ -36,7 +35,6 @@ function BecomeSupportMember() {
       name: '',
       personnumber: '',
       emailAddress: '',
-      amount: '',
     },
   });
 
@@ -169,9 +167,6 @@ function BecomeSupportMember() {
 
                 {/* Email address field */}
                 <EmailAdressField form={form} />
-
-                {/* Amount field */}
-                <AmountField form={form} />
 
                 <CardFooter className='flex justify-end p-6'>
                   <Button
