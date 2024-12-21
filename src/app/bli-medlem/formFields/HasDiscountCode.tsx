@@ -14,21 +14,21 @@ import { formSchema } from '../schema/formSchema';
 
 type FriendReferalProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
-  setHasFriend: (value: boolean) => void;
+  setHasDiscountCode: (value: boolean) => void;
 };
 
-function FriendReferalField({ form, setHasFriend }: FriendReferalProps) {
+function HasDiscountCode({ form, setHasDiscountCode }: FriendReferalProps) {
   return (
     <FormField
-      name="friendReferal"
+      name="hasDiscountCode"
       control={form.control}
       render={({ field }) => (
         <FormItem>
-          <FormLabel htmlFor="friendReferal" className="text-md">
-            Vill du värva en vän?
+          <FormLabel htmlFor="hasDiscountCode" className="text-md">
+            Har du en rabattkod?
           </FormLabel>
           <FormDescription>
-            För varje vän du har med dig får du 10% rabatt under första terminen.
+            Ange din rabattkod ifall du har fått en
           </FormDescription>
           <FormControl>
             <div className="flex items-center space-x-2">
@@ -36,7 +36,7 @@ function FriendReferalField({ form, setHasFriend }: FriendReferalProps) {
                 checked={field.value}
                 onCheckedChange={(checked: boolean) => {
                   field.onChange(checked);
-                  setHasFriend(checked);
+                  setHasDiscountCode(checked);
                 }}
               />
               <Label>Ja</Label>
@@ -49,4 +49,4 @@ function FriendReferalField({ form, setHasFriend }: FriendReferalProps) {
   );
 }
 
-export default FriendReferalField;
+export default HasDiscountCode;

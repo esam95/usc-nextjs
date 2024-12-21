@@ -21,8 +21,8 @@ import CommentsCheckbox from './formFields/CommentCheckbox';
 import CommentsForm from './formFields/CommentsForm';
 import DiseaseField from './formFields/DiseaseField';
 import EmailAdressField from './formFields/EmailAdressField';
-import FriendNameFields from './formFields/FriendNameFiels';
-import FriendReferalField from './formFields/FriendReferalFriend';
+import HasDiscountCode from './formFields/HasDiscountCode';
+import DiscountCodeField from './formFields/DiscountCodeField';
 import GenderField from './formFields/GenderField';
 import GuardianNameField from './formFields/GuardianNameField';
 import GuardianTelephoneField from './formFields/GuardianTelephone';
@@ -43,7 +43,7 @@ function BecomeMember() {
   const [hasComments, setHasComments] = useState(false);
   const [hasDiseases, setHasDiseases] = useState(false);
   const [needsGuardian, setNeedsGuardian] = useState(false);
-  const [hasFriend, setHasFriend] = useState(false);
+  const [hasDiscountCode, setHasDiscountCode] = useState(false);
   const { toast } = useToast();
   const listOfSportsMen = ['Boxning', 'Olympisk brottning', 'Fys & Kondition träningar'];
 
@@ -65,8 +65,8 @@ function BecomeMember() {
       comments: '',
       guardianName: '',
       guardianTelephone: '',
-      friendReferal: false,
-      friendsName: '',
+      hasDiscountCode: false,
+      discountCode: '',
     },
   });
 
@@ -190,9 +190,9 @@ function BecomeMember() {
                 <TrainingFrequencyField form={form} />
 
                 {/* FriendReferal Checkbox */}
-                <FriendReferalField form={form} setHasFriend={setHasFriend} />
+                <HasDiscountCode form={form} setHasDiscountCode={setHasDiscountCode} />
                 {/* FriendReferal Field */}
-                {hasFriend && <FriendNameFields form={form} />}
+                {hasDiscountCode && <DiscountCodeField form={form} />}
 
                 {/* HasDisease checkbox */}
                 <HasDiseaseCheckbox

@@ -32,18 +32,18 @@ export const formSchema = z
     comments: z.string().optional(),
     guardianName: z.string().optional(),
     guardianTelephone: z.string().optional(),
-    friendReferal: z.boolean().optional(),
-    friendsName: z.string().optional(),
+    hasDiscountCode: z.boolean().optional(),
+    discountCode: z.string().optional(),
   })
   .refine(
     (data) => {
-      if (data.friendReferal && !data.friendsName) {
+      if (data.hasDiscountCode && !data.discountCode) {
         return false;
       }
       return true;
     },
     {
       message: 'Vänligen skriv in ett namn och telefonnummer',
-      path: ['friendsName'],
+      path: ['discountCode'],
     },
   );

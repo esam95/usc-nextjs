@@ -19,14 +19,9 @@ const MembershipOptions = () => {
         <div id='rabatter-section' className='bg-[#192334] text-secondary-foreground p-12 mb-12 w-full'>
           <h3 className='text-2xl font-bold mb-4'>Rabatter & erbjudanden</h3>
           <p className='text-lg font-light mb-4'>
-            – <strong className='font-bold'>Höstterminen</strong> sträcker sig från januari till maj.&nbsp;
-            <strong className='font-bold'>Vårterminen</strong> sträcker sig från september till december.{' '}
-            <strong className='font-bold'>Juli och augusti</strong> är sommaruppehåll.
-          </p>
-          <p className='text-lg font-light mb-4'>
-            – För <strong className='font-bold'>varje</strong> vän du tar med dig som blir medlem hos oss,
-            erbjuder vi
-            <strong className='font-bold'> 10% rabatt </strong> på träningsavgiften.
+            – <strong className='font-bold'>Vårterminen</strong> sträcker sig från januari till maj.&nbsp;
+            <strong className='font-bold'>Höstterminen</strong> sträcker sig från augusti till december.{' '}
+            <strong className='font-bold'>Juni och juli</strong> är sommarträning.
           </p>
           <p className='text-lg font-light mb-4'>
             – På grund av det begränsade antalet tillgängliga platser för medlemmar rekommenderar vi starkt

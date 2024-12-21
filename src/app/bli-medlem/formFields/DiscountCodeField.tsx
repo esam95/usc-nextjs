@@ -3,15 +3,15 @@ import { Textarea } from '@/components/shadcn/textarea';
 import React from 'react';
 import { FormFieldProps } from '../page';
 
-function FriendNameFields({ form }: FormFieldProps) {
+function DiscountCodeField({ form }: FormFieldProps) {
   return (
     <FormField
-      name="friendsName"
+      name="discountCode"
       control={form.control}
       render={({ field }) => (
         <FormItem>
           <FormControl>
-            <Textarea placeholder="Skriv namnet på din vän samt telefonnummer" {...field} />
+            <Textarea placeholder="Skriv din rabattkod här" {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>
@@ -20,4 +20,4 @@ function FriendNameFields({ form }: FormFieldProps) {
   );
 }
 
-export default FriendNameFields;
+export default DiscountCodeField;
