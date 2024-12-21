@@ -22,8 +22,8 @@ export async function POST(request: Request) {
     comments,
     guardianName,
     guardianTelephone,
-    friendReferal,
-    friendsName,
+    hasDiscountCode,
+    discountCode,
   } = formData;
 
   try {
@@ -36,8 +36,7 @@ export async function POST(request: Request) {
         address,
         guardianName,
         guardianTelephone,
-        friendReferal,
-        friendsName,
+        discountCode,
         diseases,
         trainingFrequency,
         comments,

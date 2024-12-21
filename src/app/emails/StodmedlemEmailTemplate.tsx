@@ -17,10 +17,9 @@ type EmailProps = {
   name: string;
   personnumber: string;
   emailAddress: string;
-  amount: number;
 };
 
-export default function StodmedlemEmailTemplate({ name, emailAddress, amount, personnumber }: EmailProps) {
+export default function StodmedlemEmailTemplate({ name, emailAddress, personnumber }: EmailProps) {
   return (
     <Html>
       <Head />
@@ -48,8 +47,6 @@ export default function StodmedlemEmailTemplate({ name, emailAddress, amount, pe
               <Text style={infoValueStyle}>{personnumber}</Text>
               <Text style={infoLabelStyle}>Mejl adress:</Text>
               <Text style={infoValueStyle}>{emailAddress}</Text>
-              <Text style={infoLabelStyle}>Mängd:</Text>
-              <Text style={infoValueStyle}>{amount}</Text>
             </Section>
 
             <Text style={footerTextStyle}>

@@ -8,7 +8,7 @@ export async function POST(request: Request) {
   const formData = await request.json();
 
   // Extract specific fields you need for sending the email
-  const { name, personnumber, emailAddress, amount } = formData;
+  const { name, personnumber, emailAddress } = formData;
 
   try {
     await resend.emails.send({
@@ -19,7 +19,6 @@ export async function POST(request: Request) {
         name,
         personnumber,
         emailAddress,
-        amount,
       }),
     });
 

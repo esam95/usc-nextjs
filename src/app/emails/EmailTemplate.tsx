@@ -28,8 +28,7 @@ type EmailProps = {
   comments: string;
   guardianName: string;
   guardianTelephone: string;
-  friendReferal: boolean;
-  friendsName: string;
+  discountCode: string;
 };
 
 export default function EmailTemplate({
@@ -46,8 +45,7 @@ export default function EmailTemplate({
   comments,
   guardianName,
   guardianTelephone,
-  friendReferal,
-  friendsName,
+  discountCode,
 }: EmailProps) {
   return (
     <Html>
@@ -98,10 +96,8 @@ export default function EmailTemplate({
                 <Text style={infoValueStyle}>{guardianName || 'N/A'}</Text>
                 <Text style={infoLabelStyle}>Vårdnadshavares Telefonnummer:</Text>
                 <Text style={infoValueStyle}>{guardianTelephone || 'N/A'}</Text>
-                <Text style={infoLabelStyle}>Värva en vän:</Text>
-                <Text style={infoValueStyle}>{friendReferal ? 'Ja' : 'Nej'}</Text>
-                <Text style={infoLabelStyle}>Vännens namn:</Text>
-                <Text style={infoValueStyle}>{friendsName || 'N/A'}</Text>
+                <Text style={infoLabelStyle}>Rabattkod:</Text>
+                <Text style={infoValueStyle}>{discountCode || 'N/A'}</Text>
               </Section>
 
               <Text style={footerTextStyle}>
