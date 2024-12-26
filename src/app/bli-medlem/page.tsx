@@ -92,6 +92,11 @@ function BecomeMember() {
           description: 'Ditt meddelande har skickats',
           variant: 'success',
         });
+
+        // Trigger Google Ads conversion tracking
+        (window as any).gtag('event', 'conversion', {
+          send_to: 'AW-11515902602/QvJlCNvJrfwZEIr1mvMq',
+        });
       } else {
         throw new Error(data.message || 'Unknown error');
       }
