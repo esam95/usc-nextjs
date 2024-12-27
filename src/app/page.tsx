@@ -90,7 +90,7 @@ export default function Home() {
                   size='lg'
                   className='px-9 py-5 rounded-[2px] text-primary-foreground opacity-90 hover:text-secondary-foreground md:min-w-36 md:min-h-12 xl:text-base'
                 >
-                  Bli Medlem
+                  Bli medlem
                 </Button>
               </Link>
               <Link href={'#our-classes'}>
@@ -118,10 +118,9 @@ export default function Home() {
               Välkommen till Upprustningen Sports Club
             </h2>
             <p className='text-base leading-relaxed mb-6 max-w-max lg:text-lg'>
-              Vi är stolta över att presentera vår nyöppnade klubb i Järva som är en plats där passionerade
-              idrottare och kampsports entusiaster kan komma samman för att utmana sig själva, växa som
-              individer och uppnå sina träningsmål. På vår klubb erbjuder vi en dynamisk och stödjande miljö
-              som främjar teknisk utveckling, fysisk styrka och mental skärpa.
+              Vi är en kampsportsklubb i Järva där passionerade idrottare och kampsportsälskare kan komma samman 
+              för att utmana sig själva, växa som individer och uppnå sina träningsmål. På vår klubb erbjuder vi en 
+              rolig och stödjande miljö som främjar teknisk utveckling, fysisk styrka och ökat självförtroende.
             </p>
           </div>
 
@@ -167,7 +166,7 @@ export default function Home() {
       {/* VÅRA KLASSER */}
       <section className='relative w-screen py-11 flex flex-col justify-center items-center gap-12'>
         {/* <Image src={logoStamps} alt={'logos'} className='absolute h-full w-full object-cover opacity-10' /> */}
-        <div className='relative min-h-[400px] flex flex-col justify-center items-center gap-3 px-8 z-10'>
+        <div className='relative min-h-[400px] flex flex-col justify-evenly items-center gap-3 px-8 z-10'>
           <div className='flex flex-col'>
             <h2 id='our-classes' className='text-white font-semibold text-center lg:text-4xl'>
               Upptäck våra klasser
@@ -175,7 +174,6 @@ export default function Home() {
           </div>
 
           <p className='mt-4 text-base leading-relaxed mb-1 max-w-[800px] w-full text-center text-white lg:text-lg'>
-            Vi erbjuder träningsmiljö av hög kvalitet för alla nivåer, från nybörjare till proffs. <br />
             Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
             Våra träningspass inkluderar för närvarande&nbsp;
             <strong className='text-primary'>boxning, grappling, brottning </strong> samt
@@ -186,6 +184,12 @@ export default function Home() {
           <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
             Kom och hitta den perfekta träningsformen som passar just dig!
           </p>
+          <Link href='/schema'>
+            <Button size={'lg'} className='text-primary-foreground hover:text-primary hover:bg-slate-200'>
+              Schema
+              <ArrowRightIcon className='ml-2 h-4 w-4' />
+            </Button>
+          </Link>
         </div>
         <CarouselComponent images={classesImages} />
       </section>
@@ -203,33 +207,24 @@ export default function Home() {
               className='w-full h-full object-cover opacity-50'
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             />
-            <div className='absolute inset-0 flex flex-col items-center justify-center text-center p-4'>
-              <h1 className='text-secondary-foreground font-semibold mb-4'>Vill du provträna?</h1>
-              <CardDescription className='xl:text-base'>
-                Vi ser fram emot att hjälpa dig på din träningsresa
-              </CardDescription>
+            <div className='absolute inset-0 flex flex-col items-center justify-evenly text-center p-4'>
+              <div>
+                <h1 className='text-secondary-foreground font-semibold mb-4'>Vill du provträna?</h1>
+                <h4 className='text-center font-semibold leading-relaxed w-full '>
+                Att börja på en ny klubb kan vara ett stort steg för många <br /> Därför är du alltid välkommen
+                att provträna
+                </h4>
+              </div>
+              <div>
+                <Link href='/kontakt'>
+                  <Button size={'lg'} className='text-primary-foreground hover:text-primary hover:bg-slate-200'>
+                    Kontakta oss
+                    <ArrowRightIcon className='ml-2 h-4 w-4' />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
-          <div className='px-8 flex flex-col items-center max-w-[800px] w-full gap-4 text-left md:px-16 '>
-            <h4 className='text-center font-semibold leading-relaxed w-full '>
-              Att börja på en ny klubb kan vara ett stort steg för många <br /> Därför är du alltid välkommen
-              att provträna
-            </h4>
-            <p className='text-center text-base text-muted-foreground leading-relaxed mb-6 lg:text-lg xl:text-xl'>
-              På vår klubb erbjuder vi en dynamisk och stödjande miljö som främjar utveckling, fysisk styrka
-              och mental skärpa. Kom och provträna med oss och upplev gemenskapen och energin som vår klubb
-              har att erbjuda.
-            </p>
-          </div>
-        </div>
-
-        <div className='flex flex-col items-center justify-center min-h-36 h-full'>
-          <Link href='/schema'>
-            <Button size={'lg'} className='text-primary-foreground hover:text-primary hover:bg-slate-200'>
-              Schema
-              <ArrowRightIcon className='ml-2 h-4 w-4' />
-            </Button>
-          </Link>
         </div>
       </section>
     </>
