@@ -4,6 +4,7 @@ import { Check } from 'lucide-react';
 import { Button } from '@/components/shadcn/button';
 import Link from 'next/link';
 import clubStampLogo from '../../../public/img/club_logo_stamps.webp';
+import { PricingCard } from '@/components/PricingCard';
 
 const MembershipOptions = () => {
   return (
@@ -35,46 +36,17 @@ const MembershipOptions = () => {
             <strong className='text-primary'> MMA.</strong>
           </p>
           <p className='text-lg font-light mb-4'>
-            – För frågor angående betalning och avgifter, kontakta
-            <strong className='font-bold'> ekonomi@upprustningensc.nu</strong>.
+            – För frågor angående betalning och avgifter, kontakta&nbsp;
+            <a href='mailto:ekonomi@upprustningensc.nu'>
+              <strong className='font-bold underline'>ekonomi@upprustningensc.nu</strong>
+            </a>
           </p>
         </div>
 
         <main className='flex min-h-screen min-w-80 w-full flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
-          <div id='membership-cards' className='grid gap-12 md:grid-cols-2 lg:grid-cols-3'>
-            {membershipOptions.map((membership, index) => (
-              <Card key={index} className='shadow-xl h-[500px] flex flex-col'>
-                <CardHeader id='header' className='rounded-sm bg-secondary text-secondary-foreground'>
-                  <CardTitle id='title' className='mb-2 text-3xl font-bold'>
-                    {membership.title}
-                  </CardTitle>
-                  <CardDescription id='description' className='text-xl font-normal text-primary'>
-                    {membership.price}
-                  </CardDescription>
-                  <p className='text-secondary-foreground'>{membership.age}</p>
-                </CardHeader>
-                <CardContent className='flex-1 flex flex-col items-center overflow-auto justify-between pt-8'>
-                  <ul className='list-none'>
-                    {membership.description.map((description, index) => (
-                      <li className='flex items-start mb-2' key={index}>
-                        <Check className='w-6 h-6 mr-2 flex-shrink-0' />
-                        <p className='m-0 text-lg'>{description}</p>
-                      </li>
-                    ))}
-                  </ul>
-                  {membership?.route && (
-                    <Link href={membership.route} className='w-full'>
-                      {membership.route === '/stodmedlem' ?
-                      <Button size={'lg'} className='w-full hover:text-primary hover:bg-secondary-foreground'>
-                        Bli stödmedlem
-                      </Button>: 
-                      <Button size={'lg'} className='w-full hover:text-primary hover:bg-secondary-foreground'>
-                        Bli medlem
-                      </Button>}
-                    </Link>
-                  )}
-                </CardContent>
-              </Card>
+          <div className='flex flex-col flex-wrap items-center gap-8 md:flex-row md:items-stretch md:justify-center md:gap-6'>
+            {membershipOptions.map((membership) => (
+              <PricingCard key={membership.title} {...membership} />
             ))}
           </div>
         </main>
