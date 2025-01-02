@@ -1,9 +1,5 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
 import { membershipOptions } from './membershipOptions';
-import { Check } from 'lucide-react';
-import { Button } from '@/components/shadcn/button';
 import Link from 'next/link';
-import clubStampLogo from '../../../public/img/club_logo_stamps.webp';
 import { PricingCard } from '@/components/PricingCard';
 
 const MembershipOptions = () => {
@@ -33,7 +29,7 @@ const MembershipOptions = () => {
             <strong className='text-primary'>boxning, brottning </strong> samt
             <strong className='text-primary'> fys- och konditionsträningar.&nbsp;</strong>
             Snart introducerar vi även&nbsp;
-            <strong className='text-primary'> MMA.</strong>
+            <strong className='text-primary'>MMA.</strong>
           </p>
           <p className='text-lg font-light mb-4'>
             – För frågor angående betalning och avgifter, kontakta&nbsp;
@@ -44,7 +40,7 @@ const MembershipOptions = () => {
         </div>
 
         <main className='flex min-h-screen min-w-80 w-full flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
-          <div className='flex flex-col flex-wrap items-center gap-8 md:flex-row md:items-stretch md:justify-center md:gap-6'>
+          <div className='flex flex-col flex-wrap items-center gap-8 md:flex-row md:items-stretch md:justify-center md:gap-10'>
             {membershipOptions.map((membership) => (
               <PricingCard key={membership.title} {...membership} />
             ))}

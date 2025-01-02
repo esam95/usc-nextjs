@@ -15,13 +15,7 @@ type PricingCardProps = {
   accentColor?: string;
 };
 
-export function PricingCard({
-  title,
-  price,
-  features,
-  buttonClasses = 'primary',
-  accentColor = '#000',
-}: PricingCardProps) {
+export function PricingCard({ title, price, features, buttonClasses, accentColor }: PricingCardProps) {
   const renderPriceText = () => {
     if (title.toLowerCase() === 'enkel träning') {
       return (
@@ -31,6 +25,7 @@ export function PricingCard({
         </span>
       );
     }
+
     if (title.toLowerCase() === 'stödmedlem') {
       return (
         <span className='flex items-baseline text-3xl font-bold'>
@@ -39,6 +34,7 @@ export function PricingCard({
         </span>
       );
     }
+
     return (
       <span className='flex items-baseline text-3xl font-bold'>
         {price} kr
@@ -50,7 +46,7 @@ export function PricingCard({
   return (
     <Card className='relative w-[300px] overflow-hidden'>
       <div
-        className='z-0 absolute right-0 top-0 h-full w-[150px] rounded-l-full'
+        className='z-1 absolute right-0 top-0 h-full w-[150px] rounded-l-full'
         style={{ backgroundColor: accentColor, opacity: 0.1 }}
       />
       <CardHeader>
@@ -76,7 +72,7 @@ export function PricingCard({
         </ul>
       </CardContent>
       <CardFooter className='flex flex-col gap-2'>
-        <Button className={`z-50 w-full ${buttonClasses}`} style={{ backgroundColor: accentColor }}>
+        <Button className={`z-10 w-full ${buttonClasses}`} style={{ backgroundColor: accentColor }}>
           Teckna medlemskap
         </Button>
       </CardFooter>
