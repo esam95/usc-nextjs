@@ -6,6 +6,7 @@ import Navbar from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import logo from '../../public/img/club_logo.webp';
 import { Analytics } from '@vercel/analytics/react';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,24 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <head>
-        {/* Google tag (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-11515902602"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-11515902602');
-            `,
-          }}
-        ></script>
-      </head>
       <body className={`${inter.className} dark`}>
+        <GoogleAnalytics gaId='AW-11515902602' />
         <Toaster />
         <Navbar title={'Upprustningen Sports Club'} imageSrc={logo} />
         {children}
