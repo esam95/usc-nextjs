@@ -2,7 +2,7 @@ export const membershipOptions = [
   {
     title: 'Vuxna',
     price: 1400,
-    accentColor: '#22C55E', // blue-500
+    accentColor: '#22C55E',
     features: [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Bindningstid, fem månader', included: true },
@@ -26,7 +26,7 @@ export const membershipOptions = [
   {
     title: 'Ungdomar',
     price: 1100,
-    accentColor: '#22C55E', // purple-500
+    accentColor: '#22C55E',
     features: [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Bindningstid, fem månader', included: true },
@@ -38,7 +38,7 @@ export const membershipOptions = [
   {
     title: 'Barn',
     price: 900,
-    accentColor: '#dde24a', // green-500
+    accentColor: '#dde24a',
     features: [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Bindningstid, fem månader', included: true },
@@ -50,7 +50,7 @@ export const membershipOptions = [
   {
     title: 'Enkel träning',
     price: 100,
-    accentColor: '#f1f1f1', // yellow-500
+    accentColor: '#f1f1f1',
     features: [
       { text: 'Gäller vissa träningar beroende på erfarenhet', included: true },
       { text: 'Gäller endast för pass med ledig plats', included: true },
