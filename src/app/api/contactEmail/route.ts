@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import ContactEmail from '@/app/emails/sendContactEmail';
 
 export async function POST(request: Request) {
-  const { UPPRUSTNINGEN_EMAIL } = process.env;
+  const { UPPRUSTNINGEN_CONTACT_EMAIL } = process.env;
   const resend = new Resend(process.env.RESEND_API_KEY);
   const formData = await request.json();
 
@@ -12,8 +12,8 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: `Upprustningen Sports Club <${UPPRUSTNINGEN_EMAIL}>`,
-      to: [`${UPPRUSTNINGEN_EMAIL}`],
+      from: `Upprustningen Sports Club <${UPPRUSTNINGEN_CONTACT_EMAIL}>`,
+      to: [`${UPPRUSTNINGEN_CONTACT_EMAIL}`],
       subject: 'Kontakta oss',
       react: ContactEmail({ name, emailAddress, message }),
     });
