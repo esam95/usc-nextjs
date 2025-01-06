@@ -1,4 +1,3 @@
-'use client';
 import { CardContent } from '@/components/shadcn/card';
 import Image from 'next/image';
 import clubLogo from '../../../public/img/club_logo.webp';

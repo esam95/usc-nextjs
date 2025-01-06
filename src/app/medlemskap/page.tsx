@@ -3,8 +3,10 @@ import Link from 'next/link';
 import { PricingCard } from '@/components/PricingCard';
 import Image from 'next/image';
 import membershipHeroImg from '../../../public/img/membership_hero.webp'; // You'll need to add this image
+import { Calendar, Users, Dumbbell, Mail } from 'lucide-react';
+import { wrap } from 'module';
 
-const MembershipOptions = () => {
+const Membership = () => {
   return (
     <>
       {/* Hero Section */}
@@ -14,8 +16,12 @@ const MembershipOptions = () => {
           src={membershipHeroImg}
           alt='Membership Background'
           fill
-          className='w-full h-full object-cover opacity-45'
+          style={{
+            objectFit: 'cover',
+          }}
+          quality={100}
           priority
+          className='pointer-events-none opacity-60'
         />
         <div className='absolute inset-0 flex flex-col justify-center items-center p-4'>
           <h1 className='text-secondary-foreground text-4xl font-bold text-center md:text-6xl'>
@@ -32,29 +38,43 @@ const MembershipOptions = () => {
       <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
         <div
           id='rabatter-section'
-          className='rounded-sm relative overflow-hidden bg-gradient-to-br from-[#192334] to-[#1d2942] text-secondary-foreground p-8 md:p-12 mb-12 w-full shadow-xl'
+          className='rounded-sm relative overflow-hidden bg-gradient-to-br from-[#192334] to-[#1d2942] text-secondary-foreground p-8 md:p-12 mb-12 w-full shadow-xl max-sm:break-words'
         >
+          <div className='absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2' />
+          <div className='absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2' />
+
           <div className='relative'>
-            <h3 className='text-2xl md:text-3xl font-bold mb-6 text-primary'>Rabatter & erbjudanden</h3>
+            <h3 className='text-2xl md:text-3xl font-bold mb-6 text-secondary-foreground'>
+              Rabatter & erbjudanden
+            </h3>
 
             <div className='space-y-6'>
               <p className='text-lg font-light'>
-                <span className='text-xl inline-block mb-2 text-secondary-foreground/90'>Terminer</span>
+                <span className='inline-flex items-center gap-2 mb-2 text-primary'>
+                  <Calendar className='h-5 w-5' />
+                  Terminer
+                </span>
                 <br />
                 <strong className='font-bold'>Vårterminen</strong> sträcker sig från januari till maj.&nbsp;
-                <strong className='font-bold'>Höstterminen</strong> sträcker sig från augusti till december.
-                <strong className='font-bold'> Juni och juli</strong> är sommarträning.
+                <strong className='font-bold'>Höstterminen</strong> sträcker sig från augusti till december.{' '}
+                <strong className='font-bold'>Juni och juli</strong> är sommarträning.
               </p>
 
               <p className='text-lg font-light'>
-                <span className='text-xl inline-block mb-2 text-secondary-foreground/90'>Platser</span>
+                <span className='inline-flex items-center gap-2 mb-2 text-primary'>
+                  <Users className='h-5 w-5' />
+                  Platser
+                </span>
                 <br />
                 På grund av det begränsade antalet tillgängliga platser för medlemmar rekommenderar vi starkt
                 att du säkrar din plats redan idag genom att registrera dig.
               </p>
 
               <p className='text-lg font-light'>
-                <span className='text-xl inline-block mb-2 text-secondary-foreground/90'>Träningsformer</span>
+                <span className='inline-flex items-center gap-2 mb-2 text-primary'>
+                  <Dumbbell className='h-5 w-5' />
+                  Träningsformer
+                </span>
                 <br />
                 För närvarande erbjuder vi&nbsp;
                 <strong className='text-primary font-semibold'>boxning, brottning </strong> samt
@@ -64,11 +84,14 @@ const MembershipOptions = () => {
               </p>
 
               <p className='text-lg font-light'>
-                <span className='text-xl inline-block mb-2 text-secondary-foreground/90'>Kontakt</span>
+                <span className='inline-flex items-center gap-2 mb-2 text-primary'>
+                  <Mail className='h-5 w-5' />
+                  Kontakt
+                </span>
                 <br />
                 För frågor angående betalning och avgifter, kontakta&nbsp;
                 <a href='mailto:ekonomi@upprustningensc.nu' className='group transition-colors'>
-                  <strong className='font-bold underline decoration-current underline-offset-2 group-hover:decoration-primary/100 transition-colors'>
+                  <strong className='font-bold underline underline-offset-2 group-hover:decoration-primary/100 transition-colors'>
                     ekonomi@upprustningensc.nu
                   </strong>
                 </a>
@@ -89,4 +112,4 @@ const MembershipOptions = () => {
   );
 };
 
-export default MembershipOptions;
+export default Membership;
