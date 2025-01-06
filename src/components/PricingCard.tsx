@@ -1,6 +1,7 @@
 import { Check, X } from 'lucide-react';
 import { Button } from './shadcn/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './shadcn/card';
+import Link from 'next/link';
 
 type PricingFeature = {
   text: string;
@@ -72,9 +73,11 @@ export function PricingCard({ title, price, features, buttonClasses, accentColor
         </ul>
       </CardContent>
       <CardFooter className='flex flex-col gap-2'>
-        <Button className={`z-10 w-full ${buttonClasses}`} style={{ backgroundColor: accentColor }}>
-          Teckna medlemskap
-        </Button>
+        <Link href={'/bli-medlem'} className='w-full'>
+          <Button className={`z-10 w-full ${buttonClasses}`} style={{ backgroundColor: accentColor }}>
+            Teckna medlemskap
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );

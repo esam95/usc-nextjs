@@ -4,7 +4,6 @@ import { PricingCard } from '@/components/PricingCard';
 import Image from 'next/image';
 import membershipHeroImg from '../../../public/img/membership_hero.webp'; // You'll need to add this image
 import { Calendar, Users, Dumbbell, Mail } from 'lucide-react';
-import { wrap } from 'module';
 
 const Membership = () => {
   return (
