@@ -1,80 +1,108 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
 import { membershipOptions } from './membershipOptions';
-import { Check } from 'lucide-react';
-import { Button } from '@/components/shadcn/button';
 import Link from 'next/link';
-import clubStampLogo from '../../../public/img/club_logo_stamps.webp';
+import { PricingCard } from '@/components/PricingCard';
+import Image from 'next/image';
+import membershipHeroImg from '../../../public/img/membership_hero.webp'; // You'll need to add this image
+import { Calendar, Users, Dumbbell, Mail } from 'lucide-react';
 
-const MembershipOptions = () => {
+const Membership = () => {
   return (
     <>
-      <span id='shift-navbar-color'>{/* Triggering change of navbar */}</span>
-      <div className='mt-32 flex min-h-screen min-w-80 w-full flex-col items-center justify-center py-12'>
-        <div className='w-full max-w-3xl mb-8'>
-          <h1 className='text-center font-extrabold tracking-tight lg:text-5xl text-secondary-foreground'>
-            Prislista
+      {/* Hero Section */}
+      <div className='relative w-full min-h-screen'>
+        <Image
+          id='shift-navbar-color'
+          src={membershipHeroImg}
+          alt='Membership Background'
+          fill
+          style={{
+            objectFit: 'cover',
+          }}
+          quality={100}
+          priority
+          className='pointer-events-none opacity-60'
+        />
+        <div className='absolute inset-0 flex flex-col justify-center items-center p-4'>
+          <h1 className='text-secondary-foreground text-4xl font-bold text-center md:text-6xl'>
+            Priser & Medlemskap
           </h1>
+          <span className='mt-6 text-secondary-foreground/90 text-lg font-light text-center'>
+            <h4>Här kan du se våra medlemskap och priser</h4>
+            Välj det medlemskap som passar dig
+          </span>
         </div>
+      </div>
 
-        <div id='rabatter-section' className='bg-[#192334] text-secondary-foreground p-12 mb-12 w-full'>
-          <h3 className='text-2xl font-bold mb-4'>Rabatter & erbjudanden</h3>
-          <p className='text-lg font-light mb-4'>
-            – <strong className='font-bold'>Vårterminen</strong> sträcker sig från januari till maj.&nbsp;
-            <strong className='font-bold'>Höstterminen</strong> sträcker sig från augusti till december.{' '}
-            <strong className='font-bold'>Juni och juli</strong> är sommarträning.
-          </p>
-          <p className='text-lg font-light mb-4'>
-            – På grund av det begränsade antalet tillgängliga platser för medlemmar rekommenderar vi starkt
-            att du säkrar din plats redan idag genom att registrera dig.
-          </p>
-          <p className='text-lg font-light mb-4'>
-            – För närvarande erbjuder vi&nbsp;
-            <strong className='text-primary'>boxning, brottning </strong> samt
-            <strong className='text-primary'> fys- och konditionsträningar.&nbsp;</strong>
-            Snart introducerar vi även&nbsp;
-            <strong className='text-primary'> MMA.</strong>
-          </p>
-          <p className='text-lg font-light mb-4'>
-            – För frågor angående betalning och avgifter, kontakta
-            <strong className='font-bold'> ekonomi@upprustningensc.nu</strong>.
-          </p>
+      {/* Main Content */}
+      <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+        <div
+          id='rabatter-section'
+          className='rounded-sm relative overflow-hidden bg-gradient-to-br from-[#192334] to-[#1d2942] text-secondary-foreground p-8 md:p-12 mb-12 w-full shadow-xl max-sm:break-words'
+        >
+          <div className='absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2' />
+          <div className='absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2' />
+
+          <div className='relative'>
+            <h3 className='text-2xl md:text-3xl font-bold mb-6 text-secondary-foreground'>
+              Rabatter & erbjudanden
+            </h3>
+
+            <div className='space-y-6'>
+              <p className='text-lg font-light'>
+                <span className='inline-flex items-center gap-2 mb-2 text-primary'>
+                  <Calendar className='h-5 w-5' />
+                  Terminer
+                </span>
+                <br />
+                <strong className='font-bold'>Vårterminen</strong> sträcker sig från januari till maj.&nbsp;
+                <strong className='font-bold'>Höstterminen</strong> sträcker sig från augusti till december.{' '}
+                <strong className='font-bold'>Juni och juli</strong> är sommarträning.
+              </p>
+
+              <p className='text-lg font-light'>
+                <span className='inline-flex items-center gap-2 mb-2 text-primary'>
+                  <Users className='h-5 w-5' />
+                  Platser
+                </span>
+                <br />
+                På grund av det begränsade antalet tillgängliga platser för medlemmar rekommenderar vi starkt
+                att du säkrar din plats redan idag genom att registrera dig.
+              </p>
+
+              <p className='text-lg font-light'>
+                <span className='inline-flex items-center gap-2 mb-2 text-primary'>
+                  <Dumbbell className='h-5 w-5' />
+                  Träningsformer
+                </span>
+                <br />
+                För närvarande erbjuder vi&nbsp;
+                <strong className='text-primary font-semibold'>boxning, brottning </strong> samt
+                <strong className='text-primary font-semibold'> fys- och konditionsträningar.&nbsp;</strong>
+                Snart introducerar vi även&nbsp;
+                <strong className='text-primary font-semibold'>MMA.</strong>
+              </p>
+
+              <p className='text-lg font-light'>
+                <span className='inline-flex items-center gap-2 mb-2 text-primary'>
+                  <Mail className='h-5 w-5' />
+                  Kontakt
+                </span>
+                <br />
+                För frågor angående betalning och avgifter, kontakta&nbsp;
+                <a href='mailto:ekonomi@upprustningensc.nu' className='group transition-colors'>
+                  <strong className='font-bold underline underline-offset-2 group-hover:decoration-primary/100 transition-colors'>
+                    ekonomi@upprustningensc.nu
+                  </strong>
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
 
         <main className='flex min-h-screen min-w-80 w-full flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
-          <div id='membership-cards' className='grid gap-12 md:grid-cols-2 lg:grid-cols-3'>
-            {membershipOptions.map((membership, index) => (
-              <Card key={index} className='shadow-xl h-[500px] flex flex-col'>
-                <CardHeader id='header' className='rounded-sm bg-secondary text-secondary-foreground'>
-                  <CardTitle id='title' className='mb-2 text-3xl font-bold'>
-                    {membership.title}
-                  </CardTitle>
-                  <CardDescription id='description' className='text-xl font-normal text-primary'>
-                    {membership.price}
-                  </CardDescription>
-                  <p className='text-secondary-foreground'>{membership.age}</p>
-                </CardHeader>
-                <CardContent className='flex-1 flex flex-col items-center overflow-auto justify-between pt-8'>
-                  <ul className='list-none'>
-                    {membership.description.map((description, index) => (
-                      <li className='flex items-start mb-2' key={index}>
-                        <Check className='w-6 h-6 mr-2 flex-shrink-0' />
-                        <p className='m-0 text-lg'>{description}</p>
-                      </li>
-                    ))}
-                  </ul>
-                  {membership?.route && (
-                    <Link href={membership.route} className='w-full'>
-                      {membership.route === '/stodmedlem' ?
-                      <Button size={'lg'} className='w-full hover:text-primary hover:bg-secondary-foreground'>
-                        Bli stödmedlem
-                      </Button>: 
-                      <Button size={'lg'} className='w-full hover:text-primary hover:bg-secondary-foreground'>
-                        Bli medlem
-                      </Button>}
-                    </Link>
-                  )}
-                </CardContent>
-              </Card>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-center justify-items-center'>
+            {membershipOptions.map((membership) => (
+              <PricingCard key={membership.title} {...membership} />
             ))}
           </div>
         </main>
@@ -83,4 +111,4 @@ const MembershipOptions = () => {
   );
 };
 
-export default MembershipOptions;
+export default Membership;

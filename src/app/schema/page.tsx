@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
 import { FaMapPin as LocationPinIcon } from 'react-icons/fa';

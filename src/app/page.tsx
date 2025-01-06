@@ -11,8 +11,6 @@ import mmaImg from '../../public/img/mma_img.webp';
 import submissionWrestling from '../../public/img/nogi.webp';
 import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
 import strengthCondition from '../../public/img/strength_condition.webp';
-import logoStamps from '../../public/img/club_logo_stamps.webp';
-import { CardDescription } from '@/components/shadcn/card';
 import armbar from '../../public/img/armbar.webp';
 import logoRf from '../../public/img/logo_rf.webp';
 import logoUpprustningen from '../../public/img/logo_upprustningen.webp';
@@ -118,9 +116,10 @@ export default function Home() {
               Välkommen till Upprustningen Sports Club
             </h2>
             <p className='text-base leading-relaxed mb-6 max-w-max lg:text-lg'>
-              Vi är en kampsportsklubb i Järva där passionerade idrottare och kampsportsälskare kan komma samman 
-              för att utmana sig själva, växa som individer och uppnå sina träningsmål. På vår klubb erbjuder vi en 
-              rolig och stödjande miljö som främjar teknisk utveckling, fysisk styrka och ökat självförtroende.
+              Vi är en kampsportsklubb i Järva där passionerade idrottare och kampsportsälskare kan komma
+              samman för att utmana sig själva, växa som individer och uppnå sina träningsmål. På vår klubb
+              erbjuder vi en rolig och stödjande miljö som främjar teknisk utveckling, fysisk styrka och ökat
+              självförtroende.
             </p>
           </div>
 
@@ -211,13 +210,16 @@ export default function Home() {
               <div>
                 <h1 className='text-secondary-foreground font-semibold mb-4'>Vill du provträna?</h1>
                 <h4 className='text-center font-semibold leading-relaxed w-full '>
-                Att börja på en ny klubb kan vara ett stort steg för många <br /> Därför är du alltid välkommen
-                att provträna
+                  Att börja på en ny klubb kan vara ett stort steg för många <br /> Därför är du alltid
+                  välkommen att provträna
                 </h4>
               </div>
               <div>
                 <Link href='/kontakt'>
-                  <Button size={'lg'} className='text-primary-foreground hover:text-primary hover:bg-slate-200'>
+                  <Button
+                    size={'lg'}
+                    className='text-primary-foreground hover:text-primary hover:bg-slate-200'
+                  >
                     Kontakta oss
                     <ArrowRightIcon className='ml-2 h-4 w-4' />
                   </Button>
