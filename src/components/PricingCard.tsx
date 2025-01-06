@@ -47,7 +47,7 @@ export function PricingCard({ title, price, features, buttonClasses, accentColor
   return (
     <Card className='relative w-[300px] overflow-hidden h-[25rem]'>
       <div
-        className='z-1 absolute right-0 top-0 h-full w-[150px] rounded-l-full'
+        className='absolute right-0 top-0 h-full w-[150px] rounded-l-full z-10'
         style={{ backgroundColor: accentColor, opacity: 0.1 }}
       />
       <CardHeader>
@@ -73,8 +73,8 @@ export function PricingCard({ title, price, features, buttonClasses, accentColor
         </ul>
       </CardContent>
       <CardFooter className='flex flex-col gap-2'>
-        <Link href={'/bli-medlem'} className='w-full'>
-          <Button className={`z-10 w-full ${buttonClasses}`} style={{ backgroundColor: accentColor }}>
+        <Link href={'/bli-medlem'} className='w-full z-10'>
+          <Button className={`w-full ${buttonClasses}`} style={{ backgroundColor: accentColor }}>
             Teckna medlemskap
           </Button>
         </Link>
