@@ -45,7 +45,7 @@ export function PricingCard({ title, price, features, buttonClasses, accentColor
   };
 
   return (
-    <Card className='relative w-[300px] overflow-hidden min-h-96'>
+    <Card className='relative w-[300px] overflow-hidden h-[25rem]'>
       <div
         className='z-1 absolute right-0 top-0 h-full w-[150px] rounded-l-full'
         style={{ backgroundColor: accentColor, opacity: 0.1 }}
