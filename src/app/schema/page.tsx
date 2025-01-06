@@ -23,7 +23,7 @@ const TrainingSchedule = () => {
               <div className='flex flex-row md:items-center mt-1 md:mt-0'>
                 <LocationPinIcon color='red' />
               </div>
-              <strong>Plats: Fryshuset Husby (Lofotengatan 32-34, 164 33 Kista)</strong>
+              <strong>Plats: Fryshuset Husby (Lofotengatan 36, 164 33 Kista)</strong>
             </div>
           </CardHeader>
           <CardContent className='p-6'>
