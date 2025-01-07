@@ -36,8 +36,8 @@ export default function Home() {
     },
     {
       imgSrc: submissionWrestling,
-      alt: 'Submission Wrestling',
-      label: 'Submission Wrestling / NoGi',
+      alt: 'BJJ / NoGi',
+      label: 'BJJ / Submission Wrestling',
       description:
         'En kampsport som kombinerar tekniker från brottning och brasiliansk jiu-jitsu. Fokuset ligger på att använda kast, positionering och markkontroll för att få motståndaren att ge upp genom ledlås eller strypgrepp.',
     },
