@@ -45,7 +45,7 @@ function BecomeMember() {
   const [needsGuardian, setNeedsGuardian] = useState(false);
   const [hasDiscountCode, setHasDiscountCode] = useState(false);
   const { toast } = useToast();
-  const listOfSportsMen = ['Boxning', 'Olympisk brottning', 'Fys & Kondition träningar'];
+  const listOfSportsMen = ['Boxning', 'Olympisk brottning', 'BJJ', 'Fys & Kondition träningar'];
 
   const listOfSportsWomen = ['Boxning'];
 
