@@ -5,6 +5,7 @@ export const pickColor = (activity: string | null) => {
   : activity === 'Brottning' ? 'bg-slate-700'
   : activity === 'Brottning\n(Öppen matta)' ? 'bg-slate-700'
   : activity === 'Boxning\n(Kvinnor)' ? 'bg-pink-700'
+  : activity === 'Fys\n(Kvinnor)' ? 'bg-pink-700'
   : activity === 'Brottning\n(Barn)' ? 'bg-blue-700'
   : null
 }
