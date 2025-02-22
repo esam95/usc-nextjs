@@ -70,6 +70,13 @@ export function Footer() {
               >
                 FAQ
               </Link>
+              <Link
+                href='/villkor'
+                className='text-secondary-foreground hover:text-gray-300 hover:underline hover:underline-offset-2 transition-colors'
+                prefetch={false}
+              >
+                Villkor
+              </Link>
             </div>
           </section>
 
