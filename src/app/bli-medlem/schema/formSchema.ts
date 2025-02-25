@@ -34,7 +34,9 @@ export const formSchema = z
     guardianTelephone: z.string().optional(),
     hasDiscountCode: z.boolean().optional(),
     discountCode: z.string().optional(),
-  })
+    conditions: z.boolean().refine((val) => val === true, {
+      message: "Du måste acceptera villkoren",
+    }),  })
   .refine(
     (data) => {
       if (data.hasDiscountCode && !data.discountCode) {

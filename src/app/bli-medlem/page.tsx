@@ -34,6 +34,7 @@ import SportsField from './formFields/SportsField';
 import TelephoneField from './formFields/TelephoneField';
 import TrainingFrequencyField from './formFields/TrainingFrequencyField';
 import { formSchema } from './schema/formSchema';
+import ConditionsField from './formFields/ConditionsField';
 
 export type FormFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
@@ -67,12 +68,13 @@ function BecomeMember() {
       guardianTelephone: '',
       hasDiscountCode: false,
       discountCode: '',
+      conditions: false,
     },
   });
 
   const formDataObject = form.getValues();
   const { isDirty, isSubmitting, isSubmitSuccessful, errors } = form.formState;
-
+  console.log(formDataObject)
   const postEmail = async () => {
     try {
       const response = await fetch('/api/emails', {
@@ -210,6 +212,9 @@ function BecomeMember() {
                 {/* Comments field */}
                 <CommentsCheckbox hasComments={hasComments} setHasComments={setHasComments} />
                 {hasComments && <CommentsForm form={form} />}
+
+                {/* Conditions field */}
+                <ConditionsField form={form}/>
 
                 <CardFooter className='flex justify-end p-6'>
                   <Button
