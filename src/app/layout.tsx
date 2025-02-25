@@ -6,6 +6,7 @@ import Navbar from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import logo from '../../public/img/club_logo.webp';
 import { Analytics } from '@vercel/analytics/react';
+import CookieBanner from '@/components/CookieBanner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Toaster />
         <Navbar title={'Upprustningen Sports Club'} imageSrc={logo} />
         {children}
+        <CookieBanner/>
         <Analytics />
         <Footer />
       </body>
