@@ -45,7 +45,10 @@ export function PricingCard({ title, price, features, buttonClasses, accentColor
   };
 
   return (
-    <Card className='relative w-[300px] overflow-hidden h-[25rem]'>
+    <Card 
+      className='relative w-[310px] overflow-hidden h-[25rem]'
+      style={{ backgroundColor: title.search('Sommarträning') > -1 ? '#0b6595': undefined }}
+    >
       <div
         className='absolute right-0 top-0 h-full w-[150px] rounded-l-full z-10'
         style={{ backgroundColor: accentColor, opacity: 0.1 }}

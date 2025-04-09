@@ -2,7 +2,7 @@ export const membershipOptions = [
   {
     title: 'Vuxna',
     price: 1400,
-    accentColor: '#22C55E',
+    accentColor: '#817bf3',
     features: [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Bindningstid, fem månader', included: true },
@@ -12,7 +12,7 @@ export const membershipOptions = [
     ],
   },
   {
-    title: 'Kvinnor',
+    title: 'Tjejboxning',
     price: 700,
     accentColor: '#817bf3',
     features: [
@@ -26,7 +26,7 @@ export const membershipOptions = [
   {
     title: 'Ungdomar',
     price: 1100,
-    accentColor: '#22C55E',
+    accentColor: '#817bf3',
     features: [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Bindningstid, fem månader', included: true },
@@ -38,7 +38,7 @@ export const membershipOptions = [
   {
     title: 'Barn',
     price: 900,
-    accentColor: '#dde24a',
+    accentColor: '#817bf3',
     features: [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Bindningstid, fem månader', included: true },
@@ -68,6 +68,54 @@ export const membershipOptions = [
       { text: 'Främja klubbens syfte och mål', included: true },
       { text: 'Hjälp oss utveckla verksamheten', included: true },
       { text: 'Alla åldrar välkomna', included: true },
+    ],
+  },
+  {
+    title: 'Sommarträning Vuxna',
+    price: 600,
+    accentColor: '#dde24a',
+    features: [
+      { text: 'Två gratis provträningar', included: true },
+      { text: 'Bindningstid, två månader (juni-juli)', included: true },
+      { text: '100kr medlemsavgift', included: true },
+      { text: 'Alla träningspass ingår', included: true },
+      { text: 'Ålder: 18+ år', included: true },
+    ],
+  },
+  {
+    title: 'Sommarträning Tjejboxning',
+    price: 400,
+    accentColor: '#dde24a',
+    features: [
+      { text: 'Två gratis provträningar', included: true },
+      { text: 'Bindningstid, två månader (juni-juli)', included: true },
+      { text: '100kr medlemsavgift', included: true },
+      { text: 'Alla träningspass ingår', included: true },
+      { text: 'Ålder: 18+ år', included: true },
+    ],
+  },
+  {
+    title: 'Sommarträning Ungdomar',
+    price: 500,
+    accentColor: '#dde24a',
+    features: [
+      { text: 'Två gratis provträningar', included: true },
+      { text: 'Bindningstid, två månader (juni-juli)', included: true },
+      { text: '100kr medlemsavgift', included: true },
+      { text: 'Alla träningspass ingår', included: true },
+      { text: 'Ålder: 14-18 år', included: true },
+    ],
+  },
+  {
+    title: 'Sommarträning Barn',
+    price: 400,
+    accentColor: '#dde24a',
+    features: [
+      { text: 'Två gratis provträningar', included: true },
+      { text: 'Bindningstid, två månader (juni-juli)', included: true },
+      { text: '100kr medlemsavgift', included: true },
+      { text: 'Alla träningspass ingår', included: true },
+      { text: 'Ålder: 7-13 år', included: true },
     ],
   },
 ];
