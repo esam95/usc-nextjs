@@ -76,8 +76,7 @@ export const membershipOptions = [
     accentColor: '#dde24a',
     features: [
       { text: 'Två gratis provträningar', included: true },
-      { text: 'Bindningstid, två månader (juni-juli)', included: true },
-      { text: '100kr medlemsavgift', included: true },
+      { text: 'Träningsperiod juni-juli', included: true },
       { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 18+ år', included: true },
     ],
@@ -88,8 +87,7 @@ export const membershipOptions = [
     accentColor: '#dde24a',
     features: [
       { text: 'Två gratis provträningar', included: true },
-      { text: 'Bindningstid, två månader (juni-juli)', included: true },
-      { text: '100kr medlemsavgift', included: true },
+      { text: 'Träningsperiod juni-juli', included: true },
       { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 18+ år', included: true },
     ],
@@ -100,8 +98,7 @@ export const membershipOptions = [
     accentColor: '#dde24a',
     features: [
       { text: 'Två gratis provträningar', included: true },
-      { text: 'Bindningstid, två månader (juni-juli)', included: true },
-      { text: '100kr medlemsavgift', included: true },
+      { text: 'Träningsperiod juni-juli', included: true },
       { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 14-18 år', included: true },
     ],
@@ -112,8 +109,7 @@ export const membershipOptions = [
     accentColor: '#dde24a',
     features: [
       { text: 'Två gratis provträningar', included: true },
-      { text: 'Bindningstid, två månader (juni-juli)', included: true },
-      { text: '100kr medlemsavgift', included: true },
+      { text: 'Träningsperiod juni-juli', included: true },
       { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 7-13 år', included: true },
     ],

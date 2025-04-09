@@ -46,7 +46,7 @@ export function PricingCard({ title, price, features, buttonClasses, accentColor
 
   return (
     <Card 
-      className='relative w-[310px] overflow-hidden h-[25rem]'
+      className='relative w-[310px] overflow-hidden h-[25rem] flex flex-col'
       style={{ backgroundColor: title.search('Sommarträning') > -1 ? '#0b6595': undefined }}
     >
       <div
@@ -59,7 +59,7 @@ export function PricingCard({ title, price, features, buttonClasses, accentColor
           {renderPriceText()}
         </CardTitle>
       </CardHeader>
-      <CardContent className='flex flex-col gap-4'>
+      <CardContent className='flex flex-col gap-4 flex-1'>
         <ul className='space-y-2'>
           {features.map((feature, index) => (
             <li key={index} className='flex items-center gap-2'>
