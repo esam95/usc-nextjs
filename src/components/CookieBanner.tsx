@@ -25,19 +25,30 @@ export default function CookieBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-[#1d2942] text-white p-4 flex flex-col sm:flex-row justify-between items-center shadow-lg">
-      <p className="text-sm text-gray-300">
+    <div
+      className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-[9999] bg-[#1d2942] text-white p-4 rounded-lg shadow-xl flex flex-col sm:flex-row items-center gap-4 w-[90%] max-w-md pointer-events-auto"
+    >
+      <p className="text-sm text-gray-300 text-center sm:text-left">
         Vi använder cookies för att förbättra din upplevelse. Läs vår{" "}
-        <a href="/villkor" className="underline text-[#4f8de6] hover:text-[#76b0ff]">
+        <a
+          href="/villkor"
+          className="underline text-[#4f8de6] hover:text-[#76b0ff]"
+        >
           Integritetspolicy
         </a>
         .
       </p>
-      <div className="flex gap-4 mt-2 sm:mt-0">
-        <button onClick={handleAccept} className="bg-[#007bff] text-white px-4 py-2 rounded hover:bg-[#0056b3]">
+      <div className="flex gap-2">
+        <button
+          onClick={handleAccept}
+          className="bg-[#007bff] text-white px-4 py-2 rounded hover:bg-[#0056b3] transition"
+        >
           Acceptera
         </button>
-        <button onClick={handleDecline} className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">
+        <button
+          onClick={handleDecline}
+          className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700 transition"
+        >
           Avböj
         </button>
       </div>
