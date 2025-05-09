@@ -1,5 +1,4 @@
 import { Resend } from 'resend';
-import EmailTemplate from '@/app/emails/EmailTemplate';
 import { NextResponse } from 'next/server';
 import SessionTrialTemplate from '@/app/emails/SessionTrialTemplate';
 
@@ -11,7 +10,6 @@ export async function POST(request: Request) {
   // Extract specific fields you need for sending the email
   const {
     name,
-    emailAddress,
     personnumber,
     gender,
     sport,
@@ -24,8 +22,8 @@ export async function POST(request: Request) {
   try {
     await resend.emails.send({
       from: `Upprustningen Sports Club <${UPPRUSTNINGEN_REGISTRATION_EMAIL}>`,
-      to: [`${UPPRUSTNINGEN_REGISTRATION_EMAIL}`, `${emailAddress}`],
-      subject: 'Ny medlem',
+      to: [`esam_95@hotmail.se`],
+      subject: 'Ny provträning',
       react: SessionTrialTemplate({
         name,
         guardianName,
