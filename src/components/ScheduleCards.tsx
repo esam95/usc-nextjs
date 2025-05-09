@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/shadcn/card';
-import { days, schedule } from '@/types/shedule';
+import { days, schedule } from '@/constants/scheduleAndTimes';
 import { strToMins } from '@/functions/findActivity';
 import ActivityList from './ActivityList';
 import NoActivityList from './NoActivityList';

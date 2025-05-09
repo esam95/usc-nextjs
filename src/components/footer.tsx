@@ -13,6 +13,7 @@ import swishLogo from '../../public/img/swish_logo.webp';
 import { SquareArrowOutUpRight } from 'lucide-react';
 
 export function Footer() {
+  const d = new Date();
   return (
     <footer className='pb-6 w-full bg-background'>
       <div className='container mx-auto flex flex-col items-center gap-4 md:gap-6'>
@@ -150,7 +151,7 @@ export function Footer() {
 
         <div className='flex justify-center md:mt-0'>
           <p className='text-secondary-foreground text-xs text-center'>
-            &copy; 2024 Upprustningen Sports Club. All rights reserved.
+            &copy; {d.getFullYear()} Upprustningen Sports Club. All rights reserved.
           </p>
         </div>
       </div>

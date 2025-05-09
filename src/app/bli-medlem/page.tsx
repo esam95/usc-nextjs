@@ -77,7 +77,7 @@ function BecomeMember() {
   console.log(formDataObject)
   const postEmail = async () => {
     try {
-      const response = await fetch('/api/emails', {
+      const response = await fetch('/api/becomeMemberEmail', {
         method: 'POST',
         body: JSON.stringify(formDataObject),
       });

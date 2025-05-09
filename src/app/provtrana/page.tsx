@@ -16,61 +16,52 @@ import { Loader2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { FieldErrors, UseFormReturn, useForm } from 'react-hook-form';
 import * as z from 'zod';
-import AddressField from './formFields/AddressField';
 import CommentsCheckbox from './formFields/CommentCheckbox';
 import CommentsForm from './formFields/CommentsForm';
 import DiseaseField from './formFields/DiseaseField';
-import EmailAdressField from './formFields/EmailAdressField';
-import HasDiscountCode from './formFields/HasDiscountCode';
-import DiscountCodeField from './formFields/DiscountCodeField';
 import GenderField from './formFields/GenderField';
 import GuardianNameField from './formFields/GuardianNameField';
 import GuardianTelephoneField from './formFields/GuardianTelephone';
 import HasDiseaseCheckbox from './formFields/HasDiseaseCheckbox';
 import NameField from './formFields/NameField';
 import PersonNumberField from './formFields/PersonNumberField';
-import PostalCodeField from './formFields/PostalCodeField';
 import SportsField from './formFields/SportsField';
-import TelephoneField from './formFields/TelephoneField';
-import TrainingFrequencyField from './formFields/TrainingFrequencyField';
 import { formSchema } from './schema/formSchema';
 import ConditionsField from './formFields/ConditionsField';
+import DatePicker from './formFields/DatePicker';
+import getNextValidDate from '@/functions/disabledDates';
+import { listOfSports } from '@/constants/sports';
 
 export type FormFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
 };
 
-function BecomeMember() {
+function TrialSession() {
   const [hasComments, setHasComments] = useState(false);
   const [hasDiseases, setHasDiseases] = useState(false);
   const [needsGuardian, setNeedsGuardian] = useState(false);
-  const [hasDiscountCode, setHasDiscountCode] = useState(false);
-  const { toast } = useToast();
-  const listOfSportsMen = ['Boxning', 'Olympisk brottning', 'BJJ', 'Fys & Kondition träningar'];
 
-  const listOfSportsWomen = ['Boxning'];
+  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
-      emailAddress: '',
-      address: '',
-      postalCode: '',
       personnumber: '',
-      telephone: '',
       gender: 'man',
-      sports: [],
+      sport: 'Boxning',
+      date: getNextValidDate(false, 'man', 'Boxning'),
       diseases: '',
-      trainingFrequency: '1-2',
       comments: '',
       guardianName: '',
       guardianTelephone: '',
-      hasDiscountCode: false,
-      discountCode: '',
       conditions: false,
     },
   });
+
+  useEffect(() => {
+    !needsGuardian ? form.setValue('sport', 'Boxning'): form.setValue('sport', 'Olympisk brottning');
+  }, [needsGuardian]);
 
   const formDataObject = form.getValues();
   const { isDirty, isSubmitting, isSubmitSuccessful, errors } = form.formState;
@@ -118,6 +109,7 @@ function BecomeMember() {
 
   const onError = (errors: FieldErrors) => {
     if (errors) {
+      console.log(errors)
       toast({
         title: 'Något blev fel!',
         description: 'Vänligen fyll i alla obligatoriska fält',
@@ -151,7 +143,7 @@ function BecomeMember() {
         <Form {...form}>
           <Card className='w-full max-w-3xl shadow-lg rounded-lg'>
             <CardHeader className='bg-secondary text-primary-foreground rounded-t-lg p-6'>
-              <CardTitle className='text-secondary-foreground text-2xl font-bold'>Registrera dig</CardTitle>
+              <CardTitle className='text-secondary-foreground text-2xl font-bold'>Registrera din provträning</CardTitle>
               <CardDescription className='text-muted-foreground'>
                 Var vänlig fyll i formuläret för att kunna provträna hos oss
               </CardDescription>
@@ -173,13 +165,17 @@ function BecomeMember() {
                 )}
 
                 {/* Gender field */}
-                <GenderField form={form} />
+                <GenderField form={form} needsGuardian={needsGuardian} />
 
                 {/* Sports field */}
                 <SportsField
                   form={form}
-                  sports={form.watch('gender') === 'man' ? listOfSportsMen : listOfSportsWomen}
+                  sports={!needsGuardian ? form.watch('gender') === 'man' ? listOfSports.men : listOfSports.women: listOfSports.children}
+                  needsGuardian={needsGuardian}
                 />
+
+                {/* Date field */}
+                <DatePicker form={form} needsGuardian={needsGuardian} />
 
                 {/* HasDisease checkbox */}
                 <HasDiseaseCheckbox
@@ -221,4 +217,4 @@ function BecomeMember() {
   );
 }
 
-export default BecomeMember;
+export default TrialSession;
