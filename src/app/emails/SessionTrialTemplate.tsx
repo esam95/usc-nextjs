@@ -13,6 +13,7 @@ import {
   Text,
   Tailwind,
 } from '@react-email/components';
+import { getDate, getYear } from 'date-fns';
 
 type EmailProps = {
   name: string;
@@ -35,6 +36,7 @@ export default function SessionTrialTemplate({
   guardianName,
   guardianTelephone,
 }: EmailProps) {
+  const d = new Date();
   return (
     <Html>
       <Head />
@@ -107,7 +109,7 @@ export default function SessionTrialTemplate({
             </Row>
             <Row>
               <Text style={{ textAlign: 'center' }}>
-                © 2024 Upprustningen Sports Klubb, All Rights Reserved <br />
+                © {d.getFullYear()} Upprustningen Sports Club, All Rights Reserved <br />
                 Stockholm - Sweden
               </Text>
             </Row>

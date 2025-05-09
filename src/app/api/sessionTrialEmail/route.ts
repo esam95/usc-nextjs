@@ -22,7 +22,7 @@ export async function POST(request: Request) {
   try {
     await resend.emails.send({
       from: `Upprustningen Sports Club <${UPPRUSTNINGEN_REGISTRATION_EMAIL}>`,
-      to: [`esam_95@hotmail.se`],
+      to: [`${UPPRUSTNINGEN_REGISTRATION_EMAIL}`],
       subject: 'Ny provträning',
       react: SessionTrialTemplate({
         name,

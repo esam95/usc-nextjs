@@ -47,6 +47,8 @@ export default function EmailTemplate({
   guardianTelephone,
   discountCode,
 }: EmailProps) {
+  const d = new Date();
+
   return (
     <Html>
       <Head />
@@ -103,7 +105,7 @@ export default function EmailTemplate({
               <Text style={footerTextStyle}>
                 Tack,
                 <br />
-                Upprustningen Sports Klubb
+                Upprustningen Sports Club
               </Text>
             </Section>
           </Container>
@@ -131,7 +133,7 @@ export default function EmailTemplate({
             </Row>
             <Row>
               <Text style={{ textAlign: 'center' }}>
-                © 2024 Upprustningen Sports Klubb, All Rights Reserved <br />
+                © {d.getFullYear()} Upprustningen Sports Club, All Rights Reserved <br />
                 Stockholm - Sweden
               </Text>
             </Row>
