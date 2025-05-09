@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 import EmailTemplate from '@/app/emails/EmailTemplate';
 import { NextResponse } from 'next/server';
+import SessionTrialTemplate from '@/app/emails/SessionTrialTemplate';
 
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -11,19 +12,13 @@ export async function POST(request: Request) {
   const {
     name,
     emailAddress,
-    address,
-    postalCode,
     personnumber,
-    telephone,
     gender,
-    sports,
+    sport,
     diseases,
-    trainingFrequency,
     comments,
     guardianName,
     guardianTelephone,
-    hasDiscountCode,
-    discountCode,
   } = formData;
 
   try {
@@ -31,21 +26,15 @@ export async function POST(request: Request) {
       from: `Upprustningen Sports Club <${UPPRUSTNINGEN_REGISTRATION_EMAIL}>`,
       to: [`${UPPRUSTNINGEN_REGISTRATION_EMAIL}`, `${emailAddress}`],
       subject: 'Ny medlem',
-      react: EmailTemplate({
+      react: SessionTrialTemplate({
         name,
-        address,
         guardianName,
         guardianTelephone,
-        discountCode,
         diseases,
-        trainingFrequency,
         comments,
-        telephone,
         gender,
-        postalCode,
         personnumber,
-        emailAddress,
-        sports,
+        sport,
       }),
     });
 
