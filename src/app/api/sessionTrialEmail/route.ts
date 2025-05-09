@@ -17,6 +17,7 @@ export async function POST(request: Request) {
     comments,
     guardianName,
     guardianTelephone,
+    date
   } = formData;
 
   try {
@@ -33,6 +34,7 @@ export async function POST(request: Request) {
         gender,
         personnumber,
         sport,
+        date
       }),
     });
 

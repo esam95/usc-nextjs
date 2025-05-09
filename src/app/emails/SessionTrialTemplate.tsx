@@ -24,6 +24,7 @@ type EmailProps = {
   comments: string;
   guardianName: string;
   guardianTelephone: string;
+  date: Date
 };
 
 export default function SessionTrialTemplate({
@@ -35,6 +36,7 @@ export default function SessionTrialTemplate({
   comments,
   guardianName,
   guardianTelephone,
+  date
 }: EmailProps) {
   const d = new Date();
   return (
@@ -68,6 +70,8 @@ export default function SessionTrialTemplate({
                 <Text style={infoValueStyle}>{gender}</Text>
                 <Text style={infoLabelStyle}>Sport:</Text>
                 <Text style={infoValueStyle}>{sport}</Text>
+                <Text style={infoLabelStyle}>Datum:</Text>
+                <Text style={infoValueStyle}>{`${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`}</Text>
                 <Text style={infoLabelStyle}>Sjukdomar:</Text>
                 <Text style={infoValueStyle}>{diseases || 'N/A'}</Text>
                 <Text style={infoLabelStyle}>Kommentarer:</Text>
