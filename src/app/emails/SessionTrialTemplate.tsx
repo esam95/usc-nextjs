@@ -38,6 +38,8 @@ export default function SessionTrialTemplate({
   date
 }: EmailProps) {
   const d = new Date();
+  const parsedDate = new Date(date);
+
   return (
     <Html>
       <Head />
@@ -70,7 +72,7 @@ export default function SessionTrialTemplate({
                 <Text style={infoLabelStyle}>Sport:</Text>
                 <Text style={infoValueStyle}>{sport}</Text>
                 <Text style={infoLabelStyle}>Datum:</Text>
-                <Text style={infoValueStyle}>{`${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`}</Text>
+                <Text style={infoValueStyle}>{`${parsedDate.getDate()}-${parsedDate.getMonth() + 1}-${parsedDate.getFullYear()}`}</Text>
                 <Text style={infoLabelStyle}>Sjukdomar:</Text>
                 <Text style={infoValueStyle}>{diseases || 'N/A'}</Text>
                 <Text style={infoLabelStyle}>Kommentarer:</Text>
