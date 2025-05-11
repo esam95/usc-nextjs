@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   const { UPPRUSTNINGEN_REGISTRATION_EMAIL } = process.env;
   const formData = await request.json();
-
+  console.log('post request route executed')
   // Extract specific fields you need for sending the email
   const {
     name,
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
   try {
     await resend.emails.send({
       from: `Upprustningen Sports Club <${UPPRUSTNINGEN_REGISTRATION_EMAIL}>`,
-      to: [`esam_95@hotmail.se`],
+      to: [`${UPPRUSTNINGEN_REGISTRATION_EMAIL}`],
       subject: 'Ny provträning',
       react: SessionTrialTemplate({
         name,
@@ -37,9 +37,7 @@ export async function POST(request: Request) {
         date
       }),
     });
-    console.log("RESEND_API_KEY", process.env.RESEND_API_KEY);
-    console.log("EMAIL", process.env.UPPRUSTNINGEN_REGISTRATION_EMAIL);
-    
+
     console.log('data', formData);
     return NextResponse.json({
       success: true,
@@ -48,9 +46,6 @@ export async function POST(request: Request) {
       statusCode: 201,
     });
   } catch (error) {
-    console.log("RESEND_API_KEY", process.env.RESEND_API_KEY);
-console.log("EMAIL", process.env.UPPRUSTNINGEN_REGISTRATION_EMAIL);
-
     return NextResponse.json({
       success: false,
       message: 'Failed to send email',

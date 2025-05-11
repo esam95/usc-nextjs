@@ -13,7 +13,6 @@ import {
   Text,
   Tailwind,
 } from '@react-email/components';
-import { getDate, getYear } from 'date-fns';
 
 type EmailProps = {
   name: string;
