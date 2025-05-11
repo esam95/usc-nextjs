@@ -67,7 +67,9 @@ function TrialSession() {
   const { isDirty, isSubmitting, isSubmitSuccessful, errors } = form.formState;
   console.log(formDataObject)
   const postEmail = async () => {
+    console.log("Endpoint hit")
     try {
+      console.log("POST hit")
       const response = await fetch('/api/sessionTrialEmail', {
         method: 'POST',
         body: JSON.stringify(formDataObject),
@@ -100,6 +102,8 @@ function TrialSession() {
         variant: 'destructive',
       });
       console.error(error);
+      console.log("error hit")
+
     }
   };
 
