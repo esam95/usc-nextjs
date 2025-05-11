@@ -1,6 +1,6 @@
 export const personAbove18 = (number: string) => {
   if (number.length < 10) {
-    return false;
+    return true;
   }
 
   const year = parseInt(number.substring(0, 4));

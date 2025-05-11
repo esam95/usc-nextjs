@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/shadcn/table';
 import { findActivity } from '@/functions/findActivity';
-import { days, timeSlots } from '@/types/shedule';
+import { days, timeSlots } from '@/constants/scheduleAndTimes';
 import { pickColor } from '@/functions/pickColor';
 
 export function ScheduleTable() {

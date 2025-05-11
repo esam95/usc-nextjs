@@ -16,44 +16,35 @@ import {
 
 type EmailProps = {
   name: string;
-  emailAddress: string;
-  address: string;
-  postalCode: string;
   personnumber: string;
-  telephone: string;
   gender: string;
-  sports: string[];
+  sport: string;
   diseases: string;
-  trainingFrequency: string;
   comments: string;
   guardianName: string;
   guardianTelephone: string;
-  discountCode: string;
+  date: Date
 };
 
-export default function EmailTemplate({
+export default function SessionTrialTemplate({
   name,
-  emailAddress,
-  address,
-  postalCode,
   personnumber,
-  telephone,
   gender,
-  sports,
+  sport,
   diseases,
-  trainingFrequency,
   comments,
   guardianName,
   guardianTelephone,
-  discountCode,
+  date
 }: EmailProps) {
   const d = new Date();
+  const parsedDate = new Date(date);
 
   return (
     <Html>
       <Head />
       <Tailwind>
-        <Preview>Medlems registrering</Preview>
+        <Preview>Provträningsregistrering</Preview>
         <Body style={bodyStyle}>
           <Container style={containerStyle}>
             <Section style={mainSectionStyle}>
@@ -69,37 +60,27 @@ export default function EmailTemplate({
             <Section style={sectionStyle}>
               <Text style={textTitleStyle}>Grattis!</Text>
               <Text style={textBaseStyle}>
-                Du har registrerat dig som ny medlem. Nedan följer detaljerna:
+                Du har bokat en provträning. Nedan följer detaljerna:
               </Text>
               <Section style={infoSectionStyle}>
                 <Text style={infoLabelStyle}>Namn:</Text>
                 <Text style={infoValueStyle}>{name}</Text>
-                <Text style={infoLabelStyle}>Mejl adress:</Text>
-                <Text style={infoValueStyle}>{emailAddress}</Text>
-                <Text style={infoLabelStyle}>Adress:</Text>
-                <Text style={infoValueStyle}>{address}</Text>
-                <Text style={infoLabelStyle}>Postkod:</Text>
-                <Text style={infoValueStyle}>{postalCode}</Text>
                 <Text style={infoLabelStyle}>Personnummer:</Text>
                 <Text style={infoValueStyle}>{personnumber}</Text>
-                <Text style={infoLabelStyle}>Telefon:</Text>
-                <Text style={infoValueStyle}>{telephone}</Text>
                 <Text style={infoLabelStyle}>Kön:</Text>
                 <Text style={infoValueStyle}>{gender}</Text>
-                <Text style={infoLabelStyle}>Sporter:</Text>
-                <Text style={infoValueStyle}>{sports?.join(', ')}</Text>
+                <Text style={infoLabelStyle}>Sport:</Text>
+                <Text style={infoValueStyle}>{sport}</Text>
+                <Text style={infoLabelStyle}>Datum:</Text>
+                <Text style={infoValueStyle}>{`${parsedDate.getDate()}-${parsedDate.getMonth() + 1}-${parsedDate.getFullYear()}`}</Text>
                 <Text style={infoLabelStyle}>Sjukdomar:</Text>
                 <Text style={infoValueStyle}>{diseases || 'N/A'}</Text>
-                <Text style={infoLabelStyle}>Träning per vecka:</Text>
-                <Text style={infoValueStyle}>{trainingFrequency}</Text>
                 <Text style={infoLabelStyle}>Kommentarer:</Text>
                 <Text style={infoValueStyle}>{comments || 'N/A'}</Text>
                 <Text style={infoLabelStyle}>Vårdnadshavares namn:</Text>
                 <Text style={infoValueStyle}>{guardianName || 'N/A'}</Text>
                 <Text style={infoLabelStyle}>Vårdnadshavares Telefonnummer:</Text>
                 <Text style={infoValueStyle}>{guardianTelephone || 'N/A'}</Text>
-                <Text style={infoLabelStyle}>Rabattkod:</Text>
-                <Text style={infoValueStyle}>{discountCode || 'N/A'}</Text>
               </Section>
 
               <Text style={footerTextStyle}>

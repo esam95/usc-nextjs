@@ -1,4 +1,4 @@
-import { schedule } from "@/types/shedule";
+import { schedule } from "@/constants/scheduleAndTimes";
 
 export function strToMins(t: string) {
   var s = t.split(":");

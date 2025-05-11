@@ -1,10 +1,17 @@
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/shadcn/form';
 import { RadioGroup, RadioGroupItem } from '@/components/shadcn/radio-group';
 
+import { UseFormReturn } from 'react-hook-form';
+import { z } from 'zod';
+import { formSchema } from '../schema/formSchema';
 import React from 'react';
-import { FormFieldProps } from '../page';
 
-function GenderField({ form }: FormFieldProps) {
+type GenderFieldProps = {
+  form: UseFormReturn<z.infer<typeof formSchema>>;
+  needsGuardian: boolean;
+};
+
+function GenderField({ form, needsGuardian }: GenderFieldProps) {
   return (
     <FormField
       name="gender"
@@ -13,7 +20,14 @@ function GenderField({ form }: FormFieldProps) {
         <FormItem>
           <FormLabel className="text-md">Kön</FormLabel>
           <FormControl>
-            <RadioGroup value={field.value} onValueChange={(value) => {field.onChange(value), form.setValue('sports', [])}} className="flex gap-6">
+            <RadioGroup 
+              value={field.value} 
+              onValueChange={(value) => {
+                field.onChange(value), 
+                !needsGuardian ? form.setValue('sport', 'Boxning'): form.setValue('sport', 'Olympisk brottning')
+              }} 
+              className="flex gap-6"
+            >
               <div className="flex gap-2">
                 <RadioGroupItem value="man" id="man" />
                 <label htmlFor="man" className="text-sm font-medium leading-none">

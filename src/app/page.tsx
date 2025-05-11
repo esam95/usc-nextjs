@@ -215,12 +215,12 @@ export default function Home() {
                 </h4>
               </div>
               <div>
-                <Link href='/kontakt'>
+                <Link href='/provtrana'>
                   <Button
                     size={'lg'}
                     className='text-primary-foreground hover:text-primary hover:bg-slate-200'
                   >
-                    Kontakta oss
+                    Provträna
                     <ArrowRightIcon className='ml-2 h-4 w-4' />
                   </Button>
                 </Link>

@@ -1,40 +1,42 @@
-import { Checkbox } from '@/components/shadcn/checkbox';
+import { RadioGroup, RadioGroupItem } from '@/components/shadcn/radio-group';
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/shadcn/form';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
 import { formSchema } from '../schema/formSchema';
+import getNextValidDate from '@/functions/disabledDates';
+import { useEffect } from 'react';
 
 type SportsFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
   sports: string[];
+  needsGuardian: boolean;
 };
 
-function SportsField({ form, sports }: SportsFieldProps) {
+function SportsField({ form, sports, needsGuardian }: SportsFieldProps) {
+  useEffect(() => {
+    form.setValue('date', getNextValidDate(needsGuardian, form.watch('gender'), form.watch('sport')));
+  }, [form.watch('sport'), form.watch('gender')]);
+  
   return (
     <FormField
-      name="sports"
+      name="sport"
       control={form.control}
       render={({ field }) => (
         <FormItem>
           <FormLabel className="text-md">Vilken idrott vill du börja på? *</FormLabel>
           <FormControl>
-            <div className="flex flex-col gap-2">
+            <RadioGroup value={field.value} onValueChange={field.onChange} className="flex gap-6">
               {sports.map((sport) => (
-                <div key={sport} className="flex items-center gap-2">
-                  <Checkbox
-                    checked={field.value.includes(sport)}
-                    onCheckedChange={(checked) => {
-                      if (checked) {
-                        field.onChange([...field.value, sport]);
-                      } else {
-                        field.onChange(field.value.filter((s: string) => s !== sport));
-                      }
-                    }}
-                  />
-                  <FormLabel>{sport}</FormLabel>
-                </div>
+                <FormItem key={sport} className="flex items-center space-x-3 space-y-0">
+                  <FormControl>
+                    <RadioGroupItem value={sport} />
+                  </FormControl>
+                  <FormLabel className="font-normal">
+                    {sport}
+                  </FormLabel>
+                </FormItem>
               ))}
-            </div>
+            </RadioGroup>
           </FormControl>
           <FormMessage />
         </FormItem>
