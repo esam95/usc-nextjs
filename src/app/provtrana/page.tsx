@@ -99,7 +99,7 @@ function TrialSession() {
         description: 'Vi kunde tyvärr inte skicka ditt meddelande',
         variant: 'destructive',
       });
-      console.error('Error:', error);
+      console.error(error);
     }
   };
 
