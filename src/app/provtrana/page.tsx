@@ -65,7 +65,7 @@ function TrialSession() {
 
   const formDataObject = form.getValues();
   const { isDirty, isSubmitting, isSubmitSuccessful, errors } = form.formState;
-  console.log(formDataObject)
+
   const postEmail = async () => {
     try {
       const response = await fetch('/api/sessionTrialEmail', {

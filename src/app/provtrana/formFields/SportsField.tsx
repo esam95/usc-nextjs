@@ -15,8 +15,6 @@ type SportsFieldProps = {
 function SportsField({ form, sports, needsGuardian }: SportsFieldProps) {
   useEffect(() => {
     form.setValue('date', getNextValidDate(needsGuardian, form.watch('gender'), form.watch('sport')));
-    console.log('sportfield', form.getValues());
-
   }, [form.watch('sport'), form.watch('gender')]);
   
   return (

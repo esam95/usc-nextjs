@@ -46,8 +46,6 @@ export async function POST(request: Request) {
       statusCode: 201,
     });
   } catch (error) {
-    console.error("Resend error:", error);
-
     return NextResponse.json({
       success: false,
       message: 'Failed to send email',
