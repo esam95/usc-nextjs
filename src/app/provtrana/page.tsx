@@ -69,10 +69,7 @@ function TrialSession() {
   const postEmail = async () => {
     try {
       const response = await fetch('/api/sessionTrialEmail', {
-        method: 'POST',  
-        headers: {
-          'Content-Type': 'application/json', // 👈 This is CRITICAL
-        },
+        method: 'POST',
         body: JSON.stringify(formDataObject),
       });
 
