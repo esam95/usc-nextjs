@@ -24,7 +24,7 @@ export const formSchema = z
     //     message: 'Telefonnummer kan endast innehålla siffror',
     //   }),
     gender: z.enum(['man', 'woman']),
-    sport: z.enum(['Boxning', 'Olympisk brottning', 'BJJ', 'Fys & Konditionsträningar']),
+    sport: z.enum(['Boxning', 'Olympisk brottning', 'BJJ', 'Fys & konditionsträningar']),
     date: z.date(),
     diseases: z.string().optional(),
     comments: z.string().optional(),
