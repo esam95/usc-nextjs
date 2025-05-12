@@ -17,6 +17,7 @@ import logoUpprustningen from '../../public/img/logo_upprustningen.webp';
 import logoSbk from '../../public/img/logo_sbk.webp';
 import logoFryshuset from '../../public/img/logo_fryshuset.webp';
 import logoFolketsHusby from '../../public/img/logo_folkets_husby.webp';
+import logoCollectiveImpactHusby from '../../public/img/logo_collective_impact_husby.webp'
 
 export default function Home() {
   const classesImages = [
@@ -157,6 +158,9 @@ export default function Home() {
             </div>
             <div className='max-w-fit'>
               <Image className='max-w-56' src={logoFolketsHusby} alt={'Folkets husby'} />
+            </div>
+            <div className='max-w-fit'>
+              <Image className='max-w-56' src={logoCollectiveImpactHusby} alt={'Collective Impact Husby'} />
             </div>
           </div>
         </div>

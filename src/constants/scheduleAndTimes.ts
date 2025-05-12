@@ -10,7 +10,7 @@ export const schedule: Schedule = {
   'Tisdag':   { '18:00 - 19:30': 'BJJ', '19:30 - 21:00': 'Brottning' },
   'Onsdag':   { '17:30 - 19:00': 'Boxning\n(Kvinnor)', '19:00 - 20:00': 'Brottning\n(Barn)', '20:00 - 21:00': 'Boxning' },
   'Torsdag':  { '19:00 - 21:00': 'Brottning' },
-  'Fredag':   { '18:30 - 20:30': 'Brottning\n(Öppen matta)' },
+  'Fredag':   { '18:30 - 20:30': 'Brottning' },
   'Lördag':   { '11:00 - 12:30': 'Boxning\n(Kvinnor)', '13:00 - 14:30': 'Brottning\n(Barn)' },
   'Söndag':   { '11:00 - 12:30': 'BJJ', '13:00 - 14:30': 'Boxning' },
 };
