@@ -8,7 +8,7 @@ import Link from 'next/link';
 import logo from '../../public/img/club_logo.webp';
 import boxingImg from '../../public/img/boxing_img.webp';
 import mmaImg from '../../public/img/mma_img.webp';
-import submissionWrestling from '../../public/img/nogi.webp';
+import bjjImg from '../../public/img/bjj_img.webp';
 import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
 import strengthCondition from '../../public/img/strength_condition.webp';
 import armbar from '../../public/img/armbar.webp';
@@ -36,7 +36,7 @@ export default function Home() {
         'Mixed Martial Arts är en hybrid kampsport som kombinerar tekniker från boxning, thai-boxning, brottning, jiu-jitsu, och andra kampsporter. Det är en allsidig träning som inkluderar både stående och markkamp.',
     },
     {
-      imgSrc: submissionWrestling,
+      imgSrc: bjjImg,
       alt: 'BJJ / NoGi',
       label: 'BJJ / Submission Wrestling',
       description:
