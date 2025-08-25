@@ -1,5 +1,5 @@
 'use client';
-import backgroundImg from '../../public/img/background_img.webp';
+import background from '../../public/img/background.webp';
 import Image from 'next/image';
 import { ArrowRightIcon } from 'lucide-react';
 import { Button } from '@/components/shadcn/button';
@@ -8,10 +8,10 @@ import Link from 'next/link';
 import logo from '../../public/img/club_logo.webp';
 import boxingImg from '../../public/img/boxing_img.webp';
 import mmaImg from '../../public/img/mma_img.webp';
-import bjjImg from '../../public/img/bjj_img.webp';
-import freeStyleWrestling from '../../public/img/freestyle_wrestling.webp';
+import bjjImg from '../../public/img/bjj_practice.webp';
+import wrestlingThrow from '../../public/img/wrestling_throw.webp';
 import strengthCondition from '../../public/img/strength_condition.webp';
-import armbar from '../../public/img/armbar.webp';
+import provtrana from '../../public/img/provtrana.webp';
 import logoRf from '../../public/img/logo_rf.webp';
 import logoUpprustningen from '../../public/img/logo_upprustningen.webp';
 import logoSbk from '../../public/img/logo_sbk.webp';
@@ -43,11 +43,11 @@ export default function Home() {
         'En kampsport som kombinerar tekniker från brottning och brasiliansk jiu-jitsu. Fokuset ligger på att använda kast, positionering och markkontroll för att få motståndaren att ge upp genom ledlås eller strypgrepp.',
     },
     {
-      imgSrc: freeStyleWrestling,
-      alt: 'Freestyle Wrestling',
-      label: 'Freestyle Wrestling',
+      imgSrc: wrestlingThrow,
+      alt: 'Brottning',
+      label: 'Olympisk brottning',
       description:
-        'Traditionell brottningsstil som tillåter brottare att använda sina ben både offensivt och defensivt. Det handlar om att kontrollera och kasta sin motståndare för att få poäng.',
+        'Olympisk brottning är en fysisk och taktisk kampsport där två utövare tävlar genom kast, grepp och nedtagningar – utan slag och sparkar – med målet att vinna på poäng eller fallseger.',
     },
     {
       imgSrc: strengthCondition,
@@ -64,7 +64,7 @@ export default function Home() {
         <div className='absolute inset-0 z-0 h-full w-full'>
           <Image
             alt='background'
-            src={backgroundImg}
+            src={background}
             fill
             style={{
               objectFit: 'cover',
@@ -205,10 +205,9 @@ export default function Home() {
         <div className='flex flex-col items-center w-full gap-16'>
           <div className='relative w-full min-h-[420px] h-[420px] md:h-[600px] lg:h-[500px]'>
             <Image
-              src={armbar}
-              alt={'armbar, by Vladislav Bychkov'}
+              src={provtrana}
+              alt={'provtrana, by Vladislav Bychkov'}
               className='w-full h-full object-cover opacity-50'
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             />
             <div className='absolute inset-0 flex flex-col items-center justify-evenly text-center p-4'>
               <div>
