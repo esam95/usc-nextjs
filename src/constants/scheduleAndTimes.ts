@@ -6,12 +6,12 @@ export const timeSlots: string[] = [
 export const days: string[] = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag'];
 
 export const schedule: Schedule = {
-  'Måndag':   { '17:30 - 19:00': 'Fys\n(Kvinnor)', '19:00 - 21:00': 'Fys' },
+  'Måndag':   { '18:00 - 19:00': 'Fys\n(Kvinnor)', '19:00 - 21:00': 'Fys' },
   'Tisdag':   { '18:00 - 19:30': 'Brottning\n(Fristil)', '19:30 - 21:20': 'Brottning\n(Grekisk-romersk)' },
-  'Onsdag':   { '17:30 - 19:00': 'Boxning\n(Kvinnor)', '19:00 - 20:00': 'Brottning\n(Barn)', '20:00 - 21:00': 'Boxning' },
+  'Onsdag':   { '17:30 - 19:00': 'Boxning\n(Kvinnor)', '19:00 - 20:30': 'Brottning\n(Barn)',  },
   'Torsdag':  { '19:00 - 21:00': 'Brottning\n(Grekisk-romersk)' },
-  'Fredag':   { '18:00 - 19:00': 'BJJ', '19:00 - 21:00': 'Brottning\n(Grekisk-romersk)' },
-  'Lördag':   { '11:00 - 12:30': 'Boxning\n(Kvinnor)', '13:00 - 14:30': 'Brottning\n(Barn)', '14:30 - 16:00': 'Boxning' },
+  'Fredag':   { '17:00 - 18:00': 'Boxning', '18:00 - 19:00': 'BJJ', '19:00 - 21:00': 'Brottning\n(Grekisk-romersk)' },
+  'Lördag':   { '11:00 - 12:30': 'Boxning\n(Kvinnor)', '13:00 - 14:30': 'Brottning\n(Barn)', },
   'Söndag':   { '11:00 - 12:30': 'BJJ', },
 };
 
