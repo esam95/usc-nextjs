@@ -11,6 +11,7 @@ import { SiLinkedin as LinkedInIcon } from '@icons-pack/react-simple-icons';
 import { SiInstagram as InstagramIcon } from '@icons-pack/react-simple-icons';
 import swishLogo from '../../public/img/swish_logo.webp';
 import { SquareArrowOutUpRight } from 'lucide-react';
+import GoogleReviewsWidget from './GoogleReviewsWidget';
 
 export function Footer() {
   const d = new Date();
@@ -107,7 +108,7 @@ export function Footer() {
                 <SquareArrowOutUpRight size={20} />
               </Link>
             </div>
-            <Image
+            {/* <Image
               src={swishLogo}
               alt='Swish logo'
               width={40}
@@ -122,7 +123,8 @@ export function Footer() {
               Bankgiro
               <br />
               802543-8030
-            </p>
+            </p> */}
+            <GoogleReviewsWidget/>
           </section>
         </div>
 
