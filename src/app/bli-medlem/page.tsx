@@ -35,6 +35,7 @@ import TelephoneField from './formFields/TelephoneField';
 import TrainingFrequencyField from './formFields/TrainingFrequencyField';
 import { formSchema } from './schema/formSchema';
 import ConditionsField from './formFields/ConditionsField';
+import { listOfSports } from '@/constants/sports';
 
 export type FormFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
@@ -185,12 +186,13 @@ function BecomeMember() {
                 <PostalCodeField form={form} />
 
                 {/* Gender field */}
-                <GenderField form={form} />
+                <GenderField form={form} needsGuardian={needsGuardian} />
 
                 {/* Sports field */}
                 <SportsField
                   form={form}
-                  sports={form.watch('gender') === 'man' ? listOfSportsMen : listOfSportsWomen}
+                  sports={!needsGuardian ? form.watch('gender') === 'man' ? listOfSports.men : listOfSports.women: listOfSports.children}
+                  needsGuardian={needsGuardian}
                 />
 
                 {/* Training Frequency */}

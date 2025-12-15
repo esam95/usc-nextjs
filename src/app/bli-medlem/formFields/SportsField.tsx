@@ -3,13 +3,17 @@ import { FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/comp
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
 import { formSchema } from '../schema/formSchema';
+import getNextValidDate from '@/functions/disabledDates';
+import { useEffect } from 'react';
 
 type SportsFieldProps = {
   form: UseFormReturn<z.infer<typeof formSchema>>;
   sports: string[];
+  needsGuardian: boolean;
 };
 
-function SportsField({ form, sports }: SportsFieldProps) {
+function SportsField({ form, sports, needsGuardian }: SportsFieldProps) {
+  
   return (
     <FormField
       name="sport"
