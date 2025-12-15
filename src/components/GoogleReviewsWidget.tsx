@@ -99,11 +99,18 @@ const GoogleReviewsWidget = () => {
           <div className="text-sm text-gray-600 mb-1">
             Baserat på {placeData.totalReviews} recensioner
           </div>
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" 
-            alt="Google" 
-            className="h-8"
-          />
+          <a 
+            href="https://www.google.com/maps/place/?q=place_id:ChIJqa_Kn5SfX0YRjTfHS0vP_Ig"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+          >
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" 
+              alt="Google" 
+              className="h-8"
+            />
+          </a>
         </div>
         
         <div className="flex items-center justify-center gap-2">
