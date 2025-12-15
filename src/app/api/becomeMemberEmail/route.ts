@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     personnumber,
     telephone,
     gender,
-    sports,
+    sport,
     diseases,
     trainingFrequency,
     comments,
@@ -45,7 +45,7 @@ export async function POST(request: Request) {
         postalCode,
         personnumber,
         emailAddress,
-        sports,
+        sport,
       }),
     });
 

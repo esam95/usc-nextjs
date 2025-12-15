@@ -1,4 +1,4 @@
-import { Checkbox } from '@/components/shadcn/checkbox';
+import { RadioGroup, RadioGroupItem } from '@/components/shadcn/radio-group';
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/shadcn/form';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
@@ -12,29 +12,24 @@ type SportsFieldProps = {
 function SportsField({ form, sports }: SportsFieldProps) {
   return (
     <FormField
-      name="sports"
+      name="sport"
       control={form.control}
       render={({ field }) => (
         <FormItem>
           <FormLabel className="text-md">Vilken idrott vill du börja på? *</FormLabel>
           <FormControl>
-            <div className="flex flex-col gap-2">
+            <RadioGroup value={field.value} onValueChange={field.onChange} className="flex gap-6">
               {sports.map((sport) => (
-                <div key={sport} className="flex items-center gap-2">
-                  <Checkbox
-                    checked={field.value.includes(sport)}
-                    onCheckedChange={(checked) => {
-                      if (checked) {
-                        field.onChange([...field.value, sport]);
-                      } else {
-                        field.onChange(field.value.filter((s: string) => s !== sport));
-                      }
-                    }}
-                  />
-                  <FormLabel>{sport}</FormLabel>
-                </div>
+                <FormItem key={sport} className="flex items-center space-x-3 space-y-0">
+                  <FormControl>
+                    <RadioGroupItem value={sport} />
+                  </FormControl>
+                  <FormLabel className="font-normal">
+                    {sport}
+                  </FormLabel>
+                </FormItem>
               ))}
-            </div>
+            </RadioGroup>
           </FormControl>
           <FormMessage />
         </FormItem>

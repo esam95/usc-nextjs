@@ -22,7 +22,7 @@ type EmailProps = {
   personnumber: string;
   telephone: string;
   gender: string;
-  sports: string[];
+  sport: string;
   diseases: string;
   trainingFrequency: string;
   comments: string;
@@ -39,7 +39,7 @@ export default function EmailTemplate({
   personnumber,
   telephone,
   gender,
-  sports,
+  sport,
   diseases,
   trainingFrequency,
   comments,
@@ -87,7 +87,7 @@ export default function EmailTemplate({
                 <Text style={infoLabelStyle}>Kön:</Text>
                 <Text style={infoValueStyle}>{gender}</Text>
                 <Text style={infoLabelStyle}>Sporter:</Text>
-                <Text style={infoValueStyle}>{sports?.join(', ')}</Text>
+                <Text style={infoValueStyle}>{sport}</Text>
                 <Text style={infoLabelStyle}>Sjukdomar:</Text>
                 <Text style={infoValueStyle}>{diseases || 'N/A'}</Text>
                 <Text style={infoLabelStyle}>Träning per vecka:</Text>

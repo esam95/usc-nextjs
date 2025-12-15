@@ -60,7 +60,7 @@ function BecomeMember() {
       personnumber: '',
       telephone: '',
       gender: 'man',
-      sports: [],
+      sport: 'Boxning',
       diseases: '',
       trainingFrequency: '1-2',
       comments: '',
