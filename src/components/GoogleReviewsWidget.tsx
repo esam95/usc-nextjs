@@ -5,13 +5,9 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 const GoogleReviewsWidget = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [reviews, setReviews] = useState([]);
-  const [placeData, setPlaceData] = useState({});
+  const [placeData, setPlaceData] = useState<{name?: string; rating?: number; totalReviews?: number;}>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-
-  // CONFIGURATION - Replace these with your actual values
-  const GOOGLE_API_KEY = 'YOUR_API_KEY_HERE'; // Get from Google Cloud Console
-  const PLACE_ID = 'YOUR_PLACE_ID_HERE'; // Your business Place ID
 
   useEffect(() => {
     fetchGoogleReviews();
@@ -22,12 +18,7 @@ const GoogleReviewsWidget = () => {
       setLoading(true);
       
       // Using Google Places API - Place Details endpoint
-      const response = await fetch(
-        `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,user_ratings_total,reviews&key=${GOOGLE_API_KEY}`,
-        {
-          method: 'GET',
-        }
-      );
+      const response = await fetch(`/api/reviews`);
 
       const data = await response.json();
 
@@ -74,7 +65,7 @@ const GoogleReviewsWidget = () => {
       <div className="w-full max-w-7xl mx-auto px-4 py-12 bg-gray-50">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-          <p className="mt-4 text-gray-600">Loading reviews...</p>
+          <p className="mt-4 text-gray-600">Laddar recensioner...</p>
         </div>
       </div>
     );
@@ -84,10 +75,10 @@ const GoogleReviewsWidget = () => {
     return (
       <div className="w-full max-w-7xl mx-auto px-4 py-12 bg-gray-50">
         <div className="text-center text-red-600">
-          <p className="font-semibold">Error loading reviews</p>
+          <p className="font-semibold">Fel vid inläsning av recensioner</p>
           <p className="text-sm mt-2">{error}</p>
           <p className="text-xs mt-4 text-gray-500">
-            Make sure you've added your API Key and Place ID in the component
+            Kontrollera att du har lagt till ditt API-nyckel och plats-ID i komponenten
           </p>
         </div>
       </div>
@@ -95,18 +86,18 @@ const GoogleReviewsWidget = () => {
   }
   
   return (
-    <div className="w-full mx-auto p-2 rounded-lg shadow-sm bg-gray-900/50 backdrop-blur-sm">
+    <div className="w-full mx-auto mt-8 p-2 rounded-lg shadow-sm bg-gray-900/50 backdrop-blur-sm">
       
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center">
         {/* Google Rating Badge */}
         <div className="flex flex-col items-center p-2">
           <div className="flex gap-1 mb-2">
-            {[...Array(5)].map((_, i) => (
+            {[...Array(placeData.rating)].map((_, i) => (
               <Star key={i} className="w-8 h-8 fill-yellow-400 text-yellow-400" />
             ))}
           </div>
           <div className="text-sm text-gray-600 mb-1">
-            Based on 100000 reviews
+            Baserat på {placeData.totalReviews} recensioner
           </div>
           <img 
             src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" 
