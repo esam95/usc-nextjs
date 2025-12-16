@@ -163,9 +163,6 @@ export default function Home() {
             <div className='max-w-fit'>
               <Image className='max-w-56' src={logoCollectiveImpactHusby} alt={'Collective Impact Husby'} />
             </div>
-            <div className='max-w-fit'>
-              <Image className='max-w-56' src={logoRb} alt={'Rädda barnen'} />
-            </div>
           </div>
         </div>
       </section>
