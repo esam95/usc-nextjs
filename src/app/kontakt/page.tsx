@@ -116,7 +116,7 @@ export default function Contact() {
                 Har du funderingar?
               </CardTitle>
               <CardDescription className='text-muted-foreground'>
-                Vi besvarar alla dina frågor inom 24 timmar.
+                Vi besvarar alla dina frågor inom 24 timmar. (Du kan även ge feedback anonymnt utan att ange namn eller e-post)
               </CardDescription>
             </CardHeader>
             <CardContent className='p-6'>
