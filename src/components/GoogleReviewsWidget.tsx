@@ -50,12 +50,17 @@ const GoogleReviewsWidget = () => {
       setLoading(false);
     }
   };
+
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % Math.max(1, reviews.length - 2));
+    setCurrentIndex((prev) => (prev + 1) % reviews.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + Math.max(1, reviews.length - 2)) % Math.max(1, reviews.length - 2));
+    setCurrentIndex((prev) =>
+      reviews.length === 0
+        ? 0
+        : (prev - 1 + reviews.length) % reviews.length
+    );
   };
 
   const visibleReviews = reviews.slice(currentIndex, currentIndex + 1);

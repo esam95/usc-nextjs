@@ -7,7 +7,6 @@ export const membershipOptions = [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Bindningstid, fem månader', included: true },
       { text: '100kr medlemsavgift per termin', included: true },
-      { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 18+ år', included: true },
     ],
   },
@@ -19,7 +18,6 @@ export const membershipOptions = [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Bindningstid, fem månader', included: true },
       { text: '100kr medlemsavgift per termin', included: true },
-      { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 18+ år', included: true },
     ],
   },
@@ -31,7 +29,6 @@ export const membershipOptions = [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Bindningstid, fem månader', included: true },
       { text: '100kr medlemsavgift per termin', included: true },
-      { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 14-18 år', included: true },
     ],
   },
@@ -43,7 +40,6 @@ export const membershipOptions = [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Bindningstid, fem månader', included: true },
       { text: '100kr medlemsavgift per termin', included: true },
-      { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 7-13 år', included: true },
     ],
   },
@@ -77,7 +73,6 @@ export const membershipOptions = [
     features: [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Träningsperiod juni-juli', included: true },
-      { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 18+ år', included: true },
     ],
   },
@@ -88,7 +83,6 @@ export const membershipOptions = [
     features: [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Träningsperiod juni-juli', included: true },
-      { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 18+ år', included: true },
     ],
   },
@@ -99,7 +93,6 @@ export const membershipOptions = [
     features: [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Träningsperiod juni-juli', included: true },
-      { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 14-18 år', included: true },
     ],
   },
@@ -110,7 +103,6 @@ export const membershipOptions = [
     features: [
       { text: 'Två gratis provträningar', included: true },
       { text: 'Träningsperiod juni-juli', included: true },
-      { text: 'Alla träningspass ingår', included: true },
       { text: 'Ålder: 7-13 år', included: true },
     ],
   },
