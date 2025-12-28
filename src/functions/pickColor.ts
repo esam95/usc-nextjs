@@ -1,4 +1,4 @@
-export function pickColor(text: string) {
+export function pickColor(text: string | null) {
   const rules: Array<[string, string]> = [
     ['Öppenmatta', 'bg-[#2F6B5A]'],
     ['BJJ', 'bg-[#2F4A7D]'],
