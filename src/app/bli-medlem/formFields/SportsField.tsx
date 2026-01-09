@@ -22,7 +22,7 @@ function SportsField({ form, sports, needsGuardian }: SportsFieldProps) {
         <FormItem>
           <FormLabel className="text-md">Vilken idrott vill du börja på? *</FormLabel>
           <FormControl>
-            <RadioGroup value={field.value} onValueChange={field.onChange} className="flex gap-6">
+            <RadioGroup value={field.value} onValueChange={field.onChange} className="flex gap-6 flex-col">
               {sports.map((sport) => (
                 <FormItem key={sport} className="flex items-center space-x-3 space-y-0">
                   <FormControl>
