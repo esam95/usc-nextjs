@@ -191,7 +191,7 @@ function BecomeMember() {
                 {/* Sports field */}
                 <SportsField
                   form={form}
-                  sports={!needsGuardian ? form.watch('gender') === 'man' ? listOfSports.men : listOfSports.women: listOfSports.children}
+                  sports={form.watch('gender') === 'man' ? listOfSports.men : listOfSports.women}
                   needsGuardian={needsGuardian}
                 />
 

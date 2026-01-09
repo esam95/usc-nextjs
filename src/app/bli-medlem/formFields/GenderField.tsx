@@ -23,8 +23,7 @@ function GenderField({ form, needsGuardian }: GenderFieldProps) {
             <RadioGroup 
               value={field.value} 
               onValueChange={(value) => {
-                field.onChange(value), 
-                !needsGuardian ? form.setValue('sport', 'Boxning'): form.setValue('sport', 'Olympisk brottning')
+                field.onChange(value)              
               }} 
               className="flex gap-6"
             >
