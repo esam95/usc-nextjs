@@ -1,7 +1,7 @@
 export const membershipOptions = [
   {
     title: 'Vuxna',
-    price: 1400,
+    price: 1750,
     accentColor: '#817bf3',
     features: [
       { text: 'Två gratis provträningar', included: true },
@@ -12,7 +12,7 @@ export const membershipOptions = [
   },
   {
     title: 'Tjejboxning',
-    price: 700,
+    price: 750,
     accentColor: '#817bf3',
     features: [
       { text: 'Två gratis provträningar', included: true },
@@ -23,7 +23,7 @@ export const membershipOptions = [
   },
   {
     title: 'Ungdomar',
-    price: 1100,
+    price: 1250,
     accentColor: '#817bf3',
     features: [
       { text: 'Två gratis provträningar', included: true },
@@ -34,7 +34,7 @@ export const membershipOptions = [
   },
   {
     title: 'Barn',
-    price: 900,
+    price: 1150,
     accentColor: '#817bf3',
     features: [
       { text: 'Två gratis provträningar', included: true },
@@ -68,7 +68,7 @@ export const membershipOptions = [
   },
   {
     title: 'Sommarträning Vuxna',
-    price: 600,
+    price: 700,
     accentColor: '#dde24a',
     features: [
       { text: 'Två gratis provträningar', included: true },
@@ -78,7 +78,7 @@ export const membershipOptions = [
   },
   {
     title: 'Sommarträning Tjejboxning',
-    price: 400,
+    price: 500,
     accentColor: '#dde24a',
     features: [
       { text: 'Två gratis provträningar', included: true },
@@ -88,7 +88,7 @@ export const membershipOptions = [
   },
   {
     title: 'Sommarträning Ungdomar',
-    price: 500,
+    price: 600,
     accentColor: '#dde24a',
     features: [
       { text: 'Två gratis provträningar', included: true },
@@ -98,7 +98,7 @@ export const membershipOptions = [
   },
   {
     title: 'Sommarträning Barn',
-    price: 400,
+    price: 500,
     accentColor: '#dde24a',
     features: [
       { text: 'Två gratis provträningar', included: true },
