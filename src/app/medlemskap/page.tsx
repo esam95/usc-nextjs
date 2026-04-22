@@ -2,7 +2,7 @@ import { membershipOptions } from './membershipOptions';
 import Link from 'next/link';
 import { PricingCard } from '@/components/PricingCard';
 import Image from 'next/image';
-import membershipHeroImg from '../../../public/img/Brottningsmatta.webp'; // You'll need to add this image
+import membershipHeroImg from '../../../public/img/brottningsmatta.webp'; // You'll need to add this image
 import { Calendar, Users, Dumbbell, Mail } from 'lucide-react';
 
 const Membership = () => {
