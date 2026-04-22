@@ -17,7 +17,6 @@ import logoSbk from '../../public/img/logo_sbk.webp';
 import logoFryshuset from '../../public/img/logo_fryshuset.webp';
 import logoFolketsHusby from '../../public/img/logo_folkets_husby.webp';
 import logoCollectiveImpactHusby from '../../public/img/logo_collective_impact_husby.webp'
-import logoRb from '../../public/img/rb-logo.webp'
 
 export default function Home() {
   const classesImages = [
