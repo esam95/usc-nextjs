@@ -1,5 +1,5 @@
 'use client';
-import background from '../../public/img/background.webp';
+import background from '../../public/img/Brottningsträning.webp';
 import Image from 'next/image';
 import { ArrowRightIcon } from 'lucide-react';
 import { Button } from '@/components/shadcn/button';
@@ -7,11 +7,10 @@ import { CarouselComponent } from '@/components/CarouselComponent';
 import Link from 'next/link';
 import logo from '../../public/img/club_logo.webp';
 import boxingImg from '../../public/img/boxing_img.webp';
-import mmaImg from '../../public/img/mma_img.webp';
-import bjjImg from '../../public/img/bjj_practice.webp';
-import wrestlingThrow from '../../public/img/wrestling_throw.webp';
-import strengthCondition from '../../public/img/strength_condition.webp';
-import provtrana from '../../public/img/provtrana.webp';
+import bjjImg from '../../public/img/BJJ träning.webp';
+import brottningskast from '../../public/img/Brottningskast.webp';
+import strengthCondition from '../../public/img/fys&kondition.webp';
+import provtrana from '../../public/img/Sparring.webp';
 import logoRf from '../../public/img/logo_rf.webp';
 import logoUpprustningen from '../../public/img/logo_upprustningen.webp';
 import logoSbk from '../../public/img/logo_sbk.webp';
@@ -30,13 +29,6 @@ export default function Home() {
         'En traditionell kampsport som fokuserar på slagtekniker med händerna. Det handlar om snabbhet, styrka och strategi för att överlista sin motståndare.',
     },
     {
-      imgSrc: mmaImg,
-      alt: 'Mixed Martial Arts',
-      label: 'MMA',
-      description:
-        'Mixed Martial Arts är en hybrid kampsport som kombinerar tekniker från boxning, thai-boxning, brottning, jiu-jitsu, och andra kampsporter. Det är en allsidig träning som inkluderar både stående och markkamp.',
-    },
-    {
       imgSrc: bjjImg,
       alt: 'BJJ / NoGi',
       label: 'BJJ / Submission Wrestling',
@@ -44,7 +36,7 @@ export default function Home() {
         'En kampsport som kombinerar tekniker från brottning och brasiliansk jiu-jitsu. Fokuset ligger på att använda kast, positionering och markkontroll för att få motståndaren att ge upp genom ledlås eller strypgrepp.',
     },
     {
-      imgSrc: wrestlingThrow,
+      imgSrc: brottningskast,
       alt: 'Brottning',
       label: 'Olympisk brottning',
       description:
