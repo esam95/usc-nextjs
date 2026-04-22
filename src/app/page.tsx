@@ -1,22 +1,22 @@
 'use client';
-import background from '../../public/img/brottningstraning.webp';
+import background from '/public/img/brottningstraning.webp';
 import Image from 'next/image';
 import { ArrowRightIcon } from 'lucide-react';
 import { Button } from '@/components/shadcn/button';
 import { CarouselComponent } from '@/components/CarouselComponent';
 import Link from 'next/link';
-import logo from '../../public/img/club_logo.webp';
-import boxingImg from '../../public/img/boxing_img.webp';
-import bjjImg from '../../public/img/bjj_traning.webp';
-import brottningskast from '../../public/img/brottningskast.webp';
-import strengthCondition from '../../public/img/fys&kondition.webp';
-import provtrana from '../../public/img/sparring.webp';
-import logoRf from '../../public/img/logo_rf.webp';
-import logoUpprustningen from '../../public/img/logo_upprustningen.webp';
-import logoSbk from '../../public/img/logo_sbk.webp';
-import logoFryshuset from '../../public/img/logo_fryshuset.webp';
-import logoFolketsHusby from '../../public/img/logo_folkets_husby.webp';
-import logoCollectiveImpactHusby from '../../public/img/logo_collective_impact_husby.webp'
+import logo from '/public/img/club_logo.webp';
+import boxingImg from '/public/img/boxing_img.webp';
+import bjjImg from '/public/img/bjj_traning.webp';
+import brottningskast from '/public/img/brottningskast.webp';
+import strengthCondition from '/public/img/fys&kondition.webp';
+import provtrana from '/public/img/sparring.webp';
+import logoRf from '/public/img/logo_rf.webp';
+import logoUpprustningen from '/public/img/logo_upprustningen.webp';
+import logoSbk from '/public/img/logo_sbk.webp';
+import logoFryshuset from '/public/img/logo_fryshuset.webp';
+import logoFolketsHusby from '/public/img/logo_folkets_husby.webp';
+import logoCollectiveImpactHusby from '/public/img/logo_collective_impact_husby.webp'
 
 export default function Home() {
   const classesImages = [
