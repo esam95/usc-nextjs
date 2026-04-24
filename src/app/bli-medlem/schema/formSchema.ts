@@ -32,7 +32,6 @@ export const formSchema = z
       'Brottarlekis (3-6 år)',
       'Boxning', 
       'BJJ', 
-      'MMA', 
       'Fys & konditionsträningar',
       'Gymnastik (6-14 år)'
     ]),
