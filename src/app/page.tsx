@@ -9,7 +9,7 @@ import logo from '/public/img/club_logo.webp';
 import boxingImg from '/public/img/boxing_img.webp';
 import bjjImg from '/public/img/bjj_traning.webp';
 import brottningskast from '/public/img/brottningskast.webp';
-import strengthCondition from '/public/img/fys&kondition.webp';
+import strengthCondition from '/public/img/fys_kondition.webp';
 import provtrana from '/public/img/sparring.webp';
 import logoRf from '/public/img/logo_rf.webp';
 import logoUpprustningen from '/public/img/logo_upprustningen.webp';
