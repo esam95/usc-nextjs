@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/shadcn/card';
-import { FaMapPin as LocationPinIcon } from 'react-icons/fa';
+import { FaMapPin as LocationPinIcon, FaVideo } from 'react-icons/fa';
 import ScheduleTable from '@/components/ScheduleTable';
 import { ScheduleCards } from '@/components/ScheduleCards';
 
@@ -24,6 +24,19 @@ const TrainingSchedule = () => {
                 <LocationPinIcon color='red' />
               </div>
               <strong>Plats: Fryshuset Husby (Lofotengatan 36, 164 33 Kista)</strong>
+            </div>
+            <div className='flex gap-2'>
+              <div className='flex flex-row md:items-center mt-1 md:mt-0'>
+                <FaVideo color='white' />
+              </div>
+              <a
+                href='https://youtube.com/shorts/SvbEShRUId4?feature=share'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='underline hover:opacity-80'
+              >
+                <strong>Hitta hit – se vägbeskrivning från Husby T-bana</strong>
+              </a>
             </div>
           </CardHeader>
           <CardContent className='p-6'>
