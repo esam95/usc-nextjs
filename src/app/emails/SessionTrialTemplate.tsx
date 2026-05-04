@@ -105,7 +105,7 @@ export default function SessionTrialTemplate({
               <Column align='left' style={columnStyle}>
                 <Link href=''>
                   <Img
-                    alt='Upprustningen SC club icon'
+                    alt='Zenith kampsport club icon'
                     src='/img/round_logo_dark_cropped.webp'
                     style={iconStyle}
                   />

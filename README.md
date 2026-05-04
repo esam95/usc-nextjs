@@ -1,4 +1,4 @@
-# Upprustningens Sports Club
+# Zenith kampsport
 
 A modern web application built with [Next.js](https://nextjs.org/).
 Built for a sportcenter with different trainingn activities.

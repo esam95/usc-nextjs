@@ -66,7 +66,7 @@ export default function ContactEmail({ name, emailAddress, message }: EmailProps
           <Section style={footerSectionStyle}>
             <Row>
               <Column align='right' style={columnStyle}>
-                <Link href='https://www.instagram.com/upprustningensc'>
+                <Link href='https://www.instagram.com/Zenith.kampsport'>
                   <Img
                     alt='instagram icon'
                     src='https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/62-instagram-1024.png'
@@ -75,9 +75,9 @@ export default function ContactEmail({ name, emailAddress, message }: EmailProps
                 </Link>
               </Column>
               <Column align='left' style={columnStyle}>
-                <Link href='https://www.upprustningensc.nu'>
+                <Link href='https://www.zenithkampsport.se'>
                   <Img
-                    alt='Upprustningen SC club icon'
+                    alt='Zenith kampsport club icon'
                     src='/img/round_logo_dark_cropped.webp'
                     style={iconStyle}
                   />

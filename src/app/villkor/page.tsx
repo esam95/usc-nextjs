@@ -74,7 +74,7 @@ export default function VillkorPage() {
                   - Personuppgifter lagras säkert och delas inte med tredje part utan samtycke. <br />
                   - Vi använder cookies för att förbättra användarupplevelsen på vår webbplats. <br />
                   - Medlemmar har rätt att begära utdrag, ändringar eller radering av sina uppgifter. <br />
-                  - Vid frågor om integritet och personuppgifter, kontakta oss på <a href="mailto:info@upprustningen.se" className="underline">info@upprustningen.se</a>.
+                  - Vid frågor om integritet och personuppgifter, kontakta oss på <a href="mailto:info@zenithkamsport.se" className="underline">info@zenithkamsport.se</a>.
                 </p>
               </section>
             </div>

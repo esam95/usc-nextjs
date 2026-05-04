@@ -90,7 +90,7 @@ export function Footer() {
               className='text-secondary-foreground font-light md:text-lg'
               aria-label='email address information'
             >
-              info@upprustningensc.nu
+              info@zenithkamsport.se
             </span>
           </section>
 
@@ -142,7 +142,7 @@ export function Footer() {
             <LinkedInIcon size={28} />
           </Link>
           <Link
-            href='https://www.instagram.com/upprustningensc?igsh=YzB4a21qYjB6MG41'
+            href='https://www.instagram.com/Zenith.kampsport'
             aria-label='Instagram icon'
             className='text-secondary-foreground transition-colors'
             prefetch={false}

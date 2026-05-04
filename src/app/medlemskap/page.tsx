@@ -88,9 +88,9 @@ const Membership = () => {
                 </span>
                 <br />
                 För frågor angående betalning och avgifter, kontakta&nbsp;
-                <a href='mailto:ekonomi@upprustningensc.nu' className='group transition-colors'>
+                <a href='mailto:ekonomi@zenithkampsport.se' className='group transition-colors'>
                   <strong className='font-bold underline underline-offset-2 group-hover:decoration-primary/100 transition-colors'>
-                    ekonomi@upprustningensc.nu
+                    ekonomi@zenithkampsport.se
                   </strong>
                 </a>
               </p>

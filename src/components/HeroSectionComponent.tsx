@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => (
           <Image
             className='w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-xl'
             src={usc_text_logo}
-            alt='Upprustningen SC logo'
+            alt='Zenith kamsport logo'
           />
         </div>
       </div>
