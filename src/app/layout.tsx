@@ -4,7 +4,7 @@ import './globals.css';
 import { Toaster } from '@/components/shadcn/toaster';
 import Navbar from '@/components/navbar';
 import { Footer } from '@/components/footer';
-import logo from '../../public/img/club_logo.webp';
+import logo from '../../public/img/round_logo_dark_cropped.webp';
 import { Analytics } from '@vercel/analytics/react';
 import CookieBanner from '@/components/CookieBanner';
 

@@ -5,7 +5,7 @@ import { ArrowRightIcon } from 'lucide-react';
 import { Button } from '@/components/shadcn/button';
 import { CarouselComponent } from '@/components/CarouselComponent';
 import Link from 'next/link';
-import logo from '/public/img/club_logo.webp';
+import logo from '/public/img/round_logo_dark_cropped.webp';
 import boxingImg from '/public/img/boxing_img.webp';
 import bjjImg from '/public/img/bjj_traning.webp';
 import brottningskast from '/public/img/brottningskast.webp';

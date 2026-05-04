@@ -20,7 +20,7 @@ export function Footer() {
       <div className='container mx-auto flex flex-col items-center gap-4 md:gap-6'>
         <Separator orientation='horizontal' decorative className='h-0.5 bg-primary mb-8' />
         <div className='flex items-center gap-3 justify-center md:mb-4 lg:mb-6'>
-          <Image src='/img/club_logo.webp' alt={'logo'} width={40} height={40} priority />
+          <Image src='/img/round_logo_dark_cropped.webp' alt={'logo'} width={40} height={40} priority />
           <span className='text-secondary-foreground text-xl font-semibold'>Upprustningen Sports Club</span>
         </div>
 

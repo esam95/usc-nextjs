@@ -1,6 +1,6 @@
 import { CardContent } from '@/components/shadcn/card';
 import Image from 'next/image';
-import clubLogo from '../../../public/img/club_logo.webp';
+import clubLogo from '../../../public/img/round_logo_dark_cropped.webp';
 import TimelineComponent from '@/components/TimelineComponent';
 import aboutUsImg from '../../../public/img/aboutUs.webp';
 
@@ -29,10 +29,10 @@ const AboutUs: React.FC = () => {
         <section className='flex flex-col items-center text-center p-4'>
           <Image
             src={clubLogo}
-            width={100}
-            height={100}
+            width={150}
+            height={150}
             alt='Club Logo'
-            className='rounded-full shadow-lg mb-4'
+            className='rounded-full shadow-lg mb-12'
           />
           <p className='text-base'>
             Grundades år 2023, vårt uppdrag är att stärka individer genom högkvalitativ träning, och främja

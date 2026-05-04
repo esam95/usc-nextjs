@@ -49,7 +49,7 @@ export default function SessionTrialTemplate({
           <Container style={containerStyle}>
             <Section style={mainSectionStyle}>
               <Img
-                src='/img/club_logo.webp'
+                src='/img/round_logo_dark_cropped.webp'
                 alt='Logo'
                 width='150'
                 height='150'
@@ -106,7 +106,7 @@ export default function SessionTrialTemplate({
                 <Link href=''>
                   <Img
                     alt='Upprustningen SC club icon'
-                    src='/img/club_logo.webp'
+                    src='/img/round_logo_dark_cropped.webp'
                     style={iconStyle}
                   />
                 </Link>
