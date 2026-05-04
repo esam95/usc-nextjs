@@ -18,7 +18,7 @@ const AboutUs: React.FC = () => {
         />
         <div className='absolute inset-0 flex flex-col justify-center items-center p-4'>
           <h1 className='text-secondary-foreground text-4xl font-bold text-center md:text-6xl'>
-            Om Upprustningen Sports Club
+            Om Zenith Kampsport
           </h1>
         </div>
       </div>
@@ -44,7 +44,7 @@ const AboutUs: React.FC = () => {
           <div className='flex-1 md:mr-6'>
             <h3 className='font-semibold mb-4'>Vår filosofi</h3>
             <p className='text-base leading-relaxed mb-4'>
-              Välkommen till Upprustningen Sports Club! Vi är stolta över att presentera vår nyöppnade klubb i
+              Välkommen till Zenith Kampsport! Vi är stolta över att presentera vår nyöppnade klubb i
               Järva – en plats där passionerade idrottare och kampsportsentusiaster kan komma samman för att
               utmana sig själva, växa som individer och uppnå sina träningsmål.
             </p>
@@ -63,7 +63,7 @@ const AboutUs: React.FC = () => {
             </p>
 
             <p className='text-base leading-relaxed mb-4'>
-              Upprustningen Sports Club har som mål att uppmuntra en hälsosam livsstil och få unga att
+              Zenith Kampsport har som mål att uppmuntra en hälsosam livsstil och få unga att
               engagera sig i regelbunden motion istället för mindre gynnsamma aktiviteter. Genom att erbjuda
               träning och utbildning inom kampsport, strävar klubben efter att locka ungdomar till att bli
               fysiskt aktiva, bygga styrka och kondition samt utveckla värdefulla livsfärdigheter som

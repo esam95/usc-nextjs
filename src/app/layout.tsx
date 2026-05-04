@@ -11,7 +11,7 @@ import CookieBanner from '@/components/CookieBanner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Upprustningen Sports Club',
+  title: 'Zenith Kampsport',
   description: 'Järvas Kampsports Klubb',
 };
 
@@ -41,7 +41,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} dark`}>
         <Toaster />
-        <Navbar title={'Upprustningen Sports Club'} imageSrc={logo} />
+        <Navbar title={'Zenith Kampsport'} imageSrc={logo} />
         {children}
         <CookieBanner/>
         <Analytics />

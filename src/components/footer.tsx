@@ -21,7 +21,7 @@ export function Footer() {
         <Separator orientation='horizontal' decorative className='h-0.5 bg-primary mb-8' />
         <div className='flex items-center gap-3 justify-center md:mb-4 lg:mb-6'>
           <Image src='/img/round_logo_dark_cropped.webp' alt={'logo'} width={40} height={40} priority />
-          <span className='text-secondary-foreground text-xl font-semibold'>Upprustningen Sports Club</span>
+          <span className='text-secondary-foreground text-xl font-semibold'>Zenith Kampsport</span>
         </div>
 
         <div className='w-full max-w-5xl flex flex-col items-center gap-10 md:gap-14  md:flex-row md:justify-between md:items-start lg:gap-40 xl:gap-48'>
@@ -153,7 +153,7 @@ export function Footer() {
 
         <div className='flex justify-center md:mt-0'>
           <p className='text-secondary-foreground text-xs text-center'>
-            &copy; {d.getFullYear()} Upprustningen Sports Club. All rights reserved.
+            &copy; {d.getFullYear()} Zenith Kampsport. All rights reserved.
           </p>
         </div>
       </div>

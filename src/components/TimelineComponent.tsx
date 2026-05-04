@@ -118,7 +118,7 @@ function TimelineComponent() {
               <time className='font-mono italic'>Juli 2024</time>
               <div className='text-lg font-black'>Första boxningsträningen</div>
               <p>
-                Upprustningen Sports Club expanderar till olika kampsporter genom att anordna sin första
+                Klubben expanderar till olika kampsporter genom att anordna sin första
                 boxningsträning. Träningarna sker tre gånger i veckan med erfarna tränare. Intresset visar sig
                 vara starkt från ungdomar i området.
               </p>

@@ -12,7 +12,7 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: `Upprustningen Sports Club <${UPPRUSTNINGEN_CONTACT_EMAIL}>`,
+      from: `Zenith Kampsport <${UPPRUSTNINGEN_CONTACT_EMAIL}>`,
       to: [`${UPPRUSTNINGEN_CONTACT_EMAIL}`],
       subject: 'Kontakta oss',
       react: ContactEmail({ name, emailAddress, message }),

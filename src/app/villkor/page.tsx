@@ -12,7 +12,7 @@ export default function VillkorPage() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
           <div className="relative">
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-secondary-foreground">
-              Villkor för Upprustningen Sports Club
+              Villkor för Zenith Kampsport
             </h3>
 
             <div className="space-y-6">

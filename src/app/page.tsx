@@ -71,7 +71,7 @@ export default function Home() {
 
         <div className='relative z-10 flex flex-col items-center justify-center min-h-screen gap-8'>
           <h1 className='mt-12 px-2 text-secondary-foreground text-center drop-shadow-lg text-4xl font-bold  md:text-5xl lg:text-6xl xl:text-7xl'>
-            Upprustningen Sports Club
+            Zenith Kampsport
           </h1>
 
           <div className='mt-8'>
@@ -106,7 +106,7 @@ export default function Home() {
         <div className='flex flex-col items-center min-w-fit w-full gap-8 md:flex-row md:items-start md:gap-16 md:justify-evenly'>
           <div className='flex flex-col max-w-[22rem] w-full max-h-fit items-start justify-center lg:max-w-fit lg:w-2/4'>
             <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>
-              Välkommen till Upprustningen Sports Club
+              Välkommen till Zenith Kampsport
             </h2>
             <p className='text-base leading-relaxed mb-6 max-w-max lg:text-lg'>
               Vi är en kampsportsklubb i Järva där passionerade idrottare och kampsportsälskare kan komma

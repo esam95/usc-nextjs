@@ -54,7 +54,7 @@ export default function StodmedlemEmailTemplate({ name, emailAddress, personnumb
             <Text style={footerTextStyle}>
               Tack,
               <br />
-              Upprustningen Sports Club
+              Zenith Kampsport
             </Text>
           </Section>
         </Container>
@@ -82,7 +82,7 @@ export default function StodmedlemEmailTemplate({ name, emailAddress, personnumb
           </Row>
           <Row>
             <Text style={{ textAlign: 'center' }}>
-              © {d.getFullYear()} Upprustningen Sports Club, All Rights Reserved <br />
+              © {d.getFullYear()} Zenith Kampsport, All Rights Reserved <br />
               Stockholm - Sweden
             </Text>
           </Row>
