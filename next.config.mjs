@@ -1,9 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    // domains: ['example.com'],
-    minimumCacheTTL: 60,
-    formats: ['image/avif', 'image/webp'],
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "upprustningensc.nu",
+          },
+        ],
+        destination: "https://zenithkampsport.se/:path*",
+        permanent: true,
+      },
+    ];
   },
 };
 
