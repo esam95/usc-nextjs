@@ -7,7 +7,7 @@ import { CarouselComponent } from '@/components/CarouselComponent';
 import Link from 'next/link';
 import logo from '/public/img/round_logo_dark_cropped.webp';
 import boxingImg from '/public/img/boxing_img.webp';
-import bjjImg from '/public/img/bjj_traning.webp';
+import bjjImg from '/public/img/bjj_training.webp';
 import brottningskast from '/public/img/brottningskast.webp';
 import strengthCondition from '/public/img/fys_kondition.webp';
 import provtrana from '/public/img/sparring.webp';
