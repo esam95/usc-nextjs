@@ -22,7 +22,7 @@ export function Navbar({ imageSrc, title }: Props) {
     { href: '/schema', label: 'Schema' },
     { href: '/medlemskap', label: 'Priser' },
     { href: '/kontakt', label: 'Kontakt' },
-    { href: '/Q&A', label: 'FAQ' },
+    { href: '/faq', label: 'FAQ' },
   ];
 
   const isActive = (href: string) => pathname === href;

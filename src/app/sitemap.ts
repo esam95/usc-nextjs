@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: 'https://zenithkampsport.se/medlemskap', lastModified: new Date() },
     { url: 'https://zenithkampsport.se/om-oss', lastModified: new Date() },
     { url: 'https://zenithkampsport.se/provtrana', lastModified: new Date() },
-    { url: 'https://zenithkampsport.se/Q&A', lastModified: new Date() },
+    { url: 'https://zenithkampsport.se/faq', lastModified: new Date() },
     { url: 'https://zenithkampsport.se/schema', lastModified: new Date() },
     { url: 'https://zenithkampsport.se/stodmedlem', lastModified: new Date() },
     { url: 'https://zenithkampsport.se/villkor', lastModified: new Date() },

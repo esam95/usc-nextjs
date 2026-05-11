@@ -79,7 +79,7 @@ export function MenuWizard() {
           </SheetClose>
           <SheetClose asChild aria-label='FAQ button'>
             <Link
-              href='/Q&A'
+              href='/faq'
               className='font-medium text-lg text-secondary-foreground transition-colors hover:text-gray-300 dark:hover:text-gray-50'
               prefetch={false}
             >
