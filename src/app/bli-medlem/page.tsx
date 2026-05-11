@@ -153,8 +153,22 @@ function BecomeMember() {
           <Card className='w-full max-w-3xl shadow-lg rounded-lg'>
             <CardHeader className='bg-secondary text-primary-foreground rounded-t-lg p-6'>
               <CardTitle className='text-secondary-foreground text-2xl font-bold'>Registrera dig</CardTitle>
-              <CardDescription className='text-muted-foreground'>
-                Var vänlig fyll i formuläret för att bli medlem (OBS! Du behöver inte registrera dig för att provträna.)
+              <CardDescription className='text-secondary-foreground space-y-3 pt-1'>
+                <span className='block'>
+                  Du behöver inte anmäla dig för provträning – kom bara förbi och testa. 
+                  Vi erbjuder <strong>2 kostnadsfria provträningar</strong>.
+                </span>
+                <span className='block'>
+                  När du fyllt i formuläret får du en faktura inom en vecka till din mejladress. 
+                  Du har <strong>30 dagar</strong> på dig att betala — annars avslutas medlemskapet automatiskt. 
+                  Behöver du kvitto? Svara bara på mejlet så skickar vi det till dig. Självklart kan du använda ditt friskvårdsbidrag hos oss.
+                </span>
+                <span className='block'>
+                  Vill du avsluta ditt medlemskap? Mejla{' '}
+                  <a href='mailto:ekonomi@zenithkampsport.se' className='underline hover:opacity-80'>
+                    ekonomi@zenithkampsport.se
+                  </a>.
+                </span>
               </CardDescription>
             </CardHeader>
             <CardContent className='p-6'>
