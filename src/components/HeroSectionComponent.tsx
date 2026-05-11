@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from './shadcn/button';
 import Image from 'next/image';
-import usc_text_logo from '../../public/img/usc_text_logo.webp';
+import usc_text_logo from '../../public/img/logo_white.webp';
 
 const HeroSection: React.FC = () => (
   <section className='py-16 lg:py-20 xl:py-24'>
@@ -28,7 +28,7 @@ const HeroSection: React.FC = () => (
         </div>
         <div className='mt-8 lg:mt-0 lg:ml-8 flex-shrink-0'>
           <Image
-            className='w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-xl'
+            className='w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-xl rounded-lg'
             src={usc_text_logo}
             alt='Zenith kamsport logo'
           />
