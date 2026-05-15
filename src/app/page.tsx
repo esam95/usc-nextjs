@@ -17,6 +17,9 @@ import logoSbk from '/public/img/logo_sbk.webp';
 import logoFryshuset from '/public/img/logo_fryshuset.webp';
 import logoFolketsHusby from '/public/img/logo_folkets_husby.webp';
 import logoCollectiveImpactHusby from '/public/img/logo_collective_impact_husby.webp'
+import logoNobis from '/public/img/Nobis_Initiative_logga.webp'
+import logoSbf from '/public/img/logga_sbf.webp'
+import logoMinorda from '/public/img/Minorda_logo.webp'
 
 export default function Home() {
   const classesImages = [
@@ -153,6 +156,15 @@ export default function Home() {
             </div>
             <div className='max-w-fit'>
               <Image className='max-w-56' src={logoCollectiveImpactHusby} alt={'Collective Impact Husby'} />
+            </div>
+            <div className='max-w-fit'>
+              <Image className='max-w-56 brightness-0 invert' src={logoNobis} alt={'Collective Impact Husby'} />
+            </div>
+            <div className='max-w-fit'>
+              <Image className='max-w-56 brightness-0 invert' src={logoSbf} alt={'Collective Impact Husby'} />
+            </div>
+            <div className='max-w-fit'>
+              <Image className='max-w-56 brightness-0 invert' src={logoMinorda} alt={'Collective Impact Husby'} />
             </div>
           </div>
         </div>

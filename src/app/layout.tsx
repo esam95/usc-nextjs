@@ -13,6 +13,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Zenith Kampsport',
   description: 'Järvas Kampsports Klubb',
+  alternates: {
+    canonical: 'https://zenithkampsport.se',
+  },
 };
 
 export default function RootLayout({
