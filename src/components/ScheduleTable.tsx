@@ -24,21 +24,35 @@ export function ScheduleTable() {
               {time}
             </TableCell>
             {days.map((day: string) =>
-              findActivity(time, day).currentNonActivity ? null : (
-                <TableCell
-                  key={day}
-                  rowSpan={findActivity(time, day).rowSpan}
-                  className={`${pickColor(
-                    findActivity(time, day)?.activity,
-                  )} rounded-md bg-opacity-75 p-2 border-r-2`}
+            findActivity(time, day).currentNonActivity ? null : (
+              <TableCell
+                key={day}
+                rowSpan={findActivity(time, day).rowSpan}
+                className='rounded-md p-1 border-r-2 align-top overflow-hidden'
+              >
+                <div
+                  className='flex flex-row gap-1 items-stretch w-full'
+                  style={{ height: `${findActivity(time, day).rowSpan * 2.5}rem` }}
                 >
-                  <div className='flex flex-col items-center'>
-                    <h6 className='text-center'>{findActivity(time, day)?.activity}</h6>
-                    <span className='whitespace-nowrap text-xs'>{findActivity(time, day)?.time}</span>
-                  </div>
-                </TableCell>
-              ),
-            )}
+                  {findActivity(time, day)?.activity
+                    ?.split('\n\n')
+                    .map((activity, idx) => (
+                      <div
+                        key={idx}
+                        className={`${pickColor(activity)} rounded-md bg-opacity-75 p-1 flex-1 min-w-0 flex flex-col items-center justify-center overflow-hidden`}
+                      >
+                        <h6 className='whitespace-pre-line text-center text-[10px] leading-tight break-words'>
+                          {activity}
+                        </h6>
+                        <span className='whitespace-nowrap block text-center text-[10px]'>
+                          {findActivity(time, day)?.time}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              </TableCell>
+            ),
+          )}
           </TableRow>
         ))}
       </TableBody>
