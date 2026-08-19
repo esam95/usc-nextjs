@@ -77,8 +77,6 @@ const Membership = () => {
                 För närvarande erbjuder vi&nbsp;
                 <strong className='text-primary font-semibold'>boxning, brottning </strong> samt
                 <strong className='text-primary font-semibold'> fys- och konditionsträningar.&nbsp;</strong>
-                Snart introducerar vi även&nbsp;
-                <strong className='text-primary font-semibold'>MMA.</strong>
               </p>
 
               <p className='text-lg font-light'>

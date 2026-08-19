@@ -9,7 +9,7 @@ export const listOfSports: ListOfSports = {
     ],
     women: [
       'Boxning',
-      'Gymnastik (6-14 år)',
+      'Grappling (6-12 år)',
       'Brottarlekis (3-6 år)',
       'Fys & konditionsträningar'
     ],

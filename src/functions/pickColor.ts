@@ -12,7 +12,7 @@ export function pickColor(text: string | null) {
     ['Brott', 'bg-[#2F6B5A]'],
     ['Barn nybörjargruppen', 'bg-sky-500'],
     ['Barn tävlingsgruppen', 'bg-[#B79D4A]'],
-    ['Gymnastik', 'bg-[#5B5F8D]'],
+    ['Grappling', 'bg-[#5B5F8D]'],
   ];
 
   const match = rules.find(([key]) => text?.includes(key));

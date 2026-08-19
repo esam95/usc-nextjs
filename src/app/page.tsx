@@ -13,7 +13,6 @@ import strengthCondition from '/public/img/fys_kondition.webp';
 import provtrana from '/public/img/sparring.webp';
 import logoRf from '/public/img/logo_rf.webp';
 import logoUpprustningen from '/public/img/logo_upprustningen.webp';
-import logoSbk from '/public/img/logo_sbk.webp';
 import logoFryshuset from '/public/img/logo_fryshuset.webp';
 import logoFolketsHusby from '/public/img/logo_folkets_husby.webp';
 import logoCollectiveImpactHusby from '/public/img/logo_collective_impact_husby.webp'
@@ -144,9 +143,6 @@ export default function Home() {
             </div>
             <div className='max-w-fit'>
               <Image className='max-w-56' src={logoRf} alt={'Riksidrottsförbundet'} />
-            </div>
-            <div className='max-w-fit'>
-              <Image className='max-w-56' src={logoSbk} alt={'Svenska Budo & Kampsportsförbundet'} />
             </div>
             <div className='max-w-fit'>
               <Image className='max-w-56' src={logoFryshuset} alt={'Fryshuset'} />
