@@ -12,12 +12,12 @@ import brottningskast from '/public/img/brottningskast.webp';
 import strengthCondition from '/public/img/fys_kondition.webp';
 import provtrana from '/public/img/sparring.webp';
 import logoRf from '/public/img/logo_rf.webp';
-import logoUpprustningen from '/public/img/logo_upprustningen.webp';
 import logoFryshuset from '/public/img/logo_fryshuset.webp';
 import logoFolketsHusby from '/public/img/logo_folkets_husby.webp';
 import logoCollectiveImpactHusby from '/public/img/logo_collective_impact_husby.webp'
 import logoNobis from '/public/img/Nobis_Initiative_logga.webp'
 import logoSbf from '/public/img/logga_sbf.webp'
+import logoSvenskaBoxningsForbundet from '/public/img/svenska_boxningsforbundet.webp'
 import logoMinorda from '/public/img/Minorda_logo.webp'
 
 export default function Home() {
@@ -139,9 +139,6 @@ export default function Home() {
           <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>Våra samarbetspartners</h2>
           <div className='min-w-fit w-full flex flex-wrap flex-col md:flex-row md:justify-evenly items-center gap-y-5'>
             <div className='max-w-fit'>
-              <Image className='max-w-56' src={logoUpprustningen} alt={'Upprustningen'} />
-            </div>
-            <div className='max-w-fit'>
               <Image className='max-w-56' src={logoRf} alt={'Riksidrottsförbundet'} />
             </div>
             <div className='max-w-fit'>
@@ -154,13 +151,16 @@ export default function Home() {
               <Image className='max-w-56' src={logoCollectiveImpactHusby} alt={'Collective Impact Husby'} />
             </div>
             <div className='max-w-fit'>
-              <Image className='max-w-56 brightness-0 invert' src={logoNobis} alt={'Collective Impact Husby'} />
+              <Image className='max-w-56 brightness-0 invert' src={logoNobis} alt={'Nobis Initiative'} />
             </div>
             <div className='max-w-fit'>
-              <Image className='max-w-56 brightness-0 invert' src={logoSbf} alt={'Collective Impact Husby'} />
+              <Image className='max-w-56 brightness-0 invert' src={logoSbf} alt={'Svenska Brottningsförbundet'} />
             </div>
             <div className='max-w-fit'>
-              <Image className='max-w-56 brightness-0 invert' src={logoMinorda} alt={'Collective Impact Husby'} />
+              <Image className='max-w-56 brightness-0 invert' src={logoSvenskaBoxningsForbundet} alt={'Svenska Boxningsförbundet'} />
+            </div>
+            <div className='max-w-fit'>
+              <Image className='max-w-56 brightness-0 invert' src={logoMinorda} alt={'Minorda'} />
             </div>
           </div>
         </div>

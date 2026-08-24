@@ -11,8 +11,8 @@ export const membershipOptions = [
     ],
   },
   {
-    title: 'Tjejboxning',
-    price: 750,
+    title: 'Tjejgrappling',
+    price: 1000,
     accentColor: '#817bf3',
     features: [
       { text: 'Två gratis provträningar', included: true },
@@ -77,7 +77,7 @@ export const membershipOptions = [
     ],
   },
   {
-    title: 'Sommarträning Tjejboxning',
+    title: 'Sommarträning Tjejgrappling',
     price: 500,
     accentColor: '#dde24a',
     features: [
