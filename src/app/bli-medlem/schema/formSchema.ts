@@ -33,7 +33,8 @@ export const formSchema = z
       'Boxning', 
       'BJJ', 
       'Fys & konditionsträningar',
-      'Grappling (6-12 år)'
+      'Grappling (6-12 år)',
+      'Anpassad brottning (7-12 år)'
     ]),
     diseases: z.string().optional(),
     trainingFrequency: z.enum(['1-2', '3-4', '']).optional(),
