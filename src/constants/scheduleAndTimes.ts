@@ -34,7 +34,9 @@ export const schedule: Schedule = {
     '15:30 - 17:00': 'Barn nybörjargruppen',
   },
   'Söndag': {
+    '10:00 - 11:00': 'Anpassad brottning',
     '11:00 - 12:30': 'BJJ',
+    '15:00 - 16:30': 'BJJ kvinnor',
   },
 };
 
