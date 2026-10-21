@@ -74,7 +74,7 @@ export default function VillkorPage() {
                   - Personuppgifter lagras säkert och delas inte med tredje part utan samtycke. <br />
                   - Vi använder cookies för att förbättra användarupplevelsen på vår webbplats. <br />
                   - Medlemmar har rätt att begära utdrag, ändringar eller radering av sina uppgifter. <br />
-                  - Vid frågor om integritet och personuppgifter, kontakta oss på <a href="mailto:info@zenithkamsport.se" className="underline">info@zenithkamsport.se</a>.
+                  - Vid frågor om integritet och personuppgifter, kontakta oss på <a href="mailto:info@zenithkampsport.se" className="underline">info@zenithkampsport.se</a>.
                 </p>
               </section>
             </div>

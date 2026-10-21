@@ -162,7 +162,7 @@ function TimelineComponent() {
               <time className='font-mono italic'>Oktober 2024</time>
               <div className='text-lg font-black'>Grekisk-romersk brottning</div>
               <p>
-                I oktober 2025 startade vi träningar i grekisk-romersk brottning för både ungdomar och vuxna. 
+                I oktober 2024 startade vi träningar i grekisk-romersk brottning för både ungdomar och vuxna. 
                 Med en erfaren tränare på plats blev satsningen snabbt en stor framgång. Vi etablerade fyra träningar i veckan – ett 
                 upplägg som fortfarande består och fungerar mycket väl.
               </p>
@@ -207,7 +207,7 @@ function TimelineComponent() {
               <div className='text-lg font-black'>Braziliansk jiu-jitsu</div>
               <p>
                 Med en tydlig efterfrågan från medlemmar och boende i Järvaområdet startade vi brasiliansk jiu-jitsu 
-                i januari 2026. Verksamheten växte snabbt och har blivit en central del av klubben, med starkt 
+                i januari 2025. Verksamheten växte snabbt och har blivit en central del av klubben, med starkt 
                 deltagande från både ungdomar och vuxna.
               </p>
               <div className='md:hidden'>
