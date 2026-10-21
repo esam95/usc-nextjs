@@ -90,7 +90,7 @@ export function Footer() {
               className='text-secondary-foreground font-light md:text-lg'
               aria-label='email address information'
             >
-              info@zenithkamsport.se
+              info@zenithkampsport.se
             </span>
           </section>
 
