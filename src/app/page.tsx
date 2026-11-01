@@ -103,14 +103,14 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <section
         id='main-content'
-        className='w-full bg-[#0d1420] py-11 flex flex-col justify-start items-center flex-wrap gap-16 md:flex-row md:min-h-screen self-center xl:min-h-[80vh]'
+        className='w-full max-w-full bg-[#0d1420] px-4 py-11 flex flex-col justify-start items-center flex-wrap gap-16 md:flex-row md:min-h-screen self-center xl:min-h-[80vh]'
       >
-        <div className='flex flex-col items-center min-w-fit w-full gap-8 md:flex-row md:items-start md:gap-16 md:justify-evenly'>
-          <div className='flex flex-col max-w-[22rem] w-full max-h-fit items-start justify-center lg:max-w-fit lg:w-2/4'>
+        <div className='flex flex-col items-center w-full min-w-0 max-w-full gap-8 md:flex-row md:items-center md:gap-16 md:justify-center'>
+          <div className='flex flex-col w-full min-w-0 max-w-[22rem] max-h-fit items-start justify-center lg:max-w-xl lg:w-1/2'>
             <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>
               Välkommen till Zenith Kampsport
             </h2>
-            <p className='text-base leading-relaxed mb-6 max-w-max lg:text-lg'>
+            <p className='text-base leading-relaxed mb-6 max-w-full lg:text-lg'>
               Vi är en kampsportsklubb i Järva där passionerade idrottare och kampsportsälskare kan komma
               samman för att utmana sig själva, växa som individer och uppnå sina träningsmål. På vår klubb
               erbjuder vi en rolig och stödjande miljö som främjar teknisk utveckling, fysisk styrka och ökat
@@ -118,12 +118,12 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='relative flex flex-col items-center max-w-fit w-full md:w-1/2 md:items-start'>
-            <Image src={logo} alt={'club logo'} width={250} height={250} className='lg:w-80 lg:h-80' />
+          <div className='relative flex shrink-0 flex-col items-center max-w-full md:w-auto md:items-start'>
+            <Image src={logo} alt={'club logo'} width={250} height={250} className='h-auto w-[250px] max-w-full lg:w-80' />
           </div>
         </div>
 
-        <div className='flex flex-col items-center md:items-start w-full md:mt-0 md:ml-12 lg:ml-[5.5rem] xl:ml-32 2xl:ml-72'>
+        <div className='flex flex-col items-center w-full min-w-0 max-w-full md:items-start md:pl-12 lg:pl-[5.5rem] xl:pl-32 2xl:pl-72'>
           <Link href='/om-oss'>
             <Button
               size={'lg'}
@@ -135,9 +135,9 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className='min-w-fit w-full flex flex-col items-center gap-y-2'>
+        <div className='flex w-full min-w-0 max-w-full flex-col items-center gap-y-2'>
           <h2 className='text-secondary-foreground font-semibold mb-4 lg:text-4xl'>Våra samarbetspartners</h2>
-          <div className='min-w-fit w-full flex flex-wrap flex-col md:flex-row md:justify-evenly items-center gap-y-5'>
+          <div className='flex w-full min-w-0 max-w-full flex-wrap flex-col md:flex-row md:justify-evenly items-center gap-y-5'>
             <div className='max-w-fit'>
               <Image className='max-w-56' src={logoRf} alt={'Riksidrottsförbundet'} />
             </div>
@@ -167,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* VÅRA KLASSER */}
-      <section className='relative w-screen py-11 flex flex-col justify-center items-center gap-12'>
+      <section className='relative w-full max-w-full px-4 py-11 flex flex-col justify-center items-center gap-12 md:px-20'>
         {/* <Image src={logoStamps} alt={'logos'} className='absolute h-full w-full object-cover opacity-10' /> */}
         <div className='relative min-h-[400px] flex flex-col justify-evenly items-center gap-3 px-8 z-10'>
           <div className='flex flex-col'>
