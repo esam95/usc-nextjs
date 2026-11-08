@@ -40,8 +40,8 @@ const AboutUs: React.FC = () => {
           </p>
         </section>
 
-        <CardContent className='flex flex-col p-4 mb-10 md:flex-row md:mb-16 md:p-6 lg:mb-20'>
-          <div className='flex-1 md:mr-6'>
+        <CardContent className='flex flex-col p-4 mb-10 md:flex-row md:mb-16 md:p-6 lg:mb-20 '>
+          <div className='flex-1  w-full md:max-w-[1500px]  mx-auto '>
             <h3 className='font-semibold mb-4'>Vår filosofi</h3>
             <p className='text-base leading-relaxed mb-4'>
               Välkommen till Zenith Kampsport! Vi är stolta över att presentera vår nyöppnade klubb i
