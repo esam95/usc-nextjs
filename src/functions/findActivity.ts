@@ -5,10 +5,19 @@ export function strToMins(t: string) {
   return Number(hours) * 60 + Number(minutes);
 }
 
-type DrawnBlock = {
+// One pass inside a drawn cell. offset and span are counted in half-hour rows
+// from the top of the cell, so overlapping passes can sit side by side and
+// still start and end on their own rows.
+export type PassInCell = {
   label: string;
   timeLabel: string;
+  offset: number;
+  span: number;
+};
+
+type DrawnCell = {
   slots: string[];
+  passes: PassInCell[];
 };
 
 // Half-hour rows from the schedule grid that this pass covers.
@@ -23,10 +32,9 @@ function slotsBetween(start: string, end: string) {
   });
 }
 
-// Earlier passes claim their rows first. A pass that starts in the middle of
-// another one is drawn from the first free half-hour, so the table does not
-// leave a hole that pulls the next day left.
-function drawnBlocksForDay(day: string): DrawnBlock[] {
+// Passes that share at least one row are drawn in one table cell that covers
+// all of their rows. Inside the cell each pass gets its own column.
+function drawnCellsForDay(day: string): DrawnCell[] {
   const daySchedule = schedule[day];
   if (!daySchedule) {
     return [];
@@ -35,57 +43,64 @@ function drawnBlocksForDay(day: string): DrawnBlock[] {
   const activities = Object.entries(daySchedule)
     .map(([range, label]) => {
       const [start, end] = range.split(" - ");
-      return { start, end, label, range };
+      return { label, range, slots: slotsBetween(start, end) };
     })
-    .sort((a, b) => strToMins(a.start) - strToMins(b.start));
+    .filter((activity) => activity.slots.length > 0)
+    .sort((a, b) => timeSlots.indexOf(a.slots[0]) - timeSlots.indexOf(b.slots[0]));
 
-  const taken = new Set<string>();
-  const blocks: DrawnBlock[] = [];
-
+  const groups: (typeof activities)[] = [];
+  let lastRow = -1;
   for (const activity of activities) {
-    const possibleSlots = slotsBetween(activity.start, activity.end);
-    const firstFreeSlot = possibleSlots.find((slot) => !taken.has(slot));
-    if (!firstFreeSlot) {
-      continue;
+    const firstRow = timeSlots.indexOf(activity.slots[0]);
+    const endRow = timeSlots.indexOf(activity.slots[activity.slots.length - 1]);
+    if (groups.length > 0 && firstRow <= lastRow) {
+      groups[groups.length - 1].push(activity);
+    } else {
+      groups.push([activity]);
     }
-
-    const slots: string[] = [];
-    const firstFreeIndex = possibleSlots.indexOf(firstFreeSlot);
-    for (const slot of possibleSlots.slice(firstFreeIndex)) {
-      if (taken.has(slot)) {
-        break;
-      }
-      slots.push(slot);
-      taken.add(slot);
-    }
-
-    blocks.push({
-      label: activity.label,
-      timeLabel: activity.range,
-      slots,
-    });
+    lastRow = Math.max(lastRow, endRow);
   }
 
-  return blocks;
+  return groups.map((group) => {
+    const firstRow = timeSlots.indexOf(group[0].slots[0]);
+    const endRow = Math.max(
+      ...group.map((a) => timeSlots.indexOf(a.slots[a.slots.length - 1])),
+    );
+
+    return {
+      slots: timeSlots.slice(firstRow, endRow + 1),
+      passes: group.map((a) => ({
+        label: a.label,
+        timeLabel: a.range,
+        offset: timeSlots.indexOf(a.slots[0]) - firstRow,
+        span: a.slots.length,
+      })),
+    };
+  });
+}
+
+// How many boxes a day ever shows side by side: overlapping passes, plus
+// passes whose label is split with "\n\n" (e.g. Monday 18:00). The table makes
+// that day's column this many times wider, so the boxes are not squeezed.
+export function columnsForDay(day: string) {
+  return Math.max(
+    1,
+    ...drawnCellsForDay(day).map((cell) =>
+      cell.passes.reduce((sum, pass) => sum + pass.label.split("\n\n").length, 0),
+    ),
+  );
 }
 
 export const findActivity = (time: string, day: string) => {
-  const block = drawnBlocksForDay(day).find((item) => item.slots.includes(time));
-  const isStartOfBlock = block?.slots[0] === time;
+  const cell = drawnCellsForDay(day).find((item) => item.slots.includes(time));
 
-  if (!block || !isStartOfBlock) {
-    return {
-      rowSpan: 1,
-      activity: null,
-      time: block ? block.timeLabel : null,
-      currentNonActivity: block,
-    };
+  if (!cell) {
+    return { rowSpan: 1, passes: [] as PassInCell[], coveredByCellAbove: false };
   }
 
-  return {
-    rowSpan: block.slots.length,
-    activity: block.label,
-    time: block.timeLabel,
-    currentNonActivity: undefined,
-  };
+  if (cell.slots[0] !== time) {
+    return { rowSpan: 1, passes: [] as PassInCell[], coveredByCellAbove: true };
+  }
+
+  return { rowSpan: cell.slots.length, passes: cell.passes, coveredByCellAbove: false };
 };

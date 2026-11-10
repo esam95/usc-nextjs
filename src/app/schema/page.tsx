@@ -12,7 +12,7 @@ const TrainingSchedule = () => {
         <h1 className='font-extrabold tracking-tight text-secondary-foreground lg:text-5xl mb-8'>
           Träningstider
         </h1>
-        <Card className='w-full max-w-3xl shadow-xl rounded-lg'>
+        <Card className='w-full max-w-6xl shadow-xl rounded-lg'>
           <CardHeader className='bg-secondary text-secondary-foreground rounded-t-lg p-6'>
             <CardTitle className='text-3xl font-bold'>Veckoschema</CardTitle>
             <CardDescription className='mt-2 text-inherit'>
