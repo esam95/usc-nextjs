@@ -7,7 +7,8 @@ export const days: string[] = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag
 
 export const schedule: Schedule = {
   'Måndag': {
-    '18:00 - 19:00': 'Boxning (Kvarnbacka BP)\n\nBarn tävlingsgruppen\n& nybörjargruppen',
+    '17:00 - 18:00': 'Boxning barn\n(7–15 år)',
+    '18:00 - 19:00': 'Boxning vuxna\n(15+ år)\n\nBarn tävlingsgruppen\n& nybörjargruppen',
     '19:00 - 21:00': 'Brottarfys',
   },
   'Tisdag': {
@@ -29,13 +30,14 @@ export const schedule: Schedule = {
     '09:00 - 09:50': 'Brottarlekis',
     '10:00 - 10:50': 'Brottarlekis',
     '11:00 - 12:30': 'Öppenmatta\n(BJJ & Brottning)',
-    '13:00 - 14:00': 'Boxning (Kvarnbacka BP)',
-    '13:30 - 15:30': 'Barn tävlingsgruppen',
-    '15:30 - 17:00': 'Barn nybörjargruppen',
+    '12:00 - 13:30': 'Boxning vuxna\n(15+ år)',
+    '13:30 - 15:30': 'Barn nybörjargruppen',
+    '15:30 - 17:30': 'Barn tävlingsgruppen',
   },
   'Söndag': {
     '10:00 - 11:00': 'Anpassad brottning',
     '11:00 - 12:30': 'BJJ',
+    '13:30 - 15:00': 'Grappling\n(Flickor)',
     '15:00 - 16:30': 'BJJ kvinnor',
   },
 };
@@ -43,7 +45,7 @@ export const schedule: Schedule = {
 
 export const workoutDays: WorkoutDays = {
   man: {
-    boxning: [1, 6],          // Måndag, Lördag (Kvarnbacka BP) — tjejer-boxning på Tis/Lör är borttagen
+    boxning: [1, 6],          // Måndag, Lördag — tjejer-boxning på Tis/Lör är borttagen
     olympiskBrottning: [2, 4, 5, 6], // Tisdag, Torsdag, Fredag, Lördag
     bjj: [2, 5, 0],           // Tisdag, Fredag, Söndag
     fysOchKondition: [1],     // Måndag (Brottarfys)
