@@ -9,7 +9,7 @@ export const schedule: Schedule = {
   'Måndag': {
     '17:00 - 18:00': 'Boxning barn\n(7–15 år)',
     '18:00 - 19:00': 'Boxning vuxna\n(15+ år)\n\nBarn tävlingsgruppen\n& nybörjargruppen',
-    '19:00 - 21:00': 'Brottarfys',
+    '19:00 - 21:00': 'Brottning\n(Greco)',
   },
   'Tisdag': {
     '18:00 - 19:30': 'BJJ',
@@ -20,7 +20,7 @@ export const schedule: Schedule = {
     '19:00 - 20:30': 'Barn tävlingsgruppen',
   },
   'Torsdag': {
-    '19:00 - 21:00': 'Brottning\n(Greco)',
+    '19:00 - 21:00': 'Brottarfys',
   },
   'Fredag': {
     '17:30 - 19:00': 'BJJ',
@@ -46,9 +46,9 @@ export const schedule: Schedule = {
 export const workoutDays: WorkoutDays = {
   man: {
     boxning: [1, 6],          // Måndag, Lördag — tjejer-boxning på Tis/Lör är borttagen
-    olympiskBrottning: [2, 4, 5, 6], // Tisdag, Torsdag, Fredag, Lördag
+    olympiskBrottning: [1, 2, 5, 6], // Måndag, Tisdag, Fredag, Lördag
     bjj: [2, 5, 0],           // Tisdag, Fredag, Söndag
-    fysOchKondition: [1],     // Måndag (Brottarfys)
+    fysOchKondition: [4],     // Torsdag (Brottarfys)
   },
   woman: {
     boxning: [],              // Tjejboxning (Tis & Lör) är borttagen ur schemat
