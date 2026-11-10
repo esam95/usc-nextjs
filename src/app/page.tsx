@@ -98,6 +98,31 @@ export default function Home() {
               </Link>
             </div>
           </div>
+
+          {/* VÄNTELISTA BARNBROTTNING */}
+          <div className='mx-4 max-w-xl rounded-md bg-black/60 px-6 py-5 text-center backdrop-blur-sm'>
+            <h2 className='text-secondary-foreground text-xl font-semibold md:text-2xl'>
+              Väntelista för barnbrottning
+            </h2>
+            <p className='text-secondary-foreground text-sm leading-relaxed md:text-base'>
+              Alla våra barngrupper i brottning är just nu fulla. Skriv upp ditt barn på väntelistan så får
+              ni en garanterad plats i början av nästa termin.
+            </p>
+            <Button
+              asChild
+              size='lg'
+              className='mt-4 rounded-[2px] text-primary-foreground hover:text-primary hover:bg-slate-200 xl:text-base'
+            >
+              <a
+                href='https://docs.google.com/forms/d/e/1FAIpQLSc_EvIQG3qGegatsWhPYlKzIwwjxF_gMNob6CgporVfjV2euQ/viewform'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Skriv upp dig på väntelistan
+                <ArrowRightIcon className='ml-2 h-4 w-4' />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
 
