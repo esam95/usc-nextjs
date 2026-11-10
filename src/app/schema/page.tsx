@@ -23,7 +23,7 @@ const TrainingSchedule = () => {
               <div className='flex flex-row md:items-center mt-1 md:mt-0'>
                 <LocationPinIcon color='red' />
               </div>
-              <strong>Plats: Fryshuset Husby (Lofotengatan 36, 164 33 Kista)</strong>
+              <strong>Brottning &amp; BJJ: Fryshuset Husby (Lofotengatan 36, 164 33 Kista)</strong>
             </div>
             <div className='flex gap-2'>
               <div className='flex flex-row md:items-center mt-1 md:mt-0'>
@@ -35,7 +35,7 @@ const TrainingSchedule = () => {
                 rel='noopener noreferrer'
                 className='underline hover:opacity-80'
               >
-                <strong>Hitta hit – se vägbeskrivning från Husby T-bana</strong>
+                <strong>Hitta till Lofotengatan (brottning &amp; BJJ) – se vägbeskrivning från Husby T-bana</strong>
               </a>
             </div>
           </CardHeader>
