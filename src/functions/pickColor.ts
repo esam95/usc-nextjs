@@ -9,6 +9,7 @@ export function pickColor(text: string | null) {
     ['Boxning', 'bg-[#8B2F2F]'],
     ['Fys\n(Tjejer)', 'bg-[#8E4A6F]'],
     ['Brottarlekis', 'bg-[#C97A3D]'], // barn-vänlig orange, skiljer sig från vuxenbrottning
+    ['Anpassad brottning', 'bg-[#C2577F]'], // rosa, skiljer sig från vanlig brottning
     ['Brott', 'bg-[#2F6B5A]'],
     ['Barn nybörjargruppen', 'bg-sky-500'],
     ['Barn tävlingsgruppen', 'bg-[#B79D4A]'],
