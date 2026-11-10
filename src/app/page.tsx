@@ -19,6 +19,7 @@ import logoNobis from '/public/img/Nobis_Initiative_logga.webp'
 import logoSbf from '/public/img/logga_sbf.webp'
 import logoSvenskaBoxningsForbundet from '/public/img/svenska_boxningsforbundet.webp'
 import logoMinorda from '/public/img/Minorda_logo.webp'
+import logoStockholmStad from '/public/img/logo_stockholm_stad.webp'
 
 export default function Home() {
   const classesImages = [
@@ -162,6 +163,9 @@ export default function Home() {
             <div className='max-w-fit'>
               <Image className='max-w-56 brightness-0 invert' src={logoMinorda} alt={'Minorda'} />
             </div>
+            <div className='max-w-fit'>
+              <Image className='max-w-56' src={logoStockholmStad} alt={'Stockholms stad'} />
+            </div>
           </div>
         </div>
       </section>
@@ -180,9 +184,7 @@ export default function Home() {
             Oavsett din ålder eller erfarenhet, har vi träningen för dig. <br />
             Våra träningspass inkluderar för närvarande&nbsp;
             <strong className='text-primary'>boxning, grappling, brottning </strong> samt
-            <strong className='text-primary'> fys- och konditionsträningar.&nbsp;</strong>
-            Snart introducerar vi även&nbsp;
-            <strong className='text-primary'> MMA.</strong>
+            <strong className='text-primary'> fys- och konditionsträningar.</strong>
           </p>
           <p className='text-sm font-semibold leading-relaxed max-w-[800px] w-full text-center text-white lg:text-base'>
             Kom och hitta den perfekta träningsformen som passar just dig!
