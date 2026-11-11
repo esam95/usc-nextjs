@@ -23,6 +23,12 @@ const TrainingSchedule = () => {
               <div className='flex flex-row md:items-center mt-1 md:mt-0'>
                 <LocationPinIcon color='red' />
               </div>
+              <strong>Boxning: Kottbygatan 7</strong>
+            </div>
+            <div className='flex gap-2'>
+              <div className='flex flex-row md:items-center mt-1 md:mt-0'>
+                <LocationPinIcon color='red' />
+              </div>
               <strong>Brottning &amp; BJJ: Fryshuset Husby (Lofotengatan 36, 164 33 Kista)</strong>
             </div>
             <div className='flex gap-2'>
